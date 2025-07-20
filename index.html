@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCD SHU - PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>TCD SHU</h1>
+                <p>PRO Sales Master</p>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>System Aktywny</span>
+            </div>
+        </header>
+
+        <main id="mainContent">
+            <div class="customer-input-section">
+                <h3><i class="fas fa-user-plus"></i> Nowa Interakcja z Klientem</h3>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="customerPersona">Wybierz Personę Klienta:</label>
+                        <select id="customerPersona" class="form-select"></select>
+                    </div>
+                    <div class="input-group">
+                        <label for="conversationTone">Wykryty Ton Rozmowy:</label>
+                        <select id="conversationTone" class="form-select">
+                            <option value="entuzjastyczny">😊 Entuzjastyczny</option>
+                            <option value="neutralny">😐 Neutralny</option>
+                            <option value="sceptyczny">🤔 Sceptyczny</option>
+                            <option value="negatywny">😠 Negatywny</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="customerTriggers">Wybierz Triggery (słowa kluczowe użyte przez klienta):</label>
+                    <div id="triggersContainer" class="triggers-container"></div>
+                </div>
+                <button id="generateRecommendation" class="cta-button">
+                    <i class="fas fa-brain"></i> Generuj Rekomendację
+                </button>
+            </div>
+
+            <div id="recommendation-output" class="recommendation-output hidden">
+                <div class="output-header">
+                    <h3><i class="fas fa-lightbulb"></i> Plan Działania dla Handlowca</h3>
+                    <div class="conversion-chance">
+                        <span id="chance-percentage"></span>
+                        <div id="chance-bar"></div>
+                    </div>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab-link active" onclick="openTab(event, 'tab-cheatsheet')"><i class="fas fa-scroll"></i> Cheat Sheet</button>
+                    <button class="tab-link" onclick="openTab(event, 'tab-rebuttals')"><i class="fas fa-shield-halved"></i> Zbijanie Obiekcji</button>
+                    <button class="tab-link" onclick="openTab(event, 'tab-comparison')"><i class="fas fa-balance-scale"></i> Porównania</button>
+                    <button class="tab-link" onclick="openTab(event, 'tab-actions')"><i class="fas fa-tasks"></i> Co Robić Teraz?</button>
+                </div>
+
+                <div id="tab-cheatsheet" class="tab-content active">
+                    <h4><i class="fas fa-comments"></i> Język, który Konwertuje (dla profilu <span class="profile-name-placeholder"></span>)</h4>
+                    <div id="cheatsheet-content"></div>
+                </div>
+
+                <div id="tab-rebuttals" class="tab-content">
+                    <h4><i class="fas fa-comment-dots"></i> Obiekcje i Kontr-Skrypty</h4>
+                    <div id="rebuttals-content"></div>
+                </div>
+
+                <div id="tab-comparison" class="tab-content">
+                    <h4><i class="fas fa-exchange-alt"></i> Gotowe Porównania</h4>
+                    <div id="comparison-content"></div>
+                </div>
+
+                <div id="tab-actions" class="tab-content">
+                    <h4><i class="fas fa-play"></i> Panel Działań - Co Robić Teraz?</h4>
+                    <div id="actions-content"></div>
+                </div>
+
+                 <div class="ethical-warning-section">
+                    <h4><i class="fas fa-gavel"></i> Ostrzeżenie Etyczne</h4>
+                    <p id="ethical-warning-text"></p>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

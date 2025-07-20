@@ -1,0 +1,33 @@
+{
+  "description": "Gotowe do użycia, krótkie porównania (snippets) Tesli z popularnymi modelami konkurencyjnymi na polskim rynku.",
+  "comparisons": [
+    {
+      "id": "COMP_TESLA_VS_GOLF",
+      "title": "Tesla Model 3 vs. Volkswagen Golf (Spalinowy)",
+      "focus": "Całkowity Koszt Posiadania (TCO)",
+      "snippet": "Choć cena zakupu Tesli Model 3 jest wyższa, to po uwzględnieniu dopłaty 40 000 zł i 5-letnich oszczędności na paliwie i serwisie (ok. 50 000 zł), jej całkowity koszt posiadania jest o ponad 30 000 zł niższy niż w przypadku VW Golfa. W praktyce, po kilku latach Tesla okazuje się tańsza.",
+      "source": "TCO...txt"
+    },
+    {
+      "id": "COMP_TESLA_VS_SUPERB",
+      "title": "Tesla Model Y vs. Skoda Superb (Spalinowy)",
+      "focus": "Praktyczność i Koszty dla Rodziny/Firmy",
+      "snippet": "Tesla Model Y oferuje znacznie więcej przestrzeni bagażowej (do 2158 litrów) niż Skoda Superb Combi (1950 litrów) i nieporównywalnie niższe koszty eksploatacji. Dla rodziny lub firmy, która dużo podróżuje, roczne oszczędności na paliwie mogą sięgnąć nawet 10 000 zł, co szybko kompensuje różnicę w cenie.",
+      "source": "Polski Klient Tesli...txt, TCO...txt"
+    },
+    {
+      "id": "COMP_TESLA_VS_BYD",
+      "title": "Tesla Model Y vs. BYD Seal U (Chiński EV)",
+      "focus": "Ekosystem i Wartość Marki vs. Cena",
+      "snippet": "BYD oferuje bardzo konkurencyjną cenę i bogate wyposażenie standardowe. Przewagą Tesli, która uzasadnia wyższą cenę, jest jednak dojrzały i niezawodny ekosystem: największa na świecie sieć szybkich ładowarek Supercharger, intuicyjne oprogramowanie z aktualizacjami OTA oraz wyższa, sprawdzona wartość rezydualna na rynku wtórnym.",
+      "source": "4_250720_081722.txt, Psychologia Zakupowa...txt"
+    },
+    {
+      "id": "COMP_TESLA_VS_KIA_EV6",
+      "title": "Tesla Model 3 vs. KIA EV6",
+      "focus": "Oprogramowanie i Osiągi vs. Design i Gwarancja",
+      "snippet": "KIA EV6 kusi odważnym designem i 7-letnią gwarancją. Tesla Model 3 odpowiada na to lepszymi osiągami w wersji Performance, bardziej zaawansowanym i ciągle aktualizowanym oprogramowaniem oraz dostępem do ekskluzywnej sieci Supercharger, co jest kluczowe w trasie.",
+      "source": "Język i Komunikacja w Sprzedaży Tesli...txt"
+    }
+  ]
+}

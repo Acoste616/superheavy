@@ -1,0 +1,112 @@
+[
+  {
+    "ID": 1,
+    "Triggers": ["Martwi mnie cena", "cena", "drogo", "koszt"],
+    "Sentyment": "negatywny",
+    "Profil_DISC": "All",
+    "Obiekcja": "Wysokie koszty zakupu Tesla w porównaniu do spalinowych",
+    "Skrypt": "Rozumiem Pana obawy cenowe. Tesla to inwestycja, która się zwraca. Z programem NaszEauto otrzymuje Pan 40,000 PLN dotacji, plus oszczędności 30,000 PLN przez 5 lat. Łącznie 70,000 PLN korzyści vs spalinowy.",
+    "Fakty_PL": "NaszEauto: 40,000 PLN dotacji z budżetu 1.6 mld PLN. Model 3 TCO: 92,250 PLN vs Golf 127,500 PLN (5 lat). Ładowanie domowe: 0.50-0.70 PLN/kWh vs benzyna.",
+    "Technika": "Framing + Scarcity (ograniczony budżet programu)",
+    "Ostrzeżenie_etyczne": "Uczciwie przedstaw korzyści finansowe. Nie wywieraj presji czasowej."
+  },
+  {
+    "ID": 2,
+    "Triggers": ["Co będzie jak się zepsuje?", "naprawa", "serwis", "awaria"],
+    "Sentyment": "negatywny",
+    "Profil_DISC": "S, C",
+    "Obiekcja": "Obawy o niezawodność i koszty napraw Tesla",
+    "Skrypt": "Doskonale rozumiem te obawy. Tesla oferuje 8-letnią gwarancję na baterię (160-192 tys. km), 5-gwiazdkowy rating bezpieczeństwa i Mobile Service - serwis przyjeżdża do domu. Dodatkowo OTA updates poprawiają auto automatycznie.",
+    "Fakty_PL": "8-letnia gwarancja baterii: 160,000-192,000 km. Mobile Service dostępny w całej Polsce. Minimalne koszty serwisu vs spalinowy - brak wymiany oleju, filtrów, świec.",
+    "Technika": "Reassurance + Service differentiation",
+    "Ostrzeżenie_etyczne": "Szczerze przedstaw potencjalne koszty po gwarancji (~110k PLN wymiana baterii)."
+  },
+  {
+    "ID": 3,
+    "Triggers": ["Jak długo to trwa ładowanie?", "ładowanie", "czas", "szybkość"],
+    "Sentyment": "neutralny",
+    "Profil_DISC": "All",
+    "Obiekcja": "Obawy o czas ładowania i wygodę użytkowania",
+    "Skrypt": "W domu ładuje Pan przez noc jak telefon - 8 godzin daje 400km zasięgu. Na trasie Supercharger: 200km w 15 minut podczas kawy. W Polsce mamy już 10,889 punktów ładowania (+50% rocznie).",
+    "Fakty_PL": "Ładowanie domowe: 8h = 400km zasięgu. Supercharger V3: 200km w 15 minut. 10,889 punktów ładowania w Polsce (+50% YoY). Koszt domowy: 0.50-0.70 PLN/kWh.",
+    "Technika": "Convenience comparison + Growth data",
+    "Ostrzeżenie_etyczne": "Uczciwi przedstaw różnice w kosztach ładowania domowego vs publicznego."
+  },
+  {
+    "ID": 4,
+    "Triggers": ["A ten zasięg zimą?", "zima", "zasięg", "mróz"],
+    "Sentyment": "negatywny",
+    "Profil_DISC": "C, S",
+    "Obiekcja": "Obawy o spadek zasięgu w zimie",
+    "Skrypt": "Szczerze mówiąc, zimą zasięg spada o 20-30% - tak jak spalanie w spalinowych rośnie. Model Y ma 514km WLTP, zimą 350-400km. Plus prekondycjonowanie przez aplikację, pompa ciepła, inteligentne planowanie trasy.",
+    "Fakty_PL": "Model Y: 514km WLTP, zimą realistycznie 350-400km. Prekondycjonowanie baterii przez aplikację Tesla. Pompa ciepła zwiększa efektywność. Ogrzewanie foteli: 50W vs dmuchawa: 2-3kW.",
+    "Technika": "Honesty + Solutions + Practical comparisons",
+    "Ostrzeżenie_etyczne": "Bądź szczery o ograniczeniach zimowych. Nie ukrywaj rzeczywistego spadku zasięgu."
+  },
+  {
+    "ID": 5,
+    "Triggers": ["Może powinienem poczekać", "poczekać", "później", "za rok"],
+    "Sentyment": "negatywny",
+    "Profil_DISC": "C, S",
+    "Obiekcja": "Odkładanie decyzji w czasach rosnącej konkurencji",
+    "Skrypt": "Rozumiem chęć poczekania. Ale Tesla ma 15 lat doświadczenia w EV, gdy chińskie marki dopiero zaczynają w Polsce. Model Y Juniper już w drodze - ewolucja sprawdzonej technologii. Program NaszEauto ma ograniczony budżet.",
+    "Fakty_PL": "Tesla: 15 lat doświadczenia w EV. Chińskie marki: 5% udziału w Q1 2025, brak historii serwisowej. NaszEauto: budżet 1.6 mld PLN - ograniczona pula.",
+    "Technika": "FOMO + Authority + Urgency",
+    "Ostrzeżenie_etyczne": "Nie wywieraj nadmiernej presji czasowej. Przedstaw fakty, pozwól klientowi zdecydować."
+  },
+  {
+    "ID": 6,
+    "Triggers": ["Przetestowałem ponad 20 samochodów", "testowałem", "porównałem", "research"],
+    "Sentyment": "pozytywny",
+    "Profil_DISC": "C, D",
+    "Obiekcja": "Klient z ekstensywnym research - wysokie oczekiwania",
+    "Skrypt": "Imponujący research! Po przetestowaniu 20+ aut Tesla musiała się czymś wyróżnić. Oferujemy kompletny ekosystem - nie tylko samochód. 15 lat przewagi technologicznej, największa sieć Superchargerów, OTA updates.",
+    "Fakty_PL": "Tesla: jedyna marka z pełną autonomią produkcji baterii. Supercharger - największa sieć szybkiego ładowania. OTA updates - samochód się ulepsza po zakupie.",
+    "Technika": "Expert validation + Differentiation",
+    "Ostrzeżenie_etyczne": "Szanuj wiedzę klienta. Nie lekceważ jego research."
+  },
+  {
+    "ID": 7,
+    "Triggers": ["Interesuje mnie ekologia", "środowisko", "emisje", "planeta"],
+    "Sentyment": "pozytywny",
+    "Profil_DISC": "I",
+    "Obiekcja": "Brak obiekcji - pozytywna motywacja",
+    "Skrypt": "Fantastycznie! Tesla to nie tylko zero emisji lokalnych, ale symbol zmiany świata. Gigafactory Berlin działa na 100% energii odnawialnej. Jako właściciel Tesla staje się Pan ambasadorem tej misji.",
+    "Fakty_PL": "Zero emisji lokalnych podczas jazdy. Gigafactory Berlin: 100% energia odnawialna. 1 Tesla = 4.6 tony mniej CO2 rocznie vs spalinowy. Misja: przyspieszenie przejścia na zrównoważony transport.",
+    "Technika": "Mission alignment + Social influence",
+    "Ostrzeżenie_etyczne": "Uczciwi przedstaw pełny cykl życia pojazdu, nie tylko emisje podczas jazdy."
+  },
+  {
+    "ID": 8,
+    "Triggers": ["To będzie firmowy samochód", "firmowy", "firma", "biznes"],
+    "Sentyment": "neutralny",
+    "Profil_DISC": "D, C",
+    "Obiekcja": "Potrzeba uzasadnienia biznesowego",
+    "Skrypt": "Dla firmy Tesla to podwójna korzyść. Amortyzacja EV: 225,000 PLN vs spalinowy: 150,000 PLN. Koszty eksploatacji: ~0.15 PLN/km oszczędności. Plus 100% odliczenie VAT-u przy użytku mieszanym.",
+    "Fakty_PL": "Amortyzacja EV: 225,000 PLN vs ICE: 150,000 PLN. VAT 100% odliczalny przy użytku mieszanym. Preferencyjne leasing rates: 4.4-4.9% RRSO. Brak podatku od środków transportu.",
+    "Technika": "Tax optimization + Business benefits",
+    "Ostrzeżenie_etyczne": "Przedstaw faktyczne korzyści podatkowe. Nie przesadzaj z oszczędnościami."
+  },
+  {
+    "ID": 9,
+    "Triggers": ["Słyszałem o programie NaszEauto", "NaszEauto", "dotacja", "dopłata"],
+    "Sentyment": "pozytywny",
+    "Profil_DISC": "All",
+    "Obiekcja": "Świadomość dotacji - wysokie szanse",
+    "Skrypt": "Doskonale! 40,000 PLN dotacji z budżetu 1.6 mld PLN - to ograniczona pula. Razem z oszczędnościami TCO (30k PLN przez 5 lat) daje to 70,000 PLN korzyści vs spalinowy. Kiedy planuje Pan złożyć wniosek?",
+    "Fakty_PL": "NaszEauto: 40,000 PLN dotacji, budżet 1.6 mld PLN. TCO Model 3: 30,000 PLN oszczędności vs Golf przez 5 lat. Wniosek można złożyć przed dostawą auta.",
+    "Technika": "Scarcity + Financial advantage + Urgency",
+    "Ostrzeżenie_etyczne": "Nie stwarzaj fałszywej presji czasowej. Program ma określone ramy czasowe."
+  },
+  {
+    "ID": 10,
+    "Triggers": ["Co z wymianą baterii po gwarancji?", "bateria", "wymiana", "koszt"],
+    "Sentyment": "negatywny",
+    "Profil_DISC": "C, S",
+    "Obiekcja": "Długoterminowe koszty eksploatacji",
+    "Skrypt": "Szczerze mówiąc, wymiana baterii po gwarancji może kosztować ~110,000 PLN. Ale statystyki pokazują, że 95% baterii Tesla działa bez problemów przez całą żywotność samochodu. 8-letnia gwarancja pokrywa 160-192 tys. km.",
+    "Fakty_PL": "8-letnia gwarancja baterii: 160,000-192,000 km. 95% baterii Tesla działa bez problemów przez cały okres życia. Statystyki degradacji: <10% po 300,000 km.",
+    "Technika": "Honesty + Statistical reassurance",
+    "Ostrzeżenie_etyczne": "Bądź całkowicie szczery o potencjalnych kosztach. Nie ukrywaj ryzyka."
+  }
+]

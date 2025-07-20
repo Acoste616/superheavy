@@ -1,0 +1,170 @@
+[
+  {
+    "trigger": "Martwi mnie cena",
+    "grupa_semantyczna": "Financial/Concern",
+    "powiazania_disc": "All types",
+    "domyslna_waga": 60,
+    "typ_reakcji_klienta": "Obiekcja/Zainteresowanie",
+    "rekomendowany_sposob_reakcji": "Użyj NaszEauto subsidy 40k PLN + TCO savings 30k PLN. Pokaż łączną korzyść 70k PLN."
+  },
+  {
+    "trigger": "Co będzie jak się zepsuje?",
+    "grupa_semantyczna": "Technical/Reliability", 
+    "powiazania_disc": "S, C",
+    "domyslna_waga": 55,
+    "typ_reakcji_klienta": "Obiekcja/Lęk",
+    "rekomendowany_sposob_reakcji": "8-letnia gwarancja baterii, 5-gwiazdkowy rating bezpieczeństwa, Mobile Service w domu."
+  },
+  {
+    "trigger": "Jak długo to trwa ładowanie?",
+    "grupa_semantyczna": "Practical/Usage",
+    "powiazania_disc": "All types", 
+    "domyslna_waga": 45,
+    "typ_reakcji_klienta": "Pytanie/Zainteresowanie",
+    "rekomendowany_sposob_reakcji": "Domowe ładowanie przez noc jak telefon. Supercharger 200km w 15min na trasie."
+  },
+  {
+    "trigger": "A ten zasięg zimą?",
+    "grupa_semantyczna": "Practical/Seasonal",
+    "powiazania_disc": "S, C",
+    "domyslna_waga": 40,
+    "typ_reakcji_klienta": "Obiekcja/Realność",
+    "rekomendowany_sposob_reakcji": "Szczerze: spadek 20-30% zimą. Model Y 514km WLTP = 350-400km zimą. Prekondycjonowanie baterii."
+  },
+  {
+    "trigger": "Może powinienem poczekać",
+    "grupa_semantyczna": "Timing/Decision",
+    "powiazania_disc": "C, S",
+    "domyslna_waga": 35,
+    "typ_reakcji_klienta": "Wahanie/Opóźnienie", 
+    "rekomendowany_sposob_reakcji": "Tesla 15 lat doświadczenia vs nowe marki. Model Y Juniper w drodze. NaszEauto budżet ograniczony."
+  },
+  {
+    "trigger": "Przetestowałem ponad 20 samochodów",
+    "grupa_semantyczna": "Behavioral/Research",
+    "powiazania_disc": "C, D",
+    "domyslna_waga": 75,
+    "typ_reakcji_klienta": "Wysokie zainteresowanie",
+    "rekomendowany_sposob_reakcji": "Leverage research depth. Tesla oferuje kompletny ekosystem, nie tylko samochód."
+  },
+  {
+    "trigger": "Gdzie będę ładować?",
+    "grupa_semantyczna": "Infrastructure/Concern",
+    "powiazania_disc": "S, C",
+    "domyslna_waga": 42,
+    "typ_reakcji_klienta": "Obiekcja/Praktyczność",
+    "rekomendowany_sposob_reakcji": "10,889 punktów w Polsce (+50% YoY). Domowe, galerie, hotele, praca."
+  },
+  {
+    "trigger": "Interesuje mnie ekologia",
+    "grupa_semantyczna": "Values/Environmental", 
+    "powiazania_disc": "I",
+    "domyslna_waga": 65,
+    "typ_reakcji_klienta": "Pozytywna motywacja",
+    "rekomendowany_sposob_reakcji": "Zero emisji lokalnych, Gigafactory 100% energia odnawialna, misja Tesli."
+  },
+  {
+    "trigger": "To będzie firmowy samochód",
+    "grupa_semantyczna": "Business/Tax",
+    "powiazania_disc": "D, C", 
+    "domyslna_waga": 62,
+    "typ_reakcji_klienta": "Biznesowe korzyści",
+    "rekomendowany_sposob_reakcji": "Amortyzacja EV 225k PLN vs ICE 150k PLN. VAT 100% odliczalny."
+  },
+  {
+    "trigger": "Porównuję z BMW/Audi/chińskimi markami",
+    "grupa_semantyczna": "Competitive/Comparison",
+    "powiazania_disc": "C, D",
+    "domyslna_waga": 50,
+    "typ_reakcji_klienta": "Analiza rynku",
+    "rekomendowany_sposob_reakcji": "Tesla 15 lat przewagi technologicznej. Chińskie marki 5% rynku, brak historii serwisowej."
+  },
+  {
+    "trigger": "Lubię najnowsze technologie",
+    "grupa_semantyczna": "Technology/Innovation",
+    "powiazania_disc": "D, INTP",
+    "domyslna_waga": 70,
+    "typ_reakcji_klienta": "Pozytywna motywacja", 
+    "rekomendowany_sposob_reakcji": "OTA updates, Autopilot, największa sieć Superchargerów, 15 lat innowacji."
+  },
+  {
+    "trigger": "Chcę coś wyjątkowego/prestiżowego",
+    "grupa_semantyczna": "Status/Prestige",
+    "powiazania_disc": "D, I",
+    "domyslna_waga": 58,
+    "typ_reakcji_klienta": "Status seeking",
+    "rekomendowany_sposob_reakcji": "Najcenniejsza marka motoryzacyjna świata. Wybór liderów: Tim Cook, Jeff Bezos."
+  },
+  {
+    "trigger": "Czy to bezpieczne dla rodziny?",
+    "grupa_semantyczna": "Safety/Family",
+    "powiazania_disc": "S",
+    "domyslna_waga": 52,
+    "typ_reakcji_klienta": "Troska rodzicielska",
+    "rekomendowany_sposob_reakcji": "5-gwiazdkowy rating NHTSA/Euro NCAP. Najbezpieczniejsze auta na świecie."
+  },
+  {
+    "trigger": "A wartość odsprzedaży?", 
+    "grupa_semantyczna": "Financial/Resale",
+    "powiazania_disc": "C, S",
+    "domyslna_waga": 38,
+    "typ_reakcji_klienta": "Finansowe planowanie",
+    "rekomendowany_sposob_reakcji": "Tesla utrzymuje najwyższą wartość rezyduałną w segmencie premium EV."
+  },
+  {
+    "trigger": "Ile kosztuje serwis?",
+    "grupa_semantyczna": "Maintenance/Cost",
+    "powiazania_disc": "C, S", 
+    "domyslna_waga": 48,
+    "typ_reakcji_klienta": "Operacyjne koszty",
+    "rekomendowany_sposob_reakcji": "Minimalne koszty serwisu vs spalinowy. Brak wymiany oleju, filtrów, świec zapłonowych."
+  },
+  {
+    "trigger": "Co z wymianą baterii po gwarancji?",
+    "grupa_semantyczna": "Technical/Long-term",
+    "powiazania_disc": "C, S",
+    "domyslna_waga": 35,
+    "typ_reakcji_klienta": "Obiekcja/Długoterminowe obawy",
+    "rekomendowany_sposob_reakcji": "Szczerze: może kosztować 110k PLN po gwarancji. Ale 95% baterii działa bez problemów przez całą żywotność."
+  },
+  {
+    "trigger": "Nie mogę ładować w domu", 
+    "grupa_semantyczna": "Infrastructure/Barrier",
+    "powiazania_disc": "S, C",
+    "domyslna_waga": 25,
+    "typ_reakcji_klienta": "Poważna bariera",
+    "rekomendowany_sposob_reakcji": "Publiczne DC droższe ale sprawdź mapy ładowania w okolicy. Galerie, hotele, praca oferują darmowe."
+  },
+  {
+    "trigger": "Słyszałem o programie NaszEauto",
+    "grupa_semantyczna": "Financial/Opportunity", 
+    "powiazania_disc": "All types",
+    "domyslna_waga": 65,
+    "typ_reakcji_klienta": "Wysokie zainteresowanie",
+    "rekomendowany_sposob_reakcji": "40k PLN dotacji + 30k oszczędności TCO = 70k korzyści. Budżet ograniczony - działaj szybko."
+  },
+  {
+    "trigger": "Czy autopilot jest bezpieczny?",
+    "grupa_semantyczna": "Technology/Safety",
+    "powiazania_disc": "S, C",
+    "domyslna_waga": 40, 
+    "typ_reakcji_klienta": "Obawy technologiczne",
+    "rekomendowany_sposob_reakcji": "Autopilot to asystent, nie zastępuje kierowcy. Statystyki Tesla: 10x bezpieczniejszy niż średnia."
+  },
+  {
+    "trigger": "Poczekam na nowy Model Y",
+    "grupa_semantyczna": "Timing/Product cycle",
+    "powiazania_disc": "C, I", 
+    "domyslna_waga": 50,
+    "typ_reakcji_klienta": "Informed delay",
+    "rekomendowany_sposob_reakcji": "Juniper to ewolucja, nie rewolucja. Obecny model sprawdzony. NaszEauto może się skończyć."
+  },
+  {
+    "trigger": "Decyduję o flocie firmowej",
+    "grupa_semantyczna": "Business/Fleet",
+    "powiazania_disc": "D, C",
+    "domyslna_waga": 70,
+    "typ_reakcji_klienta": "Biznesowa decyzja", 
+    "rekomendowany_sposob_reakcji": "Korzyści podatkowe, image firmy, oszczędności floty. Zaproponuj pilot z 2-3 autami."
+  }
+]

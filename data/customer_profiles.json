@@ -1,0 +1,175 @@
+{
+  "profiles": {
+    "D": {
+      "name": "Dominant (Dominujący)",
+      "description": "Competitive leaders, decision makers, high achievers",
+      "age_range": "35-50",
+      "income": ">15,000 PLN",
+      "market_share": 25,
+      "motivations": [
+        "Technological prestige",
+        "Road dominance", 
+        "Results and achievements",
+        "Executive status",
+        "Being first with innovation"
+      ],
+      "pain_points": [
+        "Long decision processes",
+        "Overly detailed presentations", 
+        "Lack of concrete results",
+        "Wasting time on details"
+      ],
+      "communication_style": "Direct, results-focused, emphasize performance and status",
+      "decision_speed": "Fast",
+      "key_triggers": ["status_seeking", "technology_enthusiast", "business_use", "competition_comparison"],
+      "conversion_modifiers": {
+        "business_owner": 15,
+        "c_level": 12,
+        "competitive_industry": 8,
+        "time_pressure": 10
+      }
+    },
+    "I": {
+      "name": "Influence (Wpływowy)", 
+      "description": "Influencers, PR, marketing professionals, social connectors",
+      "age_range": "30-45",
+      "income": "10,000-20,000 PLN", 
+      "market_share": 20,
+      "motivations": [
+        "Social status and recognition",
+        "Community membership",
+        "Trendsetting appeal",
+        "Environmental impact visibility",
+        "Influence on others"
+      ],
+      "pain_points": [
+        "Being ignored or overlooked",
+        "Lack of social recognition",
+        "Boring presentations",
+        "No community aspect"
+      ],
+      "communication_style": "Enthusiastic, social, relationship-focused, emphasize community impact",
+      "decision_speed": "Medium",
+      "key_triggers": ["environmental_interest", "status_seeking", "technology_enthusiast"],
+      "conversion_modifiers": {
+        "social_media_active": 8,
+        "environmental_profession": 12,
+        "influencer_role": 10,
+        "community_leader": 8
+      }
+    },
+    "S": {
+      "name": "Steadiness (Stabilny)",
+      "description": "Family-oriented, stable careers, risk-averse, security-focused",
+      "age_range": "35-55",
+      "income": "8,000-15,000 PLN",
+      "market_share": 35,
+      "motivations": [
+        "Family safety and security",
+        "Reliability and dependability", 
+        "Long-term savings",
+        "Stability and predictability",
+        "Support and service quality"
+      ],
+      "pain_points": [
+        "Technology failure risks",
+        "Uncertainty about new tech",
+        "High upfront costs", 
+        "Lack of support",
+        "Complex decision processes"
+      ],
+      "communication_style": "Patient, detailed, supportive, emphasize safety and reliability",
+      "decision_speed": "Slow",
+      "key_triggers": ["family_safety", "reliability_concern", "maintenance_cost", "infrastructure_concern"],
+      "conversion_modifiers": {
+        "has_children": 12,
+        "home_ownership": 8,
+        "stable_employment": 6,
+        "risk_averse": 5
+      }
+    },
+    "C": {
+      "name": "Conscientious (Skrupulatny)",
+      "description": "Engineers, analysts, detail-oriented professionals, data-driven",
+      "age_range": "40-60", 
+      "income": "12,000-25,000 PLN",
+      "market_share": 20,
+      "motivations": [
+        "ROI and detailed TCO analysis",
+        "Technical specifications",
+        "Quality and precision",
+        "Logical decision making",
+        "Thorough research"
+      ],
+      "pain_points": [
+        "Insufficient technical data",
+        "Sales pressure tactics",
+        "Unproven technologies",
+        "Emotional appeals",
+        "Rushed decisions"
+      ],
+      "communication_style": "Analytical, fact-based, detailed, provide comprehensive data",
+      "decision_speed": "Very slow",
+      "key_triggers": ["competition_comparison", "maintenance_cost", "resale_value", "reliability_concern"],
+      "conversion_modifiers": {
+        "engineer_profession": 10,
+        "analytical_role": 8,
+        "detail_oriented": 8,
+        "financial_analysis_skills": 12,
+        "research_intensive": 6
+      }
+    },
+    "ENTJ": {
+      "name": "Executive Leader (ENTJ)",
+      "description": "C-level managers, natural leaders, strategic thinkers",
+      "age_range": "40-55",
+      "income": ">20,000 PLN",
+      "market_share": 15,
+      "motivations": [
+        "Luxury combined with innovation",
+        "Executive status symbols",
+        "Strategic advantage",
+        "Leadership positioning"
+      ],
+      "pain_points": [
+        "Products that don't reflect status",
+        "Poor service quality",
+        "Lack of exclusivity"
+      ],
+      "communication_style": "Executive-level, strategic focus, luxury positioning",
+      "decision_speed": "Fast",
+      "key_triggers": ["status_seeking", "technology_enthusiast", "business_use"],
+      "conversion_modifiers": {
+        "ceo_cfo": 20,
+        "board_member": 15,
+        "luxury_buyer": 12
+      }
+    },
+    "INTP": {
+      "name": "Technical Innovator (INTP)",
+      "description": "IT specialists, engineers, tech enthusiasts",
+      "age_range": "30-50",
+      "income": "15,000-30,000 PLN", 
+      "market_share": 10,
+      "motivations": [
+        "Cutting-edge technology",
+        "Engineering excellence",
+        "Innovation and progress",
+        "Technical sophistication"
+      ],
+      "pain_points": [
+        "Outdated technology",
+        "Poor technical implementation",
+        "Marketing over substance"
+      ],
+      "communication_style": "Technical depth, innovation focus, engineering excellence",
+      "decision_speed": "Medium",
+      "key_triggers": ["technology_enthusiast", "reliability_concern", "competition_comparison"],
+      "conversion_modifiers": {
+        "tech_professional": 15,
+        "early_adopter": 12,
+        "engineering_background": 10
+      }
+    }
+  }
+}

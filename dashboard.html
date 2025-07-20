@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TCD SHU PRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        tesla: {
+                            red: '#E31E24',
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            gray: {
+                                700: '#2A2A2A',
+                                800: '#1A1A1A',
+                                900: '#0A0A0A'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-tesla-black text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="mb-8">
+            <div class="flex items-center justify-between">
+                <h1 class="text-3xl font-bold text-tesla-red">
+                    <i class="fas fa-chart-bar mr-3"></i>
+                    Tesla Customer Analytics Dashboard
+                </h1>
+                <a href="main.html" class="bg-tesla-gray-800 hover:bg-tesla-gray-700 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>Powrót do Analizy
+                </a>
+            </div>
+            <p class="text-tesla-gray-400 mt-2">Monitorowanie konwersji i ścieżek klientów</p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8" id="quickStats">
+            <div class="bg-tesla-gray-800 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-tesla-gray-400 text-sm">Wszyscy Klienci</p>
+                        <p class="text-2xl font-bold text-white" id="totalCustomers">-</p>
+                    </div>
+                    <i class="fas fa-users text-tesla-red text-2xl"></i>
+                </div>
+            </div>
+            
+            <div class="bg-tesla-gray-800 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-tesla-gray-400 text-sm">Aktywni (30 dni)</p>
+                        <p class="text-2xl font-bold text-white" id="activeCustomers">-</p>
+                    </div>
+                    <i class="fas fa-heartbeat text-green-500 text-2xl"></i>
+                </div>
+            </div>
+            
+            <div class="bg-tesla-gray-800 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-tesla-gray-400 text-sm">Średnia Ścieżka</p>
+                        <p class="text-2xl font-bold text-white" id="avgJourney">-</p>
+                        <p class="text-xs text-tesla-gray-500">dni</p>
+                    </div>
+                    <i class="fas fa-route text-blue-500 text-2xl"></i>
+                </div>
+            </div>
+            
+            <div class="bg-tesla-gray-800 rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-tesla-gray-400 text-sm">Hot Leads</p>
+                        <p class="text-2xl font-bold text-white" id="hotLeads">-</p>
+                    </div>
+                    <i class="fas fa-fire text-orange-500 text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conversion Funnel -->
+        <div class="bg-tesla-gray-800 rounded-lg p-6 mb-8">
+            <h2 class="text-xl font-semibold text-tesla-red mb-4">
+                <i class="fas fa-funnel-dollar mr-2"></i>Lejek Konwersji
+            </h2>
+            <div id="conversionFunnel" class="space-y-4">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+
+        <!-- DISC Distribution -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-tesla-gray-800 rounded-lg p-6">
+                <h2 class="text-xl font-semibold text-tesla-red mb-4">
+                    <i class="fas fa-user-circle mr-2"></i>Rozkład Typów DISC
+                </h2>
+                <div id="discDistribution" class="space-y-3">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+
+            <!-- Top Triggers -->
+            <div class="bg-tesla-gray-800 rounded-lg p-6">
+                <h2 class="text-xl font-semibold text-tesla-red mb-4">
+                    <i class="fas fa-chart-line mr-2"></i>Najczęstsze Triggery
+                </h2>
+                <div id="topTriggers" class="space-y-2">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="bg-tesla-gray-800 rounded-lg p-6">
+            <h2 class="text-xl font-semibold text-tesla-red mb-4">
+                <i class="fas fa-clock mr-2"></i>Najnowsza Aktywność
+            </h2>
+            <div id="recentActivity" class="space-y-3">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class Dashboard {
+            constructor() {
+                this.apiBase = 'http://localhost:3000/api';
+                this.init();
+            }
+
+            async init() {
+                await this.loadAnalytics();
+                
+                // Auto-refresh every 30 seconds
+                setInterval(() => this.loadAnalytics(), 30000);
+            }
+
+            async loadAnalytics() {
+                try {
+                    const response = await fetch(`${this.apiBase}/analytics/dashboard`);
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.updateDashboard(data.analytics);
+                    }
+                } catch (error) {
+                    console.error('Failed to load analytics:', error);
+                }
+            }
+
+            updateDashboard(analytics) {
+                // Quick stats
+                document.getElementById('totalCustomers').textContent = analytics.totalCustomers || 0;
+                document.getElementById('activeCustomers').textContent = analytics.activeCustomers || 0;
+                document.getElementById('avgJourney').textContent = analytics.averageJourneyLength || 0;
+                
+                // Count hot leads from recent activity
+                const hotLeads = analytics.recentActivity?.filter(activity => 
+                    activity.tags.includes('hot_lead') || activity.tags.includes('highly_engaged')
+                ).length || 0;
+                document.getElementById('hotLeads').textContent = hotLeads;
+
+                // Conversion funnel
+                this.updateConversionFunnel(analytics.conversionFunnel || {});
+                
+                // DISC distribution
+                this.updateDiscDistribution(analytics.personalityDistribution || {});
+                
+                // Top triggers
+                this.updateTopTriggers(analytics.topTriggers || []);
+                
+                // Recent activity
+                this.updateRecentActivity(analytics.recentActivity || []);
+            }
+
+            updateConversionFunnel(funnel) {
+                const stages = [
+                    { key: 'initial_analysis', name: 'Pierwsza Analiza', icon: 'fas fa-search' },
+                    { key: 'post_conversation', name: 'Po Rozmowie', icon: 'fas fa-comments' },
+                    { key: 'test_drive_booked', name: 'Jazda Testowa', icon: 'fas fa-car' },
+                    { key: 'post_test_drive', name: 'Po Jeździe', icon: 'fas fa-check' },
+                    { key: 'purchase', name: 'Zakup', icon: 'fas fa-shopping-cart' }
+                ];
+
+                const container = document.getElementById('conversionFunnel');
+                const total = funnel.initial_analysis || 1;
+                
+                container.innerHTML = stages.map(stage => {
+                    const count = funnel[stage.key] || 0;
+                    const percentage = Math.round((count / total) * 100);
+                    
+                    return `
+                        <div class="flex items-center justify-between bg-tesla-gray-900 rounded p-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="${stage.icon} text-tesla-red"></i>
+                                <span class="text-white">${stage.name}</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-tesla-gray-700 rounded-full h-2 w-32">
+                                    <div class="bg-tesla-red rounded-full h-2 transition-all duration-500" 
+                                         style="width: ${percentage}%"></div>
+                                </div>
+                                <span class="text-tesla-gray-300 text-sm w-12">${count}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            updateDiscDistribution(distribution) {
+                const discTypes = [
+                    { key: 'D', name: 'Dominance', color: 'bg-red-500', icon: '⚡' },
+                    { key: 'I', name: 'Influence', color: 'bg-yellow-500', icon: '🌟' },
+                    { key: 'S', name: 'Steadiness', color: 'bg-green-500', icon: '🏠' },
+                    { key: 'C', name: 'Compliance', color: 'bg-blue-500', icon: '🔬' }
+                ];
+
+                const container = document.getElementById('discDistribution');
+                const total = Object.values(distribution).reduce((sum, val) => sum + val, 0) || 1;
+                
+                container.innerHTML = discTypes.map(type => {
+                    const count = distribution[type.key] || 0;
+                    const percentage = Math.round((count / total) * 100);
+                    
+                    return `
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xl">${type.icon}</span>
+                                <span class="text-white">${type.name} (${type.key})</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="bg-tesla-gray-700 rounded-full h-2 w-20">
+                                    <div class="${type.color} rounded-full h-2 transition-all duration-500" 
+                                         style="width: ${percentage}%"></div>
+                                </div>
+                                <span class="text-tesla-gray-300 text-sm w-8">${count}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            updateTopTriggers(triggers) {
+                const container = document.getElementById('topTriggers');
+                
+                if (triggers.length === 0) {
+                    container.innerHTML = '<p class="text-tesla-gray-400 text-center">Brak danych</p>';
+                    return;
+                }
+                
+                container.innerHTML = triggers.slice(0, 5).map((trigger, index) => `
+                    <div class="flex items-center justify-between bg-tesla-gray-900 rounded p-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-tesla-red text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
+                                ${index + 1}
+                            </span>
+                            <span class="text-white text-sm">${trigger.trigger}</span>
+                        </div>
+                        <span class="text-tesla-gray-300 text-sm">${trigger.count}x</span>
+                    </div>
+                `).join('');
+            }
+
+            updateRecentActivity(activities) {
+                const container = document.getElementById('recentActivity');
+                
+                if (activities.length === 0) {
+                    container.innerHTML = '<p class="text-tesla-gray-400 text-center">Brak aktywności</p>';
+                    return;
+                }
+                
+                container.innerHTML = activities.slice(0, 10).map(activity => {
+                    const timeAgo = this.timeAgo(new Date(activity.lastUpdated));
+                    const stageIcon = this.getStageIcon(activity.lastStage);
+                    
+                    return `
+                        <div class="flex items-center justify-between bg-tesla-gray-900 rounded p-3">
+                            <div class="flex items-center space-x-3">
+                                <i class="${stageIcon} text-tesla-red"></i>
+                                <div>
+                                    <span class="text-white text-sm">Klient ${activity.customerId.slice(0, 8)}</span>
+                                    <div class="flex space-x-1 mt-1">
+                                        ${activity.tags.map(tag => `
+                                            <span class="bg-tesla-red px-2 py-1 rounded text-xs">${tag}</span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-tesla-gray-300 text-sm">${this.translateStage(activity.lastStage)}</div>
+                                <div class="text-tesla-gray-500 text-xs">${timeAgo}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            getStageIcon(stage) {
+                const icons = {
+                    'initial_analysis': 'fas fa-search',
+                    'post_conversation': 'fas fa-comments',
+                    'test_drive_booked': 'fas fa-car',
+                    'post_test_drive': 'fas fa-check',
+                    'purchase': 'fas fa-shopping-cart'
+                };
+                return icons[stage] || 'fas fa-user';
+            }
+
+            translateStage(stage) {
+                const translations = {
+                    'initial_analysis': 'Pierwsza analiza',
+                    'post_conversation': 'Po rozmowie',
+                    'test_drive_booked': 'Jazda testowa',
+                    'post_test_drive': 'Po jeździe',
+                    'purchase': 'Zakup'
+                };
+                return translations[stage] || stage;
+            }
+
+            timeAgo(date) {
+                const seconds = Math.floor((new Date() - date) / 1000);
+                const intervals = [
+                    { label: 'rok', seconds: 31536000 },
+                    { label: 'miesiąc', seconds: 2592000 },
+                    { label: 'dzień', seconds: 86400 },
+                    { label: 'godzina', seconds: 3600 },
+                    { label: 'minuta', seconds: 60 }
+                ];
+                
+                for (const interval of intervals) {
+                    const count = Math.floor(seconds / interval.seconds);
+                    if (count > 0) {
+                        return `${count} ${interval.label}${count > 1 ? 'y' : ''} temu`;
+                    }
+                }
+                return 'teraz';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new Dashboard();
+        });
+    </script>
+</body>
+</html>

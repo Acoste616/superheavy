@@ -1,0 +1,24 @@
+{
+  "Profil_klienta": "Ostrożny Rodzic (S-Type)",
+  "Sentyment": "sceptyczny",
+  "Triggery": [
+    "bezpieczeństwo",
+    "rodzina",
+    "zasięg",
+    "zima"
+  ],
+  "Skrypt_rozmowy": "Rozumiem, że bezpieczeństwo rodziny i niezawodność w każdych warunkach są absolutnym priorytetem. Dlatego chciałbym podkreślić, że ten model uzyskał najwyższe noty w testach zderzeniowych Euro NCAP, a jego realny zasięg zimą wciąż komfortowo pokrywa codzienne potrzeby. Czy chciałby Pan, abym pokazał szczegółowe wyniki testów bezpieczeństwa?",
+  "Fakty_PL": [
+    "Tesla Model Y otrzymała 5 gwiazdek w testach Euro NCAP z wynikiem 97% za ochronę dorosłych pasażerów.",
+    "Realny zasięg Tesli Model Y zimą to ok. 382 km, co przy średnim dziennym przebiegu Polaków (ok. 50 km) daje ogromny zapas.",
+    "Wszystkie modele Tesli są standardowo wyposażone w zaawansowane aktywne systemy bezpieczeństwa, takie jak automatyczne hamowanie awaryjne."
+  ],
+  "Technika_perswazji": "Zasada Autorytetu (wyniki testów Euro NCAP), Zbijanie obiekcji faktami",
+  "Szansa_zakupu": 65,
+  "Ostrzeżenie_etyczne": "Brak (użyto etycznych technik opartych na faktach i budowaniu zaufania).",
+  "Źródła": [
+    "Segmentacja klientów Tesla...txt",
+    "Psychologia Zakupowa...txt",
+    "Mistrzostwo perswazji...txt"
+  ]
+}

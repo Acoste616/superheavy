@@ -1,0 +1,55 @@
+{
+  "description": "Baza danych mapująca emocjonalne triggery klienta na rekomendowane reakcje i techniki perswazji.",
+  "emotional_triggers": [
+    {
+      "emotion": "Lęk / Strach",
+      "keywords": ["boję się", "obawiam się", "martwię się", "ryzyko", "niepewność"],
+      "interpretation": "Klient odczuwa realne ryzyko (finansowe, technologiczne, logistyczne). Jego system limbiczny jest w trybie 'walki lub ucieczki'.",
+      "recommended_reaction": {
+        "goal": "Zbudować poczucie bezpieczeństwa i zaufania.",
+        "script_idea": "Empatyczne uznanie: 'Rozumiem Pana/Pani obawy, to całkowicie naturalne przy nowej technologii. Pozwoli Pan/Pani, że pokażę, jak zabezpieczyliśmy ten obszar...'",
+        "technique": "Zasada Autorytetu (gwarancje, testy), Budowanie Zaufania (Rapport), Zbijanie obiekcji faktami."
+      }
+    },
+    {
+      "emotion": "Entuzjazm / Ekscytacja",
+      "keywords": ["wow", "super", "niesamowite", "genialne", "chcę to"],
+      "interpretation": "Klient jest w stanie silnego pobudzenia emocjonalnego, gotowy do podjęcia impulsywnej decyzji. To idealny moment na zamknięcie sprzedaży.",
+      "recommended_reaction": {
+        "goal": "Podtrzymać i skapitalizować entuzjazm.",
+        "script_idea": "Wzmocnienie pozytywnych emocji: 'Prawda, że to niesamowite uczucie? Proszę sobie wyobrazić, że może Pan/Pani tak jeździć na co dzień!'",
+        "technique": "Przejście do finalizacji (Closing), Podtrzymanie entuzjazmu, Język korzyści emocjonalnych."
+      }
+    },
+    {
+      "emotion": "Sceptycyzm / Nieufność",
+      "keywords": ["nie wierzę", "wątpię", "czy to prawda", "marketingowy bełkot"],
+      "interpretation": "Klient ma wysoki poziom nieufności, prawdopodobnie miał złe doświadczenia w przeszłości. Potrzebuje twardych, weryfikowalnych dowodów.",
+      "recommended_reaction": {
+        "goal": "Zbudować wiarygodność poprzez transparentność i dowody.",
+        "script_idea": "Odwołanie do zewnętrznych źródeł: 'To nie tylko nasza opinia. Proszę spojrzeć na wyniki niezależnych testów przeprowadzonych przez [nazwa instytucji].'",
+        "technique": "Zasada Autorytetu (niezależne źródła), Zbijanie obiekcji faktami, Transparentność."
+      }
+    },
+    {
+      "emotion": "Duma / Poczucie Statusu",
+      "keywords": ["wyróżnić się", "wrażenie", "sąsiedzi", "prestiż", "luksus"],
+      "interpretation": "Klient jest motywowany potrzebą uznania i podniesienia swojego statusu społecznego. Samochód jest dla niego narzędziem do budowania wizerunku.",
+      "recommended_reaction": {
+        "goal": "Wzmocnić poczucie wyjątkowości i prestiżu.",
+        "script_idea": "Potwierdzenie statusu: 'To zdecydowanie samochód, który przyciąga spojrzenia i pokazuje, że jest Pan/Pani liderem, a nie naśladowcą.'",
+        "technique": "Dowód Społeczny (elita, trendsetterzy), Budowanie wizerunku, Język korzyści wizerunkowych."
+      }
+    },
+    {
+      "emotion": "Frustracja / Zniecierpliwienie",
+      "keywords": ["ile można czekać", "dlaczego to nie działa", "bez sensu", "tracę czas"],
+      "interpretation": "Klient napotkał problem w procesie (np. długi czas oczekiwania, błąd w systemie) i jest na granicy rezygnacji.",
+      "recommended_reaction": {
+        "goal": "Natychmiastowe rozwiązanie problemu i deeskalacja emocji.",
+        "script_idea": "Przeprosiny i przejęcie odpowiedzialności: 'Bardzo przepraszam za te niedogodności. Już sprawdzam, jak możemy to natychmiast rozwiązać dla Pana/Pani.'",
+        "technique": "Aktywne słuchanie, Empatia, Przedstawienie natychmiastowego rozwiązania."
+      }
+    }
+  ]
+}

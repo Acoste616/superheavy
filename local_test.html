@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCD SHU PRO - Local Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #000; 
+            color: #fff; 
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 { color: #E31E24; }
+        .trigger-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 4px;
+            border: 1px solid #333;
+            background: #111;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .trigger-btn.selected {
+            background: #E31E24;
+            border-color: #E31E24;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 20px;
+            background: #111;
+            border-radius: 8px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #E31E24;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        button:hover { background: #c41e23; }
+        select {
+            padding: 8px;
+            background: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧠 Tesla Customer Decoder - SHU PRO</h1>
+    <h2>Test Lokalny Systemu</h2>
+    
+    <div>
+        <h3>Ton rozmowy:</h3>
+        <select id="toneSelect">
+            <option value="entuzjastyczny">😊 Entuzjastyczny</option>
+            <option value="neutralny">😐 Neutralny</option>
+            <option value="sceptyczny" selected>🤔 Sceptyczny</option>
+            <option value="negatywny">😠 Negatywny/Wrogi</option>
+        </select>
+    </div>
+    
+    <div>
+        <h3>🎯 Triggery z rozmowy (kliknij co mówił klient):</h3>
+        <div id="triggersContainer">
+            <div class="trigger-btn" data-trigger="Martwi mnie cena">💰 Martwi mnie cena</div>
+            <div class="trigger-btn" data-trigger="Co będzie jak się zepsuje?">🔧 Co będzie jak się zepsuje?</div>
+            <div class="trigger-btn" data-trigger="Jak długo to trwa ładowanie?">⚡ Jak długo to trwa ładowanie?</div>
+            <div class="trigger-btn" data-trigger="A ten zasięg zimą?">❄️ A ten zasięg zimą?</div>
+            <div class="trigger-btn" data-trigger="Może powinienem poczekać">⏳ Może powinienem poczekać</div>
+            <div class="trigger-btn" data-trigger="Przetestowałem ponad 20 samochodów">🔍 Przetestowałem ponad 20 samochodów</div>
+            <div class="trigger-btn" data-trigger="Interesuje mnie ekologia">🌱 Interesuje mnie ekologia</div>
+            <div class="trigger-btn" data-trigger="To będzie firmowy samochód">🏢 To będzie firmowy samochód</div>
+            <div class="trigger-btn" data-trigger="Słyszałem o programie NaszEauto">🎯 Słyszałem o programie NaszEauto</div>
+            <div class="trigger-btn" data-trigger="Co z wymianą baterii po gwarancji?">🔋 Co z wymianą baterii po gwarancji?</div>
+        </div>
+    </div>
+    
+    <button onclick="runAnalysis()">🚀 Analizuj Klienta</button>
+    
+    <div id="selectedTriggers">
+        <h4>Wybrane triggery: <span id="count">0</span></h4>
+        <div id="list">Brak wybranych</div>
+    </div>
+    
+    <div id="results" class="results" style="display: none;">
+        <h3>📊 Wyniki Analizy</h3>
+        <div id="analysisResults"></div>
+    </div>
+
+    <script src="logicEngine.js"></script>
+    <script>
+        let selectedTriggers = new Set();
+        let engine;
+        
+        // Initialize engine
+        async function initEngine() {
+            engine = new CustomerDecoderEngine();
+            
+            const dataFiles = {
+                triggers: 'data/triggers.json',
+                personas: 'data/personas.json', 
+                rules: 'rules.json',
+                weights: 'weights_and_scoring.json',
+                cheatsheet: 'cheatsheet_phrases.json',
+                objections: 'objections_and_rebuttals.json'
+            };
+            
+            try {
+                await engine.initialize(dataFiles);
+                console.log('✅ Engine initialized');
+            } catch (error) {
+                console.error('❌ Engine init failed:', error);
+                document.getElementById('results').innerHTML = '<h3>❌ Błąd inicjalizacji: ' + error.message + '</h3>';
+                document.getElementById('results').style.display = 'block';
+            }
+        }
+        
+        // Trigger selection
+        document.getElementById('triggersContainer').addEventListener('click', (e) => {
+            if (e.target.classList.contains('trigger-btn')) {
+                const trigger = e.target.dataset.trigger;
+                
+                if (selectedTriggers.has(trigger)) {
+                    selectedTriggers.delete(trigger);
+                    e.target.classList.remove('selected');
+                } else {
+                    selectedTriggers.add(trigger);
+                    e.target.classList.add('selected');
+                }
+                
+                updateTriggerDisplay();
+            }
+        });
+        
+        function updateTriggerDisplay() {
+            document.getElementById('count').textContent = selectedTriggers.size;
+            document.getElementById('list').textContent = 
+                selectedTriggers.size > 0 ? Array.from(selectedTriggers).join(', ') : 'Brak wybranych';
+        }
+        
+        function runAnalysis() {
+            if (!engine) {
+                alert('Engine nie jest zainicjalizowany!');
+                return;
+            }
+            
+            if (selectedTriggers.size === 0) {
+                alert('Wybierz przynajmniej jeden trigger!');
+                return;
+            }
+            
+            const inputData = {
+                personaId: '', // Automatyczne wykrywanie
+                tone: document.getElementById('toneSelect').value,
+                selectedTriggers: Array.from(selectedTriggers),
+                demographics: {}
+            };
+            
+            try {
+                const analysis = engine.analyzeCustomer(inputData);
+                displayResults(analysis);
+            } catch (error) {
+                console.error('Analysis failed:', error);
+                document.getElementById('analysisResults').innerHTML = 
+                    '<h4>❌ Błąd analizy: ' + error.message + '</h4>';
+                document.getElementById('results').style.display = 'block';
+            }
+        }
+        
+        function displayResults(analysis) {
+            const profile = analysis.personality.detected;
+            const score = analysis.scores.total;
+            const strategy = analysis.strategy.selected;
+            const recommendations = analysis.recommendations;
+            
+            document.getElementById('analysisResults').innerHTML = `
+                <h4>🎯 Wynik Konwersji: ${score}%</h4>
+                <h4>🤖 Wykryty Profil: ${profile.name} (${profile.DISC})</h4>
+                <h4>🔥 Poziom Pewności: ${Math.round(analysis.confidence * 100)}%</h4>
+                
+                <h5>📈 Szczegółowe Wyniki:</h5>
+                <ul>
+                    <li>Dopasowanie osobowości: ${Math.round(analysis.personality.confidence * 100)}%</li>
+                    <li>Intensywność triggerów: ${analysis.triggers.intensityScore}</li>
+                    <li>Kompatybilność tonu: ${Math.round(analysis.tone.compatibility * 100)}%</li>
+                </ul>
+                
+                <h5>🎯 Główne Motywacje:</h5>
+                <ul>
+                    ${(profile.psychological_profile?.motivations || []).map(m => `<li>${m}</li>`).join('')}
+                </ul>
+                
+                <h5>🚀 Strategia Sprzedażowa:</h5>
+                <div style="background: #222; padding: 15px; border-radius: 5px; margin: 10px 0;">
+                    <strong>Skrypt:</strong> ${strategy?.Skrypt || 'Brak dostępnej strategii'}<br><br>
+                    <strong>Fakty PL:</strong> ${strategy?.Fakty_PL || ''}<br><br>
+                    <strong>Technika:</strong> ${strategy?.Technika || ''}
+                </div>
+                
+                <h5>💬 Słowa Kluczowe do Użycia:</h5>
+                <div style="margin: 10px 0;">
+                    ${(recommendations.language.keywords || []).map(word => 
+                        `<span style="background: #E31E24; color: white; padding: 5px 10px; margin: 3px; border-radius: 15px; display: inline-block;">${word}</span>`
+                    ).join('')}
+                </div>
+                
+                <h5>📝 Gotowe Frazy:</h5>
+                <ul>
+                    ${(recommendations.language.phrases || []).map(phrase => `<li style="margin: 5px 0;">"${phrase}"</li>`).join('')}
+                </ul>
+                
+                <h5>🛡️ Prawdopodobne Obiekcje:</h5>
+                ${recommendations.objectionHandling.length > 0 ? 
+                    recommendations.objectionHandling.map(obj => `
+                        <div style="background: #333; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                            <strong>Obiekcja:</strong> "${obj.objection}"<br>
+                            <strong>Odpowiedź:</strong> ${obj.responses?.[0]?.script || 'Brak odpowiedzi'}
+                        </div>
+                    `).join('') : 
+                    '<p style="color: green;">✅ Brak przewidywanych obiekcji</p>'}
+                
+                <h5>📋 Następne Kroki:</h5>
+                <ul>
+                    ${recommendations.nextSteps.map(step => `<li><strong>Priorytet ${step.priority}:</strong> ${step.action} (${step.timeframe})</li>`).join('')}
+                </ul>
+                
+                <h5>⚠️ Ostrzeżenia Etyczne:</h5>
+                ${analysis.warnings.length > 0 ? 
+                    '<ul>' + analysis.warnings.map(w => `<li>${w.message}</li>`).join('') + '</ul>' : 
+                    '<p style="color: green;">✅ Brak ostrzeżeń - strategia etyczna</p>'}
+            `;
+            
+            document.getElementById('results').style.display = 'block';
+        }
+        
+        // Initialize on load
+        initEngine();
+    </script>
+</body>
+</html>

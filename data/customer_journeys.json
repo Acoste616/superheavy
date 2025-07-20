@@ -1,0 +1,2620 @@
+{
+  "7eb5d6ce-33a3-4a6d-a9b7-6b3646018534": {
+    "customerId": "7eb5d6ce-33a3-4a6d-a9b7-6b3646018534",
+    "createdAt": "2025-07-20T15:37:39.417Z",
+    "lastUpdated": "2025-07-20T15:38:19.938Z",
+    "currentStage": "post_conversation",
+    "stages": [
+      {
+        "id": "5d6744c8-ad3d-4431-b7cc-b61933c50673",
+        "timestamp": "2025-07-20T15:37:39.417Z",
+        "sessionId": "51a12a3a-2cf3-473b-b89a-1e894699cbbd",
+        "stage": "initial_analysis",
+        "customerId": "7eb5d6ce-33a3-4a6d-a9b7-6b3646018534",
+        "analysis": {
+          "timestamp": "2025-07-20T15:37:39.415Z",
+          "input": {
+            "personaId": "",
+            "tone": "entuzjastyczny",
+            "selectedTriggers": [
+              "Martwi mnie cena",
+              "A ten zasięg zimą?",
+              "To będzie firmowy samochód",
+              "Co z wymianą baterii po gwarancji?",
+              "naprawa",
+              "testowałem",
+              "dotacja"
+            ],
+            "demographics": {
+              "age": "35-45",
+              "hasPV": "true",
+              "region": "slaskie"
+            }
+          },
+          "personality": {
+            "detected": {
+              "id": "ANALYTICAL_SKEPTIC",
+              "name": "Inżynier Analityczny",
+              "DISC": "C",
+              "category": "data_driven",
+              "demographics": {
+                "age_range": "35-55",
+                "income_pln": "12000-30000",
+                "family_status": "varied",
+                "location": "urban_suburban"
+              },
+              "psychological_profile": {
+                "core_values": [
+                  "precision",
+                  "efficiency",
+                  "logical_decisions",
+                  "technical_excellence"
+                ],
+                "motivations": [
+                  "Optimal ROI and TCO analysis",
+                  "Technical superiority",
+                  "Energy efficiency metrics",
+                  "Data-driven decision making"
+                ],
+                "fears_and_concerns": [
+                  "Niewystarczające dane techniczne",
+                  "Przepłacanie za marketing",
+                  "Niesprawdzona długoterminowa niezawodność",
+                  "Uzależnienie od dostawcy"
+                ],
+                "decision_making_style": "analityczny i dokładny",
+                "decision_speed": "bardzo wolna",
+                "trust_factors": [
+                  "niezależne dane",
+                  "specyfikacje techniczne",
+                  "analiza porównawcza",
+                  "recenzje ekspertów"
+                ]
+              },
+              "communication_preferences": {
+                "style": "Techniczny i oparty na faktach",
+                "key_language": [
+                  "dane",
+                  "analiza",
+                  "efektywność",
+                  "porównanie",
+                  "specyfikacja"
+                ],
+                "avoid_language": [
+                  "emocje",
+                  "uczucia",
+                  "presja",
+                  "ograniczona_oferta"
+                ],
+                "preferred_media": [
+                  "dokumenty techniczne",
+                  "wykresy porównawcze",
+                  "filmy inżynierskie",
+                  "białe księgi"
+                ],
+                "meeting_preference": "głębokie zagłębienie techniczne"
+              },
+              "trigger_sensitivity": {
+                "high_positive": [
+                  "wyższość techniczna",
+                  "dane efektywności",
+                  "optymalizacja kosztów"
+                ],
+                "high_negative": [
+                  "presja marketingowa",
+                  "apele emocjonalne",
+                  "pośpieszne decyzje"
+                ],
+                "conversion_accelerators": [
+                  "techniczny test drive",
+                  "konsultacja inżynieryjna",
+                  "szczegółowa analiza"
+                ]
+              },
+              "sales_approach": {
+                "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+                "key_messages": [
+                  "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+                  "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+                  "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+                ],
+                "proof_points": [
+                  "specyfikacje inżynierskie",
+                  "oceny efektywności",
+                  "kalkulacje TCO"
+                ],
+                "closing_technique": "logiczny wniosek oparty na danych"
+              }
+            },
+            "confidence": 0.5348571428571428,
+            "autoDetected": true,
+            "alternatives": [
+              {
+                "id": "FAMILIA_SAVER",
+                "name": "Ojciec Rodziny Oszczędny",
+                "DISC": "S",
+                "category": "family_oriented",
+                "demographics": {
+                  "age_range": "35-50",
+                  "income_pln": "8000-15000",
+                  "family_status": "married_with_children",
+                  "location": "suburban"
+                },
+                "psychological_profile": {
+                  "core_values": [
+                    "safety",
+                    "security",
+                    "family_wellbeing",
+                    "long_term_stability"
+                  ],
+                  "motivations": [
+                    "Lower monthly expenses",
+                    "Secure family transportation",
+                    "Environmental responsibility for children's future",
+                    "Reliable technology"
+                  ],
+                  "fears_and_concerns": [
+                    "High upfront costs affecting family budget",
+                    "Technology failure risks",
+                    "Insufficient charging infrastructure",
+                    "Unknown long-term costs"
+                  ],
+                  "decision_making_style": "thorough_research",
+                  "decision_speed": "slow",
+                  "trust_factors": [
+                    "warranties",
+                    "testimonials",
+                    "official_data",
+                    "family_recommendations"
+                  ]
+                },
+                "communication_preferences": {
+                  "style": "Patient and detailed",
+                  "key_language": [
+                    "family",
+                    "bezpieczeństwo",
+                    "oszczędności",
+                    "gwarancja",
+                    "niezawodność"
+                  ],
+                  "avoid_language": [
+                    "ryzyko",
+                    "eksperyment",
+                    "nowość",
+                    "presja_czasowa"
+                  ],
+                  "preferred_media": [
+                    "detailed_brochures",
+                    "family_testimonials",
+                    "safety_videos"
+                  ],
+                  "meeting_preference": "family_consultation"
+                },
+                "trigger_sensitivity": {
+                  "high_positive": [
+                    "family_safety",
+                    "long_term_savings",
+                    "environmental_legacy"
+                  ],
+                  "high_negative": [
+                    "high_upfront_cost",
+                    "technology_complexity",
+                    "charging_anxiety"
+                  ],
+                  "conversion_accelerators": [
+                    "warranty_extension",
+                    "family_discount",
+                    "referral_program"
+                  ]
+                },
+                "sales_approach": {
+                  "primary_strategy": "Safety-first with TCO analysis",
+                  "key_messages": [
+                    "Tesla has the highest safety ratings - 5 stars across all categories",
+                    "Home charging saves your family 30,000 PLN over 5 years",
+                    "8-year battery warranty provides long-term peace of mind"
+                  ],
+                  "proof_points": [
+                    "Euro NCAP ratings",
+                    "TCO calculator",
+                    "warranty terms"
+                  ],
+                  "closing_technique": "family_consensus_building"
+                }
+              },
+              {
+                "id": "SOCIAL_TRENDSETTER",
+                "name": "Młody Influencer Technologiczny",
+                "DISC": "I",
+                "category": "social_status",
+                "demographics": {
+                  "age_range": "25-35",
+                  "income_pln": "10000-25000",
+                  "family_status": "single_or_young_couple",
+                  "location": "urban"
+                },
+                "psychological_profile": {
+                  "core_values": [
+                    "innovation",
+                    "social_recognition",
+                    "environmental_impact",
+                    "lifestyle_enhancement"
+                  ],
+                  "motivations": [
+                    "Being first with latest technology",
+                    "Social media content opportunities",
+                    "Environmental statement",
+                    "Unique driving experience"
+                  ],
+                  "fears_and_concerns": [
+                    "Przegapienie nowszych modeli",
+                    "Brak atrakcyjności na Instagramie",
+                    "Ocena ze strony znajomych",
+                    "Szybkie dezaktualizowanie się technologii"
+                  ],
+                  "decision_making_style": "emocjonalny",
+                  "decision_speed": "szybka",
+                  "trust_factors": [
+                    "rekomendacje znajomych",
+                    "endorsement influencerów",
+                    "atrakcyjność wizualna",
+                    "specyfikacje techniczne"
+                  ]
+                },
+                "communication_preferences": {
+                  "style": "Entuzjastyczny i wizualny",
+                  "key_language": [
+                    "przyszłość",
+                    "innowacja",
+                    "wyjątkowy",
+                    "społeczność",
+                    "trendy"
+                  ],
+                  "avoid_language": [
+                    "tradycyjny",
+                    "standardowy",
+                    "powszechny",
+                    "analiza_długoterminowa"
+                  ],
+                  "preferred_media": [
+                    "treści video",
+                    "prezentacje interaktywne",
+                    "dowody społeczne",
+                    "recenzje influencerów"
+                  ],
+                  "meeting_preference": "prezentacja dynamiczna"
+                },
+                "trigger_sensitivity": {
+                  "high_positive": [
+                    "najnowsza technologia",
+                    "status społeczny",
+                    "aktywizm ekologiczny"
+                  ],
+                  "high_negative": [
+                    "stawanie się mainstreamem",
+                    "skomplikowana własność",
+                    "opóźniona gratyfikacja"
+                  ],
+                  "conversion_accelerators": [
+                    "ekskluzywny dostęp",
+                    "możliwości social media",
+                    "pokazy technologiczne"
+                  ]
+                },
+                "sales_approach": {
+                  "primary_strategy": "Pokaz innowacyjności z dowodem społecznym",
+                  "key_messages": [
+                    "Tesla przewodzi rewolucji motoryzacyjnej - bądź częścią przyszłości",
+                    "Dołącz do społeczności myślących przyszłościowo",
+                    "Twoja Tesla będzie przyciągać uwagę i wywoływać rozmowy"
+                  ],
+                  "proof_points": [
+                    "aktualizacje OTA",
+                    "wydarzenia społeczności",
+                    "właściciele celebryci"
+                  ],
+                  "closing_technique": "ekskluzywność ograniczona w czasie"
+                }
+              }
+            ]
+          },
+          "triggers": {
+            "selected": [
+              {
+                "id": "price_concern_main",
+                "text": "Martwi mnie cena",
+                "category": "financial",
+                "subcategory": "cost_concern",
+                "base_conversion_rate": 60,
+                "psychological_indicators": {
+                  "intent_level": "medium_high",
+                  "decision_stage": "consideration",
+                  "emotional_state": "concerned_but_interested",
+                  "information_need": "financial_justification"
+                },
+                "personality_resonance": {
+                  "S": 0.9,
+                  "C": 0.85,
+                  "D": 0.7,
+                  "I": 0.6
+                },
+                "trigger_relationships": {
+                  "amplifies": [
+                    "naszauto_program",
+                    "tco_interest",
+                    "business_use"
+                  ],
+                  "conflicts": [
+                    "premium_seeking",
+                    "status_focus"
+                  ],
+                  "neutral": [
+                    "environmental_interest"
+                  ]
+                },
+                "response_strategies": {
+                  "S": {
+                    "approach": "Reassure with long-term savings and warranty",
+                    "key_messages": [
+                      "40k PLN subsidy reduces real cost",
+                      "30k PLN savings over 5 years",
+                      "8-year warranty protects investment"
+                    ],
+                    "proof_points": [
+                      "NaszEauto calculator",
+                      "TCO comparison",
+                      "warranty terms"
+                    ]
+                  },
+                  "C": {
+                    "approach": "Detailed financial analysis and ROI breakdown",
+                    "key_messages": [
+                      "Complete TCO: 92,250 PLN vs Golf 127,500 PLN",
+                      "Tax benefits for business use",
+                      "Energy cost: 0.15 PLN/km vs 0.30 PLN/km"
+                    ],
+                    "proof_points": [
+                      "Detailed TCO spreadsheet",
+                      "Government tax regulations",
+                      "Energy cost calculator"
+                    ]
+                  },
+                  "D": {
+                    "approach": "Frame as strategic investment with status benefits",
+                    "key_messages": [
+                      "Investment in future technology leadership",
+                      "Business tax advantages",
+                      "Executive choice justification"
+                    ],
+                    "proof_points": [
+                      "Business tax benefits",
+                      "Executive testimonials",
+                      "Market leadership data"
+                    ]
+                  },
+                  "I": {
+                    "approach": "Social proof of smart financial choice",
+                    "key_messages": [
+                      "Smart buyers get subsidies",
+                      "Community of savvy Tesla owners",
+                      "Environmental investment pays off"
+                    ],
+                    "proof_points": [
+                      "Owner testimonials",
+                      "Community savings stories",
+                      "Environmental ROI"
+                    ]
+                  }
+                },
+                "objection_handling": {
+                  "common_follow_ups": [
+                    "But what about after subsidy ends?",
+                    "How do I know I'll really save money?",
+                    "What if electricity prices rise?"
+                  ],
+                  "counter_strategies": [
+                    "Show 5-year savings projection",
+                    "Provide real owner testimonials",
+                    "Compare energy vs fuel price stability"
+                  ]
+                },
+                "conversion_modifiers": {
+                  "has_home_pv": 15,
+                  "business_owner": 12,
+                  "family_with_children": 8,
+                  "first_time_ev_buyer": 5,
+                  "luxury_car_background": -5
+                }
+              },
+              {
+                "id": "winter_range_realistic",
+                "text": "A ten zasięg zimą?",
+                "category": "technical",
+                "subcategory": "seasonal_performance",
+                "base_conversion_rate": 40,
+                "psychological_indicators": {
+                  "intent_level": "medium",
+                  "decision_stage": "detailed_evaluation",
+                  "emotional_state": "practical_concern",
+                  "information_need": "real_world_performance"
+                },
+                "personality_resonance": {
+                  "C": 0.95,
+                  "S": 0.85,
+                  "D": 0.6,
+                  "I": 0.4
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Honest data with solutions and comparisons",
+                    "key_messages": [
+                      "514km WLTP = 350-400km winter",
+                      "Preconditioning optimizes performance",
+                      "Still competitive vs ICE efficiency loss"
+                    ],
+                    "proof_points": [
+                      "Winter testing data",
+                      "Preconditioning demo",
+                      "ICE winter comparison"
+                    ]
+                  },
+                  "S": {
+                    "approach": "Practical solutions and peace of mind",
+                    "key_messages": [
+                      "Plan routes with app",
+                      "Heat seats not cabin",
+                      "Charging network covers you"
+                    ],
+                    "proof_points": [
+                      "Route planning demo",
+                      "Efficiency tips",
+                      "Charging network map"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "cold_climate_region": 15,
+                  "long_distance_driver": 10,
+                  "realistic_expectations": 8,
+                  "efficiency_focused": 5
+                }
+              },
+              {
+                "id": "business_car",
+                "text": "To będzie firmowy samochód",
+                "category": "financial",
+                "subcategory": "business_benefits",
+                "base_conversion_rate": 75,
+                "psychological_indicators": {
+                  "intent_level": "high",
+                  "decision_stage": "business_justification",
+                  "emotional_state": "rational_focused",
+                  "information_need": "tax_benefits"
+                },
+                "personality_resonance": {
+                  "D": 0.9,
+                  "C": 0.85,
+                  "S": 0.6,
+                  "I": 0.7
+                },
+                "response_strategies": {
+                  "D": {
+                    "approach": "Tax optimization and business benefits",
+                    "key_messages": [
+                      "Amortyzacja EV: 225,000 PLN vs ICE: 150,000 PLN",
+                      "100% odliczenie VAT-u",
+                      "Preferencyjne leasing rates"
+                    ],
+                    "proof_points": [
+                      "Regulacje podatkowe",
+                      "Kalkulator leasingu",
+                      "Korzyści biznesowe"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "business_owner": 20,
+                  "tax_optimization_focus": 15,
+                  "fleet_decision": 25
+                }
+              },
+              {
+                "id": "battery_replacement_concern",
+                "text": "Co z wymianą baterii po gwarancji?",
+                "category": "technical",
+                "subcategory": "long_term_costs",
+                "base_conversion_rate": 45,
+                "psychological_indicators": {
+                  "intent_level": "medium",
+                  "decision_stage": "risk_assessment",
+                  "emotional_state": "cautious_analytical",
+                  "information_need": "long_term_costs"
+                },
+                "personality_resonance": {
+                  "C": 0.95,
+                  "S": 0.85,
+                  "D": 0.6,
+                  "I": 0.4
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Honesty with statistical reassurance",
+                    "key_messages": [
+                      "95% baterii działa bez problemów przez całą żywotność",
+                      "8-letnia gwarancja: 160-192 tys. km",
+                      "Degradacja <10% po 300,000 km"
+                    ],
+                    "proof_points": [
+                      "Statystyki niezawodności",
+                      "Warunki gwarancji",
+                      "Dane degradacji baterii"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "long_term_owner": 10,
+                  "high_mileage": 8,
+                  "cost_conscious": 12
+                }
+              },
+              {
+                "id": "repair",
+                "text": "naprawa",
+                "category": "safety_security",
+                "subcategory": "reliability_concern",
+                "base_conversion_rate": 50,
+                "personality_resonance": {
+                  "S": 0.95,
+                  "C": 0.85,
+                  "D": 0.6,
+                  "I": 0.5
+                },
+                "response_strategies": {
+                  "S": {
+                    "approach": "Warranty and service support",
+                    "key_messages": [
+                      "8-year warranty",
+                      "Mobile Service"
+                    ],
+                    "proof_points": [
+                      "Warranty documentation"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "family_car": 10
+                }
+              },
+              {
+                "id": "tested",
+                "text": "testowałem",
+                "category": "behavioral",
+                "subcategory": "high_research_intent",
+                "base_conversion_rate": 72,
+                "personality_resonance": {
+                  "C": 0.95,
+                  "D": 0.8,
+                  "S": 0.7,
+                  "I": 0.6
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Expert validation",
+                    "key_messages": [
+                      "Tesla ecosystem advantage",
+                      "OTA unique feature"
+                    ],
+                    "proof_points": [
+                      "Comparison analysis"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "researcher": 20
+                }
+              },
+              {
+                "id": "subsidy",
+                "text": "dotacja",
+                "category": "financial",
+                "subcategory": "subsidy_awareness",
+                "base_conversion_rate": 80,
+                "personality_resonance": {
+                  "S": 0.9,
+                  "C": 0.85,
+                  "D": 0.8,
+                  "I": 0.7
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Subsidy calculation",
+                    "key_messages": [
+                      "Exact amount",
+                      "Application process"
+                    ],
+                    "proof_points": [
+                      "Official documentation"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "process_focused": 18
+                }
+              }
+            ],
+            "count": 7,
+            "intensityScore": 422,
+            "relationships": {},
+            "categories": [
+              "financial",
+              "technical",
+              "safety_security",
+              "behavioral"
+            ]
+          },
+          "tone": {
+            "selected": "entuzjastyczny",
+            "compatibility": {
+              "I": 0.9,
+              "D": 0.7,
+              "S": 0.6,
+              "C": 0.4
+            },
+            "description": "Energetyczny i pozytywny"
+          },
+          "demographics": {
+            "age": "35-45",
+            "hasPV": "true",
+            "region": "slaskie",
+            "score": 70
+          },
+          "scores": {
+            "trigger_match": 42.2,
+            "personality_alignment": 40,
+            "tone_compatibility": 53.48571428571428,
+            "trigger_combinations": 50,
+            "demographic_fit": 70,
+            "total": 47
+          },
+          "recommendations": {
+            "language": {
+              "keywords": [
+                "dane",
+                "analiza",
+                "efektywność",
+                "porównanie",
+                "specyfikacja"
+              ],
+              "avoidWords": [
+                "emocje",
+                "uczucia",
+                "presja",
+                "ograniczona_oferta"
+              ],
+              "phrases": []
+            },
+            "objectionHandling": [],
+            "nextSteps": [
+              {
+                "priority": 2,
+                "action": "Wyślij dodatkowe materiały",
+                "timeframe": "24 godziny",
+                "reason": "Potrzeba budowania zaufania"
+              }
+            ]
+          },
+          "strategy": {
+            "selected": {
+              "ID": 9,
+              "Triggers": [
+                "Słyszałem o programie NaszEauto",
+                "NaszEauto",
+                "dotacja",
+                "dopłata"
+              ],
+              "Sentyment": "pozytywny",
+              "Profil_DISC": "All",
+              "Obiekcja": "Świadomość dotacji - wysokie szanse",
+              "Skrypt": "Doskonale! 40,000 PLN dotacji z budżetu 1.6 mld PLN - to ograniczona pula. Razem z oszczędnościami TCO (30k PLN przez 5 lat) daje to 70,000 PLN korzyści vs spalinowy. Kiedy planuje Pan złożyć wniosek?",
+              "Fakty_PL": "NaszEauto: 40,000 PLN dotacji, budżet 1.6 mld PLN. TCO Model 3: 30,000 PLN oszczędności vs Golf przez 5 lat. Wniosek można złożyć przed dostawą auta.",
+              "Technika": "Scarcity + Financial advantage + Urgency",
+              "Ostrzeżenie_etyczne": "Nie stwarzaj fałszywej presji czasowej. Program ma określone ramy czasowe."
+            },
+            "matchScore": 80,
+            "personalizedApproach": {
+              "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+              "key_messages": [
+                "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+                "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+                "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+              ],
+              "proof_points": [
+                "specyfikacje inżynierskie",
+                "oceny efektywności",
+                "kalkulacje TCO"
+              ],
+              "closing_technique": "logiczny wniosek oparty na danych"
+            }
+          },
+          "warnings": [],
+          "confidence": 0.7674285714285713
+        },
+        "triggers": [
+          "Martwi mnie cena",
+          "A ten zasięg zimą?",
+          "To będzie firmowy samochód",
+          "Co z wymianą baterii po gwarancji?",
+          "naprawa",
+          "testowałem",
+          "dotacja"
+        ]
+      },
+      {
+        "id": "2ceba6f1-6e74-47d8-ad6d-0efc75416882",
+        "timestamp": "2025-07-20T15:38:19.938Z",
+        "sessionId": "conv_1753025879480_iyjj2hnu9",
+        "stage": "post_conversation",
+        "customerId": "7eb5d6ce-33a3-4a6d-a9b7-6b3646018534",
+        "outcome": "very_interested",
+        "newTriggers": [],
+        "reactions": [
+          {
+            "type": "interested",
+            "timestamp": "2025-07-20T15:38:19.927Z"
+          }
+        ],
+        "nextSteps": []
+      }
+    ],
+    "sessions": [
+      "51a12a3a-2cf3-473b-b89a-1e894699cbbd",
+      "conv_1753025879480_iyjj2hnu9"
+    ],
+    "totalInteractions": 2,
+    "conversionProbability": 0,
+    "tags": [
+      "analyzed"
+    ]
+  },
+  "afe413a8-f978-445d-899a-88e3a14695e4": {
+    "customerId": "afe413a8-f978-445d-899a-88e3a14695e4",
+    "createdAt": "2025-07-20T15:39:26.359Z",
+    "lastUpdated": "2025-07-20T15:39:26.359Z",
+    "currentStage": "initial_analysis",
+    "stages": [
+      {
+        "id": "33f35c61-657d-495e-80f4-891e59e78fd9",
+        "timestamp": "2025-07-20T15:39:26.359Z",
+        "sessionId": "29ba5e92-0d11-483f-a551-f25af5f15817",
+        "stage": "initial_analysis",
+        "customerId": "afe413a8-f978-445d-899a-88e3a14695e4",
+        "analysis": {
+          "timestamp": "2025-07-20T15:39:26.358Z",
+          "input": {
+            "selectedTriggers": [
+              "cena",
+              "serwis"
+            ],
+            "tone": "profesjonalny"
+          },
+          "personality": {
+            "detected": {
+              "id": "FAMILIA_SAVER",
+              "name": "Ojciec Rodziny Oszczędny",
+              "DISC": "S",
+              "category": "family_oriented",
+              "demographics": {
+                "age_range": "35-50",
+                "income_pln": "8000-15000",
+                "family_status": "married_with_children",
+                "location": "suburban"
+              },
+              "psychological_profile": {
+                "core_values": [
+                  "safety",
+                  "security",
+                  "family_wellbeing",
+                  "long_term_stability"
+                ],
+                "motivations": [
+                  "Lower monthly expenses",
+                  "Secure family transportation",
+                  "Environmental responsibility for children's future",
+                  "Reliable technology"
+                ],
+                "fears_and_concerns": [
+                  "High upfront costs affecting family budget",
+                  "Technology failure risks",
+                  "Insufficient charging infrastructure",
+                  "Unknown long-term costs"
+                ],
+                "decision_making_style": "thorough_research",
+                "decision_speed": "slow",
+                "trust_factors": [
+                  "warranties",
+                  "testimonials",
+                  "official_data",
+                  "family_recommendations"
+                ]
+              },
+              "communication_preferences": {
+                "style": "Patient and detailed",
+                "key_language": [
+                  "family",
+                  "bezpieczeństwo",
+                  "oszczędności",
+                  "gwarancja",
+                  "niezawodność"
+                ],
+                "avoid_language": [
+                  "ryzyko",
+                  "eksperyment",
+                  "nowość",
+                  "presja_czasowa"
+                ],
+                "preferred_media": [
+                  "detailed_brochures",
+                  "family_testimonials",
+                  "safety_videos"
+                ],
+                "meeting_preference": "family_consultation"
+              },
+              "trigger_sensitivity": {
+                "high_positive": [
+                  "family_safety",
+                  "long_term_savings",
+                  "environmental_legacy"
+                ],
+                "high_negative": [
+                  "high_upfront_cost",
+                  "technology_complexity",
+                  "charging_anxiety"
+                ],
+                "conversion_accelerators": [
+                  "warranty_extension",
+                  "family_discount",
+                  "referral_program"
+                ]
+              },
+              "sales_approach": {
+                "primary_strategy": "Safety-first with TCO analysis",
+                "key_messages": [
+                  "Tesla has the highest safety ratings - 5 stars across all categories",
+                  "Home charging saves your family 30,000 PLN over 5 years",
+                  "8-year battery warranty provides long-term peace of mind"
+                ],
+                "proof_points": [
+                  "Euro NCAP ratings",
+                  "TCO calculator",
+                  "warranty terms"
+                ],
+                "closing_technique": "family_consensus_building"
+              }
+            },
+            "confidence": 0.508,
+            "autoDetected": true,
+            "alternatives": [
+              {
+                "id": "SOCIAL_TRENDSETTER",
+                "name": "Młody Influencer Technologiczny",
+                "DISC": "I",
+                "category": "social_status",
+                "demographics": {
+                  "age_range": "25-35",
+                  "income_pln": "10000-25000",
+                  "family_status": "single_or_young_couple",
+                  "location": "urban"
+                },
+                "psychological_profile": {
+                  "core_values": [
+                    "innovation",
+                    "social_recognition",
+                    "environmental_impact",
+                    "lifestyle_enhancement"
+                  ],
+                  "motivations": [
+                    "Being first with latest technology",
+                    "Social media content opportunities",
+                    "Environmental statement",
+                    "Unique driving experience"
+                  ],
+                  "fears_and_concerns": [
+                    "Przegapienie nowszych modeli",
+                    "Brak atrakcyjności na Instagramie",
+                    "Ocena ze strony znajomych",
+                    "Szybkie dezaktualizowanie się technologii"
+                  ],
+                  "decision_making_style": "emocjonalny",
+                  "decision_speed": "szybka",
+                  "trust_factors": [
+                    "rekomendacje znajomych",
+                    "endorsement influencerów",
+                    "atrakcyjność wizualna",
+                    "specyfikacje techniczne"
+                  ]
+                },
+                "communication_preferences": {
+                  "style": "Entuzjastyczny i wizualny",
+                  "key_language": [
+                    "przyszłość",
+                    "innowacja",
+                    "wyjątkowy",
+                    "społeczność",
+                    "trendy"
+                  ],
+                  "avoid_language": [
+                    "tradycyjny",
+                    "standardowy",
+                    "powszechny",
+                    "analiza_długoterminowa"
+                  ],
+                  "preferred_media": [
+                    "treści video",
+                    "prezentacje interaktywne",
+                    "dowody społeczne",
+                    "recenzje influencerów"
+                  ],
+                  "meeting_preference": "prezentacja dynamiczna"
+                },
+                "trigger_sensitivity": {
+                  "high_positive": [
+                    "najnowsza technologia",
+                    "status społeczny",
+                    "aktywizm ekologiczny"
+                  ],
+                  "high_negative": [
+                    "stawanie się mainstreamem",
+                    "skomplikowana własność",
+                    "opóźniona gratyfikacja"
+                  ],
+                  "conversion_accelerators": [
+                    "ekskluzywny dostęp",
+                    "możliwości social media",
+                    "pokazy technologiczne"
+                  ]
+                },
+                "sales_approach": {
+                  "primary_strategy": "Pokaz innowacyjności z dowodem społecznym",
+                  "key_messages": [
+                    "Tesla przewodzi rewolucji motoryzacyjnej - bądź częścią przyszłości",
+                    "Dołącz do społeczności myślących przyszłościowo",
+                    "Twoja Tesla będzie przyciągać uwagę i wywoływać rozmowy"
+                  ],
+                  "proof_points": [
+                    "aktualizacje OTA",
+                    "wydarzenia społeczności",
+                    "właściciele celebryci"
+                  ],
+                  "closing_technique": "ekskluzywność ograniczona w czasie"
+                }
+              },
+              {
+                "id": "ANALYTICAL_SKEPTIC",
+                "name": "Inżynier Analityczny",
+                "DISC": "C",
+                "category": "data_driven",
+                "demographics": {
+                  "age_range": "35-55",
+                  "income_pln": "12000-30000",
+                  "family_status": "varied",
+                  "location": "urban_suburban"
+                },
+                "psychological_profile": {
+                  "core_values": [
+                    "precision",
+                    "efficiency",
+                    "logical_decisions",
+                    "technical_excellence"
+                  ],
+                  "motivations": [
+                    "Optimal ROI and TCO analysis",
+                    "Technical superiority",
+                    "Energy efficiency metrics",
+                    "Data-driven decision making"
+                  ],
+                  "fears_and_concerns": [
+                    "Niewystarczające dane techniczne",
+                    "Przepłacanie za marketing",
+                    "Niesprawdzona długoterminowa niezawodność",
+                    "Uzależnienie od dostawcy"
+                  ],
+                  "decision_making_style": "analityczny i dokładny",
+                  "decision_speed": "bardzo wolna",
+                  "trust_factors": [
+                    "niezależne dane",
+                    "specyfikacje techniczne",
+                    "analiza porównawcza",
+                    "recenzje ekspertów"
+                  ]
+                },
+                "communication_preferences": {
+                  "style": "Techniczny i oparty na faktach",
+                  "key_language": [
+                    "dane",
+                    "analiza",
+                    "efektywność",
+                    "porównanie",
+                    "specyfikacja"
+                  ],
+                  "avoid_language": [
+                    "emocje",
+                    "uczucia",
+                    "presja",
+                    "ograniczona_oferta"
+                  ],
+                  "preferred_media": [
+                    "dokumenty techniczne",
+                    "wykresy porównawcze",
+                    "filmy inżynierskie",
+                    "białe księgi"
+                  ],
+                  "meeting_preference": "głębokie zagłębienie techniczne"
+                },
+                "trigger_sensitivity": {
+                  "high_positive": [
+                    "wyższość techniczna",
+                    "dane efektywności",
+                    "optymalizacja kosztów"
+                  ],
+                  "high_negative": [
+                    "presja marketingowa",
+                    "apele emocjonalne",
+                    "pośpieszne decyzje"
+                  ],
+                  "conversion_accelerators": [
+                    "techniczny test drive",
+                    "konsultacja inżynieryjna",
+                    "szczegółowa analiza"
+                  ]
+                },
+                "sales_approach": {
+                  "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+                  "key_messages": [
+                    "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+                    "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+                    "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+                  ],
+                  "proof_points": [
+                    "specyfikacje inżynierskie",
+                    "oceny efektywności",
+                    "kalkulacje TCO"
+                  ],
+                  "closing_technique": "logiczny wniosek oparty na danych"
+                }
+              }
+            ]
+          },
+          "triggers": {
+            "selected": [
+              {
+                "id": "price_simple",
+                "text": "cena",
+                "category": "financial",
+                "subcategory": "cost_concern",
+                "base_conversion_rate": 58,
+                "personality_resonance": {
+                  "S": 0.9,
+                  "C": 0.85,
+                  "D": 0.7,
+                  "I": 0.6
+                },
+                "response_strategies": {
+                  "S": {
+                    "approach": "Reassure with long-term savings",
+                    "key_messages": [
+                      "40k PLN subsidy",
+                      "30k PLN savings"
+                    ],
+                    "proof_points": [
+                      "NaszEauto calculator"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "has_home_pv": 15,
+                  "business_owner": 12
+                }
+              },
+              {
+                "id": "service",
+                "text": "serwis",
+                "category": "safety_security",
+                "subcategory": "reliability_concern",
+                "base_conversion_rate": 52,
+                "personality_resonance": {
+                  "S": 0.95,
+                  "C": 0.85,
+                  "D": 0.6,
+                  "I": 0.5
+                },
+                "response_strategies": {
+                  "S": {
+                    "approach": "Service convenience",
+                    "key_messages": [
+                      "Mobile Service comes to you",
+                      "Minimal maintenance"
+                    ],
+                    "proof_points": [
+                      "Service demo"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "convenience_focused": 12
+                }
+              }
+            ],
+            "count": 2,
+            "intensityScore": 110,
+            "relationships": {},
+            "categories": [
+              "financial",
+              "safety_security"
+            ]
+          },
+          "tone": {
+            "selected": "profesjonalny",
+            "compatibility": {
+              "D": 0.9,
+              "C": 0.8,
+              "S": 0.7,
+              "I": 0.6
+            },
+            "description": "Formalny i biznesowy"
+          },
+          "demographics": {
+            "age": "unknown",
+            "hasPV": "unknown",
+            "region": "unknown",
+            "score": 50
+          },
+          "scores": {
+            "trigger_match": 11,
+            "personality_alignment": 70,
+            "tone_compatibility": 50.8,
+            "trigger_combinations": 50,
+            "demographic_fit": 50,
+            "total": 41
+          },
+          "recommendations": {
+            "language": {
+              "keywords": [
+                "family",
+                "bezpieczeństwo",
+                "oszczędności",
+                "gwarancja",
+                "niezawodność"
+              ],
+              "avoidWords": [
+                "ryzyko",
+                "eksperyment",
+                "nowość",
+                "presja_czasowa"
+              ],
+              "phrases": []
+            },
+            "objectionHandling": [],
+            "nextSteps": [
+              {
+                "priority": 2,
+                "action": "Wyślij dodatkowe materiały",
+                "timeframe": "24 godziny",
+                "reason": "Potrzeba budowania zaufania"
+              }
+            ]
+          },
+          "strategy": {
+            "selected": {
+              "ID": 1,
+              "Triggers": [
+                "Martwi mnie cena",
+                "cena",
+                "drogo",
+                "koszt"
+              ],
+              "Sentyment": "negatywny",
+              "Profil_DISC": "All",
+              "Obiekcja": "Wysokie koszty zakupu Tesla w porównaniu do spalinowych",
+              "Skrypt": "Rozumiem Pana obawy cenowe. Tesla to inwestycja, która się zwraca. Z programem NaszEauto otrzymuje Pan 40,000 PLN dotacji, plus oszczędności 30,000 PLN przez 5 lat. Łącznie 70,000 PLN korzyści vs spalinowy.",
+              "Fakty_PL": "NaszEauto: 40,000 PLN dotacji z budżetu 1.6 mld PLN. Model 3 TCO: 92,250 PLN vs Golf 127,500 PLN (5 lat). Ładowanie domowe: 0.50-0.70 PLN/kWh vs benzyna.",
+              "Technika": "Framing + Scarcity (ograniczony budżet programu)",
+              "Ostrzeżenie_etyczne": "Uczciwie przedstaw korzyści finansowe. Nie wywieraj presji czasowej."
+            },
+            "matchScore": 58,
+            "personalizedApproach": {
+              "primary_strategy": "Safety-first with TCO analysis",
+              "key_messages": [
+                "Tesla has the highest safety ratings - 5 stars across all categories",
+                "Home charging saves your family 30,000 PLN over 5 years",
+                "8-year battery warranty provides long-term peace of mind"
+              ],
+              "proof_points": [
+                "Euro NCAP ratings",
+                "TCO calculator",
+                "warranty terms"
+              ],
+              "closing_technique": "family_consensus_building"
+            }
+          },
+          "warnings": [],
+          "confidence": 0.454
+        },
+        "triggers": [
+          "cena",
+          "serwis"
+        ]
+      }
+    ],
+    "sessions": [
+      "29ba5e92-0d11-483f-a551-f25af5f15817"
+    ],
+    "totalInteractions": 1,
+    "conversionProbability": 0,
+    "tags": [
+      "analyzed"
+    ]
+  },
+  "88344f66-f460-48a2-9a50-8ed1aaad520f": {
+    "customerId": "88344f66-f460-48a2-9a50-8ed1aaad520f",
+    "createdAt": "2025-07-20T15:41:01.848Z",
+    "lastUpdated": "2025-07-20T15:41:01.848Z",
+    "currentStage": "initial_analysis",
+    "stages": [
+      {
+        "id": "2bb1ebd0-462d-4b35-8f38-7c3a4395b813",
+        "timestamp": "2025-07-20T15:41:01.848Z",
+        "sessionId": "5abef893-cb9b-4a8d-b342-76368c756416",
+        "stage": "initial_analysis",
+        "customerId": "88344f66-f460-48a2-9a50-8ed1aaad520f",
+        "analysis": {
+          "timestamp": "2025-07-20T15:41:01.847Z",
+          "input": {
+            "personaId": "",
+            "tone": "entuzjastyczny",
+            "selectedTriggers": [
+              "Jak długo to trwa ładowanie?",
+              "A ten zasięg zimą?",
+              "cena",
+              "czas",
+              "mróz",
+              "firmowy",
+              "koszt wymiany"
+            ],
+            "demographics": {
+              "age": "25-35",
+              "hasPV": "true",
+              "region": "slaskie"
+            }
+          },
+          "personality": {
+            "detected": {
+              "id": "ANALYTICAL_SKEPTIC",
+              "name": "Inżynier Analityczny",
+              "DISC": "C",
+              "category": "data_driven",
+              "demographics": {
+                "age_range": "35-55",
+                "income_pln": "12000-30000",
+                "family_status": "varied",
+                "location": "urban_suburban"
+              },
+              "psychological_profile": {
+                "core_values": [
+                  "precision",
+                  "efficiency",
+                  "logical_decisions",
+                  "technical_excellence"
+                ],
+                "motivations": [
+                  "Optimal ROI and TCO analysis",
+                  "Technical superiority",
+                  "Energy efficiency metrics",
+                  "Data-driven decision making"
+                ],
+                "fears_and_concerns": [
+                  "Niewystarczające dane techniczne",
+                  "Przepłacanie za marketing",
+                  "Niesprawdzona długoterminowa niezawodność",
+                  "Uzależnienie od dostawcy"
+                ],
+                "decision_making_style": "analityczny i dokładny",
+                "decision_speed": "bardzo wolna",
+                "trust_factors": [
+                  "niezależne dane",
+                  "specyfikacje techniczne",
+                  "analiza porównawcza",
+                  "recenzje ekspertów"
+                ]
+              },
+              "communication_preferences": {
+                "style": "Techniczny i oparty na faktach",
+                "key_language": [
+                  "dane",
+                  "analiza",
+                  "efektywność",
+                  "porównanie",
+                  "specyfikacja"
+                ],
+                "avoid_language": [
+                  "emocje",
+                  "uczucia",
+                  "presja",
+                  "ograniczona_oferta"
+                ],
+                "preferred_media": [
+                  "dokumenty techniczne",
+                  "wykresy porównawcze",
+                  "filmy inżynierskie",
+                  "białe księgi"
+                ],
+                "meeting_preference": "głębokie zagłębienie techniczne"
+              },
+              "trigger_sensitivity": {
+                "high_positive": [
+                  "wyższość techniczna",
+                  "dane efektywności",
+                  "optymalizacja kosztów"
+                ],
+                "high_negative": [
+                  "presja marketingowa",
+                  "apele emocjonalne",
+                  "pośpieszne decyzje"
+                ],
+                "conversion_accelerators": [
+                  "techniczny test drive",
+                  "konsultacja inżynieryjna",
+                  "szczegółowa analiza"
+                ]
+              },
+              "sales_approach": {
+                "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+                "key_messages": [
+                  "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+                  "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+                  "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+                ],
+                "proof_points": [
+                  "specyfikacje inżynierskie",
+                  "oceny efektywności",
+                  "kalkulacje TCO"
+                ],
+                "closing_technique": "logiczny wniosek oparty na danych"
+              }
+            },
+            "confidence": 0.4116428571428572,
+            "autoDetected": true,
+            "alternatives": [
+              {
+                "id": "FAMILIA_SAVER",
+                "name": "Ojciec Rodziny Oszczędny",
+                "DISC": "S",
+                "category": "family_oriented",
+                "demographics": {
+                  "age_range": "35-50",
+                  "income_pln": "8000-15000",
+                  "family_status": "married_with_children",
+                  "location": "suburban"
+                },
+                "psychological_profile": {
+                  "core_values": [
+                    "safety",
+                    "security",
+                    "family_wellbeing",
+                    "long_term_stability"
+                  ],
+                  "motivations": [
+                    "Lower monthly expenses",
+                    "Secure family transportation",
+                    "Environmental responsibility for children's future",
+                    "Reliable technology"
+                  ],
+                  "fears_and_concerns": [
+                    "High upfront costs affecting family budget",
+                    "Technology failure risks",
+                    "Insufficient charging infrastructure",
+                    "Unknown long-term costs"
+                  ],
+                  "decision_making_style": "thorough_research",
+                  "decision_speed": "slow",
+                  "trust_factors": [
+                    "warranties",
+                    "testimonials",
+                    "official_data",
+                    "family_recommendations"
+                  ]
+                },
+                "communication_preferences": {
+                  "style": "Patient and detailed",
+                  "key_language": [
+                    "family",
+                    "bezpieczeństwo",
+                    "oszczędności",
+                    "gwarancja",
+                    "niezawodność"
+                  ],
+                  "avoid_language": [
+                    "ryzyko",
+                    "eksperyment",
+                    "nowość",
+                    "presja_czasowa"
+                  ],
+                  "preferred_media": [
+                    "detailed_brochures",
+                    "family_testimonials",
+                    "safety_videos"
+                  ],
+                  "meeting_preference": "family_consultation"
+                },
+                "trigger_sensitivity": {
+                  "high_positive": [
+                    "family_safety",
+                    "long_term_savings",
+                    "environmental_legacy"
+                  ],
+                  "high_negative": [
+                    "high_upfront_cost",
+                    "technology_complexity",
+                    "charging_anxiety"
+                  ],
+                  "conversion_accelerators": [
+                    "warranty_extension",
+                    "family_discount",
+                    "referral_program"
+                  ]
+                },
+                "sales_approach": {
+                  "primary_strategy": "Safety-first with TCO analysis",
+                  "key_messages": [
+                    "Tesla has the highest safety ratings - 5 stars across all categories",
+                    "Home charging saves your family 30,000 PLN over 5 years",
+                    "8-year battery warranty provides long-term peace of mind"
+                  ],
+                  "proof_points": [
+                    "Euro NCAP ratings",
+                    "TCO calculator",
+                    "warranty terms"
+                  ],
+                  "closing_technique": "family_consensus_building"
+                }
+              },
+              {
+                "id": "SOCIAL_TRENDSETTER",
+                "name": "Młody Influencer Technologiczny",
+                "DISC": "I",
+                "category": "social_status",
+                "demographics": {
+                  "age_range": "25-35",
+                  "income_pln": "10000-25000",
+                  "family_status": "single_or_young_couple",
+                  "location": "urban"
+                },
+                "psychological_profile": {
+                  "core_values": [
+                    "innovation",
+                    "social_recognition",
+                    "environmental_impact",
+                    "lifestyle_enhancement"
+                  ],
+                  "motivations": [
+                    "Being first with latest technology",
+                    "Social media content opportunities",
+                    "Environmental statement",
+                    "Unique driving experience"
+                  ],
+                  "fears_and_concerns": [
+                    "Przegapienie nowszych modeli",
+                    "Brak atrakcyjności na Instagramie",
+                    "Ocena ze strony znajomych",
+                    "Szybkie dezaktualizowanie się technologii"
+                  ],
+                  "decision_making_style": "emocjonalny",
+                  "decision_speed": "szybka",
+                  "trust_factors": [
+                    "rekomendacje znajomych",
+                    "endorsement influencerów",
+                    "atrakcyjność wizualna",
+                    "specyfikacje techniczne"
+                  ]
+                },
+                "communication_preferences": {
+                  "style": "Entuzjastyczny i wizualny",
+                  "key_language": [
+                    "przyszłość",
+                    "innowacja",
+                    "wyjątkowy",
+                    "społeczność",
+                    "trendy"
+                  ],
+                  "avoid_language": [
+                    "tradycyjny",
+                    "standardowy",
+                    "powszechny",
+                    "analiza_długoterminowa"
+                  ],
+                  "preferred_media": [
+                    "treści video",
+                    "prezentacje interaktywne",
+                    "dowody społeczne",
+                    "recenzje influencerów"
+                  ],
+                  "meeting_preference": "prezentacja dynamiczna"
+                },
+                "trigger_sensitivity": {
+                  "high_positive": [
+                    "najnowsza technologia",
+                    "status społeczny",
+                    "aktywizm ekologiczny"
+                  ],
+                  "high_negative": [
+                    "stawanie się mainstreamem",
+                    "skomplikowana własność",
+                    "opóźniona gratyfikacja"
+                  ],
+                  "conversion_accelerators": [
+                    "ekskluzywny dostęp",
+                    "możliwości social media",
+                    "pokazy technologiczne"
+                  ]
+                },
+                "sales_approach": {
+                  "primary_strategy": "Pokaz innowacyjności z dowodem społecznym",
+                  "key_messages": [
+                    "Tesla przewodzi rewolucji motoryzacyjnej - bądź częścią przyszłości",
+                    "Dołącz do społeczności myślących przyszłościowo",
+                    "Twoja Tesla będzie przyciągać uwagę i wywoływać rozmowy"
+                  ],
+                  "proof_points": [
+                    "aktualizacje OTA",
+                    "wydarzenia społeczności",
+                    "właściciele celebryci"
+                  ],
+                  "closing_technique": "ekskluzywność ograniczona w czasie"
+                }
+              }
+            ]
+          },
+          "triggers": {
+            "selected": [
+              {
+                "id": "charging_duration_practical",
+                "text": "Jak długo to trwa ładowanie?",
+                "category": "technical",
+                "subcategory": "usage_practical",
+                "base_conversion_rate": 45,
+                "psychological_indicators": {
+                  "intent_level": "medium",
+                  "decision_stage": "practical_evaluation",
+                  "emotional_state": "curious_concerned",
+                  "information_need": "usage_patterns"
+                },
+                "personality_resonance": {
+                  "C": 0.9,
+                  "S": 0.8,
+                  "D": 0.7,
+                  "I": 0.6
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Detailed charging scenarios with time calculations",
+                    "key_messages": [
+                      "Home AC: 8h = 400km",
+                      "Supercharger DC: 200km in 15min",
+                      "Cost optimization strategies"
+                    ],
+                    "proof_points": [
+                      "Charging time calculator",
+                      "Supercharger map",
+                      "Cost comparison tool"
+                    ]
+                  },
+                  "S": {
+                    "approach": "Convenience and routine integration",
+                    "key_messages": [
+                      "Charge overnight like phone",
+                      "Never visit gas station",
+                      "Always start day with full battery"
+                    ],
+                    "proof_points": [
+                      "Daily routine examples",
+                      "Home charging setup",
+                      "Convenience testimonials"
+                    ]
+                  },
+                  "D": {
+                    "approach": "Time efficiency and productivity gains",
+                    "key_messages": [
+                      "Charge during productive activities",
+                      "No time wasted at gas stations",
+                      "Route optimization"
+                    ],
+                    "proof_points": [
+                      "Time-saving calculator",
+                      "Productivity examples",
+                      "Executive testimonials"
+                    ]
+                  },
+                  "I": {
+                    "approach": "Modern lifestyle and social aspects",
+                    "key_messages": [
+                      "Charging at cool locations",
+                      "Coffee shop networking",
+                      "Tech-forward lifestyle"
+                    ],
+                    "proof_points": [
+                      "Lifestyle photos",
+                      "Social charging spots",
+                      "Community experiences"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "has_home_charging": 20,
+                  "workplace_charging": 15,
+                  "frequent_long_trips": -8,
+                  "urban_location": 5,
+                  "time_conscious": -3
+                }
+              },
+              {
+                "id": "winter_range_realistic",
+                "text": "A ten zasięg zimą?",
+                "category": "technical",
+                "subcategory": "seasonal_performance",
+                "base_conversion_rate": 40,
+                "psychological_indicators": {
+                  "intent_level": "medium",
+                  "decision_stage": "detailed_evaluation",
+                  "emotional_state": "practical_concern",
+                  "information_need": "real_world_performance"
+                },
+                "personality_resonance": {
+                  "C": 0.95,
+                  "S": 0.85,
+                  "D": 0.6,
+                  "I": 0.4
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Honest data with solutions and comparisons",
+                    "key_messages": [
+                      "514km WLTP = 350-400km winter",
+                      "Preconditioning optimizes performance",
+                      "Still competitive vs ICE efficiency loss"
+                    ],
+                    "proof_points": [
+                      "Winter testing data",
+                      "Preconditioning demo",
+                      "ICE winter comparison"
+                    ]
+                  },
+                  "S": {
+                    "approach": "Practical solutions and peace of mind",
+                    "key_messages": [
+                      "Plan routes with app",
+                      "Heat seats not cabin",
+                      "Charging network covers you"
+                    ],
+                    "proof_points": [
+                      "Route planning demo",
+                      "Efficiency tips",
+                      "Charging network map"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "cold_climate_region": 15,
+                  "long_distance_driver": 10,
+                  "realistic_expectations": 8,
+                  "efficiency_focused": 5
+                }
+              },
+              {
+                "id": "price_simple",
+                "text": "cena",
+                "category": "financial",
+                "subcategory": "cost_concern",
+                "base_conversion_rate": 58,
+                "personality_resonance": {
+                  "S": 0.9,
+                  "C": 0.85,
+                  "D": 0.7,
+                  "I": 0.6
+                },
+                "response_strategies": {
+                  "S": {
+                    "approach": "Reassure with long-term savings",
+                    "key_messages": [
+                      "40k PLN subsidy",
+                      "30k PLN savings"
+                    ],
+                    "proof_points": [
+                      "NaszEauto calculator"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "has_home_pv": 15,
+                  "business_owner": 12
+                }
+              },
+              {
+                "id": "time_concern",
+                "text": "czas",
+                "category": "technical",
+                "subcategory": "usage_practical",
+                "base_conversion_rate": 40,
+                "personality_resonance": {
+                  "D": 0.8,
+                  "C": 0.7,
+                  "S": 0.6,
+                  "I": 0.5
+                },
+                "response_strategies": {
+                  "D": {
+                    "approach": "Time efficiency",
+                    "key_messages": [
+                      "Charge during productive activities",
+                      "No gas station time"
+                    ],
+                    "proof_points": [
+                      "Time-saving calculator"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "time_conscious": 10
+                }
+              },
+              {
+                "id": "frost",
+                "text": "mróz",
+                "category": "technical",
+                "subcategory": "seasonal_performance",
+                "base_conversion_rate": 35,
+                "personality_resonance": {
+                  "C": 0.95,
+                  "S": 0.85,
+                  "D": 0.6,
+                  "I": 0.4
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Technical solutions",
+                    "key_messages": [
+                      "Heat pump technology",
+                      "Battery preconditioning"
+                    ],
+                    "proof_points": [
+                      "Technical documentation"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "technical_interest": 10
+                }
+              },
+              {
+                "id": "corporate",
+                "text": "firmowy",
+                "category": "financial",
+                "subcategory": "business_benefits",
+                "base_conversion_rate": 73,
+                "personality_resonance": {
+                  "D": 0.9,
+                  "C": 0.85,
+                  "S": 0.6,
+                  "I": 0.7
+                },
+                "response_strategies": {
+                  "D": {
+                    "approach": "Business tax benefits",
+                    "key_messages": [
+                      "Better depreciation",
+                      "VAT deduction"
+                    ],
+                    "proof_points": [
+                      "Tax calculations"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "business_user": 18
+                }
+              },
+              {
+                "id": "cost_replacement",
+                "text": "koszt wymiany",
+                "category": "technical",
+                "subcategory": "long_term_costs",
+                "base_conversion_rate": 39,
+                "personality_resonance": {
+                  "C": 0.95,
+                  "S": 0.85,
+                  "D": 0.6,
+                  "I": 0.4
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Honest cost discussion",
+                    "key_messages": [
+                      "Potential costs",
+                      "Probability analysis"
+                    ],
+                    "proof_points": [
+                      "Cost scenarios"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "cost_realistic": 10
+                }
+              }
+            ],
+            "count": 7,
+            "intensityScore": 330,
+            "relationships": {},
+            "categories": [
+              "technical",
+              "financial"
+            ]
+          },
+          "tone": {
+            "selected": "entuzjastyczny",
+            "compatibility": {
+              "I": 0.9,
+              "D": 0.7,
+              "S": 0.6,
+              "C": 0.4
+            },
+            "description": "Energetyczny i pozytywny"
+          },
+          "demographics": {
+            "age": "25-35",
+            "hasPV": "true",
+            "region": "slaskie",
+            "score": 70
+          },
+          "scores": {
+            "trigger_match": 33,
+            "personality_alignment": 40,
+            "tone_compatibility": 41.16428571428572,
+            "trigger_combinations": 50,
+            "demographic_fit": 70,
+            "total": 42
+          },
+          "recommendations": {
+            "language": {
+              "keywords": [
+                "dane",
+                "analiza",
+                "efektywność",
+                "porównanie",
+                "specyfikacja"
+              ],
+              "avoidWords": [
+                "emocje",
+                "uczucia",
+                "presja",
+                "ograniczona_oferta"
+              ],
+              "phrases": []
+            },
+            "objectionHandling": [],
+            "nextSteps": [
+              {
+                "priority": 2,
+                "action": "Wyślij dodatkowe materiały",
+                "timeframe": "24 godziny",
+                "reason": "Potrzeba budowania zaufania"
+              }
+            ]
+          },
+          "strategy": {
+            "selected": {
+              "ID": 3,
+              "Triggers": [
+                "Jak długo to trwa ładowanie?",
+                "ładowanie",
+                "czas",
+                "szybkość"
+              ],
+              "Sentyment": "neutralny",
+              "Profil_DISC": "All",
+              "Obiekcja": "Obawy o czas ładowania i wygodę użytkowania",
+              "Skrypt": "W domu ładuje Pan przez noc jak telefon - 8 godzin daje 400km zasięgu. Na trasie Supercharger: 200km w 15 minut podczas kawy. W Polsce mamy już 10,889 punktów ładowania (+50% rocznie).",
+              "Fakty_PL": "Ładowanie domowe: 8h = 400km zasięgu. Supercharger V3: 200km w 15 minut. 10,889 punktów ładowania w Polsce (+50% YoY). Koszt domowy: 0.50-0.70 PLN/kWh.",
+              "Technika": "Convenience comparison + Growth data",
+              "Ostrzeżenie_etyczne": "Uczciwi przedstaw różnice w kosztach ładowania domowego vs publicznego."
+            },
+            "matchScore": 85,
+            "personalizedApproach": {
+              "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+              "key_messages": [
+                "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+                "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+                "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+              ],
+              "proof_points": [
+                "specyfikacje inżynierskie",
+                "oceny efektywności",
+                "kalkulacje TCO"
+              ],
+              "closing_technique": "logiczny wniosek oparty na danych"
+            }
+          },
+          "warnings": [],
+          "confidence": 0.7058214285714286
+        },
+        "triggers": [
+          "Jak długo to trwa ładowanie?",
+          "A ten zasięg zimą?",
+          "cena",
+          "czas",
+          "mróz",
+          "firmowy",
+          "koszt wymiany"
+        ]
+      }
+    ],
+    "sessions": [
+      "5abef893-cb9b-4a8d-b342-76368c756416"
+    ],
+    "totalInteractions": 1,
+    "conversionProbability": 0,
+    "tags": [
+      "analyzed"
+    ]
+  },
+  "4d15b250-97e1-496e-8a4f-f167c8eb8952": {
+    "customerId": "4d15b250-97e1-496e-8a4f-f167c8eb8952",
+    "createdAt": "2025-07-20T15:43:05.175Z",
+    "lastUpdated": "2025-07-20T15:43:05.175Z",
+    "currentStage": "initial_analysis",
+    "stages": [
+      {
+        "id": "d20797b2-8c2f-477b-b286-c444b5a78b3f",
+        "timestamp": "2025-07-20T15:43:05.175Z",
+        "sessionId": "e42dded0-7515-4ff5-9e25-e28bcc5763c5",
+        "stage": "initial_analysis",
+        "customerId": "4d15b250-97e1-496e-8a4f-f167c8eb8952",
+        "analysis": {
+          "timestamp": "2025-07-20T15:43:05.174Z",
+          "input": {
+            "personaId": "",
+            "tone": "entuzjastyczny",
+            "selectedTriggers": [
+              "Co będzie jak się zepsuje?",
+              "Przetestowałem ponad 20 samochodów",
+              "koszt wymiany",
+              "bateria",
+              "dopłata"
+            ],
+            "demographics": {
+              "age": "",
+              "hasPV": "",
+              "region": ""
+            }
+          },
+          "personality": {
+            "detected": {
+              "id": "ANALYTICAL_SKEPTIC",
+              "name": "Inżynier Analityczny",
+              "DISC": "C",
+              "category": "data_driven",
+              "demographics": {
+                "age_range": "35-55",
+                "income_pln": "12000-30000",
+                "family_status": "varied",
+                "location": "urban_suburban"
+              },
+              "psychological_profile": {
+                "core_values": [
+                  "precision",
+                  "efficiency",
+                  "logical_decisions",
+                  "technical_excellence"
+                ],
+                "motivations": [
+                  "Optimal ROI and TCO analysis",
+                  "Technical superiority",
+                  "Energy efficiency metrics",
+                  "Data-driven decision making"
+                ],
+                "fears_and_concerns": [
+                  "Niewystarczające dane techniczne",
+                  "Przepłacanie za marketing",
+                  "Niesprawdzona długoterminowa niezawodność",
+                  "Uzależnienie od dostawcy"
+                ],
+                "decision_making_style": "analityczny i dokładny",
+                "decision_speed": "bardzo wolna",
+                "trust_factors": [
+                  "niezależne dane",
+                  "specyfikacje techniczne",
+                  "analiza porównawcza",
+                  "recenzje ekspertów"
+                ]
+              },
+              "communication_preferences": {
+                "style": "Techniczny i oparty na faktach",
+                "key_language": [
+                  "dane",
+                  "analiza",
+                  "efektywność",
+                  "porównanie",
+                  "specyfikacja"
+                ],
+                "avoid_language": [
+                  "emocje",
+                  "uczucia",
+                  "presja",
+                  "ograniczona_oferta"
+                ],
+                "preferred_media": [
+                  "dokumenty techniczne",
+                  "wykresy porównawcze",
+                  "filmy inżynierskie",
+                  "białe księgi"
+                ],
+                "meeting_preference": "głębokie zagłębienie techniczne"
+              },
+              "trigger_sensitivity": {
+                "high_positive": [
+                  "wyższość techniczna",
+                  "dane efektywności",
+                  "optymalizacja kosztów"
+                ],
+                "high_negative": [
+                  "presja marketingowa",
+                  "apele emocjonalne",
+                  "pośpieszne decyzje"
+                ],
+                "conversion_accelerators": [
+                  "techniczny test drive",
+                  "konsultacja inżynieryjna",
+                  "szczegółowa analiza"
+                ]
+              },
+              "sales_approach": {
+                "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+                "key_messages": [
+                  "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+                  "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+                  "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+                ],
+                "proof_points": [
+                  "specyfikacje inżynierskie",
+                  "oceny efektywności",
+                  "kalkulacje TCO"
+                ],
+                "closing_technique": "logiczny wniosek oparty na danych"
+              }
+            },
+            "confidence": 0.5244,
+            "autoDetected": true,
+            "alternatives": [
+              {
+                "id": "FAMILIA_SAVER",
+                "name": "Ojciec Rodziny Oszczędny",
+                "DISC": "S",
+                "category": "family_oriented",
+                "demographics": {
+                  "age_range": "35-50",
+                  "income_pln": "8000-15000",
+                  "family_status": "married_with_children",
+                  "location": "suburban"
+                },
+                "psychological_profile": {
+                  "core_values": [
+                    "safety",
+                    "security",
+                    "family_wellbeing",
+                    "long_term_stability"
+                  ],
+                  "motivations": [
+                    "Lower monthly expenses",
+                    "Secure family transportation",
+                    "Environmental responsibility for children's future",
+                    "Reliable technology"
+                  ],
+                  "fears_and_concerns": [
+                    "High upfront costs affecting family budget",
+                    "Technology failure risks",
+                    "Insufficient charging infrastructure",
+                    "Unknown long-term costs"
+                  ],
+                  "decision_making_style": "thorough_research",
+                  "decision_speed": "slow",
+                  "trust_factors": [
+                    "warranties",
+                    "testimonials",
+                    "official_data",
+                    "family_recommendations"
+                  ]
+                },
+                "communication_preferences": {
+                  "style": "Patient and detailed",
+                  "key_language": [
+                    "family",
+                    "bezpieczeństwo",
+                    "oszczędności",
+                    "gwarancja",
+                    "niezawodność"
+                  ],
+                  "avoid_language": [
+                    "ryzyko",
+                    "eksperyment",
+                    "nowość",
+                    "presja_czasowa"
+                  ],
+                  "preferred_media": [
+                    "detailed_brochures",
+                    "family_testimonials",
+                    "safety_videos"
+                  ],
+                  "meeting_preference": "family_consultation"
+                },
+                "trigger_sensitivity": {
+                  "high_positive": [
+                    "family_safety",
+                    "long_term_savings",
+                    "environmental_legacy"
+                  ],
+                  "high_negative": [
+                    "high_upfront_cost",
+                    "technology_complexity",
+                    "charging_anxiety"
+                  ],
+                  "conversion_accelerators": [
+                    "warranty_extension",
+                    "family_discount",
+                    "referral_program"
+                  ]
+                },
+                "sales_approach": {
+                  "primary_strategy": "Safety-first with TCO analysis",
+                  "key_messages": [
+                    "Tesla has the highest safety ratings - 5 stars across all categories",
+                    "Home charging saves your family 30,000 PLN over 5 years",
+                    "8-year battery warranty provides long-term peace of mind"
+                  ],
+                  "proof_points": [
+                    "Euro NCAP ratings",
+                    "TCO calculator",
+                    "warranty terms"
+                  ],
+                  "closing_technique": "family_consensus_building"
+                }
+              },
+              {
+                "id": "SOCIAL_TRENDSETTER",
+                "name": "Młody Influencer Technologiczny",
+                "DISC": "I",
+                "category": "social_status",
+                "demographics": {
+                  "age_range": "25-35",
+                  "income_pln": "10000-25000",
+                  "family_status": "single_or_young_couple",
+                  "location": "urban"
+                },
+                "psychological_profile": {
+                  "core_values": [
+                    "innovation",
+                    "social_recognition",
+                    "environmental_impact",
+                    "lifestyle_enhancement"
+                  ],
+                  "motivations": [
+                    "Being first with latest technology",
+                    "Social media content opportunities",
+                    "Environmental statement",
+                    "Unique driving experience"
+                  ],
+                  "fears_and_concerns": [
+                    "Przegapienie nowszych modeli",
+                    "Brak atrakcyjności na Instagramie",
+                    "Ocena ze strony znajomych",
+                    "Szybkie dezaktualizowanie się technologii"
+                  ],
+                  "decision_making_style": "emocjonalny",
+                  "decision_speed": "szybka",
+                  "trust_factors": [
+                    "rekomendacje znajomych",
+                    "endorsement influencerów",
+                    "atrakcyjność wizualna",
+                    "specyfikacje techniczne"
+                  ]
+                },
+                "communication_preferences": {
+                  "style": "Entuzjastyczny i wizualny",
+                  "key_language": [
+                    "przyszłość",
+                    "innowacja",
+                    "wyjątkowy",
+                    "społeczność",
+                    "trendy"
+                  ],
+                  "avoid_language": [
+                    "tradycyjny",
+                    "standardowy",
+                    "powszechny",
+                    "analiza_długoterminowa"
+                  ],
+                  "preferred_media": [
+                    "treści video",
+                    "prezentacje interaktywne",
+                    "dowody społeczne",
+                    "recenzje influencerów"
+                  ],
+                  "meeting_preference": "prezentacja dynamiczna"
+                },
+                "trigger_sensitivity": {
+                  "high_positive": [
+                    "najnowsza technologia",
+                    "status społeczny",
+                    "aktywizm ekologiczny"
+                  ],
+                  "high_negative": [
+                    "stawanie się mainstreamem",
+                    "skomplikowana własność",
+                    "opóźniona gratyfikacja"
+                  ],
+                  "conversion_accelerators": [
+                    "ekskluzywny dostęp",
+                    "możliwości social media",
+                    "pokazy technologiczne"
+                  ]
+                },
+                "sales_approach": {
+                  "primary_strategy": "Pokaz innowacyjności z dowodem społecznym",
+                  "key_messages": [
+                    "Tesla przewodzi rewolucji motoryzacyjnej - bądź częścią przyszłości",
+                    "Dołącz do społeczności myślących przyszłościowo",
+                    "Twoja Tesla będzie przyciągać uwagę i wywoływać rozmowy"
+                  ],
+                  "proof_points": [
+                    "aktualizacje OTA",
+                    "wydarzenia społeczności",
+                    "właściciele celebryci"
+                  ],
+                  "closing_technique": "ekskluzywność ograniczona w czasie"
+                }
+              }
+            ]
+          },
+          "triggers": {
+            "selected": [
+              {
+                "id": "reliability_main_concern",
+                "text": "Co będzie jak się zepsuje?",
+                "category": "safety_security",
+                "subcategory": "reliability_concern",
+                "base_conversion_rate": 55,
+                "psychological_indicators": {
+                  "intent_level": "medium",
+                  "decision_stage": "evaluation",
+                  "emotional_state": "cautious_but_considering",
+                  "information_need": "risk_mitigation"
+                },
+                "personality_resonance": {
+                  "S": 0.95,
+                  "C": 0.85,
+                  "D": 0.6,
+                  "I": 0.5
+                },
+                "trigger_relationships": {
+                  "amplifies": [
+                    "warranty_questions",
+                    "service_concerns",
+                    "battery_replacement_fear"
+                  ],
+                  "conflicts": [
+                    "tech_enthusiasm",
+                    "early_adopter_mentality"
+                  ],
+                  "neutral": [
+                    "price_sensitivity"
+                  ]
+                },
+                "response_strategies": {
+                  "S": {
+                    "approach": "Comprehensive warranty and service support reassurance",
+                    "key_messages": [
+                      "8-year/160k+ km battery warranty",
+                      "Mobile Service comes to you",
+                      "Lowest breakdown rates in industry"
+                    ],
+                    "proof_points": [
+                      "Warranty documentation",
+                      "Mobile Service demo",
+                      "Reliability statistics"
+                    ]
+                  },
+                  "C": {
+                    "approach": "Technical reliability data and preventive measures",
+                    "key_messages": [
+                      "95% of batteries never need replacement",
+                      "OTA updates prevent issues",
+                      "Diagnostic data prevents failures"
+                    ],
+                    "proof_points": [
+                      "Battery degradation studies",
+                      "OTA update history",
+                      "Diagnostic capabilities demo"
+                    ]
+                  },
+                  "D": {
+                    "approach": "Executive service level and minimal disruption",
+                    "key_messages": [
+                      "VIP service priority",
+                      "Minimal business disruption",
+                      "Proactive maintenance alerts"
+                    ],
+                    "proof_points": [
+                      "Executive service packages",
+                      "Uptime guarantees",
+                      "Proactive service examples"
+                    ]
+                  },
+                  "I": {
+                    "approach": "Community support and shared experiences",
+                    "key_messages": [
+                      "Strong owner community support",
+                      "Shared knowledge base",
+                      "Social network for help"
+                    ],
+                    "proof_points": [
+                      "Owner group testimonials",
+                      "Community forums",
+                      "Social support examples"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "family_primary_car": 10,
+                  "long_commuter": 8,
+                  "rural_location": 12,
+                  "tech_savvy": -5,
+                  "multiple_car_household": -3
+                }
+              },
+              {
+                "id": "extensive_research_high_intent",
+                "text": "Przetestowałem ponad 20 samochodów",
+                "category": "behavioral",
+                "subcategory": "high_research_intent",
+                "base_conversion_rate": 75,
+                "psychological_indicators": {
+                  "intent_level": "very_high",
+                  "decision_stage": "final_evaluation",
+                  "emotional_state": "informed_confident",
+                  "information_need": "final_differentiation"
+                },
+                "personality_resonance": {
+                  "C": 0.95,
+                  "D": 0.8,
+                  "S": 0.7,
+                  "I": 0.6
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Expert validation and unique differentiators",
+                    "key_messages": [
+                      "Tesla ecosystem vs car-only competitors",
+                      "OTA updates unique advantage",
+                      "Supercharger network leadership"
+                    ],
+                    "proof_points": [
+                      "Ecosystem comparison",
+                      "OTA update history",
+                      "Charging network analysis"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "comparison_shopper": 20,
+                  "detail_oriented": 15,
+                  "ready_to_decide": 25
+                }
+              },
+              {
+                "id": "cost_replacement",
+                "text": "koszt wymiany",
+                "category": "technical",
+                "subcategory": "long_term_costs",
+                "base_conversion_rate": 39,
+                "personality_resonance": {
+                  "C": 0.95,
+                  "S": 0.85,
+                  "D": 0.6,
+                  "I": 0.4
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Honest cost discussion",
+                    "key_messages": [
+                      "Potential costs",
+                      "Probability analysis"
+                    ],
+                    "proof_points": [
+                      "Cost scenarios"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "cost_realistic": 10
+                }
+              },
+              {
+                "id": "battery_word",
+                "text": "bateria",
+                "category": "technical",
+                "subcategory": "long_term_costs",
+                "base_conversion_rate": 43,
+                "personality_resonance": {
+                  "C": 0.95,
+                  "S": 0.85,
+                  "D": 0.6,
+                  "I": 0.4
+                },
+                "response_strategies": {
+                  "C": {
+                    "approach": "Technical battery information",
+                    "key_messages": [
+                      "Battery technology",
+                      "Longevity data"
+                    ],
+                    "proof_points": [
+                      "Technical specifications"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "tech_interested": 12
+                }
+              },
+              {
+                "id": "grant",
+                "text": "dopłata",
+                "category": "financial",
+                "subcategory": "subsidy_awareness",
+                "base_conversion_rate": 78,
+                "personality_resonance": {
+                  "S": 0.9,
+                  "C": 0.85,
+                  "D": 0.8,
+                  "I": 0.7
+                },
+                "response_strategies": {
+                  "S": {
+                    "approach": "Financial relief focus",
+                    "key_messages": [
+                      "Significant cost reduction",
+                      "Government support"
+                    ],
+                    "proof_points": [
+                      "Cost comparison"
+                    ]
+                  }
+                },
+                "conversion_modifiers": {
+                  "financial_relief": 20
+                }
+              }
+            ],
+            "count": 5,
+            "intensityScore": 290,
+            "relationships": {},
+            "categories": [
+              "safety_security",
+              "behavioral",
+              "technical",
+              "financial"
+            ]
+          },
+          "tone": {
+            "selected": "entuzjastyczny",
+            "compatibility": {
+              "I": 0.9,
+              "D": 0.7,
+              "S": 0.6,
+              "C": 0.4
+            },
+            "description": "Energetyczny i pozytywny"
+          },
+          "demographics": {
+            "age": "unknown",
+            "hasPV": "unknown",
+            "region": "unknown",
+            "score": 50
+          },
+          "scores": {
+            "trigger_match": 29,
+            "personality_alignment": 40,
+            "tone_compatibility": 52.44,
+            "trigger_combinations": 50,
+            "demographic_fit": 50,
+            "total": 41
+          },
+          "recommendations": {
+            "language": {
+              "keywords": [
+                "dane",
+                "analiza",
+                "efektywność",
+                "porównanie",
+                "specyfikacja"
+              ],
+              "avoidWords": [
+                "emocje",
+                "uczucia",
+                "presja",
+                "ograniczona_oferta"
+              ],
+              "phrases": []
+            },
+            "objectionHandling": [],
+            "nextSteps": [
+              {
+                "priority": 2,
+                "action": "Wyślij dodatkowe materiały",
+                "timeframe": "24 godziny",
+                "reason": "Potrzeba budowania zaufania"
+              }
+            ]
+          },
+          "strategy": {
+            "selected": {
+              "ID": 9,
+              "Triggers": [
+                "Słyszałem o programie NaszEauto",
+                "NaszEauto",
+                "dotacja",
+                "dopłata"
+              ],
+              "Sentyment": "pozytywny",
+              "Profil_DISC": "All",
+              "Obiekcja": "Świadomość dotacji - wysokie szanse",
+              "Skrypt": "Doskonale! 40,000 PLN dotacji z budżetu 1.6 mld PLN - to ograniczona pula. Razem z oszczędnościami TCO (30k PLN przez 5 lat) daje to 70,000 PLN korzyści vs spalinowy. Kiedy planuje Pan złożyć wniosek?",
+              "Fakty_PL": "NaszEauto: 40,000 PLN dotacji, budżet 1.6 mld PLN. TCO Model 3: 30,000 PLN oszczędności vs Golf przez 5 lat. Wniosek można złożyć przed dostawą auta.",
+              "Technika": "Scarcity + Financial advantage + Urgency",
+              "Ostrzeżenie_etyczne": "Nie stwarzaj fałszywej presji czasowej. Program ma określone ramy czasowe."
+            },
+            "matchScore": 78,
+            "personalizedApproach": {
+              "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+              "key_messages": [
+                "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+                "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+                "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+              ],
+              "proof_points": [
+                "specyfikacje inżynierskie",
+                "oceny efektywności",
+                "kalkulacje TCO"
+              ],
+              "closing_technique": "logiczny wniosek oparty na danych"
+            }
+          },
+          "warnings": [],
+          "confidence": 0.7622
+        },
+        "triggers": [
+          "Co będzie jak się zepsuje?",
+          "Przetestowałem ponad 20 samochodów",
+          "koszt wymiany",
+          "bateria",
+          "dopłata"
+        ]
+      }
+    ],
+    "sessions": [
+      "e42dded0-7515-4ff5-9e25-e28bcc5763c5"
+    ],
+    "totalInteractions": 1,
+    "conversionProbability": 0,
+    "tags": [
+      "analyzed"
+    ]
+  }
+}

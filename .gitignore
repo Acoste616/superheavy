@@ -1,0 +1,8 @@
+# Logi
+*.log
+
+# Pliki z researchu i notatki
+*.txt
+
+# Ustawienia lokalne
+.claude/

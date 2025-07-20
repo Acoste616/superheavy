@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Customer Decoder - Super Heavy Ultra PRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        tesla: {
+                            red: '#E31E24',
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            gray: {
+                                100: '#F8F8F8',
+                                200: '#E8E8E8',
+                                300: '#D8D8D8', 
+                                800: '#1A1A1A',
+                                900: '#0A0A0A'
+                            }
+                        }
+                    },
+                    fontFamily: {
+                        'tesla': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-glow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.3s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .gradient-border {
+            background: linear-gradient(90deg, #E31E24, #FF4444, #E31E24);
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-tesla min-h-screen">
+    <!-- Header -->
+    <header class="border-b border-gray-800 bg-tesla-gray-900/90 backdrop-blur">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-tesla-red rounded-lg flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">TCD SHU PRO</h1>
+                        <p class="text-tesla-gray-300 text-sm">Tesla Customer Decoder - Super Heavy Ultra</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-green-500 text-sm">System Active</span>
+                    </div>
+                    <div id="analysisCount" class="text-tesla-gray-300 text-sm">
+                        Analyses: <span class="text-tesla-red font-semibold">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="text-center py-16 animate-fade-in">
+            <div class="mb-8">
+                <div class="w-24 h-24 bg-tesla-red rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                    <i class="fas fa-user-secret text-white text-3xl"></i>
+                </div>
+                <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-tesla-red to-red-600 bg-clip-text text-transparent">
+                    Decoder Umysłu Klienta Tesla
+                </h2>
+                <p class="text-tesla-gray-300 text-lg max-w-2xl mx-auto">
+                    Zaawansowany system psychologicznej analizy klienta oparty na badaniach rynku polskiego 2025. 
+                    Dopasuj strategię sprzedażową do typu osobowości i intencji zakupowych.
+                </p>
+            </div>
+            
+            <button id="startAnalysis" class="bg-tesla-red hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                <i class="fas fa-rocket mr-2"></i>
+                Rozpocznij Analizę Klienta
+            </button>
+        </div>
+
+        <!-- Analysis Interface -->
+        <div id="analysisInterface" class="hidden animate-slide-up">
+            <!-- Customer Input Section -->
+            <div class="bg-tesla-gray-900 rounded-xl border border-tesla-gray-800 p-8 mb-8">
+                <h3 class="text-2xl font-bold text-tesla-red mb-6 flex items-center">
+                    <i class="fas fa-user-edit mr-3"></i>
+                    Profil Klienta
+                </h3>
+
+                <!-- Tone Selection -->
+                <div class="mb-8">
+                    <label class="block text-tesla-gray-300 mb-3 font-semibold">Ton Rozmowy Klienta:</label>
+                    <select id="toneSelect" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg px-4 py-3 text-white focus:border-tesla-red focus:ring-1 focus:ring-tesla-red transition-colors">
+                        <option value="entuzjastyczny">😊 Entuzjastyczny</option>
+                        <option value="neutralny">😐 Neutralny</option>
+                        <option value="sceptyczny">🤔 Sceptyczny</option>
+                        <option value="negatywny">😠 Negatywny/Wrogi</option>
+                    </select>
+                </div>
+
+                <!-- Trigger Selection -->
+                <div class="mb-8">
+                    <label class="block text-tesla-gray-300 mb-4 font-semibold">
+                        🎯 Triggery z rozmowy (zaznacz co mówił klient):
+                    </label>
+                    <p class="text-tesla-gray-400 text-sm mb-4">
+                        System automatycznie wykryje typ osobowości na podstawie wybranych triggerów
+                    </p>
+                    <div id="triggerGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <!-- Dynamically populated -->
+                    </div>
+                    <div class="mt-4 p-4 bg-tesla-gray-800 rounded-lg">
+                        <div class="flex items-center justify-between">
+                            <span class="text-tesla-gray-300">Wybrane triggery:</span>
+                            <span id="selectedTriggerCount" class="text-tesla-red font-semibold">0</span>
+                        </div>
+                        <div id="selectedTriggersList" class="mt-2 text-sm text-tesla-gray-400">
+                            Brak wybranych triggerów
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Context -->
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div>
+                        <label class="block text-tesla-gray-300 mb-2 text-sm">Wiek:</label>
+                        <select id="ageRange" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
+                            <option value="">Nie określono</option>
+                            <option value="25-35">25-35 lat</option>
+                            <option value="35-45">35-45 lat</option>
+                            <option value="45-55">45-55 lat</option>
+                            <option value="55+">55+ lat</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-tesla-gray-300 mb-2 text-sm">Panele PV:</label>
+                        <select id="hasPV" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
+                            <option value="">Nie wiem</option>
+                            <option value="true">Tak, ma PV</option>
+                            <option value="false">Nie ma PV</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-tesla-gray-300 mb-2 text-sm">Region:</label>
+                        <select id="region" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
+                            <option value="">Nie określono</option>
+                            <option value="mazowieckie">Mazowieckie</option>
+                            <option value="slaskie">Śląskie</option>
+                            <option value="wielkopolskie">Wielkopolskie</option>
+                            <option value="malopolskie">Małopolskie</option>
+                            <option value="other">Inny</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Analysis Button -->
+                <button id="runAnalysis" class="w-full bg-gradient-to-r from-tesla-red to-red-600 hover:from-red-600 hover:to-tesla-red text-white font-bold py-4 rounded-lg text-lg transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
+                    <i id="analysisIcon" class="fas fa-brain mr-3"></i>
+                    <span id="analysisText">Analizuj Klienta</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Display -->
+        <div id="resultsSection" class="hidden animate-fade-in">
+            <!-- Score Header -->
+            <div class="bg-tesla-gray-900 rounded-xl border border-tesla-gray-800 p-6 mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-2xl font-bold text-white flex items-center">
+                        <i class="fas fa-chart-line mr-3 text-tesla-red"></i>
+                        Analiza Completed
+                    </h3>
+                    <div class="text-right">
+                        <div id="conversionScore" class="text-4xl font-bold text-tesla-red">85%</div>
+                        <div class="text-tesla-gray-400 text-sm">Szansa Konwersji</div>
+                    </div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="w-full bg-tesla-gray-800 rounded-full h-4 mb-4">
+                    <div id="progressBar" class="bg-gradient-to-r from-tesla-red to-red-600 h-4 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                </div>
+                
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center p-3 bg-tesla-gray-800 rounded-lg">
+                        <div id="personalityMatch" class="text-xl font-bold text-green-500">92%</div>
+                        <div class="text-xs text-tesla-gray-400">Dopasowanie Profilu</div>
+                    </div>
+                    <div class="text-center p-3 bg-tesla-gray-800 rounded-lg">
+                        <div id="triggerIntensity" class="text-xl font-bold text-blue-500">High</div>
+                        <div class="text-xs text-tesla-gray-400">Intensywność</div>
+                    </div>
+                    <div class="text-center p-3 bg-tesla-gray-800 rounded-lg">
+                        <div id="toneCompatibility" class="text-xl font-bold text-yellow-500">Good</div>
+                        <div class="text-xs text-tesla-gray-400">Ton Rozmowy</div>
+                    </div>
+                    <div class="text-center p-3 bg-tesla-gray-800 rounded-lg">
+                        <div id="confidenceLevel" class="text-xl font-bold text-purple-500">87%</div>
+                        <div class="text-xs text-tesla-gray-400">Pewność</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Results Tabs -->
+            <div class="bg-tesla-gray-900 rounded-xl border border-tesla-gray-800 overflow-hidden">
+                <!-- Tab Navigation -->
+                <div class="flex border-b border-tesla-gray-800">
+                    <button class="tab-button active flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="strategy">
+                        <i class="fas fa-bullseye mr-2"></i>Strategia
+                    </button>
+                    <button class="tab-button flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="language">
+                        <i class="fas fa-comments mr-2"></i>Język
+                    </button>
+                    <button class="tab-button flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="objections">
+                        <i class="fas fa-shield-alt mr-2"></i>Obiekcje
+                    </button>
+                    <button class="tab-button flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="actions">
+                        <i class="fas fa-tasks mr-2"></i>Działania
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="p-8">
+                    <!-- Strategy Tab -->
+                    <div id="strategyTab" class="tab-content">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-user-check mr-2"></i>Wykryty Profil Klienta
+                                </h4>
+                                <div id="customerProfile" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-route mr-2"></i>Strategia Sprzedażowa  
+                                </h4>
+                                <div id="salesStrategy" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Language Tab -->
+                    <div id="languageTab" class="tab-content hidden">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-key mr-2"></i>Słowa Kluczowe
+                                </h4>
+                                <div id="keyWords" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-quote-left mr-2"></i>Gotowe Frazy
+                                </h4>
+                                <div id="readyPhrases" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Objections Tab -->
+                    <div id="objectionsTab" class="tab-content hidden">
+                        <h4 class="text-xl font-bold text-tesla-red mb-6">
+                            <i class="fas fa-comments-dollar mr-2"></i>Prawdopodobne Obiekcje i Odpowiedzi
+                        </h4>
+                        <div id="objectionsList" class="space-y-6">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+
+                    <!-- Actions Tab -->
+                    <div id="actionsTab" class="tab-content hidden">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-list-check mr-2"></i>Następne Kroki
+                                </h4>
+                                <div id="nextSteps" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-exclamation-triangle mr-2"></i>Ostrzeżenia Etyczne
+                                </h4>
+                                <div id="ethicalWarnings" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-center space-x-4 mt-8">
+                <button id="exportReport" class="bg-tesla-gray-800 hover:bg-tesla-gray-700 text-white px-6 py-3 rounded-lg transition-colors">
+                    <i class="fas fa-download mr-2"></i>Eksport Raportu
+                </button>
+                <button id="newAnalysis" class="bg-tesla-red hover:bg-red-600 text-white px-6 py-3 rounded-lg transition-colors">
+                    <i class="fas fa-plus mr-2"></i>Nowa Analiza
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+            <div class="text-center">
+                <div class="w-16 h-16 border-4 border-tesla-red border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="text-white text-lg">Analizowanie profilu klienta...</p>
+                <p class="text-tesla-gray-400 text-sm mt-2">Może to potrwać kilka sekund</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="logicEngine.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

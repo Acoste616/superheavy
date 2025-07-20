@@ -1,0 +1,70 @@
+{
+  "output_structure": {
+    "customer_analysis": {
+      "profile_type": "string",
+      "confidence_score": "number",
+      "key_motivations": "array",
+      "pain_points": "array",
+      "decision_speed": "string",
+      "conversion_probability": "number"
+    },
+    "recommended_approach": {
+      "primary_strategy": "string",
+      "communication_style": "string",
+      "key_messages": "array",
+      "persuasion_technique": "string",
+      "ethical_warning": "string"
+    },
+    "conversation_script": {
+      "opening": "string",
+      "main_pitch": "string",
+      "objection_handling": "string",
+      "closing": "string",
+      "next_steps": "string"
+    },
+    "supporting_facts": {
+      "market_data": "array",
+      "financial_benefits": "array",
+      "technical_specs": "array",
+      "competitive_advantages": "array"
+    },
+    "risk_assessment": {
+      "potential_objections": "array",
+      "competitive_threats": "array",
+      "timing_considerations": "array"
+    }
+  },
+  "templates": {
+    "high_probability": {
+      "header": "🎯 WYSOKA SZANSA KONWERSJI ({conversion_probability}%)",
+      "advice": "Klient wykazuje silne sygnały zainteresowania. Skup się na zamknięciu sprzedaży.",
+      "urgency": "Działaj szybko - klient jest gotowy na decyzję."
+    },
+    "medium_probability": {
+      "header": "⚡ ŚREDNIA SZANSA KONWERSJI ({conversion_probability}%)",
+      "advice": "Klient wymaga dodatkowego przekonywania. Adresuj główne obawy.",
+      "urgency": "Buduj zaufanie i odpowiadaj na wątpliwości."
+    },
+    "low_probability": {
+      "header": "🔍 NISKA SZANSA KONWERSJI ({conversion_probability}%)",
+      "advice": "Klient na wczesnym etapie lub ma znaczące zastrzeżenia.",
+      "urgency": "Skup się na edukacji i budowaniu świadomości korzyści."
+    },
+    "ethical_warnings": {
+      "manipulation": "⚠️ OSTRZEŻENIE: Ta technika może być postrzegana jako manipulacyjna. Używaj z rozwagą.",
+      "pressure": "⚠️ UWAGA: Nie wywieraj nadmiernej presji - może to zniechęcić klienta.",
+      "honesty": "✅ ETYCZNE: Szczere podejście buduje długoterminowe relacje."
+    }
+  },
+  "formatting": {
+    "use_emoji": true,
+    "highlight_key_numbers": true,
+    "color_coding": {
+      "high_conversion": "#00ff00",
+      "medium_conversion": "#ffaa00", 
+      "low_conversion": "#ff6600",
+      "warning": "#ff0000",
+      "success": "#00aa00"
+    }
+  }
+}

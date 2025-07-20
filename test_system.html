@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCD SHU PRO - System Test</title>
+</head>
+<body>
+    <div id="test-results"></div>
+    
+    <script src="logicEngine.js"></script>
+    <script>
+        async function testSystem() {
+            const results = document.getElementById('test-results');
+            results.innerHTML = '<h2>Testing TCD SHU PRO System...</h2>';
+            
+            try {
+                // Initialize the engine
+                const engine = new CustomerDecoderEngine();
+                
+                const dataFiles = {
+                    triggers: 'data/triggers.json',
+                    personas: 'data/personas.json', 
+                    rules: 'rules.json',
+                    weights: 'weights_and_scoring.json',
+                    cheatsheet: 'cheatsheet_phrases.json',
+                    objections: 'objections_and_rebuttals.json'
+                };
+                
+                await engine.initialize(dataFiles);
+                results.innerHTML += '<p>✅ Engine initialized successfully</p>';
+                
+                // Test analysis
+                const testInput = {
+                    personaId: '',
+                    tone: 'sceptyczny',
+                    selectedTriggers: ['Martwi mnie cena', 'Co będzie jak się zepsuje?'],
+                    demographics: {
+                        age: '35-45',
+                        hasPV: 'false',
+                        region: 'mazowieckie'
+                    }
+                };
+                
+                const analysis = engine.analyzeCustomer(testInput);
+                results.innerHTML += '<p>✅ Analysis completed</p>';
+                results.innerHTML += '<p>Score: ' + analysis.scores.total + '%</p>';
+                results.innerHTML += '<p>Personality: ' + analysis.personality.detected.name + '</p>';
+                results.innerHTML += '<h3>✅ System is working correctly!</h3>';
+                
+            } catch (error) {
+                results.innerHTML += '<p>❌ Error: ' + error.message + '</p>';
+                console.error('Test failed:', error);
+            }
+        }
+        
+        testSystem();
+    </script>
+</body>
+</html>

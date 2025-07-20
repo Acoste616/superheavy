@@ -1,0 +1,186 @@
+{
+  "triggers": [
+    {
+      "id": "price_concern",
+      "name": "Martwi mnie cena",
+      "category": "financial",
+      "base_conversion": 60,
+      "description": "High conversion trigger signals financial readiness + need for reassurance"
+    },
+    {
+      "id": "reliability_concern", 
+      "name": "Co będzie jak się zepsuje?",
+      "category": "technical",
+      "base_conversion": 55,
+      "description": "Practical concerns thinking about ownership shows genuine interest"
+    },
+    {
+      "id": "charging_duration",
+      "name": "Jak długo to trwa ładowanie?", 
+      "category": "practical",
+      "base_conversion": 45,
+      "description": "Concrete usage questions indicate serious consideration"
+    },
+    {
+      "id": "winter_range",
+      "name": "A ten zasięg zimą?",
+      "category": "practical", 
+      "base_conversion": 40,
+      "description": "Realistic concerns but shows product interest medium conversion"
+    },
+    {
+      "id": "decision_delay",
+      "name": "Może powinienem poczekać",
+      "category": "psychological",
+      "base_conversion": 35,
+      "description": "Decision paralysis needs reassurance medium conversion potential"
+    },
+    {
+      "id": "high_interest_behavior",
+      "name": "Przetestowałem ponad 20 samochodów",
+      "category": "behavioral",
+      "base_conversion": 75,
+      "description": "High interest behavioral indicator shows thorough research process"
+    },
+    {
+      "id": "infrastructure_concern",
+      "name": "Gdzie będę ładować?",
+      "category": "practical",
+      "base_conversion": 42,
+      "description": "Range anxiety concerns about charging availability"
+    },
+    {
+      "id": "environmental_interest",
+      "name": "Interesuje mnie ekologia",
+      "category": "values",
+      "base_conversion": 65,
+      "description": "Environmental consciousness indicates values alignment"
+    },
+    {
+      "id": "business_use",
+      "name": "To będzie firmowy samochód",
+      "category": "business",
+      "base_conversion": 62,
+      "description": "Business purchase with tax benefits opportunities"
+    },
+    {
+      "id": "competition_comparison",
+      "name": "Porównuję z BMW/Audi/chińskimi markami",
+      "category": "competitive",
+      "base_conversion": 50,
+      "description": "Active comparison shopping indicates serious consideration"
+    },
+    {
+      "id": "technology_enthusiast",
+      "name": "Lubię najnowsze technologie",
+      "category": "personality",
+      "base_conversion": 70,
+      "description": "Early adopter personality with high tech affinity"
+    },
+    {
+      "id": "status_seeking",
+      "name": "Chcę coś wyjątkowego/prestiżowego",
+      "category": "social",
+      "base_conversion": 58,
+      "description": "Status and prestige motivation"
+    },
+    {
+      "id": "family_safety",
+      "name": "Czy to bezpieczne dla rodziny?",
+      "category": "safety", 
+      "base_conversion": 52,
+      "description": "Family safety concerns indicate responsible decision making"
+    },
+    {
+      "id": "resale_value",
+      "name": "A wartość odsprzedaży?",
+      "category": "financial",
+      "base_conversion": 38,
+      "description": "Long-term financial planning consideration"
+    },
+    {
+      "id": "maintenance_cost",
+      "name": "Ile kosztuje serwis?",
+      "category": "financial",
+      "base_conversion": 48,
+      "description": "Operational cost awareness"
+    },
+    {
+      "id": "extensive_research",
+      "name": "Przetestowałem ponad 20 samochodów",
+      "category": "behavioral",
+      "base_conversion": 75,
+      "description": "High interest behavioral indicator shows thorough research process"
+    },
+    {
+      "id": "battery_replacement_concern",
+      "name": "Co z wymianą baterii po gwarancji?",
+      "category": "technical",
+      "base_conversion": 35,
+      "description": "Long-term ownership concerns about 110k PLN replacement cost"
+    },
+    {
+      "id": "charging_at_home_impossible",
+      "name": "Nie mogę ładować w domu",
+      "category": "practical",
+      "base_conversion": 25,
+      "description": "Major barrier - higher costs without home charging"
+    },
+    {
+      "id": "current_car_satisfaction",
+      "name": "Mój obecny samochód mnie zadowala",
+      "category": "psychological",
+      "base_conversion": 20,
+      "description": "Low motivation to change, needs strong value proposition"
+    },
+    {
+      "id": "lease_vs_purchase",
+      "name": "Wolę leasing niż zakup",
+      "category": "financial",
+      "base_conversion": 55,
+      "description": "Business orientation, prefers 4.4-4.9% leasing rates"
+    },
+    {
+      "id": "chinese_competition_interest",
+      "name": "Rozważam chińskie marki EV",
+      "category": "competitive",
+      "base_conversion": 45,
+      "description": "Price-sensitive, needs Tesla differentiation strategy"
+    },
+    {
+      "id": "naszauto_program_interest",
+      "name": "Słyszałem o programie NaszEauto",
+      "category": "financial",
+      "base_conversion": 65,
+      "description": "Aware of 40k PLN subsidy opportunity - high interest"
+    },
+    {
+      "id": "autopilot_safety_concern",
+      "name": "Czy autopilot jest bezpieczny?",
+      "category": "safety",
+      "base_conversion": 40,
+      "description": "Technology skepticism needs education approach"
+    },
+    {
+      "id": "supercharger_network_interest",
+      "name": "Interesuje mnie sieć Superchargerów",
+      "category": "practical",
+      "base_conversion": 60,
+      "description": "Infrastructure-aware customer, understands Tesla advantage"
+    },
+    {
+      "id": "model_y_juniper_wait",
+      "name": "Poczekam na nowy Model Y",
+      "category": "timing",
+      "base_conversion": 50,
+      "description": "Well-informed about product cycle, needs timing strategy"
+    },
+    {
+      "id": "company_fleet_decision",
+      "name": "Decyduję o flocie firmowej",
+      "category": "business",
+      "base_conversion": 70,
+      "description": "Fleet decision maker with tax optimization focus"
+    }
+  ]
+}

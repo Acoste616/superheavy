@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Śledzenie Rozmowy - TCD SHU PRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        tesla: {
+                            red: '#E31E24',
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            gray: {
+                                100: '#F8F8F8',
+                                200: '#E8E8E8',
+                                300: '#D8D8D8',
+                                400: '#A8A8A8',
+                                500: '#888888',
+                                600: '#666666',
+                                700: '#2A2A2A',
+                                800: '#1A1A1A',
+                                900: '#0A0A0A'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-tesla-black text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="mb-8">
+            <div class="flex items-center justify-between">
+                <h1 class="text-3xl font-bold text-tesla-red">
+                    <i class="fas fa-comments mr-3"></i>
+                    Śledzenie Rozmowy z Klientem
+                </h1>
+                <a href="main.html" class="bg-tesla-gray-800 hover:bg-tesla-gray-700 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>Powrót
+                </a>
+            </div>
+            <p class="text-tesla-gray-400 mt-2">Zapisz wyniki rozmowy i odkryj nowe triggery</p>
+        </div>
+
+        <!-- Customer Info -->
+        <div class="bg-tesla-gray-800 rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold text-tesla-red mb-4">
+                <i class="fas fa-user mr-2"></i>Informacje o Kliencie
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-tesla-gray-300 mb-2">ID Klienta</label>
+                    <input type="text" id="customerId" class="w-full p-3 bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg text-white" 
+                           placeholder="Wklej ID klienta z poprzedniej analizy">
+                </div>
+                <div>
+                    <label class="block text-tesla-gray-300 mb-2">ID Sesji</label>
+                    <input type="text" id="sessionId" class="w-full p-3 bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg text-white" 
+                           placeholder="Automatycznie wygenerowany" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conversation Outcome -->
+        <div class="bg-tesla-gray-800 rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold text-tesla-red mb-4">
+                <i class="fas fa-chart-line mr-2"></i>Wynik Rozmowy
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <label class="cursor-pointer">
+                    <input type="radio" name="outcome" value="very_interested" class="sr-only">
+                    <div class="outcome-card bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg p-4 text-center transition-all hover:border-green-500">
+                        <i class="fas fa-heart text-green-500 text-2xl mb-2"></i>
+                        <div class="text-sm text-white">Bardzo zainteresowany</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="outcome" value="interested" class="sr-only">
+                    <div class="outcome-card bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg p-4 text-center transition-all hover:border-blue-500">
+                        <i class="fas fa-thumbs-up text-blue-500 text-2xl mb-2"></i>
+                        <div class="text-sm text-white">Zainteresowany</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="outcome" value="neutral" class="sr-only">
+                    <div class="outcome-card bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg p-4 text-center transition-all hover:border-yellow-500">
+                        <i class="fas fa-meh text-yellow-500 text-2xl mb-2"></i>
+                        <div class="text-sm text-white">Neutralny</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="outcome" value="skeptical" class="sr-only">
+                    <div class="outcome-card bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg p-4 text-center transition-all hover:border-orange-500">
+                        <i class="fas fa-question text-orange-500 text-2xl mb-2"></i>
+                        <div class="text-sm text-white">Sceptyczny</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="outcome" value="not_interested" class="sr-only">
+                    <div class="outcome-card bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg p-4 text-center transition-all hover:border-red-500">
+                        <i class="fas fa-times text-red-500 text-2xl mb-2"></i>
+                        <div class="text-sm text-white">Niezainteresowany</div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- New Triggers Discovered -->
+        <div class="bg-tesla-gray-800 rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold text-tesla-red mb-4">
+                <i class="fas fa-lightbulb mr-2"></i>Nowe Triggery Odkryte w Rozmowie
+            </h2>
+            <div class="mb-4">
+                <div class="flex items-center space-x-4 mb-4">
+                    <input type="text" id="newTriggerInput" class="flex-1 p-3 bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg text-white" 
+                           placeholder="Co jeszcze jest ważne dla klienta?">
+                    <button id="addNewTrigger" class="bg-tesla-red hover:bg-red-600 px-6 py-3 rounded-lg transition-colors">
+                        <i class="fas fa-plus mr-2"></i>Dodaj
+                    </button>
+                </div>
+                <div id="newTriggersList" class="space-y-2">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Reactions -->
+        <div class="bg-tesla-gray-800 rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold text-tesla-red mb-4">
+                <i class="fas fa-smile mr-2"></i>Reakcje Klienta
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <label class="cursor-pointer">
+                    <input type="checkbox" name="reactions" value="excited" class="sr-only">
+                    <div class="reaction-card bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg p-4 text-center transition-all">
+                        <i class="fas fa-star text-yellow-500 text-xl mb-2"></i>
+                        <div class="text-sm">Podekscytowany</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="checkbox" name="reactions" value="interested" class="sr-only">
+                    <div class="reaction-card bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg p-4 text-center transition-all">
+                        <i class="fas fa-eye text-blue-500 text-xl mb-2"></i>
+                        <div class="text-sm">Zainteresowany</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="checkbox" name="reactions" value="concerned" class="sr-only">
+                    <div class="reaction-card bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg p-4 text-center transition-all">
+                        <i class="fas fa-exclamation text-orange-500 text-xl mb-2"></i>
+                        <div class="text-sm">Zaniepokojony</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="checkbox" name="reactions" value="skeptical" class="sr-only">
+                    <div class="reaction-card bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg p-4 text-center transition-all">
+                        <i class="fas fa-question text-red-500 text-xl mb-2"></i>
+                        <div class="text-sm">Sceptyczny</div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="bg-tesla-gray-800 rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold text-tesla-red mb-4">
+                <i class="fas fa-arrow-right mr-2"></i>Następne Kroki
+            </h2>
+            <div class="space-y-4">
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" name="nextSteps" value="test_drive" class="text-tesla-red">
+                    <span>Umów jazdę testową</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" name="nextSteps" value="materials" class="text-tesla-red">
+                    <span>Wyślij dodatkowe materiały</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" name="nextSteps" value="technical_call" class="text-tesla-red">
+                    <span>Zaplanuj rozmowę techniczną</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" name="nextSteps" value="financing_info" class="text-tesla-red">
+                    <span>Przygotuj informacje o finansowaniu</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                    <input type="checkbox" name="nextSteps" value="follow_up_call" class="text-tesla-red">
+                    <span>Umów kolejną rozmowę</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Additional Notes -->
+        <div class="bg-tesla-gray-800 rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold text-tesla-red mb-4">
+                <i class="fas fa-edit mr-2"></i>Dodatkowe Notatki
+            </h2>
+            <textarea id="additionalNotes" rows="4" 
+                      class="w-full p-4 bg-tesla-gray-900 border border-tesla-gray-700 rounded-lg text-white" 
+                      placeholder="Zapisz ważne informacje z rozmowy, szczególne obawy klienta, itp."></textarea>
+        </div>
+
+        <!-- Save Button -->
+        <div class="text-center">
+            <button id="saveConversation" class="bg-tesla-red hover:bg-red-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                <i class="fas fa-save mr-2"></i>Zapisz Rozmowę i Wygeneruj Rekomendacje
+            </button>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div id="resultsModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div class="bg-tesla-gray-800 rounded-lg p-8 max-w-2xl w-full m-4 max-h-[80vh] overflow-y-auto">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-tesla-red">
+                    <i class="fas fa-chart-bar mr-2"></i>Analiza Rozmowy
+                </h2>
+                <button id="closeModal" class="text-tesla-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="resultsContent">
+                <!-- Dynamic content -->
+            </div>
+            <div class="mt-6 flex space-x-4">
+                <button id="bookTestDrive" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg flex-1 transition-colors">
+                    <i class="fas fa-car mr-2"></i>Umów Jazdę Testową
+                </button>
+                <button id="viewJourney" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg flex-1 transition-colors">
+                    <i class="fas fa-map mr-2"></i>Zobacz Ścieżkę Klienta
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="conversation-tracker.js"></script>
+</body>
+</html>

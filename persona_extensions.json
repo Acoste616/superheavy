@@ -1,0 +1,45 @@
+{
+  "description": "Rozszerzone, bardziej szczegółowe profile klientów (persony), które łączą dane demograficzne, psychograficzne i behawioralne w konkretne archetypy.",
+  "personas": [
+    {
+      "id": "PERSONA_01",
+      "name": "Ojciec Rodziny od Oszczędności",
+      "base_profile": "Ostrożny Rodzic (S-Type)",
+      "DISC": "S",
+      "description": "Głowa rodziny 2+2, mieszkająca w domu pod miastem. Jego główną motywacją jest obniżenie domowych rachunków i zapewnienie rodzinie bezpiecznego, nowoczesnego transportu. Jest pragmatyczny i nieufny wobec marketingowych obietnic.",
+      "keywords": ["rodzina", "dzieci", "bezpieczeństwo", "oszczędności", "koszty", "TCO", "dom", "fotowoltaika"],
+      "pain_points": ["Wysoka cena początkowa obciąży budżet domowy.", "Czy to auto jest wystarczająco duże i bezpieczne na wakacyjne wyjazdy?", "Czy realnie zaoszczędzę, czy to tylko chwyt marketingowy?"],
+      "what_works": "Szczegółowa kalkulacja TCO porównująca obecne auto z EV. Podkreślenie 5 gwiazdek Euro NCAP i przestronności bagażnika. Zaproponowanie jazdy próbnej z całą rodziną."
+    },
+    {
+      "id": "PERSONA_02",
+      "name": "Młody Gniewny z TikToka",
+      "base_profile": "Entuzjastyczny Trendsetter (I-Type)",
+      "DISC": "I",
+      "description": "Młody profesjonalista (25-35 lat) z dużego miasta, aktywny w mediach społecznościowych. Samochód jest dla niego przedłużeniem jego wizerunku - musi być szybki, nowoczesny i 'cool'. Wrażliwy na trendy i opinie influencerów.",
+      "keywords": ["osiągi", "design", "wow", "TikTok", "Instagram", "influencer", "nowość", "gadżet"],
+      "pain_points": ["Czy to auto jest wystarczająco 'instagramowalne'?", "Czy jego osiągi naprawdę robią wrażenie?", "Czy nie wyjdę na 'boomersa' w przestarzałym modelu?"],
+      "what_works": "Dynamiczna jazda próbna z demonstracją przyspieszenia. Podkreślenie unikalnych funkcji (np. tryb 'Ludicrous', gry na ekranie). Użycie dowodu społecznego z udziałem znanych influencerów."
+    },
+    {
+      "id": "PERSONA_03",
+      "name": "Anty-Muskowiec Technologiczny",
+      "base_profile": "Analityczny Inżynier (C-Type)",
+      "DISC": "C",
+      "description": "Inżynier lub specjalista IT, który docenia technologię Tesli, ale jest silnie uprzedzony do postaci Elona Muska. Szuka racjonalnych argumentów, aby oddzielić produkt od kontrowersyjnego CEO. Jest bardzo dobrze poinformowany.",
+      "keywords": ["technologia", "inżynieria", "dane", "konkurencja", "jakość", "Musk", "alternatywa"],
+      "pain_points": ["Jak mogę kupić ten samochód, nie wspierając jednocześnie działań Muska?", "Czy konkurencyjne marki (np. KIA, Hyundai) nie oferują już lepszej technologii bez tego bagażu wizerunkowego?", "Czy jakość wykonania na pewno uzasadnia cenę?"],
+      "what_works": "Technika 'Depersonalizacji' - skupienie rozmowy wyłącznie na produkcie i jego obiektywnych zaletach (ekosystem ładowania, oprogramowanie). Uznanie istnienia konkurencji i przeprowadzenie uczciwego porównania. Podkreślenie, że auto to praca tysięcy inżynierów."
+    },
+    {
+      "id": "PERSONA_04",
+      "name": "Prezes Firmy z Misją ESG",
+      "base_profile": "Dominujący Przedsiębiorca B2B",
+      "DISC": "D",
+      "description": "Właściciel lub menedżer średniej wielkości firmy, który oprócz TCO, zwraca uwagę na wizerunek i cele zrównoważonego rozwoju (ESG). Chce, aby jego flota była nowoczesna, ekologiczna i stanowiła wizytówkę firmy.",
+      "keywords": ["firma", "flota", "ESG", "wizerunek", "ekologia", "podatki", "leasing"],
+      "pain_points": ["Jak przejście na flotę EV wpłynie na wizerunek mojej firmy?", "Jakie są konkretne korzyści podatkowe i wizerunkowe poza samym TCO?", "Jak zarządzać ładowaniem floty dla pracowników?"],
+      "what_works": "Przedstawienie EV jako inwestycji w wizerunek nowoczesnej i odpowiedzialnej firmy. Przygotowanie raportu o korzyściach ESG. Zaproponowanie kompleksowego rozwiązania flotowego, włączając w to systemy do zarządzania ładowaniem."
+    }
+  ]
+}

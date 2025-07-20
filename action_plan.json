@@ -1,0 +1,84 @@
+{
+  "description": "Zbiór rekomendowanych działań (planów akcji) dla handlowca w zależności od etapu rozmowy i sytuacji klienta.",
+  "action_plans": [
+    {
+      "situation_id": "INITIAL_CONTACT_HIGH_POTENTIAL",
+      "description": "Klient jest na wczesnym etapie, ale wykazuje wysoki potencjał (np. przedsiębiorca z PV).",
+      "recommended_actions": [
+        {
+          "action": "Zaproponuj jazdę próbną (Test Drive)",
+          "priority": 1,
+          "details": "Umów jazdę próbną w ciągu najbliższych 48 godzin. Podkreśl, że to najlepszy sposób na weryfikację osiągów i komfortu."
+        },
+        {
+          "action": "Przygotuj spersonalizowaną kalkulację TCO",
+          "priority": 2,
+          "details": "Poproś o dane dotyczące obecnego samochodu i rocznego przebiegu, aby przygotować szczegółowe porównanie kosztów."
+        },
+        {
+          "action": "Wyślij follow-up z materiałami",
+          "priority": 3,
+          "details": "Po rozmowie wyślij email z podsumowaniem, linkiem do umówienia jazdy i broszurą techniczną."
+        }
+      ]
+    },
+    {
+      "situation_id": "OBJECTION_HANDLING_PRICE",
+      "description": "Klient zgłosił silną obiekcję cenową.",
+      "recommended_actions": [
+        {
+          "action": "Użyj skryptu z 'objections_and_rebuttals.json'",
+          "priority": 1,
+          "details": "Zastosuj technikę Framingu (TCO), aby zmienić perspektywę klienta z kosztu na inwestycję."
+        },
+        {
+          "action": "Przedstaw opcje finansowania",
+          "priority": 2,
+          "details": "Zaprezentuj symulację raty leasingowej lub kredytowej, podkreślając niskie miesięczne obciążenie."
+        },
+        {
+          "action": "Poinformuj o pełnej kwocie dopłat",
+          "priority": 3,
+          "details": "Dokładnie wylicz, jaką maksymalną dopłatę z programu 'NaszEauto' może uzyskać klient."
+        }
+      ]
+    },
+    {
+      "situation_id": "POST_TEST_DRIVE_ENTHUSIASM",
+      "description": "Klient jest bardzo zadowolony po jeździe próbnej.",
+      "recommended_actions": [
+        {
+          "action": "Przejdź do zamknięcia sprzedaży (Closing)",
+          "priority": 1,
+          "details": "Zadaj pytanie zamykające, np. 'Który kolor podoba się Panu/Pani najbardziej?' lub 'Czy możemy przejść do przygotowania dokumentów zamówienia?'"
+        },
+        {
+          "action": "Zaproponuj rezerwację pojazdu",
+          "priority": 2,
+          "details": "Jeśli klient się waha, zaproponuj niezobowiązującą rezerwację na 24-48h, aby 'przytrzymać' konkretny egzemplarz."
+        }
+      ]
+    },
+    {
+      "situation_id": "CUSTOMER_IS_HESITATING",
+      "description": "Klient mówi, że musi się zastanowić.",
+      "recommended_actions": [
+        {
+          "action": "Zdiagnozuj prawdziwą obiekcję",
+          "priority": 1,
+          "details": "Zadaj pytanie: 'Rozumiem, a co jest głównym powodem Pana/Pani wahania? Czy chodzi o cenę, zasięg, a może coś innego?'"
+        },
+        {
+          "action": "Zastosuj etyczną pilność",
+          "priority": 2,
+          "details": "Poinformuj o realnych ograniczeniach, np. 'Rozumiem, proszę tylko pamiętać, że ta oferta promocyjna na finansowanie kończy się w tym tygodniu.'"
+        },
+        {
+          "action": "Umów kolejny kontakt",
+          "priority": 3,
+          "details": "Zaproponuj konkretny termin kolejnej rozmowy: 'Czy mogę zadzwonić do Pana/Pani w czwartek, aby odpowiedzieć na ewentualne nowe pytania?'"
+        }
+      ]
+    }
+  ]
+}
