@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Triggers</title>
+</head>
+<body>
+    <h1>Test Loading Triggers</h1>
+    <div id="output"></div>
+    
+    <script>
+        async function testTriggers() {
+            try {
+                console.log('Loading triggers...');
+                const response = await fetch('data/triggers.json');
+                const data = await response.json();
+                
+                console.log('Loaded data:', data);
+                document.getElementById('output').innerHTML = `
+                    <p>Triggers loaded: ${data.triggers?.length || 0}</p>
+                    <p>Categories: ${Object.keys(data.trigger_categories || {}).join(', ')}</p>
+                    <pre>${JSON.stringify(data.triggers?.[0], null, 2)}</pre>
+                `;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('output').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+        
+        testTriggers();
+    </script>
+</body>
+</html>

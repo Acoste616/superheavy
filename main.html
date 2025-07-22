@@ -18,7 +18,11 @@
                             gray: {
                                 100: '#F8F8F8',
                                 200: '#E8E8E8',
-                                300: '#D8D8D8', 
+                                300: '#D8D8D8',
+                                400: '#A0A0A0',
+                                500: '#808080',
+                                600: '#606060',
+                                700: '#404040',
                                 800: '#1A1A1A',
                                 900: '#0A0A0A'
                             }
@@ -55,6 +59,22 @@
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+        .tab-button.active {
+            background-color: #E31E24;
+            color: white;
+        }
+        .tab-button.active:hover {
+            background-color: #B71E24;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .trigger-btn {
+            min-height: 120px;
         }
     </style>
 </head>
@@ -152,7 +172,7 @@
                 </div>
 
                 <!-- Additional Context -->
-                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                <div class="grid md:grid-cols-4 gap-4 mb-8">
                     <div>
                         <label class="block text-tesla-gray-300 mb-2 text-sm">Wiek:</label>
                         <select id="ageRange" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
@@ -161,6 +181,15 @@
                             <option value="35-45">35-45 lat</option>
                             <option value="45-55">45-55 lat</option>
                             <option value="55+">55+ lat</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-tesla-gray-300 mb-2 text-sm">Typ mieszkania:</label>
+                        <select id="housingType" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
+                            <option value="">Nie określono</option>
+                            <option value="dom">🏠 Dom z garażem</option>
+                            <option value="mieszkanie_parking">🏢 Mieszkanie z parkingiem</option>
+                            <option value="mieszkanie_ulica">🏢 Mieszkanie - parking uliczny</option>
                         </select>
                     </div>
                     <div>
@@ -249,6 +278,9 @@
                     <button class="tab-button flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="actions">
                         <i class="fas fa-tasks mr-2"></i>Działania
                     </button>
+                    <button class="tab-button flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="explainability">
+                        <i class="fas fa-chart-bar mr-2"></i>Dlaczego?
+                    </button>
                 </div>
 
                 <!-- Tab Content -->
@@ -328,6 +360,35 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Explainability Tab -->
+                    <div id="explainabilityTab" class="tab-content hidden">
+                        <h4 class="text-xl font-bold text-tesla-red mb-6">
+                            <i class="fas fa-microscope mr-2"></i>Dlaczego taki wynik? - Analiza 2.0
+                        </h4>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h5 class="text-lg font-semibold text-tesla-red mb-4">📊 Waterfall Chart - Wkład Czynników</h5>
+                                <div id="featureContributions" class="space-y-3">
+                                    <!-- Dynamically populated waterfall chart -->
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-semibold text-tesla-red mb-4">🏢 Czynniki Rynkowe 2025</h5>
+                                <div id="marketFactors" class="space-y-4">
+                                    <!-- Market factors analysis -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h5 class="text-lg font-semibold text-tesla-red mb-4">🛡️ AI Guard-Rails - Compliance</h5>
+                            <div id="complianceInfo" class="bg-tesla-gray-800 rounded-lg p-6">
+                                <!-- Compliance and ethical guidelines -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -353,7 +414,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="logicEngine.js"></script>
-    <script src="app.js"></script>
+    <script src="app-simple.js"></script>
 </body>
 </html>

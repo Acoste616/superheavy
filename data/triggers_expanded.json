@@ -55,6 +55,7 @@
 
   "triggers": [
     
+    // === FINANCIAL CATEGORY ===
     {
       "id": "price_concern",
       "text": "Ta cena to jednak spory wydatek",
@@ -230,6 +231,7 @@
       }
     },
 
+    // === TECHNICAL CATEGORY ===
     {
       "id": "range_anxiety",
       "text": "Czy zasięg wystarczy na dłuższe trasy?",
@@ -417,6 +419,7 @@
       }
     },
 
+    // === COMPETITIVE CATEGORY ===
     {
       "id": "competitor_byd",
       "text": "A co z BYD? Mają podobny zasięg za mniej",
@@ -518,6 +521,7 @@
       }
     },
 
+    // === LIFESTYLE CATEGORY ===
     {
       "id": "status_symbol",
       "text": "Tesla to symbol statusu, prawda?",
@@ -597,6 +601,7 @@
       }
     },
 
+    // === ENVIRONMENTAL CATEGORY ===
     {
       "id": "environmental_impact",
       "text": "Dbam o środowisko, czy EV rzeczywiście pomaga?",
@@ -649,6 +654,7 @@
       }
     },
 
+    // === DECISION PROCESS CATEGORY ===
     {
       "id": "extensive_research",
       "text": "Badałem rynek przez miesiące, testowałem różne modele",
@@ -777,6 +783,7 @@
       }
     },
 
+    // === OBJECTIONS CATEGORY ===
     {
       "id": "need_time_to_think",
       "text": "Muszę się nad tym zastanowić",

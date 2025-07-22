@@ -383,9 +383,24 @@ class CustomerDecoderEngine {
         const triggers = analysis.triggers.selected;
         const objections = this.data.objections?.objections || [];
         
+        if (this.debugMode) {
+            console.log('🔍 Objection Debug:', {
+                triggersCount: triggers.length,
+                objectionsCount: objections.length,
+                triggerTexts: triggers.map(t => t.text),
+                objectionTriggers: objections.map(o => o.triggers)
+            });
+        }
+        
         const relevantObjections = objections.filter(obj =>
-            obj.triggers?.some(t => triggers.includes(t))
+            obj.triggers?.some(t => triggers.some(trigger => 
+                trigger.text && trigger.text.toLowerCase().includes(t.toLowerCase())
+            ))
         );
+        
+        if (this.debugMode) {
+            console.log('🎯 Found relevant objections:', relevantObjections.length);
+        }
         
         return relevantObjections.map(obj => ({
             objection: obj.objection,

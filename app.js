@@ -14,7 +14,7 @@ class TeslaCusomerDecoderApp {
         this.analysisCount = 0;
         this.isInitialized = false;
         this.currentCustomerId = null;
-        this.apiBase = 'http://localhost:3000/api';
+        this.apiBase = 'http://localhost:3001/api';
         
         // UI Elements
         this.ui = {
@@ -112,14 +112,23 @@ class TeslaCusomerDecoderApp {
 
         // Trigger selection
         this.ui.triggerGrid.addEventListener('click', (e) => {
-            if (e.target.classList.contains('trigger-btn')) {
-                this.toggleTrigger(e.target);
+            const triggerBtn = e.target.closest('.trigger-btn');
+            if (triggerBtn) {
+                this.toggleTrigger(triggerBtn);
             }
         });
 
         // Real-time trigger count updates
         this.ui.triggerGrid.addEventListener('change', () => {
             this.updateTriggerDisplay();
+        });
+
+        // Category toggle functionality
+        this.ui.triggerGrid.addEventListener('click', (e) => {
+            const toggleBtn = e.target.closest('.category-toggle');
+            if (toggleBtn) {
+                this.toggleCategory(toggleBtn.dataset.category);
+            }
         });
     }
 
@@ -128,6 +137,206 @@ class TeslaCusomerDecoderApp {
     }
 
     populateTriggers() {
+        console.log('🔍 Loading triggers...', this.engine.data.triggers);
+        const triggers = this.engine.data.triggers?.triggers || [];
+        console.log('📊 Found triggers:', triggers.length);
+        
+        if (triggers.length === 0) {
+            this.ui.triggerGrid.innerHTML = '<div class="col-span-full text-center text-tesla-gray-400 py-8">Brak triggerów do wyświetlenia</div>';
+            return;
+        }
+        
+        // Group triggers by category
+        const triggersByCategory = this.groupTriggersByCategory(triggers);
+        console.log('📂 Grouped categories:', Object.keys(triggersByCategory));
+        
+        this.ui.triggerGrid.innerHTML = this.renderTriggerCategories(triggersByCategory);
+    }
+
+    groupTriggersByCategory(triggers) {
+        const categories = {
+            financial: { 
+                name: '💰 Finanse i Koszty', 
+                description: 'Wszelkie kwestie związane z ceną, kosztami, finansowaniem',
+                triggers: [],
+                color: 'border-green-500'
+            },
+            technical: { 
+                name: '⚙️ Techniczne i Praktyczne', 
+                description: 'Zasięg, ładowanie, wydajność, funkcjonalności',
+                triggers: [],
+                color: 'border-blue-500'
+            },
+            competitive: { 
+                name: '🏁 Porównania i Konkurencja', 
+                description: 'Porównania z innymi markami, modelami, technologiami',
+                triggers: [],
+                color: 'border-red-500'
+            },
+            lifestyle: { 
+                name: '🚗 Styl Życia i Status', 
+                description: 'Prestiż, wizerunek, dopasowanie do stylu życia',
+                triggers: [],
+                color: 'border-purple-500'
+            },
+            environmental: { 
+                name: '🌱 Ekologia i Wartości', 
+                description: 'Wpływ na środowisko, misja, przyszłość',
+                triggers: [],
+                color: 'border-green-400'
+            },
+            decision_process: { 
+                name: '🎯 Proces Decyzyjny', 
+                description: 'Timing, badania, gotowość do zakupu',
+                triggers: [],
+                color: 'border-orange-500'
+            },
+            objections: { 
+                name: '🚫 Obiekcje i Wątpliwości', 
+                description: 'Typowe obiekcje i zastrzeżenia klientów',
+                triggers: [],
+                color: 'border-red-400'
+            }
+        };
+
+        // Group triggers by category
+        triggers.forEach(trigger => {
+            const category = trigger.category || 'other';
+            if (categories[category]) {
+                categories[category].triggers.push(trigger);
+            } else {
+                // Handle unknown categories
+                if (!categories.other) {
+                    categories.other = {
+                        name: '🔍 Inne',
+                        description: 'Pozostałe triggery',
+                        triggers: [],
+                        color: 'border-gray-500'
+                    };
+                }
+                categories.other.triggers.push(trigger);
+            }
+        });
+
+        // Remove empty categories
+        Object.keys(categories).forEach(key => {
+            if (categories[key].triggers.length === 0) {
+                delete categories[key];
+            }
+        });
+
+        return categories;
+    }
+
+    renderTriggerCategories(triggersByCategory) {
+        let html = '';
+        
+        Object.entries(triggersByCategory).forEach(([categoryKey, categoryData]) => {
+            html += `
+                <div class="category-section mb-8">
+                    <div class="category-header mb-4 p-4 bg-tesla-gray-800 rounded-lg border-l-4 ${categoryData.color}">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-1">${categoryData.name}</h4>
+                                <p class="text-tesla-gray-400 text-sm">${categoryData.description}</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs bg-tesla-gray-700 px-2 py-1 rounded text-tesla-gray-300">
+                                    ${categoryData.triggers.length} triggerów
+                                </span>
+                                <button class="category-toggle text-tesla-gray-400 hover:text-white transition-colors" data-category="${categoryKey}">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-triggers grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" data-category="${categoryKey}">
+                        ${categoryData.triggers.map(trigger => this.renderTriggerTile(trigger)).join('')}
+                    </div>
+                </div>
+            `;
+        });
+        
+        return html;
+    }
+
+    renderTriggerTile(trigger) {
+        // Użyj nowej struktury szybkich odpowiedzi
+        const quickResponse = trigger.quick_response?.immediate_reply || 
+                             this.getQuickResponseFromRules(trigger) || 
+                             "Przygotowuję odpowiedź na ten trigger";
+        
+        // Dodaj kontekst dla pojedynczych słów
+        const contextualText = this.addContextToTrigger(trigger.text);
+        
+        // Ikona dla kategorii
+        const categoryIcon = this.getCategoryIcon(trigger.category);
+        
+        return `
+            <div class="trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-4 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group"
+                 data-trigger-id="${trigger.id}"
+                 data-trigger-text="${trigger.text}"
+                 title="Kliknij aby zobaczyć pełną szybką odpowiedź"
+                 style="min-height: 140px;">
+                <div class="flex items-start justify-between mb-3">
+                    <span class="text-white text-sm font-medium flex-1 pr-2 leading-relaxed">${contextualText}</span>
+                    <div class="flex items-center space-x-2 flex-shrink-0">
+                        <span class="text-xs bg-tesla-gray-700 px-2 py-1 rounded text-tesla-gray-300">
+                            ${trigger.base_conversion_rate}%
+                        </span>
+                        <i class="fas fa-plus text-tesla-gray-400 transition-transform duration-200 group-hover:rotate-45"></i>
+                    </div>
+                </div>
+                <div class="flex items-center text-xs text-tesla-gray-400 mb-2">
+                    <span class="mr-1">${categoryIcon}</span>
+                    <span>${this.getCategoryLabel(trigger.category)}</span>
+                    ${trigger.intent_level ? `<span class="ml-2 px-1 py-0.5 bg-tesla-gray-700 rounded text-xs">${this.getIntentLabel(trigger.intent_level)}</span>` : ''}
+                </div>
+                <div class="text-xs text-tesla-gray-500 border-t border-tesla-gray-700 pt-2 leading-relaxed">
+                    <div class="flex items-start">
+                        <span class="mr-1 mt-0.5">⚡</span>
+                        <span><strong>Szybka odpowiedź:</strong> "${quickResponse.length > 100 ? quickResponse.substring(0, 100) + '...' : quickResponse}"</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    getQuickResponseFromRules(trigger) {
+        const rule = this.engine.data.rules?.find(r => 
+            r.Triggers?.some(t => t.toLowerCase().includes(trigger.text.toLowerCase()))
+        );
+        return rule?.Skrypt || null;
+    }
+    
+    getCategoryIcon(category) {
+        const icons = {
+            'financial': '💰',
+            'technical': '⚙️',
+            'competitive': '🏁',
+            'lifestyle': '🚗',
+            'environmental': '🌱',
+            'decision_process': '🎯',
+            'objections': '🚫'
+        };
+        return icons[category] || '📋';
+    }
+    
+    getIntentLabel(intentLevel) {
+        const labels = {
+            'low': 'Niski',
+            'low_medium': 'Niski-Średni',
+            'medium': 'Średni',
+            'medium_high': 'Średni-Wysoki',
+            'high': 'Wysoki',
+            'very_high': 'Bardzo Wysoki',
+            'maximum': 'Maksymalny'
+        };
+        return labels[intentLevel] || intentLevel;
+    }
+
+    populateTriggers_OLD() {
         const triggers = this.engine.data.triggers?.triggers || [];
         
         this.ui.triggerGrid.innerHTML = triggers.map(trigger => {
@@ -164,10 +373,17 @@ class TeslaCusomerDecoderApp {
     }
 
     toggleTrigger(element) {
+        // Prevent double-clicking/rapid clicking
+        if (element.dataset.processing === 'true') return;
+        element.dataset.processing = 'true';
+        
         const triggerId = element.dataset.triggerId;
         const trigger = this.engine.data.triggers?.triggers?.find(t => t.id === triggerId);
         
-        if (!trigger) return;
+        if (!trigger) {
+            element.dataset.processing = 'false';
+            return;
+        }
 
         const icon = element.querySelector('i');
         
@@ -176,16 +392,25 @@ class TeslaCusomerDecoderApp {
             this.selectedTriggers.delete(trigger.text);
             element.classList.remove('border-tesla-red', 'bg-tesla-red', 'bg-opacity-20');
             element.classList.add('border-tesla-gray-700', 'bg-tesla-gray-800');
-            icon.className = 'fas fa-plus text-tesla-gray-400 transition-transform duration-200';
+            if (icon) {
+                icon.className = 'fas fa-plus text-tesla-gray-400 transition-transform duration-200';
+            }
         } else {
             // Add trigger
             this.selectedTriggers.add(trigger.text);
             element.classList.remove('border-tesla-gray-700', 'bg-tesla-gray-800');
             element.classList.add('border-tesla-red', 'bg-tesla-red', 'bg-opacity-20');
-            icon.className = 'fas fa-check text-tesla-red transition-transform duration-200';
+            if (icon) {
+                icon.className = 'fas fa-check text-tesla-red transition-transform duration-200';
+            }
         }
 
         this.updateTriggerDisplay();
+        
+        // Re-enable after a short delay
+        setTimeout(() => {
+            element.dataset.processing = 'false';
+        }, 200);
     }
 
     updateTriggerDisplay() {
@@ -201,6 +426,26 @@ class TeslaCusomerDecoderApp {
 
         // Enable/disable analysis button
         this.ui.runAnalysis.disabled = count === 0;
+    }
+
+    toggleCategory(categoryKey) {
+        const categorySection = document.querySelector(`.category-triggers[data-category="${categoryKey}"]`);
+        const toggleButton = document.querySelector(`.category-toggle[data-category="${categoryKey}"] i`);
+        
+        if (!categorySection || !toggleButton) return;
+        
+        const isCollapsed = categorySection.style.display === 'none';
+        
+        if (isCollapsed) {
+            // Expand category
+            categorySection.style.display = 'grid';
+            toggleButton.className = 'fas fa-chevron-down';
+            categorySection.style.animation = 'fadeIn 0.3s ease-out';
+        } else {
+            // Collapse category
+            categorySection.style.display = 'none';
+            toggleButton.className = 'fas fa-chevron-right';
+        }
     }
 
     showAnalysisInterface() {
@@ -225,6 +470,7 @@ class TeslaCusomerDecoderApp {
                 selectedTriggers: Array.from(this.selectedTriggers),
                 demographics: {
                     age: document.getElementById('ageRange').value,
+                    housingType: document.getElementById('housingType').value,
                     hasPV: document.getElementById('hasPV').value,
                     region: document.getElementById('region').value
                 }
@@ -312,6 +558,7 @@ class TeslaCusomerDecoderApp {
         this.populateLanguageTab(analysis);
         this.populateObjectionsTab(analysis);
         this.populateActionsTab(analysis);
+        this.populateExplainabilityTab(analysis);
 
         // Show first tab
         this.switchTab('strategy');
@@ -579,6 +826,193 @@ class TeslaCusomerDecoderApp {
         `;
     }
 
+    populateExplainabilityTab(analysis) {
+        // Feature Contributions Waterfall Chart
+        const contributions = analysis.scores.feature_contributions || {};
+        const marketFactors = analysis.scores.market_factors || {};
+        const compliance = analysis.compliance || {};
+
+        // Sort contributions by impact
+        const sortedContributions = Object.entries(contributions)
+            .sort(([,a], [,b]) => Math.abs(b.contribution) - Math.abs(a.contribution));
+
+        document.getElementById('featureContributions').innerHTML = `
+            <div class="space-y-3">
+                ${sortedContributions.map(([feature, data]) => {
+                    const isPositive = data.contribution > 0;
+                    const barWidth = Math.abs(data.contribution);
+                    const color = isPositive ? 'bg-green-500' : 'bg-red-500';
+                    
+                    return `
+                        <div class="bg-tesla-gray-800 rounded p-3">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-white">${this.getFeatureLabel(feature)}</span>
+                                <span class="text-xs ${isPositive ? 'text-green-400' : 'text-red-400'}">
+                                    ${isPositive ? '+' : ''}${data.contribution.toFixed(1)}pp
+                                </span>
+                            </div>
+                            <div class="w-full bg-tesla-gray-700 rounded-full h-2">
+                                <div class="${color} h-2 rounded-full transition-all duration-500" 
+                                     style="width: ${Math.min(barWidth * 2, 100)}%"></div>
+                            </div>
+                            <div class="text-xs text-tesla-gray-400 mt-1">
+                                Wartość: ${(data.value * 100).toFixed(1)}% × Waga: ${(data.coefficient * 100).toFixed(1)}%
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+        `;
+
+        // Market Factors 2025
+        document.getElementById('marketFactors').innerHTML = `
+            ${marketFactors.charger_density ? `
+                <div class="bg-tesla-gray-800 rounded-lg p-4">
+                    <h6 class="text-tesla-red text-sm font-semibold mb-2">⚡ Infrastruktura Ładowania</h6>
+                    <div class="text-sm text-tesla-gray-300">
+                        <div>Gęstość: <span class="text-white font-semibold">${marketFactors.charger_density.density} pkt/100km²</span></div>
+                        <div>Modifikator: <span class="${marketFactors.charger_density.anxiety_modifier > 0 ? 'text-green-400' : 'text-red-400'}">
+                            ${marketFactors.charger_density.anxiety_modifier > 0 ? '+' : ''}${marketFactors.charger_density.anxiety_modifier}pp
+                        </span></div>
+                    </div>
+                </div>
+            ` : ''}
+            
+            ${marketFactors.competitor_gap ? `
+                <div class="bg-tesla-gray-800 rounded-lg p-4">
+                    <h6 class="text-tesla-red text-sm font-semibold mb-2">🏁 Konkurencja Cenowa</h6>
+                    <div class="text-sm text-tesla-gray-300">
+                        <div>Najgorszy gap: <span class="text-white font-semibold">${marketFactors.competitor_gap.worst_gap}%</span></div>
+                        ${marketFactors.competitor_gap.main_competitor ? `
+                            <div>vs ${marketFactors.competitor_gap.main_competitor.name}: 
+                                <span class="text-tesla-red">${marketFactors.competitor_gap.main_competitor.price.toLocaleString()} zł</span>
+                            </div>
+                        ` : ''}
+                        <div>Wpływ na score: <span class="text-red-400">${marketFactors.competitor_gap.price_pressure_modifier}pp</span></div>
+                    </div>
+                </div>
+            ` : ''}
+            
+            ${marketFactors.financing ? `
+                <div class="bg-tesla-gray-800 rounded-lg p-4">
+                    <h6 class="text-tesla-red text-sm font-semibold mb-2">💰 Zdolność Kredytowa</h6>
+                    <div class="text-sm text-tesla-gray-300">
+                        <div>Rata: <span class="text-white font-semibold">${marketFactors.financing.monthly_payment} zł</span></div>
+                        <div>Szacowany dochód: <span class="text-white">${marketFactors.financing.estimated_income} zł</span></div>
+                        <div>Ratio: <span class="${marketFactors.financing.is_affordable ? 'text-green-400' : 'text-red-400'}">
+                            ${(marketFactors.financing.affordability_ratio * 100).toFixed(1)}%
+                        </span></div>
+                        <div>Status: <span class="${marketFactors.financing.is_affordable ? 'text-green-400' : 'text-red-400'}">
+                            ${marketFactors.financing.is_affordable ? '✓ Przystępne' : '✗ Za drogie'}
+                        </span></div>
+                    </div>
+                </div>
+            ` : ''}
+            
+            ${marketFactors.subsidy_availability ? `
+                <div class="bg-tesla-gray-800 rounded-lg p-4">
+                    <h6 class="text-tesla-red text-sm font-semibold mb-2">🎁 NaszEauto Dostępność</h6>
+                    <div class="text-sm text-tesla-gray-300">
+                        <div>Środki dostępne: <span class="text-green-400">${(marketFactors.subsidy_availability.expected_availability * 100).toFixed(0)}%</span></div>
+                        <div>Można użyć "urgency": <span class="${marketFactors.subsidy_availability.can_use_scarcity ? 'text-green-400' : 'text-red-400'}">
+                            ${marketFactors.subsidy_availability.can_use_scarcity ? '✓ Tak' : '✗ Nie'}
+                        </span></div>
+                    </div>
+                </div>
+            ` : ''}
+        `;
+
+        // Compliance Info
+        const riskColors = {
+            'low': 'text-green-400',
+            'medium': 'text-yellow-400', 
+            'high': 'text-red-400'
+        };
+
+        document.getElementById('complianceInfo').innerHTML = `
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h6 class="text-tesla-red font-semibold mb-3">🚫 Zabronione Taktyki</h6>
+                    <div class="space-y-2">
+                        ${compliance.blocked_tactics && compliance.blocked_tactics.length > 0 ? 
+                            compliance.blocked_tactics.map(tactic => `
+                                <div class="bg-red-600 bg-opacity-20 px-3 py-1 rounded text-red-400 text-sm">
+                                    ${this.getTacticLabel(tactic)}
+                                </div>
+                            `).join('') : 
+                            '<div class="text-green-400 text-sm">✓ Brak ograniczeń</div>'
+                        }
+                    </div>
+                </div>
+                
+                <div>
+                    <h6 class="text-tesla-red font-semibold mb-3">✅ Dozwolone Podejścia</h6>
+                    <div class="space-y-2">
+                        ${compliance.allowed_tactics && compliance.allowed_tactics.length > 0 ? 
+                            compliance.allowed_tactics.slice(0, 5).map(tactic => `
+                                <div class="bg-green-600 bg-opacity-20 px-3 py-1 rounded text-green-400 text-sm">
+                                    ${this.getTacticLabel(tactic)}
+                                </div>
+                            `).join('') : 
+                            '<div class="text-tesla-gray-400 text-sm">Brak danych</div>'
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4 p-3 rounded-lg ${compliance.risk_level === 'high' ? 'bg-red-600' : compliance.risk_level === 'medium' ? 'bg-yellow-600' : 'bg-green-600'} bg-opacity-20">
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm font-semibold">Poziom ryzyka UOKiK:</span>
+                    <span class="${riskColors[compliance.risk_level] || 'text-gray-400'} font-bold">
+                        ${compliance.risk_level?.toUpperCase() || 'UNKNOWN'}
+                    </span>
+                </div>
+                ${compliance.audit_log && compliance.audit_log.length > 0 ? `
+                    <div class="mt-2 text-xs text-tesla-gray-400">
+                        Ostatnia reguła: ${compliance.audit_log[compliance.audit_log.length - 1].reason}
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    }
+
+    getFeatureLabel(feature) {
+        const labels = {
+            'trigger_strength': '🎯 Siła Triggerów',
+            'personality_alignment': '🧠 Dopasowanie Osobowości',
+            'charger_density': '⚡ Gęstość Ładowarek',
+            'financing_affordability': '💰 Zdolność Kredytowa',
+            'competitor_price_pressure': '🏁 Presja Konkurencji',
+            'tone_compatibility': '🗣️ Dopasowanie Tonu',
+            'subsidy_availability': '🎁 Dostępność Dotacji',
+            'housing_charging_synergy': '🏠 Synergia Ładowania',
+            'price_sensitivity_context': '💸 Wrażliwość Cenowa'
+        };
+        return labels[feature] || feature.replace('_', ' ');
+    }
+
+    getTacticLabel(tactic) {
+        const labels = {
+            'scarcity': '⏰ Sztuczna rzadkość',
+            'countdown': '⏰ Odliczanie',
+            'limited_offer': '🔒 Ograniczona oferta',
+            'emotional_appeal': '💔 Manipulacja emocjonalna',
+            'social_pressure': '👥 Presja społeczna',
+            'premium_justification_oversell': '💎 Overselling premium',
+            'payment_focus': '💳 Nacisk na raty',
+            'extended_terms': '📅 Wydłużone terminy',
+            'education': '📚 Edukacja',
+            'facts': '📊 Fakty i dane',
+            'testimonials': '⭐ Rekomendacje',
+            'technical_demo': '🔧 Demo techniczne',
+            'tco_calculation': '💹 Kalkulacja TCO',
+            'test_drive_push': '🚗 Zachęta do jazdy testowej',
+            'closing_questions': '❓ Pytania zamykające',
+            'subsidy_urgency': '🎁 Urgency dotacji'
+        };
+        return labels[tactic] || tactic.replace('_', ' ');
+    }
+
     switchTab(tabName) {
         // Update tab buttons
         document.querySelectorAll('.tab-button').forEach(btn => {
@@ -609,6 +1043,7 @@ class TeslaCusomerDecoderApp {
         // Reset form
         this.ui.toneSelect.value = 'entuzjastyczny';
         document.getElementById('ageRange').value = '';
+        document.getElementById('housingType').value = '';
         document.getElementById('hasPV').value = '';
         document.getElementById('region').value = '';
 
