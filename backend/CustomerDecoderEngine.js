@@ -16,6 +16,184 @@ const TriggerDetectionEngine = require('../services/trigger-detection-service/en
 const ScoringAggregationEngine = require('../services/scoring-aggregation-service/engine.js');
 const RecommendationEngine = require('../services/recommendation-engine/engine.js');
 
+// Import Customer Segmentation Engine
+class CustomerSegmentationEngine {
+    constructor() {
+        this.segmentDefinitions = {
+            eco_family: {
+                criteria: {
+                    hasChildren: ['yes_young', 'yes_school'],
+                    hasPV: ['true', 'planned'],
+                    housingType: ['dom'],
+                    age: ['26-35', '36-45']
+                },
+                priority_score: 95,
+                conversion_multiplier: 1.4
+            },
+            tech_professional: {
+                criteria: {
+                    age: ['26-35', '36-45'],
+                    housingType: ['mieszkanie', 'mieszkanie_ulica'],
+                    teslaExperience: ['researching', 'test_driven'],
+                    carRole: ['primary', 'replacement']
+                },
+                priority_score: 88,
+                conversion_multiplier: 1.2
+            },
+            senior_comfort: {
+                criteria: {
+                    age: ['56-65', '65+'],
+                    housingType: ['dom'],
+                    relationshipStatus: ['married'],
+                    teslaExperience: ['first_time', 'researching']
+                },
+                priority_score: 92,
+                conversion_multiplier: 1.35
+            },
+            business_roi: {
+                criteria: {
+                    carRole: ['business', 'fleet'],
+                    age: ['36-45', '46-55'],
+                    relationshipStatus: ['married', 'single']
+                },
+                priority_score: 85,
+                conversion_multiplier: 1.15
+            },
+            young_urban: {
+                criteria: {
+                    age: ['18-25', '26-35'],
+                    housingType: ['mieszkanie', 'mieszkanie_ulica'],
+                    relationshipStatus: ['single', 'relationship'],
+                    hasChildren: ['none']
+                },
+                priority_score: 75,
+                conversion_multiplier: 1.1
+            }
+        };
+        this.segmentStrategies = this.initializeSegmentStrategies();
+    }
+
+    identifyCustomerSegment(demographics) {
+        const scores = {};
+        
+        for (const [segmentName, definition] of Object.entries(this.segmentDefinitions)) {
+            scores[segmentName] = this.calculateSegmentMatch(demographics, definition.criteria);
+        }
+
+        const bestMatch = Object.entries(scores)
+            .filter(([_, score]) => score > 0.6)
+            .sort(([,a], [,b]) => b - a)[0];
+
+        return bestMatch ? {
+            segment: bestMatch[0],
+            confidence: bestMatch[1],
+            priority_score: this.segmentDefinitions[bestMatch[0]].priority_score,
+            conversion_multiplier: this.segmentDefinitions[bestMatch[0]].conversion_multiplier
+        } : {
+            segment: 'general',
+            confidence: 0,
+            priority_score: 50,
+            conversion_multiplier: 1.0
+        };
+    }
+
+    calculateSegmentMatch(demographics, criteria) {
+        let matches = 0;
+        let totalCriteria = 0;
+
+        for (const [key, expectedValues] of Object.entries(criteria)) {
+            totalCriteria++;
+            if (demographics[key] && expectedValues.includes(demographics[key])) {
+                matches++;
+            }
+        }
+
+        return totalCriteria > 0 ? matches / totalCriteria : 0;
+    }
+
+    initializeSegmentStrategies() {
+        return {
+            eco_family: {
+                primaryMessages: {
+                    D: "Najlepsza inwestycja w przyszłość rodziny - Tesla + PV = maksymalne oszczędności i bezpieczeństwo",
+                    I: "Wyobraź sobie - dzieci bezpieczne, planeta czysta, sąsiedzi zazdroszczą! Dołącz do rodzin Tesla!",
+                    S: "Spokojnie i bezpiecznie - Tesla z panelami PV to gwarancja oszczędności i ochrony dla rodziny",
+                    C: "Analiza ROI: Tesla + PV = 35% oszczędności rocznie + 5-gwiazdkowe bezpieczeństwo. Liczby nie kłamią."
+                },
+                keyBenefits: [
+                    "Synergia PV + Tesla = darmowa energia",
+                    "5-gwiazdkowe bezpieczeństwo dla dzieci",
+                    "Ekologiczny legacy dla przyszłych pokoleń",
+                    "ROI 15-20% rocznie z kombinacji PV + Tesla"
+                ],
+                communicationStyle: "family_focused",
+                urgencyLevel: "medium"
+            },
+            tech_professional: {
+                primaryMessages: {
+                    D: "Tesla Model S Plaid - najszybszy sedan świata. 0-100 w 2.1s. Chcesz być pierwszy w Polsce?",
+                    I: "Wyobraź sobie reakcje na parkingu biurowca! Tesla to ultimate status symbol dla tech profesjonalistów",
+                    S: "Tesla to spokój ducha - najnowsza technologia, ale niezawodna. Autopilot zadba o Ciebie w korkach",
+                    C: "Specs nie do pobicia: 628 KM, Autopilot 4.0, OTA updates. Żadna konkurencja nie ma takich parametrów"
+                },
+                keyBenefits: [
+                    "Najnowsza technologia na kółkach",
+                    "0-100 km/h szybciej niż konkurencja",
+                    "OTA updates - samochód się ulepsza",
+                    "Autopilot - przyszłość już dziś"
+                ],
+                communicationStyle: "tech_focused",
+                urgencyLevel: "high"
+            },
+            general: {
+                primaryMessages: {
+                    D: "Tesla - lider innowacji i performance. Najlepsza inwestycja w mobilność przyszłości",
+                    I: "Dołącz do rewolucji Tesla! Miliony zadowolonych właścicieli na całym świecie",
+                    S: "Tesla - niezawodność i komfort. Spokojnie przejdź na elektryczną przyszłość",
+                    C: "Tesla - najwyższe oceny bezpieczeństwa, najlepsza technologia, optymalne TCO"
+                },
+                keyBenefits: [
+                    "Najnowsza technologia",
+                    "Najwyższe bezpieczeństwo",
+                    "Niskie koszty eksploatacji",
+                    "Globalna sieć Supercharger"
+                ],
+                communicationStyle: "balanced",
+                urgencyLevel: "medium"
+            }
+        };
+    }
+
+    generateSegmentStrategy(segment, demographics, triggers, personality) {
+        const strategy = this.segmentStrategies[segment] || this.segmentStrategies.general;
+        const personalizedStrategy = { ...strategy };
+        
+        personalizedStrategy.selectedMessage = strategy.primaryMessages[personality] || strategy.primaryMessages.S;
+        
+        // Dostosuj styl komunikacji na podstawie DISC
+        switch(personality) {
+            case 'D':
+                personalizedStrategy.communicationTone = "direct_results_focused";
+                personalizedStrategy.urgencyLevel = "high";
+                break;
+            case 'I':
+                personalizedStrategy.communicationTone = "enthusiastic_social";
+                personalizedStrategy.urgencyLevel = "medium";
+                break;
+            case 'S':
+                personalizedStrategy.communicationTone = "supportive_patient";
+                personalizedStrategy.urgencyLevel = "low";
+                break;
+            case 'C':
+                personalizedStrategy.communicationTone = "analytical_detailed";
+                personalizedStrategy.urgencyLevel = "low";
+                break;
+        }
+        
+        return personalizedStrategy;
+    }
+}
+
 class CustomerDecoderEngine {
     constructor() {
         this.data = {};
@@ -56,6 +234,7 @@ class CustomerDecoderEngine {
         this.triggerDetectionEngine = new TriggerDetectionEngine();
         this.scoringAggregationEngine = new ScoringAggregationEngine();
         this.recommendationEngine = new RecommendationEngine();
+        this.segmentationEngine = new CustomerSegmentationEngine();
         
         // Conversion history for ML-style learning
         this.conversionHistory = [];
@@ -159,13 +338,24 @@ class CustomerDecoderEngine {
             const coreAnalysis = this.customerAnalysisEngine.analyze(cleanInputData);
 
             // Enhanced analysis with fuzzy logic and fallback
+            // Map triggers to personality resonance scores
+            const personalityTraits = this.mapTriggersToPersonalityTraits(cleanInputData.selectedTriggers);
             const fuzzyPersonalityAnalysis = this.fuzzyEngine.analyzeFuzzyPersonality({
-                personality_traits: cleanInputData.selectedTriggers // Pass triggers as personality traits
+                personality_traits: personalityTraits
             });
             
             // Perform trigger analysis using the new microservice
             const triggerAnalysis = this.triggerDetectionEngine.analyze(cleanInputData);
             const temporalAnalysis = this.analyzeTemporalContext(inputData);
+
+            // Perform customer segmentation analysis
+            const segmentAnalysis = this.segmentationEngine.identifyCustomerSegment(coreAnalysis.demographics.data || {});
+            const segmentStrategy = this.segmentationEngine.generateSegmentStrategy(
+                segmentAnalysis.segment,
+                coreAnalysis.demographics.data || {},
+                triggerAnalysis,
+                coreAnalysis.personality.dominant_type || 'S'
+            );
 
             const analysis = {
                 timestamp: new Date().toISOString(),
@@ -176,6 +366,10 @@ class CustomerDecoderEngine {
                 tone: coreAnalysis.tone,
                 demographics: coreAnalysis.demographics,
                 temporal_analysis: temporalAnalysis,
+                segment: {
+                    analysis: segmentAnalysis,
+                    strategy: segmentStrategy
+                },
                 scores: {},
                 recommendations: {},
                 strategy: {},
@@ -387,6 +581,66 @@ class CustomerDecoderEngine {
         return analysis;
     }
     
+    /**
+     * Map triggers to personality traits for fuzzy analysis
+     */
+    mapTriggersToPersonalityTraits(selectedTriggers) {
+        const personalityTraits = [];
+        
+        if (!selectedTriggers || !Array.isArray(selectedTriggers)) {
+            return personalityTraits;
+        }
+        
+        // Load trigger_list.json for mapping
+        const triggerList = this.data.trigger_list || { triggers: [] };
+        
+        selectedTriggers.forEach(triggerText => {
+            // Find trigger in trigger_list.json by name
+            const trigger = triggerList.triggers.find(t => t.name === triggerText);
+            if (trigger) {
+                // Map trigger categories to DISC personality traits
+                const categoryToDiscMapping = {
+                    'financial': ['C', 'S'], // Cost-conscious, Security-focused
+                    'values': ['I', 'S'], // Social influence, Stability
+                    'technical': ['C', 'D'], // Data-focused, Results-oriented
+                    'practical': ['C', 'S'], // Analytical, Security
+                    'business': ['D', 'C'], // Dominance, Data-focused
+                    'competitive': ['D', 'C'], // Dominance, Analytical
+                    'safety': ['S', 'C'], // Security, Careful analysis
+                    'social': ['I', 'D'], // Influence, Status
+                    'behavioral': ['D', 'C'], // Decisive, Research-oriented
+                    'psychological': ['S', 'I'], // Stability, Influence
+                    'timing': ['C', 'S'] // Careful planning, Security
+                };
+                
+                const discTypes = categoryToDiscMapping[trigger.category] || ['S'];
+                
+                // Map DISC types to abstract trait names
+                const traitMapping = {
+                    'D': 'dominance',
+                    'I': 'social_proof', 
+                    'S': 'security',
+                    'C': 'data_focus'
+                };
+                
+                discTypes.forEach(discType => {
+                    const traitName = traitMapping[discType];
+                    if (traitName) {
+                        // Add trait based on base_conversion strength
+                        const strength = trigger.base_conversion || 50;
+                        const repetitions = Math.ceil(strength / 30); // 30-60 = 1-2 times, 60+ = 2-3 times
+                        for (let i = 0; i < repetitions; i++) {
+                            personalityTraits.push(traitName);
+                        }
+                    }
+                });
+            }
+        });
+        
+        console.log('🎯 Mapped triggers to personality traits:', personalityTraits);
+        return personalityTraits;
+    }
+
     /**
      * Analyze temporal context of triggers
      */

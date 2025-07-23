@@ -1,6 +1,14 @@
 {
-  "D": { "dominance": 0.4, "results_focus": 0.3, "time_pressure": 0.3 },
-  "I": { "social_proof": 0.4, "enthusiasm": 0.3, "relationship": 0.3 },
-  "S": { "security": 0.4, "stability": 0.3, "support": 0.3 },
-  "C": { "data_focus": 0.4, "precision": 0.3, "analysis": 0.3 }
+  "dominance": { "D": 0.4, "I": 0.1, "S": 0.1, "C": 0.2 },
+  "results_focus": { "D": 0.3, "I": 0.1, "S": 0.1, "C": 0.2 },
+  "time_pressure": { "D": 0.3, "I": 0.2, "S": 0.1, "C": 0.1 },
+  "social_proof": { "D": 0.1, "I": 0.4, "S": 0.2, "C": 0.1 },
+  "enthusiasm": { "D": 0.2, "I": 0.3, "S": 0.1, "C": 0.1 },
+  "relationship": { "D": 0.1, "I": 0.3, "S": 0.3, "C": 0.1 },
+  "security": { "D": 0.1, "I": 0.1, "S": 0.4, "C": 0.2 },
+  "stability": { "D": 0.1, "I": 0.1, "S": 0.3, "C": 0.2 },
+  "support": { "D": 0.1, "I": 0.2, "S": 0.3, "C": 0.1 },
+  "data_focus": { "D": 0.2, "I": 0.1, "S": 0.2, "C": 0.4 },
+  "precision": { "D": 0.1, "I": 0.1, "S": 0.2, "C": 0.3 },
+  "analysis": { "D": 0.2, "I": 0.1, "S": 0.1, "C": 0.3 }
 }

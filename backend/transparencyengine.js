@@ -37,25 +37,44 @@ class TransparencyEngine {
      * Generate human-readable decision summary
      */
     generateDecisionSummary(analysisResult) {
+        console.log('DEBUG analysisResult keys:', Object.keys(analysisResult));
+        console.log('DEBUG analysisResult.fuzzy_personality:', analysisResult.fuzzy_personality);
+        console.log('DEBUG analysisResult.analysis exists:', !!analysisResult.analysis);
+        
         const personality = analysisResult.fuzzy_personality || analysisResult.personality;
         const conversionProb = analysisResult.conversion_probability || 50;
         
         let summary = "";
         
         if (personality) {
-            if (personality.fuzzy_scores) {
-                const dominant = personality.dominant_type;
-                const confidence = personality.confidence;
+            if (personality.fuzzy_scores || personality.scores) {
+                const dominant = personality.dominant_type || personality.dominant_personality || 'nieznany';
+                const confidence = personality.confidence || 0;
                 
-                summary += `Wykryto profil ${dominant} z pewnością ${confidence}%. `;
-                
-                if (personality.is_hybrid) {
-                    summary += `Klient wykazuje cechy mieszane - ${personality.personality_blend}. `;
-                } else if (personality.is_pure_type) {
-                    summary += `Wyraźny profil ${dominant} - rekomendacje będą bardzo precyzyjne. `;
+                // Skip if dominant is Unknown or confidence is 0
+                if (dominant === 'Unknown' || confidence === 0) {
+                    // Fall back to dominant_personality from fuzzy analysis
+                    const dominantPersonality = personality.dominant_personality;
+                    console.log('DEBUG dominantPersonality:', dominantPersonality);
+                    const profileName = dominantPersonality && dominantPersonality !== 'Unknown' ? dominantPersonality : 'nieznany';
+                    console.log('DEBUG profileName:', profileName);
+                    summary += `Wykryto profil ${profileName}. `;
+                } else {
+                    summary += `Wykryto profil ${dominant} z pewnością ${confidence}%. `;
+                    
+                    if (personality.is_hybrid) {
+                        summary += `Klient wykazuje cechy mieszane - ${personality.personality_blend}. `;
+                    } else if (personality.is_pure_type) {
+                        summary += `Wyraźny profil ${dominant} - rekomendacje będą bardzo precyzyjne. `;
+                    }
                 }
             } else {
-                summary += `Wykryto profil ${personality.type || personality}. `;
+                // No fuzzy scores available, fall back to dominant_personality
+                const dominantPersonality = personality.dominant_personality;
+                console.log('DEBUG (else branch) dominantPersonality:', dominantPersonality);
+                const profileName = dominantPersonality && dominantPersonality !== 'Unknown' ? dominantPersonality : 'nieznany';
+                console.log('DEBUG (else branch) profileName:', profileName);
+                summary += `Wykryto profil ${profileName}. `;
             }
         }
         
@@ -283,7 +302,7 @@ class TransparencyEngine {
     
     getTriggerPersonalityMatch(trigger, analysisResult) {
         const personality = analysisResult.fuzzy_personality || analysisResult.personality;
-        return personality.dominant_type || personality.type || 'nieznany';
+        return personality.detected?.DISC || personality.dominant_type || personality.dominant_personality || personality.type || 'nieznany';
     }
     
     detectConflictingSignals(inputData, analysisResult) {

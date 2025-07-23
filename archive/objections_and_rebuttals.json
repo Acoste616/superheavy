@@ -1,0 +1,75 @@
+{
+  "description": "Baza najczęstszych obiekcji klientów wraz z wielopoziomowymi strategiami odpowiedzi (rebuttals).",
+  "objections": [
+    {
+      "id": "OBJ_PRICE",
+      "objection": "Cena jest za wysoka / To jest za drogie.",
+      "triggers": ["cena", "drogo", "koszt", "budżet"],
+      "rebuttals": [
+        {
+          "level": 1,
+          "pressure": "Niska",
+          "technique": "Framing (TCO)",
+          "script": "Rozumiem, że cena początkowa może wydawać się wysoka. Jednak proponuję spojrzeć na to jako na inwestycję w niższe koszty eksploatacji - dzięki oszczędnościom na paliwie i serwisie, ten samochód w perspektywie 5 lat może okazać się tańszy niż jego spalinowy odpowiednik.",
+          "ethical_warning": "Brak. Technika oparta na edukacji finansowej."
+        },
+        {
+          "level": 2,
+          "pressure": "Średnia",
+          "technique": "Dowód Społeczny + Pilność (oparta na faktach)",
+          "script": "Wielu naszych klientów miało podobne odczucia, ale przekonali się po kalkulacji TCO. Warto też pamiętać, że program dopłat 'NaszEauto' ma ograniczony budżet i może zakończyć się wcześniej, co wpłynie na finalny koszt.",
+          "ethical_warning": "Używaj ostrożnie, aby nie tworzyć fałszywej presji. Informuj o realnych terminach."
+        },
+        {
+          "level": 3,
+          "pressure": "Wysoka",
+          "technique": "Efekt Kontrastu + Scarcity",
+          "script": "W porównaniu do modeli premium, które nie oferują takich osiągów, nasza cena jest bardzo konkurencyjna. Dodatkowo, mamy informację o planowanej podwyżce cen od przyszłego kwartału, więc obecna oferta jest naprawdę wyjątkowa.",
+          "ethical_warning": "Ryzyko manipulacji. Używaj tylko, jeśli informacje o podwyżkach są w 100% potwierdzone."
+        }
+      ]
+    },
+    {
+      "id": "OBJ_RANGE",
+      "objection": "Boję się o zasięg, zwłaszcza zimą.",
+      "triggers": ["zasięg", "zima", "trasa"],
+      "rebuttals": [
+        {
+          "level": 1,
+          "pressure": "Niska",
+          "technique": "Edukacja i Zbijanie Obiekcji Faktami",
+          "script": "To bardzo częsta obawa. Warto wiedzieć, że realny zasięg tego modelu zimą to wciąż ponad 350 km, a 95% codziennych podróży Polaków to dystanse poniżej 50 km. Czy Pana/Pani codzienne trasy są dłuższe?",
+          "ethical_warning": "Brak. Technika oparta na rzetelnych danych."
+        },
+        {
+          "level": 2,
+          "pressure": "Średnia",
+          "technique": "Przedstawienie Rozwiązania + Dowód Społeczny",
+          "script": "Dodatkowo, samochód jest wyposażony w pompę ciepła, która minimalizuje straty energii zimą. Nasi klienci z podobnymi obawami po pierwszej zimie przyznają, że lęk był nieuzasadniony, a planowanie trasy z nawigacją uwzględniającą ładowarki jest bardzo proste.",
+          "ethical_warning": "Brak."
+        }
+      ]
+    },
+    {
+      "id": "OBJ_CHARGING",
+      "objection": "Nie mam gdzie ładować / Ładowanie jest kłopotliwe.",
+      "triggers": ["ładowanie", "blok", "infrastruktura"],
+      "rebuttals": [
+        {
+          "level": 1,
+          "pressure": "Niska",
+          "technique": "Edukacja i Segmentacja Rozwiązania",
+          "script": "Rozumiem, to kluczowa kwestia. Jeśli ma Pan/Pani dom, instalacja wallboxa rozwiązuje problem na zawsze, ładując auto jak telefon w nocy. Jeśli mieszka Pan/Pani w bloku, pokażę Panu/Pani mapę publicznych ładowarek w okolicy - jest ich więcej niż się wydaje.",
+          "ethical_warning": "Brak."
+        },
+        {
+          "level": 2,
+          "pressure": "Średnia",
+          "technique": "Przedstawienie Rozwiązania (Partnerstwo)",
+          "script": "Co więcej, współpracujemy z firmami, które pomagają w uzyskaniu zgody wspólnoty mieszkaniowej i profesjonalnie montują ładowarki w garażach podziemnych. Możemy umówić Pana/Panią na bezpłatną konsultację.",
+          "ethical_warning": "Brak."
+        }
+      ]
+    }
+  ]
+}

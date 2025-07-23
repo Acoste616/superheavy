@@ -1,0 +1,41 @@
+{
+  "description": "Zbiór fraz i słów kluczowych zoptymalizowanych pod kątem różnych profili klientów (DISC) w celu zwiększenia skuteczności perswazji.",
+  "profiles": {
+    "Dominant": {
+      "keywords": ["efektywność", "wynik", "przewaga", "lider", "innowacja", "moc", "kontrola"],
+      "phrases": [
+        "To rozwiązanie zapewni Panu/Pani przewagę konkurencyjną i maksymalny zwrot z inwestycji.",
+        "Skupmy się na konkretnych wynikach: ten model gwarantuje najniższy koszt TCO w swojej klasie.",
+        "Dzięki temu rozwiązaniu zdominuje Pan/Pani rynek i zostawi konkurencję w tyle.",
+        "To jest narzędzie dla liderów, którzy cenią sobie efektywność i kontrolę nad procesem."
+      ]
+    },
+    "Influence": {
+      "keywords": ["niesamowite", "rewolucja", "społeczność", "razem", "wyjątkowy", "inspiracja", "przyszłość"],
+      "phrases": [
+        "Proszę sobie wyobrazić, jakie wrażenie zrobi to na Pana/Pani znajomych i partnerach biznesowych!",
+        "Dołączając do nas, staje się Pan/Pani częścią ekskluzywnej społeczności innowatorów.",
+        "To nie tylko produkt, to inspiracja i nowy styl życia, który pokocha Pan/Pani od pierwszej chwili.",
+        "Razem możemy zrewolucjonizować sposób, w jaki Pan/Pani prowadzi biznes."
+      ]
+    },
+    "Steady": {
+      "keywords": ["bezpieczeństwo", "gwarancja", "stabilność", "wsparcie", "rodzina", "zaufanie", "spokój"],
+      "phrases": [
+        "Naszym priorytetem jest zapewnienie Panu/Pani pełnego bezpieczeństwa i spokoju na lata.",
+        "Gwarantujemy stabilność tego rozwiązania i pełne wsparcie naszego zespołu na każdym etapie.",
+        "To sprawdzona i niezawodna technologia, której zaufały już tysiące rodzin w Polsce.",
+        "Może Pan/Pani na nas polegać, jesteśmy tu, aby pomóc i zapewnić najlepszą opiekę."
+      ]
+    },
+    "Conscientious": {
+      "keywords": ["dane", "analiza", "dowód", "specyfikacja", "jakość", "precyzja", "weryfikacja"],
+      "phrases": [
+        "Pozwoli Pan/Pani, że przedstawię szczegółową analizę danych i konkretne dowody potwierdzające nasze tezy.",
+        "Wszystkie nasze twierdzenia opieramy na weryfikowalnych danych i niezależnych testach.",
+        "Rozumiem, że potrzebuje Pan/Pani precyzyjnych informacji. Oto pełna specyfikacja techniczna.",
+        "Gwarantujemy najwyższą jakość i precyzję wykonania, co potwierdzają certyfikaty i audyty."
+      ]
+    }
+  }
+}

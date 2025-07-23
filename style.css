@@ -217,10 +217,133 @@ body {
 
 .ethical-warning-section h4 { color: var(--warning-color); }
 
-/* Responsive */
+/* Responsive Design - Mobile First */
+@media (max-width: 480px) {
+    .container { padding: 10px; }
+    .customer-input-section, .recommendation-output { padding: 15px; margin-bottom: 15px; }
+    .input-grid { grid-template-columns: 1fr; gap: 10px; }
+    .triggers-container { gap: 5px; }
+    .trigger-btn { padding: 6px 12px; font-size: 0.9rem; }
+    .tabs { flex-wrap: wrap; gap: 5px; }
+    .tab-link { padding: 8px 12px; font-size: 0.9rem; }
+    .header { flex-direction: column; gap: 10px; text-align: center; }
+    #chance-percentage { font-size: 1.5rem; }
+    #chance-bar { width: 100px; }
+}
+
 @media (max-width: 768px) {
     .input-grid { grid-template-columns: 1fr; }
     .output-header { flex-direction: column; align-items: flex-start; gap: 15px; }
     .conversion-chance { text-align: left; }
     .tabs { flex-wrap: wrap; }
+    .container { padding: 15px; }
+    .customer-input-section, .recommendation-output { padding: 20px; }
+}
+
+@media (max-width: 1024px) {
+    .container { max-width: 95%; }
+    .input-grid { gap: 15px; }
+}
+
+/* Performance optimizations */
+.trigger-btn, .tab-link, .cta-button {
+    will-change: transform;
+    transform: translateZ(0); /* Hardware acceleration */
+}
+
+.tab-content {
+    contain: layout style paint;
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 768px) {
+    .trigger-btn, .tab-link, .cta-button {
+        min-height: 44px; /* Apple's recommended touch target size */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Performance optimizations */
+.animate-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile layout optimizations */
+.mobile-layout .grid {
+    grid-template-columns: 1fr;
+}
+
+.mobile-layout .flex {
+    flex-direction: column;
+}
+
+/* Lazy loading states */
+.tab-content[data-loaded="false"] {
+    min-height: 200px;
+    background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Intersection Observer optimizations */
+.result-card,
+.analysis-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.result-card.animate-in,
+.analysis-section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Performance hints for browser */
+.trigger-btn,
+.tab-button {
+    will-change: transform, background-color;
+}
+
+.result-card {
+    contain: layout style paint;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

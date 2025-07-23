@@ -11,6 +11,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require('fs');
+const compression = require('compression');
 const { v4: uuidv4 } = require('uuid');
 const moment = require('moment');
 
@@ -23,12 +24,17 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 // Middleware
+app.use(compression()); // Kompresja gzip dla lepszej wydajności
 app.use(cors());
 app.use(bodyParser.json({ limit: '10mb' }));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
-// Serve static files
-app.use(express.static(__dirname));
+// Serve static files z cache headers
+app.use(express.static(__dirname, {
+    maxAge: '1d', // Cache statyczne pliki na 1 dzień
+    etag: true,
+    lastModified: true
+}));
 
 // Initialize systems
 let decoderEngine;
@@ -43,6 +49,7 @@ async function initializeBackend() {
         // Initialize decoder engine
         const dataFiles = {
             triggers: 'data/triggers.json',
+            trigger_list: 'data/trigger_list.json',
             personas: 'data/personas.json',
             rules: 'data/rules.json',
             weights: 'weights_and_scoring.json',

@@ -181,6 +181,13 @@
       "category": "business",
       "base_conversion": 70,
       "description": "Fleet decision maker with tax optimization focus"
+    },
+    {
+      "id": "fuel_savings_interest",
+      "name": "Chce oszczedzac na paliwie",
+      "category": "financial",
+      "base_conversion": 68,
+      "description": "Cost-conscious customer focused on operational savings"
     }
   ]
 }

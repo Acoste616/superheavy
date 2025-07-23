@@ -1,0 +1,15 @@
+quarter,bev_registrations,public_chargers_total,public_dc_chargers,public_ac_chargers,inflation_pct,interest_rate_pct,avg_energy_price_pln_kwh,market_scope,source,pearson_r_bev_vs_chargers,pearson_r_bev_vs_inflation,pearson_r_bev_vs_energy_price
+2022-Q1,2252,4118,1194,2924,10.2,3.5,0.796,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,,,
+2022-Q2,2555,4217,1223,2994,14.2,5.25,0.85,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,,,
+2022-Q3,3105,4738,1326,3412,15.7,6.0,0.9,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.978,0.912,0.982
+2022-Q4,3379,5016,1455,3561,15.3,6.75,0.85,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.988,0.859,0.689
+2023-Q1,4095,5305,1592,3713,15.2,6.75,0.736,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.983,0.72,-0.389
+2023-Q2,4402,5709,1770,3939,11.0,6.75,0.65,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.989,0.124,-0.69
+2023-Q3,3663,6159,2032,4127,7.7,6.75,0.58,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.85,-0.041,-0.608
+2023-Q4,4920,5933,1543,4390,6.2,5.75,0.679,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.866,-0.407,-0.63
+2024-Q1,4194,6490,1817,4673,2.7,5.75,0.6,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.842,-0.458,-0.657
+2024-Q2,4670,7350,2058,5292,3.0,5.75,0.498,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.841,-0.554,-0.713
+2024-Q3,3636,7962,2229,5733,4.2,5.75,0.526,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.65,-0.507,-0.638
+2024-Q4,4067,8659,2684,5975,3.9,5.75,0.538,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.595,-0.517,-0.639
+2025-Q1,5107,9342,2989,6353,4.4,5.75,0.52,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.688,-0.562,-0.685
+2025-Q2,5400,9814,3238,6576,3.5,5.75,0.51,PL,Licznik_Elektromobilnosci_PSNM_PZPM_URE_NBP_GUS,0.757,-0.606,-0.719

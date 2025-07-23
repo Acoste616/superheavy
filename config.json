@@ -137,7 +137,7 @@
   "ui": {
     "theme": "modern",
     "language": "pl",
-    "auto_refresh": true,
+    "auto_refresh": false,
     "refresh_interval_seconds": 30,
     "dashboard_features": {
       "real_time_monitoring": true,

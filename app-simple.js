@@ -13,7 +13,7 @@ class TeslaCusomerDecoderApp {
         this.analysisCount = 0;
         this.isInitialized = false;
         this.currentCustomerId = null;
-        this.apiBase = 'http://localhost:8080/api';
+        this.apiBase = 'http://localhost:8000/api';
         this.data = {};
         
         // UI Elements
@@ -45,6 +45,7 @@ class TeslaCusomerDecoderApp {
         };
 
         this.init();
+        this.optimizePerformance();
     }
 
     getDISCProfile(disc) {
@@ -1038,6 +1039,7 @@ class TeslaCusomerDecoderApp {
         this.populatePartnerTab(analysis);
         this.populatePredictionsTab(analysis);
         this.populateActionsTab(analysis);
+        this.populateSegmentAnalysisTab(analysis);
         this.populateExplainabilityTab(analysis);
     }
 
@@ -1839,6 +1841,297 @@ class TeslaCusomerDecoderApp {
         URL.revokeObjectURL(url);
     }
 
+    populateSegmentAnalysisTab(analysis) {
+        const segmentIdentificationElement = document.getElementById('segmentIdentification');
+        const segmentStrategyElement = document.getElementById('segmentStrategy');
+        const conversionPotentialElement = document.getElementById('conversionPotential');
+        const personalizedActionsElement = document.getElementById('personalizedActions');
+        
+        // Sprawdź czy dane segmentacji istnieją
+        if (!analysis.segmentAnalysis && !analysis.segmentStrategy) {
+            // Wyświetl komunikat o braku danych segmentacji
+            if (segmentIdentificationElement) {
+                segmentIdentificationElement.innerHTML = `
+                    <div class="bg-tesla-gray-800 p-4 rounded-lg text-center">
+                        <i class="fas fa-info-circle text-tesla-gray-400 text-2xl mb-2"></i>
+                        <p class="text-tesla-gray-400">Brak danych segmentacji dla tej analizy</p>
+                        <p class="text-tesla-gray-500 text-sm mt-1">Segmentacja zostanie dodana w przyszłych wersjach</p>
+                    </div>
+                `;
+            }
+            if (segmentStrategyElement) {
+                segmentStrategyElement.innerHTML = `
+                    <div class="bg-tesla-gray-800 p-4 rounded-lg text-center">
+                        <i class="fas fa-cog text-tesla-gray-400 text-2xl mb-2"></i>
+                        <p class="text-tesla-gray-400">Strategia segmentowa niedostępna</p>
+                    </div>
+                `;
+            }
+            if (conversionPotentialElement) {
+                conversionPotentialElement.innerHTML = `
+                    <div class="bg-tesla-gray-800 p-4 rounded-lg text-center">
+                        <i class="fas fa-chart-line text-tesla-gray-400 text-2xl mb-2"></i>
+                        <p class="text-tesla-gray-400">Potencjał konwersji niedostępny</p>
+                    </div>
+                `;
+            }
+            if (personalizedActionsElement) {
+                personalizedActionsElement.innerHTML = `
+                    <div class="bg-tesla-gray-800 p-4 rounded-lg text-center">
+                        <i class="fas fa-tasks text-tesla-gray-400 text-2xl mb-2"></i>
+                        <p class="text-tesla-gray-400">Spersonalizowane działania niedostępne</p>
+                    </div>
+                `;
+            }
+            return;
+        }
+        
+        if (analysis.segmentAnalysis && segmentIdentificationElement) {
+            const segment = analysis.segmentAnalysis;
+            segmentIdentificationElement.innerHTML = `
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <h6 class="text-tesla-red font-semibold mb-3">Zidentyfikowany Segment</h6>
+                    <div class="text-lg font-bold text-white mb-2">${this.getSegmentName(segment.segment)}</div>
+                    <div class="text-sm text-tesla-gray-300 mb-3">${this.getSegmentDescription(segment.segment)}</div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-tesla-gray-400">Pewność identyfikacji:</span>
+                        <span class="text-tesla-red font-semibold">${Math.round(segment.confidence * 100)}%</span>
+                    </div>
+                </div>
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <h6 class="text-tesla-red font-semibold mb-3">Priorytet Segmentu</h6>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm">Poziom priorytetu:</span>
+                        <span class="${this.getPriorityColor(segment.priority)}">${this.getPriorityLevel(segment.priority)}</span>
+                    </div>
+                    <div class="w-full bg-tesla-gray-700 rounded-full h-2">
+                        <div class="${this.getPriorityColor(segment.priority)} h-2 rounded-full" style="width: ${segment.priority * 10}%"></div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        if (analysis.segmentStrategy && segmentStrategyElement) {
+            const strategy = analysis.segmentStrategy;
+            segmentStrategyElement.innerHTML = `
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <h6 class="text-tesla-red font-semibold mb-3">Główne Przesłania</h6>
+                    <div class="space-y-2">
+                        ${strategy.primaryMessages.map(msg => `
+                            <div class="flex items-start">
+                                <i class="fas fa-arrow-right text-tesla-red mr-2 mt-1"></i>
+                                <span class="text-sm text-tesla-gray-300">${msg}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <h6 class="text-tesla-red font-semibold mb-3">Kluczowe Korzyści</h6>
+                    <div class="space-y-2">
+                        ${strategy.keyBenefits.map(benefit => `
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                                <span class="text-sm text-tesla-gray-300">${benefit}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        if (analysis.segmentAnalysis && conversionPotentialElement) {
+            const segment = analysis.segmentAnalysis;
+            conversionPotentialElement.innerHTML = `
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <h6 class="text-tesla-red font-semibold mb-3">Mnożnik Konwersji</h6>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold ${this.getMultiplierColor(segment.conversionMultiplier)} mb-2">
+                            ${segment.conversionMultiplier.toFixed(2)}x
+                        </div>
+                        <div class="text-sm text-tesla-gray-400">${this.getMultiplierLevel(segment.conversionMultiplier)}</div>
+                    </div>
+                </div>
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <h6 class="text-tesla-red font-semibold mb-3">Potencjał Segmentu</h6>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-tesla-gray-400">Wielkość rynku:</span>
+                            <span class="text-white">${this.getMarketSize(segment.segment)}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-tesla-gray-400">Konkurencja:</span>
+                            <span class="text-white">${this.getCompetitionLevel(segment.segment)}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-tesla-gray-400">Trend wzrostu:</span>
+                            <span class="text-green-400">${this.getGrowthTrend(segment.segment)}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        if (analysis.segmentStrategy && personalizedActionsElement) {
+            const strategy = analysis.segmentStrategy;
+            personalizedActionsElement.innerHTML = `
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <h6 class="text-tesla-red font-semibold mb-3">Następne Kroki</h6>
+                    <div class="space-y-2">
+                        ${strategy.nextSteps.map((step, index) => `
+                            <div class="flex items-start">
+                                <span class="bg-tesla-red text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-2 mt-0.5">${index + 1}</span>
+                                <span class="text-sm text-tesla-gray-300">${step}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <h6 class="text-tesla-red font-semibold mb-3">Specjalne Oferty</h6>
+                    <div class="space-y-2">
+                        ${strategy.specialOffers.map(offer => `
+                            <div class="flex items-start">
+                                <i class="fas fa-gift text-yellow-400 mr-2 mt-1"></i>
+                                <span class="text-sm text-tesla-gray-300">${offer}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <h6 class="text-tesla-red font-semibold mb-3">Styl Komunikacji</h6>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-tesla-gray-400">Ton:</span>
+                            <span class="text-white">${this.getCommunicationTone(strategy.communicationStyle.tone)}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-tesla-gray-400">Pilność:</span>
+                            <span class="text-white">${this.getUrgencyLevel(strategy.communicationStyle.urgency)}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-tesla-gray-400">Kanał:</span>
+                            <span class="text-white">${this.getChannelName(strategy.communicationStyle.channel)}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    }
+    
+    // Helper methods for segmentation display
+    getSegmentName(segment) {
+        const names = {
+            'eco_family': 'Eko-Rodzina',
+            'tech_professional': 'Tech Professional',
+            'senior_comfort': 'Senior Comfort',
+            'business_roi': 'Business ROI',
+            'young_urban': 'Young Urban'
+        };
+        return names[segment] || segment;
+    }
+    
+    getSegmentDescription(segment) {
+        const descriptions = {
+            'eco_family': 'Rodziny świadome ekologicznie, szukające oszczędności i bezpieczeństwa',
+            'tech_professional': 'Profesjonaliści IT/tech ceniący innowacje i wydajność',
+            'senior_comfort': 'Dojrzali klienci priorytetyzujący komfort i prostotę',
+            'business_roi': 'Przedsiębiorcy skupieni na zwrocie z inwestycji',
+            'young_urban': 'Młodzi mieszkańcy miast, trendseterzy i early adopters'
+        };
+        return descriptions[segment] || 'Opis segmentu';
+    }
+    
+    getPriorityLevel(priority) {
+        if (priority >= 8) return 'Bardzo wysoki';
+        if (priority >= 6) return 'Wysoki';
+        if (priority >= 4) return 'Średni';
+        return 'Niski';
+    }
+    
+    getPriorityColor(priority) {
+        if (priority >= 8) return 'text-red-400 bg-red-400';
+        if (priority >= 6) return 'text-yellow-400 bg-yellow-400';
+        if (priority >= 4) return 'text-blue-400 bg-blue-400';
+        return 'text-gray-400 bg-gray-400';
+    }
+    
+    getMultiplierLevel(multiplier) {
+        if (multiplier >= 1.5) return 'Bardzo wysoki potencjał';
+        if (multiplier >= 1.2) return 'Wysoki potencjał';
+        if (multiplier >= 1.0) return 'Standardowy potencjał';
+        return 'Niski potencjał';
+    }
+    
+    getMultiplierColor(multiplier) {
+        if (multiplier >= 1.5) return 'text-green-400';
+        if (multiplier >= 1.2) return 'text-yellow-400';
+        if (multiplier >= 1.0) return 'text-blue-400';
+        return 'text-red-400';
+    }
+    
+    getMarketSize(segment) {
+        const sizes = {
+            'eco_family': 'Duży (25% rynku)',
+            'tech_professional': 'Średni (15% rynku)',
+            'senior_comfort': 'Rosnący (20% rynku)',
+            'business_roi': 'Niszowy (10% rynku)',
+            'young_urban': 'Dynamiczny (30% rynku)'
+        };
+        return sizes[segment] || 'Nieznany';
+    }
+    
+    getCompetitionLevel(segment) {
+        const levels = {
+            'eco_family': 'Średnia',
+            'tech_professional': 'Wysoka',
+            'senior_comfort': 'Niska',
+            'business_roi': 'Średnia',
+            'young_urban': 'Bardzo wysoka'
+        };
+        return levels[segment] || 'Nieznana';
+    }
+    
+    getGrowthTrend(segment) {
+        const trends = {
+            'eco_family': '+15% rocznie',
+            'tech_professional': '+8% rocznie',
+            'senior_comfort': '+25% rocznie',
+            'business_roi': '+12% rocznie',
+            'young_urban': '+20% rocznie'
+        };
+        return trends[segment] || 'Brak danych';
+    }
+    
+    getCommunicationTone(tone) {
+        const tones = {
+            'professional': 'Profesjonalny',
+            'friendly': 'Przyjazny',
+            'authoritative': 'Autorytatywny',
+            'casual': 'Swobodny',
+            'technical': 'Techniczny'
+        };
+        return tones[tone] || tone;
+    }
+    
+    getUrgencyLevel(urgency) {
+        const levels = {
+            'low': 'Niska',
+            'medium': 'Średnia',
+            'high': 'Wysoka'
+        };
+        return levels[urgency] || urgency;
+    }
+    
+    getChannelName(channel) {
+        const channels = {
+            'email': 'Email',
+            'phone': 'Telefon',
+            'meeting': 'Spotkanie osobiste',
+            'video_call': 'Rozmowa wideo',
+            'demo': 'Prezentacja/Demo'
+        };
+        return channels[channel] || channel;
+    }
+
     // Metody pomocnicze do formatowania etykiet
     getAgeLabel(age) {
         const labels = {
@@ -1909,6 +2202,111 @@ class TeslaCusomerDecoderApp {
             'additional': 'Dodatkowe auto'
         };
         return labels[role] || role;
+    }
+
+    // Performance optimizations
+    optimizePerformance() {
+        // Debounced resize handler
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                this.handleResize();
+            }, 250);
+        });
+
+        // Lazy loading for tab content
+        this.setupLazyTabLoading();
+
+        // Intersection Observer for result elements
+        this.setupIntersectionObserver();
+
+        // Preload critical resources
+        this.preloadCriticalResources();
+
+        // Optimize DOM queries
+        this.cacheFrequentlyUsedElements();
+    }
+
+    handleResize() {
+        // Optimize layout on resize
+        const isMobile = window.innerWidth < 768;
+        document.body.classList.toggle('mobile-layout', isMobile);
+    }
+
+    setupLazyTabLoading() {
+        // Only load tab content when tab becomes active
+        const tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const tabName = e.target.dataset.tab;
+                this.loadTabContent(tabName);
+            });
+        });
+    }
+
+    loadTabContent(tabName) {
+        // Lazy load content for inactive tabs
+        const tab = document.getElementById(tabName + 'Tab');
+        if (tab && !tab.dataset.loaded) {
+            // Mark as loaded to prevent reloading
+            tab.dataset.loaded = 'true';
+            
+            // Add loading animation
+            tab.style.opacity = '0';
+            setTimeout(() => {
+                tab.style.opacity = '1';
+                tab.style.transition = 'opacity 0.3s ease';
+            }, 50);
+        }
+    }
+
+    setupIntersectionObserver() {
+        // Optimize animations and heavy content loading
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        // Trigger any heavy computations only when visible
+                        this.processVisibleElement(entry.target);
+                    } else {
+                        entry.target.classList.remove('animate-in');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+
+            // Observe result cards and heavy content
+            document.querySelectorAll('.result-card, .analysis-section').forEach(el => {
+                observer.observe(el);
+            });
+        }
+    }
+
+    processVisibleElement(element) {
+        // Process heavy content only when element is visible
+        if (element.classList.contains('chart-container') && !element.dataset.processed) {
+            element.dataset.processed = 'true';
+            // Initialize charts or heavy visualizations here
+        }
+    }
+
+    preloadCriticalResources() {
+        // Preload critical CSS and JS resources only
+        // Removed API preloading to prevent unnecessary requests
+        console.log('Critical resources optimization ready');
+    }
+
+    cacheFrequentlyUsedElements() {
+        // Cache DOM queries for better performance
+        this.cachedElements = {
+            triggerButtons: document.querySelectorAll('.trigger-btn'),
+            tabContents: document.querySelectorAll('.tab-content'),
+            resultCards: document.querySelectorAll('.result-card')
+        };
     }
 }
 

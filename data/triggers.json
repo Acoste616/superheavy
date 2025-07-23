@@ -1019,6 +1019,171 @@
       "conversion_modifiers": {
         "luxury_buyer": 18, "second_car": 12, "premium_focus": 15
       }
+    },
+
+    {
+      "id": "eco_family_pv_synergy",
+      "text": "Mamy panele fotowoltaiczne w domu",
+      "category": "environmental",
+      "subcategory": "pv_integration",
+      "base_conversion_rate": 90,
+      "intent_level": "very_high",
+      "decision_stage": "perfect_match",
+      "segment_target": "eco_family",
+      "personality_resonance": {"S": 0.9, "C": 0.85, "I": 0.8, "D": 0.7},
+      "quick_response": {
+        "immediate_reply": "Idealnie! Tesla + PV to perfekcyjna synergia. Będziesz jeździć praktycznie za darmo energią ze słońca. To najlepsza inwestycja ekologiczna!",
+        "key_points": ["Darmowa energia ze słońca", "Pełna synergia PV + Tesla", "ROI 20% rocznie"],
+        "next_action": "Pokażę kalkulator oszczędności PV + Tesla",
+        "avoid": ["Pomijanie synergii", "Skupianie się tylko na aucie"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Family security and long-term savings",
+          "key_messages": ["Bezpieczeństwo energetyczne rodziny", "Stałe oszczędności przez lata", "Niezależność od cen energii"],
+          "proof_points": ["Kalkulator oszczędności", "Przykłady rodzin", "Gwarancja systemu"]
+        },
+        "C": {
+          "approach": "Technical integration and ROI analysis",
+          "key_messages": ["Efektywność ładowania 95%", "ROI kombinacji: 18-22% rocznie", "Optymalizacja zużycia energii"],
+          "proof_points": ["Dane techniczne", "Analiza ROI", "Monitoring energii"]
+        }
+      },
+      "conversion_modifiers": {
+        "has_pv": 35, "eco_conscious": 25, "energy_independent": 20, "family_home": 15
+      }
+    },
+
+    {
+      "id": "tech_professional_performance",
+      "text": "Interesuje mnie wydajność i przyspieszenie",
+      "category": "technical",
+      "subcategory": "performance_focus",
+      "base_conversion_rate": 85,
+      "intent_level": "very_high",
+      "decision_stage": "feature_validation",
+      "segment_target": "tech_professional",
+      "personality_resonance": {"D": 0.95, "C": 0.8, "I": 0.7, "S": 0.5},
+      "quick_response": {
+        "immediate_reply": "Doskonały wybór! Model S Plaid: 0-100 w 2.1s, 628 KM, najszybszy sedan świata. Chcesz zobaczyć tryb Ludicrous w akcji?",
+        "key_points": ["0-100 w 2.1s", "628 KM mocy", "Najszybszy sedan świata"],
+        "next_action": "Pokażę tryb Ludicrous i dane wydajności",
+        "avoid": ["Pomijanie konkretnych liczb", "Ogólne stwierdzenia"]
+      },
+      "response_strategies": {
+        "D": {
+          "approach": "Performance leadership and competitive advantage",
+          "key_messages": ["Najszybsze przyspieszenie na rynku", "Technologia przyszłości już dziś", "Przewaga nad konkurencją"],
+          "proof_points": ["Testy wydajności", "Porównania z konkurencją", "Track mode data"]
+        },
+        "C": {
+          "approach": "Technical specifications and engineering excellence",
+          "key_messages": ["Tri-motor setup: 628 KM", "Carbon fiber spoiler aktywny", "Ceramic brakes standard"],
+          "proof_points": ["Specyfikacje techniczne", "Dane inżynieryjne", "Performance metrics"]
+        }
+      },
+      "conversion_modifiers": {
+        "performance_enthusiast": 30, "tech_savvy": 25, "early_adopter": 20, "status_conscious": 15
+      }
+    },
+
+    {
+      "id": "senior_comfort_simplicity",
+      "text": "Czy to nie będzie zbyt skomplikowane w obsłudze?",
+      "category": "technical",
+      "subcategory": "ease_of_use",
+      "base_conversion_rate": 75,
+      "intent_level": "high",
+      "decision_stage": "usability_concern",
+      "segment_target": "senior_comfort",
+      "personality_resonance": {"S": 0.95, "C": 0.8, "I": 0.6, "D": 0.5},
+      "quick_response": {
+        "immediate_reply": "Przeciwnie! Tesla jest prostsza niż tradycyjne auto. Jeden pedał do jazdy, automatyczne wszystko, głosowe komendy. Jak iPhone na kółkach.",
+        "key_points": ["Prostsze niż tradycyjne auto", "Jeden pedał do jazdy", "Głosowe komendy"],
+        "next_action": "Pokażę jak proste jest codzienne użytkowanie",
+        "avoid": ["Pokazywanie skomplikowanych funkcji", "Techniczny żargon"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Simplicity and reliability focus",
+          "key_messages": ["Prostota obsługi na pierwszym miejscu", "Niezawodność przez lata", "Wsparcie 24/7"],
+          "proof_points": ["Demo prostej obsługi", "Testimoniale seniorów", "Gwarancja wsparcia"]
+        },
+        "C": {
+          "approach": "Logical design and user-friendly interface",
+          "key_messages": ["Intuicyjny interfejs", "Logiczne menu", "Personalizacja ustawień"],
+          "proof_points": ["UI/UX design", "Customization options", "Learning curve data"]
+        }
+      },
+      "conversion_modifiers": {
+        "senior_buyer": 25, "simplicity_seeker": 20, "comfort_focused": 18, "reliability_priority": 15
+      }
+    },
+
+    {
+      "id": "business_roi_fleet",
+      "text": "Rozważamy flotę elektryczną dla firmy",
+      "category": "financial",
+      "subcategory": "fleet_business",
+      "base_conversion_rate": 80,
+      "intent_level": "very_high",
+      "decision_stage": "business_evaluation",
+      "segment_target": "business_roi",
+      "personality_resonance": {"D": 0.9, "C": 0.85, "S": 0.6, "I": 0.7},
+      "quick_response": {
+        "immediate_reply": "Świetna strategia! Flota Tesla: 40% niższe TCO, lepsze korzyści podatkowe, wizerunek innowacyjnej firmy. Ile aut planujecie?",
+        "key_points": ["40% niższe TCO", "Lepsze korzyści podatkowe", "Wizerunek innowacyjnej firmy"],
+        "next_action": "Przygotowuję analizę biznesową dla floty",
+        "avoid": ["Skupianie się na pojedynczym aucie", "Pomijanie aspektów biznesowych"]
+      },
+      "response_strategies": {
+        "D": {
+          "approach": "Strategic business advantage and leadership",
+          "key_messages": ["Przewaga konkurencyjna", "Liderstwo w branży", "Strategiczna inwestycja"],
+          "proof_points": ["Business case studies", "Competitive analysis", "Industry leadership examples"]
+        },
+        "C": {
+          "approach": "Detailed fleet ROI and operational analysis",
+          "key_messages": ["Fleet TCO: 1.02 vs 1.45 PLN/km", "Operational savings: 35%", "Tax optimization: 225k amortization"],
+          "proof_points": ["Fleet calculator", "Operational data", "Tax benefit analysis"]
+        }
+      },
+      "conversion_modifiers": {
+        "fleet_buyer": 35, "business_decision": 25, "cost_optimization": 20, "corporate_image": 15
+      }
+    },
+
+    {
+      "id": "young_urban_lifestyle",
+      "text": "Mieszkam w centrum miasta, często podróżuję",
+      "category": "lifestyle",
+      "subcategory": "urban_mobility",
+      "base_conversion_rate": 70,
+      "intent_level": "high",
+      "decision_stage": "lifestyle_fit",
+      "segment_target": "young_urban",
+      "personality_resonance": {"I": 0.9, "D": 0.8, "S": 0.6, "C": 0.7},
+      "quick_response": {
+        "immediate_reply": "Idealnie! Tesla w mieście to czysta przyjemność - cicha, zero emisji, parkowanie w strefach EV. Plus Supercharger na trasach w całej Europie.",
+        "key_points": ["Cicha jazda w mieście", "Parkowanie w strefach EV", "Supercharger w całej Europie"],
+        "next_action": "Pokażę mapę Supercharger i korzyści miejskie",
+        "avoid": ["Skupianie się na rodzinnych aspektach", "Pomijanie mobilności"]
+      },
+      "response_strategies": {
+        "I": {
+          "approach": "Lifestyle enhancement and social status",
+          "key_messages": ["Status symbol w mieście", "Ekologiczny lifestyle", "Społeczność Tesla"],
+          "proof_points": ["Urban testimonials", "Social media presence", "Community events"]
+        },
+        "D": {
+          "approach": "Efficiency and time-saving benefits",
+          "key_messages": ["Szybkie ładowanie w mieście", "Efektywność podróży", "Autonomiczne funkcje"],
+          "proof_points": ["Charging network", "Travel efficiency", "Autopilot benefits"]
+        }
+      },
+      "conversion_modifiers": {
+        "urban_dweller": 25, "frequent_traveler": 20, "lifestyle_conscious": 18, "tech_adopter": 15
+      }
     }
   ],
 
