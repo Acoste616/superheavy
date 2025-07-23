@@ -1,0 +1,299 @@
+{
+  "system_name": "Tesla Customer Decoder PRO 2.0",
+  "version": "2.0",
+  "architecture_type": "Event-Driven Microservices with Service Mesh",
+  "core_principles": [
+    "Fault Tolerance by Design",
+    "Separation of Concerns",
+    "Event-Driven Communication",
+    "Observability First",
+    "Horizontal Scalability",
+    "Zero Trust Security"
+  ],
+  "architecture_layers": {
+    "presentation_layer": {
+      "components": [
+        "API Gateway",
+        "Load Balancer",
+        "Rate Limiter"
+      ],
+      "purpose": "Request routing, authentication, and rate limiting",
+      "patterns": [
+        "Gateway Aggregation",
+        "API Versioning"
+      ]
+    },
+    "service_mesh_layer": {
+      "components": [
+        "Istio/Linkerd",
+        "Envoy Proxies",
+        "mTLS"
+      ],
+      "purpose": "Service-to-service communication, security, observability",
+      "patterns": [
+        "Circuit Breaker",
+        "Retry with Backoff",
+        "Traffic Splitting"
+      ]
+    },
+    "application_layer": {
+      "components": [
+        "Core Microservices",
+        "Event Processors",
+        "ML Inference Services"
+      ],
+      "purpose": "Business logic execution and decision making",
+      "patterns": [
+        "Domain-Driven Design",
+        "CQRS",
+        "Event Sourcing"
+      ]
+    },
+    "data_layer": {
+      "components": [
+        "Event Store",
+        "Read Models",
+        "Cache Layer"
+      ],
+      "purpose": "Data persistence and retrieval",
+      "patterns": [
+        "Polyglot Persistence",
+        "CQRS Read Models",
+        "Cache-Aside"
+      ]
+    },
+    "infrastructure_layer": {
+      "components": [
+        "Container Orchestration",
+        "Service Discovery",
+        "Monitoring"
+      ],
+      "purpose": "Platform services and operations",
+      "patterns": [
+        "Infrastructure as Code",
+        "Health Check API",
+        "Distributed Tracing"
+      ]
+    }
+  },
+  "microservices": {
+    "customer_analysis_service": {
+      "responsibility": "Core customer analysis logic",
+      "inputs": [
+        "Customer Events",
+        "Behavioral Data"
+      ],
+      "outputs": [
+        "Analysis Results",
+        "Scoring Events"
+      ],
+      "scalability": "Horizontal",
+      "fault_tolerance": [
+        "Circuit Breaker",
+        "Bulkhead Pattern"
+      ]
+    },
+    "fuzzy_inference_service": {
+      "responsibility": "Fuzzy logic processing",
+      "inputs": [
+        "Analysis Parameters",
+        "Rule Base Updates"
+      ],
+      "outputs": [
+        "Fuzzy Scores",
+        "Confidence Metrics"
+      ],
+      "scalability": "Vertical + Horizontal",
+      "fault_tolerance": [
+        "Graceful Degradation",
+        "Fallback Rules"
+      ]
+    },
+    "trigger_detection_service": {
+      "responsibility": "Pattern recognition and trigger identification",
+      "inputs": [
+        "Customer Interactions",
+        "Behavioral Patterns"
+      ],
+      "outputs": [
+        "Detected Triggers",
+        "Pattern Events"
+      ],
+      "scalability": "Horizontal",
+      "fault_tolerance": [
+        "Event Replay",
+        "Idempotent Processing"
+      ]
+    },
+    "scoring_aggregation_service": {
+      "responsibility": "Score calculation and aggregation",
+      "inputs": [
+        "Component Scores",
+        "Weight Configurations"
+      ],
+      "outputs": [
+        "Final Scores",
+        "Score Breakdowns"
+      ],
+      "scalability": "Horizontal",
+      "fault_tolerance": [
+        "Compensating Transactions",
+        "Saga Pattern"
+      ]
+    },
+    "recommendation_engine": {
+      "responsibility": "Strategy and recommendation generation",
+      "inputs": [
+        "Customer Scores",
+        "Business Rules"
+      ],
+      "outputs": [
+        "Recommendations",
+        "Strategy Events"
+      ],
+      "scalability": "Horizontal",
+      "fault_tolerance": [
+        "Cache Fallback",
+        "Default Recommendations"
+      ]
+    },
+    "transparency_service": {
+      "responsibility": "Decision explanation and audit trail",
+      "inputs": [
+        "Decision Events",
+        "Audit Requests"
+      ],
+      "outputs": [
+        "Explanations",
+        "Audit Logs"
+      ],
+      "scalability": "Horizontal",
+      "fault_tolerance": [
+        "Event Sourcing",
+        "Read Replicas"
+      ]
+    }
+  },
+  "communication_patterns": {
+    "synchronous": {
+      "pattern": "Request-Response with Circuit Breaker",
+      "use_cases": [
+        "Real-time scoring",
+        "API queries"
+      ],
+      "tools": [
+        "gRPC",
+        "HTTP/REST"
+      ]
+    },
+    "asynchronous": {
+      "pattern": "Event-Driven with Message Queues",
+      "use_cases": [
+        "Batch processing",
+        "Analytics updates"
+      ],
+      "tools": [
+        "Apache Kafka",
+        "Redis Streams"
+      ]
+    },
+    "event_sourcing": {
+      "pattern": "Event Store with Projections",
+      "use_cases": [
+        "Audit trail",
+        "State reconstruction"
+      ],
+      "tools": [
+        "EventStore",
+        "Apache Kafka"
+      ]
+    }
+  },
+  "data_management": {
+    "event_store": {
+      "purpose": "Immutable event log",
+      "technology": "EventStore/Kafka",
+      "patterns": [
+        "Event Sourcing",
+        "CQRS"
+      ]
+    },
+    "read_models": {
+      "purpose": "Optimized query models",
+      "technology": "MongoDB/PostgreSQL",
+      "patterns": [
+        "Materialized Views",
+        "Denormalization"
+      ]
+    },
+    "cache_layer": {
+      "purpose": "High-performance data access",
+      "technology": "Redis/Hazelcast",
+      "patterns": [
+        "Cache-Aside",
+        "Write-Through"
+      ]
+    },
+    "ml_model_store": {
+      "purpose": "Model versioning and serving",
+      "technology": "MLflow/Seldon",
+      "patterns": [
+        "Model Versioning",
+        "A/B Testing"
+      ]
+    }
+  },
+  "fault_tolerance_mechanisms": {
+    "circuit_breaker": {
+      "implementation": "Service Mesh + Application Level",
+      "trigger": "Failure threshold exceeded",
+      "recovery": "Health check based"
+    },
+    "bulkhead_pattern": {
+      "implementation": "Resource isolation",
+      "scope": "Thread pools, connection pools",
+      "benefit": "Failure isolation"
+    },
+    "retry_with_backoff": {
+      "implementation": "Exponential backoff with jitter",
+      "max_attempts": 3,
+      "timeout": "Progressive timeout"
+    },
+    "graceful_degradation": {
+      "implementation": "Feature flags + fallback logic",
+      "scope": "Non-critical features",
+      "strategy": "Reduced functionality"
+    },
+    "saga_pattern": {
+      "implementation": "Distributed transaction management",
+      "type": "Choreography-based",
+      "compensation": "Automated rollback"
+    }
+  },
+  "observability_stack": {
+    "metrics": {
+      "tool": "Prometheus + Grafana",
+      "scope": "Business + Technical metrics",
+      "alerts": "SLI/SLO based"
+    },
+    "tracing": {
+      "tool": "Jaeger/Zipkin",
+      "scope": "End-to-end request tracing",
+      "sampling": "Adaptive sampling"
+    },
+    "logging": {
+      "tool": "ELK Stack/Loki",
+      "format": "Structured JSON",
+      "correlation": "Trace ID based"
+    },
+    "health_checks": {
+      "types": [
+        "Liveness",
+        "Readiness",
+        "Startup"
+      ],
+      "implementation": "Kubernetes native",
+      "monitoring": "Automated failover"
+    }
+  }
+}

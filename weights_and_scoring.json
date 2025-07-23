@@ -1,55 +1,254 @@
 {
   "scoring_system_definition": {
-    "description": "System oceny dopasowania reguły do klienta, używany do wyboru najlepszej odpowiedzi i oszacowania szansy zakupu.",
-    "version": "1.0",
-    "author": "Gemini"
+    "description": "Tesla-specific challenges and competitive response integration",
+    "version": "3.1",
+    "author": "Tesla Customer Decoder AI",
+    "last_updated": "2025-06-01",
+    "market_focus": "Polish EV Market - Reality Check May 2025",
+    "key_updates": [
+      "Tesla challenges: Delivery delays, service distance, FSD relevance",
+      "Competitive response: Kia EV6, Hyundai, Mercedes, Dacia threats",
+      "Regional variations: 4-tier city classification system",
+      "Financial reality: TCO, insurance, resale value truth",
+      "Service center distance impact on rural areas"
+    ]
   },
   "component_weights": {
-    "description": "Procentowy udział każdego elementu w końcowej ocenie 'score_total'. Suma wag wynosi 100.",
-    "trigger_match": 40,
-    "profile_match": 30,
-    "sentiment_match": 20,
-    "demographic_match": 10
+    "description": "Enhanced ML 3.0 weights based on May 2025 market reality and Q1 sales data. Total: 100%",
+    "trigger_strength": 25,
+    "personality_alignment": 18,
+    "sentiment_match": 15,
+    "competitive_price_position": 12,
+    "used_ev_consideration": 10,
+    "brand_sentiment_realtime": 8,
+    "naszeauto_eligibility": 6,
+    "infrastructure_reality": 6
+  },
+  "ml_coefficients_3_1": {
+    "trigger_strength": 0.22,
+    "personality_alignment": 0.16,
+    "sentiment_match": 0.13,
+    "competitive_price_position": 0.11,
+    "used_ev_consideration": 0.09,
+    "brand_sentiment_realtime": 0.07,
+    "tesla_specific_challenges": 0.08,
+    "competitive_response_factor": 0.07,
+    "regional_variation_impact": 0.06,
+    "naszeauto_eligibility": 0.05,
+    "infrastructure_reality": 0.05,
+    "financial_reality_check": 0.05,
+    "charger_density": 0.02,
+    "financing_affordability": 0.02,
+    "demographic_match": 0.015,
+    "tone_compatibility": 0.015
   },
   "score_calculation_logic": {
-    "description": "Formuła obliczania końcowego wyniku dopasowania ('score_total'), który reprezentuje szansę zakupu w procentach.",
-    "formula": "score_total = (trigger_score * 0.40) + (profile_score * 0.30) + (sentiment_score * 0.20) + (demographic_score * 0.10)",
+    "description": "Enhanced formula 3.1 with Tesla-specific challenges and competitive response for June 2025.",
+    "formula": "weighted_sum(features) * confidence_multiplier * tesla_reality_adjustment * regional_modifier",
+    "new_factors_3_1": [
+      "tesla_specific_challenges: Delivery delays, service distance, FSD relevance",
+      "competitive_response_factor: Kia EV6, Hyundai, Mercedes, Dacia threats",
+      "regional_variation_impact: 4-tier city classification with modifiers",
+      "financial_reality_check: TCO, insurance costs, resale value anxiety"
+    ],
+    "tesla_reality_adjustments": {
+      "delivery_delay_impact": 0.85,
+      "service_center_distance_rural": 0.80,
+      "fsd_irrelevant_poland": 0.90,
+      "kia_ev6_threat_high": 0.88,
+      "dacia_spring_budget_disruption": 0.82
+    },
+    "regional_modifiers": {
+      "tier_1_cities": 1.15,
+      "tier_2_cities": 1.00,
+      "rural_areas": 0.75,
+      "industrial_regions": 0.90
+    },
     "components": [
       {
-        "name": "trigger_score",
-        "description": "Ocena dopasowania triggera (0-100). 100 oznacza idealne dopasowanie (klient użył słowa kluczowego z reguły), 0 oznacza brak dopasowania."
+        "name": "trigger_strength",
+        "description": "Behavioral trigger matching (0-100). Updated with Q1 2025 conversion data.",
+        "weight": "25%",
+        "examples": ["price concerns", "range anxiety", "charging infrastructure", "used EV consideration"]
       },
       {
-        "name": "profile_score",
-        "description": "Ocena dopasowania profilu klienta (0-100). 100 oznacza idealne dopasowanie do profilu DISC/psychograficznego z reguły."
+        "name": "personality_alignment",
+        "description": "DISC personality alignment (0-100). Updated segments: I=45%, D=25%, S=20%, C=10%.",
+        "weight": "18%",
+        "q1_2025_data": {
+          "I_influence": "45% (Model Y buyers, social media active)",
+          "D_dominant": "25% (down from 30%, ultra-premium leaving Tesla)",
+          "S_steady": "20% (down from 35%, losing to Kia/Dacia)",
+          "C_conscientious": "10% (tech engineers, TCO focused)"
+        }
       },
       {
-        "name": "sentiment_score",
-        "description": "Ocena dopasowania sentymentu (0-100). 100 oznacza zgodność sentymentu klienta z sentymentem zdefiniowanym w regule."
+        "name": "sentiment_match",
+        "description": "Emotional state towards EV (0-100). Includes Tesla brand sentiment.",
+        "weight": "15%",
+        "range": "Negative (-100) to Positive (+100)"
       },
       {
-        "name": "demographic_score",
-        "description": "Ocena dopasowania danych demograficznych (wiek, lokalizacja) (0-100). 100 oznacza pełną zgodność z widełkami zdefiniowanymi w profilu."
+        "name": "competitive_price_position",
+        "description": "Tesla price competitiveness vs alternatives (0-100). Critical factor in Polish market.",
+        "weight": "12%",
+        "competitors": ["BMW iX", "Audi e-tron", "Mercedes EQC", "Polestar", "Kia EV6", "Dacia Spring"],
+        "price_pressure_factors": ["Model Y vs competition", "Used EV market growth", "Financing options"]
+      },
+      {
+        "name": "used_ev_consideration",
+        "description": "Impact of used EV market on Tesla purchase (0-100). 62% of Poles consider used EVs.",
+        "weight": "10%",
+        "market_reality": "62% consideration rate",
+        "tesla_impact": {
+          "high_price_sensitivity": "+30% weight",
+          "tesla_depreciation_concern": "+20% weight",
+          "warranty_anxiety": "+40% weight"
+        }
+      },
+      {
+        "name": "brand_sentiment_realtime",
+        "description": "Real-time Tesla brand sentiment including Elon Musk factor (0-100).",
+        "weight": "8%",
+        "monitoring_sources": ["Social media", "News sentiment", "Industry reports"],
+        "elon_factor": "Significant impact on Tesla perception in Poland"
+      },
+      {
+        "name": "naszeauto_eligibility",
+        "description": "NaszEauto program eligibility and impact (0-100). 1.6B PLN budget tracking.",
+        "weight": "6%",
+        "program_details": {
+          "max_subsidy": "40,000 PLN",
+          "base_individual": "18,750 PLN",
+          "price_limit": "225,000 PLN netto",
+          "tesla_eligibility": "All Model Y variants qualify"
+        }
+      },
+      {
+        "name": "infrastructure_reality",
+        "description": "Real charging infrastructure data May 2025 (0-100).",
+        "weight": "6%",
+        "real_data_may_2025": {
+          "total_points": "9,814 charging points",
+          "fast_dc_percentage": "33% (vs 40% system assumption)",
+          "ev_per_point": "9.6 vehicles per charging point",
+          "consumer_concern": "36% fear insufficient infrastructure"
+        }
       }
     ]
   },
   "purchase_probability_assessment": {
-    "description": "Sposób interpretacji wyniku 'score_total' jako procentowej szansy na zakup.",
-    "method": "Wynik 'score_total' jest bezpośrednio interpretowany jako procentowa szansa na zakup. Na przykład, score_total = 75 oznacza 75% szansy na zakup."
+    "description": "Enhanced ML-based conversion probability with confidence intervals.",
+    "method": "Score is adjusted by confidence multiplier based on data completeness and market validation.",
+    "confidence_adjustments": {
+      "full_data_with_history": {
+        "multiplier": 0.85,
+        "description": "Complete customer profile with interaction history"
+      },
+      "standard_profile": {
+        "multiplier": 0.70,
+        "description": "Basic demographic and behavioral data"
+      },
+      "minimal_data": {
+        "multiplier": 0.55,
+        "description": "Limited demographic information only"
+      },
+      "cold_prospect": {
+        "multiplier": 0.45,
+        "description": "New prospect without interaction history"
+      }
+    }
   },
   "match_thresholds": {
-    "description": "Progi klasyfikujące wynik 'score_total' na trzy poziomy dopasowania.",
-    "high_match": {
-      "range": "80-100",
-      "interpretation": "Bardzo wysokie dopasowanie. Reguła jest idealnie dobrana do sytuacji klienta. Wysoka pewność co do oszacowanej szansy zakupu."
+    "description": "Realistic conversion probability thresholds based on Polish EV market data.",
+    "hot_prospect": {
+      "range": "70-100",
+      "conversion_probability": "60-85%",
+      "action": "Immediate follow-up, schedule test drive, prepare financing options",
+      "timeline": "Close within 2-4 weeks"
     },
-    "medium_match": {
-      "range": "50-79",
-      "interpretation": "Średnie dopasowanie. Reguła jest prawdopodobnie adekwatna, ale mogą istnieć inne, lepiej pasujące. Szansa zakupu jest umiarkowana."
+    "warm_prospect": {
+      "range": "45-69",
+      "conversion_probability": "35-60%",
+      "action": "Nurture with targeted content, address specific objections",
+      "timeline": "Close within 1-3 months"
     },
-    "low_match": {
-      "range": "0-49",
-      "interpretation": "Niskie dopasowanie. Reguła jest słabo dopasowana do kontekstu rozmowy. Należy poszukać innej reguły lub zebrać więcej danych o kliencie."
+    "cold_prospect": {
+      "range": "25-44",
+      "conversion_probability": "15-35%",
+      "action": "Educational content, build awareness, long-term nurturing",
+      "timeline": "Close within 3-6 months"
+    },
+    "low_potential": {
+      "range": "0-24",
+      "conversion_probability": "0-15%",
+      "action": "Minimal resources, focus on qualification improvement",
+      "timeline": "Unlikely conversion in current cycle"
+    }
+  },
+  "polish_market_specifics": {
+    "description": "Updated factors for Polish EV market May 2025 with real infrastructure data.",
+    "infrastructure_reality_may_2025": {
+      "total_charging_points": 9814,
+      "fast_dc_percentage": 33,
+      "ev_per_charging_point": 9.6,
+      "consumer_infrastructure_anxiety": 36,
+      "weight_multiplier": 1.4,
+      "description": "Infrastructure anxiety increased to 40% due to real density data"
+    },
+    "used_ev_market_impact": {
+      "consideration_rate": 62,
+      "tesla_specific_concerns": {
+        "depreciation_anxiety": 0.2,
+        "warranty_concerns": 0.4,
+        "price_sensitivity_increase": 0.3
+      },
+      "description": "62% of Poles consider used EVs, fundamentally changing Tesla customer profile"
+    },
+    "price_sensitivity_enhanced": {
+      "weight_multiplier": 1.25,
+      "description": "Price concerns increased 25% due to used EV alternatives and economic pressures"
+    },
+    "naszeauto_program_tracking": {
+      "total_budget": "1.6B PLN",
+      "max_subsidy": 40000,
+      "base_individual_subsidy": 18750,
+      "tesla_model_y_eligibility": "All variants qualify",
+      "conversion_impact": "+20% when eligible (up from +15%)"
+    },
+    "brand_sentiment_factors": {
+      "elon_musk_effect": {
+        "positive_impact": "Innovation leadership, tech vision",
+        "negative_impact": "Political statements, Twitter controversies",
+        "polish_market_sensitivity": "Medium-High",
+        "monitoring_required": true
+      }
+    },
+    "disc_segments_q1_2025_reality": {
+      "I_influence_segment": {
+        "market_share": "45% (up from 25%)",
+        "primary_model": "Model Y (51% of Tesla sales)",
+        "characteristics": "High-income families, social media active, NaszEauto users"
+      },
+      "D_dominant_segment": {
+        "market_share": "25% (down from 30%)",
+        "concern": "Ultra-premium segment leaving Tesla for traditional luxury",
+        "model_s_x_sales": "Only 3% of total Tesla sales"
+      },
+      "S_steady_segment": {
+        "market_share": "20% (down from 35%)",
+        "primary_model": "Model 3 (46% of Tesla sales)",
+        "competitive_pressure": "Losing to Kia EV6, Dacia Spring"
+      },
+      "C_conscientious_segment": {
+        "market_share": "10% (stable)",
+        "characteristics": "Tech engineers, TCO focused, detailed analysis"
+      }
+    },
+    "regional_variations": {
+      "warsaw_krakow": "Base scoring",
+      "other_major_cities": "-15% infrastructure score (updated from -10%)",
+      "rural_areas": "-30% infrastructure score, +20% price sensitivity (updated)"
     }
   }
 }

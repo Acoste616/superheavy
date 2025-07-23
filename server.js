@@ -44,7 +44,7 @@ async function initializeBackend() {
         const dataFiles = {
             triggers: 'data/triggers.json',
             personas: 'data/personas.json',
-            rules: 'rules.json',
+            rules: 'data/rules.json',
             weights: 'weights_and_scoring.json',
             cheatsheet: 'cheatsheet_phrases.json',
             objections: 'objections_and_rebuttals.json'
@@ -75,8 +75,33 @@ app.post('/api/analyze', async (req, res) => {
     try {
         const { customerId, sessionId, inputData } = req.body;
         
-        // Perform customer analysis
-        const analysis = decoderEngine.analyzeCustomer(inputData);
+        // Enhanced input validation
+        if (!inputData) {
+            return res.status(400).json({
+                success: false,
+                error: 'Missing input data'
+            });
+        }
+        
+        if (!inputData.selectedTriggers || inputData.selectedTriggers.length === 0) {
+            return res.status(400).json({
+                success: false,
+                error: 'No triggers selected'
+            });
+        }
+        
+        // Perform customer analysis with enhanced error handling
+        const analysis = await decoderEngine.analyzeCustomer(inputData);
+        
+        // Validate analysis result
+        if (!analysis || (typeof analysis.conversion_probability === 'undefined' && typeof analysis.scores?.enhanced_conversion_probability === 'undefined')) {
+            throw new Error('Invalid analysis result');
+        }
+        
+        // Ensure conversion_probability exists for backward compatibility
+        if (typeof analysis.conversion_probability === 'undefined' && analysis.scores?.enhanced_conversion_probability) {
+            analysis.conversion_probability = analysis.scores.enhanced_conversion_probability;
+        }
         
         // Create or update customer journey
         const customerData = {
@@ -99,9 +124,26 @@ app.post('/api/analyze', async (req, res) => {
         
     } catch (error) {
         console.error('Analysis error:', error);
-        res.status(500).json({
+        
+        // Enhanced error response
+        let statusCode = 500;
+        let errorMessage = 'Analysis failed';
+        
+        if (error.message.includes('validation')) {
+            statusCode = 400;
+            errorMessage = 'Data validation failed: ' + error.message;
+        } else if (error.message.includes('API')) {
+            statusCode = 503;
+            errorMessage = 'External service unavailable: ' + error.message;
+        } else if (error.message.includes('Invalid analysis result')) {
+            statusCode = 500;
+            errorMessage = 'Analysis engine error';
+        }
+        
+        res.status(statusCode).json({
             success: false,
-            error: 'Analysis failed'
+            error: errorMessage,
+            timestamp: new Date().toISOString()
         });
     }
 });

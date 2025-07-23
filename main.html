@@ -101,6 +101,14 @@
                     <div id="analysisCount" class="text-tesla-gray-300 text-sm">
                         Analyses: <span class="text-tesla-red font-semibold">0</span>
                     </div>
+                    <a href="analysis-history.html" class="bg-tesla-gray-800 hover:bg-tesla-gray-700 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center space-x-2">
+                        <i class="fas fa-history"></i>
+                        <span>Historia Analiz</span>
+                    </a>
+                    <a href="dashboard-advanced.html" class="bg-tesla-gray-800 hover:bg-tesla-gray-700 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center space-x-2">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Dashboard</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -213,6 +221,55 @@
                     </div>
                 </div>
 
+                <!-- Relationship & Context Information -->
+                <div class="bg-tesla-gray-800 rounded-lg p-6 mb-8">
+                    <h4 class="text-lg font-semibold text-tesla-red mb-4 flex items-center">
+                        <i class="fas fa-users mr-2"></i>
+                        Kontekst Osobisty i Rodzinny
+                    </h4>
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div>
+                            <label class="block text-tesla-gray-300 mb-2 text-sm">Status związku:</label>
+                            <select id="relationshipStatus" class="w-full bg-tesla-gray-700 border border-tesla-gray-600 rounded px-3 py-2 text-white text-sm">
+                                <option value="">Nie określono</option>
+                                <option value="single">💼 Single</option>
+                                <option value="partner">👫 W związku/Małżeństwo</option>
+                                <option value="divorced">📋 Po rozwodzie</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-tesla-gray-300 mb-2 text-sm">Dzieci:</label>
+                            <select id="hasChildren" class="w-full bg-tesla-gray-700 border border-tesla-gray-600 rounded px-3 py-2 text-white text-sm">
+                                <option value="">Nie określono</option>
+                                <option value="none">🚫 Bez dzieci</option>
+                                <option value="young">👶 Małe dzieci (0-10)</option>
+                                <option value="teen">🎓 Nastolatki (11-18)</option>
+                                <option value="adult">👨‍💼 Dorosłe dzieci</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-tesla-gray-300 mb-2 text-sm">Pierwszy kontakt z Tesla:</label>
+                            <select id="teslaExperience" class="w-full bg-tesla-gray-700 border border-tesla-gray-600 rounded px-3 py-2 text-white text-sm">
+                                <option value="">Nie określono</option>
+                                <option value="first_time">🆕 Pierwszy raz</option>
+                                <option value="researching">🔍 Badałem wcześniej</option>
+                                <option value="test_driven">🚗 Jeździłem już Teslą</option>
+                                <option value="owner_friend">👥 Znam właściciela</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-tesla-gray-300 mb-2 text-sm">Rola auta:</label>
+                            <select id="carRole" class="w-full bg-tesla-gray-700 border border-tesla-gray-600 rounded px-3 py-2 text-white text-sm">
+                                <option value="">Nie określono</option>
+                                <option value="primary">🚗 Główne auto</option>
+                                <option value="secondary">🚙 Drugie auto</option>
+                                <option value="replacement">🔄 Zamiana obecnego</option>
+                                <option value="additional">➕ Dodatkowe auto</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Analysis Button -->
                 <button id="runAnalysis" class="w-full bg-gradient-to-r from-tesla-red to-red-600 hover:from-red-600 hover:to-tesla-red text-white font-bold py-4 rounded-lg text-lg transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">
                     <i id="analysisIcon" class="fas fa-brain mr-3"></i>
@@ -265,21 +322,30 @@
             <!-- Main Results Tabs -->
             <div class="bg-tesla-gray-900 rounded-xl border border-tesla-gray-800 overflow-hidden">
                 <!-- Tab Navigation -->
-                <div class="flex border-b border-tesla-gray-800">
-                    <button class="tab-button active flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="strategy">
-                        <i class="fas fa-bullseye mr-2"></i>Strategia
+                <div class="flex flex-wrap border-b border-tesla-gray-800">
+                    <button class="tab-button active flex-1 min-w-0 px-4 py-4 text-center hover:bg-tesla-gray-800 transition-colors text-sm" data-tab="strategy">
+                        <i class="fas fa-bullseye mr-1"></i>Strategia
                     </button>
-                    <button class="tab-button flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="language">
-                        <i class="fas fa-comments mr-2"></i>Język
+                    <button class="tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-tesla-gray-800 transition-colors text-sm" data-tab="psychology">
+                        <i class="fas fa-brain mr-1"></i>Psychologia
                     </button>
-                    <button class="tab-button flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="objections">
-                        <i class="fas fa-shield-alt mr-2"></i>Obiekcje
+                    <button class="tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-tesla-gray-800 transition-colors text-sm" data-tab="language">
+                        <i class="fas fa-comments mr-1"></i>Język
                     </button>
-                    <button class="tab-button flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="actions">
-                        <i class="fas fa-tasks mr-2"></i>Działania
+                    <button class="tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-tesla-gray-800 transition-colors text-sm" data-tab="objections">
+                        <i class="fas fa-shield-alt mr-1"></i>Obiekcje
                     </button>
-                    <button class="tab-button flex-1 px-6 py-4 text-center hover:bg-tesla-gray-800 transition-colors" data-tab="explainability">
-                        <i class="fas fa-chart-bar mr-2"></i>Dlaczego?
+                    <button class="tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-tesla-gray-800 transition-colors text-sm" data-tab="partner">
+                        <i class="fas fa-handshake mr-1"></i>Partner
+                    </button>
+                    <button class="tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-tesla-gray-800 transition-colors text-sm" data-tab="predictions">
+                        <i class="fas fa-crystal-ball mr-1"></i>Predykcje
+                    </button>
+                    <button class="tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-tesla-gray-800 transition-colors text-sm" data-tab="actions">
+                        <i class="fas fa-tasks mr-1"></i>Działania
+                    </button>
+                    <button class="tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-tesla-gray-800 transition-colors text-sm" data-tab="explainability">
+                        <i class="fas fa-chart-bar mr-1"></i>Analityka
                     </button>
                 </div>
 
@@ -307,6 +373,42 @@
                         </div>
                     </div>
 
+                    <!-- Psychology Tab -->
+                    <div id="psychologyTab" class="tab-content hidden">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-user-circle mr-2"></i>Profil Psychologiczny DISC
+                                </h4>
+                                <div id="discAnalysis" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-tesla-red mb-4 mt-8">
+                                    <i class="fas fa-heart mr-2"></i>Motywacje i Wartości
+                                </h4>
+                                <div id="motivationsValues" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-exclamation-triangle mr-2"></i>Lęki i Obawy
+                                </h4>
+                                <div id="fearsWorries" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-tesla-red mb-4 mt-8">
+                                    <i class="fas fa-lightbulb mr-2"></i>Styl Podejmowania Decyzji
+                                </h4>
+                                <div id="decisionStyle" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Language Tab -->
                     <div id="languageTab" class="tab-content hidden">
                         <div class="grid md:grid-cols-2 gap-8">
@@ -317,6 +419,13 @@
                                 <div id="keyWords" class="space-y-4">
                                     <!-- Dynamically populated -->
                                 </div>
+                                
+                                <h4 class="text-xl font-bold text-tesla-red mb-4 mt-8">
+                                    <i class="fas fa-volume-up mr-2"></i>Ton i Styl Komunikacji
+                                </h4>
+                                <div id="communicationStyle" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-tesla-red mb-4">
@@ -325,17 +434,122 @@
                                 <div id="readyPhrases" class="space-y-4">
                                     <!-- Dynamically populated -->
                                 </div>
+                                
+                                <h4 class="text-xl font-bold text-tesla-red mb-4 mt-8">
+                                    <i class="fas fa-ban mr-2"></i>Czego Unikać
+                                </h4>
+                                <div id="avoidPhrases" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Objections Tab -->
                     <div id="objectionsTab" class="tab-content hidden">
-                        <h4 class="text-xl font-bold text-tesla-red mb-6">
-                            <i class="fas fa-comments-dollar mr-2"></i>Prawdopodobne Obiekcje i Odpowiedzi
-                        </h4>
-                        <div id="objectionsList" class="space-y-6">
-                            <!-- Dynamically populated -->
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-shield-alt mr-2"></i>Najczęstsze Zastrzeżenia
+                                </h4>
+                                <div id="commonObjections" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-tesla-red mb-4 mt-8">
+                                    <i class="fas fa-clock mr-2"></i>Zastrzeżenia Czasowe
+                                </h4>
+                                <div id="timeObjections" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-dollar-sign mr-2"></i>Zastrzeżenia Finansowe
+                                </h4>
+                                <div id="financialObjections" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-tesla-red mb-4 mt-8">
+                                    <i class="fas fa-cog mr-2"></i>Zastrzeżenia Techniczne
+                                </h4>
+                                <div id="technicalObjections" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Partner Tab -->
+                    <div id="partnerTab" class="tab-content hidden">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-users mr-2"></i>Analiza Partnera/Współmałżonka
+                                </h4>
+                                <div id="partnerAnalysis" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-tesla-red mb-4 mt-8">
+                                    <i class="fas fa-handshake mr-2"></i>Strategia Podwójnej Sprzedaży
+                                </h4>
+                                <div id="dualSalesStrategy" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-balance-scale mr-2"></i>Dynamika Decyzyjna
+                                </h4>
+                                <div id="decisionDynamics" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-tesla-red mb-4 mt-8">
+                                    <i class="fas fa-comments mr-2"></i>Argumenty dla Każdej Strony
+                                </h4>
+                                <div id="partnerArguments" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Predictions Tab -->
+                    <div id="predictionsTab" class="tab-content hidden">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-chart-line mr-2"></i>Prawdopodobieństwo Zakupu
+                                </h4>
+                                <div id="purchaseProbability" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-tesla-red mb-4 mt-8">
+                                    <i class="fas fa-calendar-alt mr-2"></i>Przewidywany Timeline
+                                </h4>
+                                <div id="predictedTimeline" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-tesla-red mb-4">
+                                    <i class="fas fa-car mr-2"></i>Preferowany Model
+                                </h4>
+                                <div id="preferredModel" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-tesla-red mb-4 mt-8">
+                                    <i class="fas fa-route mr-2"></i>Następne Kroki
+                                </h4>
+                                <div id="predictedNextSteps" class="space-y-4">
+                                    <!-- Dynamically populated -->
+                                </div>
+                            </div>
                         </div>
                     </div>
 

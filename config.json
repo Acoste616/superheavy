@@ -1,0 +1,167 @@
+{
+  "system": {
+    "version": "2.1",
+    "name": "Tesla Customer Decoder Engine",
+    "description": "Zaawansowany system analizy klientów z fuzzy logic i uczeniem maszynowym"
+  },
+  "fuzzy_logic": {
+    "confidence_threshold": 60,
+    "hybrid_detection_threshold": 0.3,
+    "personality_weights": {
+      "D": {
+        "dominance_triggers": 1.2,
+        "time_pressure": 1.1,
+        "results_focus": 1.3
+      },
+      "I": {
+        "social_proof": 1.2,
+        "innovation_focus": 1.1,
+        "enthusiasm_signals": 1.3
+      },
+      "S": {
+        "security_concerns": 1.2,
+        "stability_focus": 1.1,
+        "support_needs": 1.3
+      },
+      "C": {
+        "detail_requests": 1.2,
+        "analysis_focus": 1.1,
+        "precision_signals": 1.3
+      }
+    },
+    "temporal_weights": {
+      "early_conversation": {
+        "uncertainty_signals": 1.3,
+        "information_gathering": 1.2
+      },
+      "mid_conversation": {
+        "objection_patterns": 1.2,
+        "engagement_signals": 1.1
+      },
+      "late_conversation": {
+        "decision_signals": 1.4,
+        "closing_resistance": 1.3
+      }
+    }
+  },
+  "advanced_triggers": {
+    "micro_signals": {
+      "enabled": true,
+      "weight_multiplier": 0.8,
+      "confidence_boost": 5
+    },
+    "behavioral_signals": {
+      "enabled": true,
+      "weight_multiplier": 1.1,
+      "confidence_boost": 7
+    },
+    "contextual_signals": {
+      "enabled": true,
+      "weight_multiplier": 1.0,
+      "confidence_boost": 6
+    },
+    "hierarchical_processing": {
+      "enabled": true,
+      "category_weights": {
+        "obawy": 1.2,
+        "motywacje": 1.1,
+        "preferencje": 1.0,
+        "ograniczenia": 1.3
+      }
+    }
+  },
+  "transparency": {
+    "mode": "full",
+    "explanation_depth": "detailed",
+    "confidence_reporting": true,
+    "decision_tracking": true,
+    "feedback_collection": {
+      "enabled": true,
+      "auto_prompt": false,
+      "rating_scale": 5
+    }
+  },
+  "learning": {
+    "enabled": true,
+    "max_history_sessions": 100,
+    "weight_update_frequency": "weekly",
+    "learning_rate": 0.01,
+    "performance_tracking": {
+      "conversion_rate_window": 30,
+      "accuracy_measurement": true,
+      "confidence_calibration": true
+    },
+    "ab_testing": {
+      "enabled": true,
+      "max_concurrent_tests": 3,
+      "min_sample_size": 50,
+      "significance_level": 0.05
+    }
+  },
+  "api": {
+    "rate_limiting": {
+      "enabled": false,
+      "requests_per_minute": 60
+    },
+    "cors": {
+      "enabled": true,
+      "origins": ["*"]
+    },
+    "logging": {
+      "level": "info",
+      "requests": true,
+      "errors": true,
+      "performance": true
+    }
+  },
+  "data_sources": {
+    "triggers_database": "./data/triggers.json",
+    "personas_database": "./data/personas.json",
+    "market_data": "./data/market_data_2025.json",
+    "rules_engine": "./data/rules.json",
+    "cheatsheet": "./cheatsheet_phrases.json",
+    "objections": "./objections_and_rebuttals.json"
+  },
+  "performance": {
+    "cache_enabled": true,
+    "cache_ttl_seconds": 300,
+    "parallel_processing": true,
+    "max_concurrent_analyses": 10
+  },
+  "security": {
+    "data_anonymization": true,
+    "session_encryption": false,
+    "audit_logging": true,
+    "data_retention_days": 90
+  },
+  "ui": {
+    "theme": "modern",
+    "language": "pl",
+    "auto_refresh": true,
+    "refresh_interval_seconds": 30,
+    "dashboard_features": {
+      "real_time_monitoring": true,
+      "performance_charts": true,
+      "feedback_interface": true,
+      "ab_test_management": true,
+      "configuration_panel": true
+    }
+  },
+  "alerts": {
+    "low_confidence_threshold": 40,
+    "high_uncertainty_threshold": 80,
+    "performance_degradation_threshold": 0.1,
+    "notification_channels": {
+      "console": true,
+      "dashboard": true,
+      "email": false
+    }
+  },
+  "experimental": {
+    "neural_personality_detection": false,
+    "real_time_learning": false,
+    "advanced_nlp": false,
+    "predictive_objections": true,
+    "dynamic_strategy_adaptation": true
+  }
+}

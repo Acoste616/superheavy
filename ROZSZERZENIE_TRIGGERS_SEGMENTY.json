@@ -1,0 +1,370 @@
+{
+  "segment_specific_triggers": {
+    "eco_family_pv_synergy": {
+      "category": "environmental_financial",
+      "segment_target": "eco_family",
+      "description": "Rodzina z PV chce maksymalizować synergię Tesla + panele słoneczne",
+      "detection_keywords": [
+        "panele słoneczne", "fotowoltaika", "PV", "energia słoneczna",
+        "oszczędności energii", "darmowa energia", "synergia",
+        "ekologia dla dzieci", "przyszłość planety", "czysta energia"
+      ],
+      "quick_responses": {
+        "D": {
+          "immediate_reply": "Perfekcyjne połączenie! Tesla + Twoje PV = 100% darmowa energia + maksymalne oszczędności. Sprawdźmy liczby.",
+          "key_points": [
+            "ROI 15-20% rocznie z kombinacji Tesla + PV",
+            "Całkowita niezależność energetyczna",
+            "Nadwyżka energii = dodatkowy dochód",
+            "5-gwiazdkowe bezpieczeństwo dla rodziny"
+          ],
+          "next_action": "Kalkulator PV + Tesla ROI w ciągu 2h"
+        },
+        "I": {
+          "immediate_reply": "Wow! Jesteście prawdziwymi eko-pionierami! Tesla + PV = dream team dla planety i portfela. Sąsiedzi będą zazdroszczać!",
+          "key_points": [
+            "Dołączcie do ekskluzywnej grupy Eco-Families Tesla",
+            "Pokażcie dzieciom, jak dbać o planetę",
+            "Inspirujcie innych rodzin w okolicy",
+            "Cicha jazda = spokojne dzieci w podróży"
+          ],
+          "next_action": "Video call z rodziną Tesla + PV z Waszego regionu"
+        },
+        "S": {
+          "immediate_reply": "Wspaniały wybór dla rodziny. Tesla z PV to spokojne oszczędności i pewność, że dzieci mają bezpieczną przyszłość.",
+          "key_points": [
+            "Przewidywalne, stałe oszczędności każdego miesiąca",
+            "Najwyższe standardy bezpieczeństwa dla dzieci",
+            "Prosta obsługa - wszystko automatyczne",
+            "Wsparcie Tesla 24/7 dla spokoju ducha"
+          ],
+          "next_action": "Spokojne omówienie korzyści bez presji"
+        },
+        "C": {
+          "immediate_reply": "Doskonała analiza! Oto konkretne dane: Tesla + PV = 35% oszczędności rocznie + ROI 18% + zerowa emisja CO2.",
+          "key_points": [
+            "Szczegółowa analiza TCO: Tesla vs konkurencja",
+            "Kalkulator rzeczywistych oszczędności z Waszymi PV",
+            "Dane bezpieczeństwa: 5 gwiazdek NCAP",
+            "Gwarancja 8 lat na baterię + PV warranty"
+          ],
+          "next_action": "Przygotowanie szczegółowej analizy finansowej"
+        }
+      },
+      "conversion_modifiers": [
+        "pv_synergy_bonus",
+        "eco_family_priority",
+        "energy_independence",
+        "environmental_legacy",
+        "family_savings_focus"
+      ]
+    },
+
+    "tech_professional_performance": {
+      "category": "performance_innovation",
+      "segment_target": "tech_professional",
+      "description": "Tech professional szuka najnowszej technologii i performance",
+      "detection_keywords": [
+        "performance", "acceleration", "0-100", "tech specs",
+        "autopilot", "FSD", "OTA updates", "innovation",
+        "cutting edge", "latest technology", "AI", "neural networks"
+      ],
+      "quick_responses": {
+        "D": {
+          "immediate_reply": "Model S Plaid - 1020 KM, 0-100 w 2.1s. Najszybszy sedan świata. Chcesz być pierwszy w Polsce z taką mocą?",
+          "key_points": [
+            "Rekordowe przyspieszenie - bije wszystkie supercary",
+            "Autopilot 4.0 - najnowsza generacja AI",
+            "OTA updates - samochód się ulepsza co miesiąc",
+            "Track Mode - profesjonalne ustawienia torowe"
+          ],
+          "next_action": "Exclusive performance test drive jutro"
+        },
+        "I": {
+          "immediate_reply": "Wyobraź sobie reakcje na parkingu biurowca! Tesla to ultimate tech status symbol. Dołącz do elity innowatorów!",
+          "key_points": [
+            "Networking z innymi tech leaders w Tesla community",
+            "Early access do najnowszych features",
+            "Inspiruj zespół swoją wizją przyszłości",
+            "Social media content - pokaz technologii"
+          ],
+          "next_action": "Zaproszenie na Tesla Tech Meetup"
+        },
+        "S": {
+          "immediate_reply": "Tesla to spokojne przejście w przyszłość. Najnowsza technologia, ale niezawodna i prosta w użyciu.",
+          "key_points": [
+            "Autopilot - relaks w korkach do pracy",
+            "Cicha kabina - spokojne rozmowy telefoniczne",
+            "Niezawodność potwierdzona przez miliony mil",
+            "Wsparcie techniczne 24/7"
+          ],
+          "next_action": "Demo Autopilot w warunkach miejskich"
+        },
+        "C": {
+          "immediate_reply": "Specs nie do pobicia: 1020 KM, 628 Nm, Autopilot 4.0, 8-core gaming. Żadna konkurencja nie ma takich parametrów.",
+          "key_points": [
+            "Szczegółowe porównanie tech specs vs konkurencja",
+            "Architektura neural networks w Autopilot",
+            "Roadmapa rozwoju technologii Tesla",
+            "Benchmarki performance i efficiency"
+          ],
+          "next_action": "Technical deep-dive session z Tesla engineer"
+        }
+      },
+      "conversion_modifiers": [
+        "tech_early_adopter",
+        "performance_priority",
+        "innovation_seeker",
+        "status_symbol",
+        "community_access"
+      ]
+    },
+
+    "senior_comfort_simplicity": {
+      "category": "comfort_support",
+      "segment_target": "senior_comfort",
+      "description": "Senior szuka komfortu, prostoty i niezawodności",
+      "detection_keywords": [
+        "proste w obsłudze", "niezawodność", "komfort", "wsparcie",
+        "gwarancja", "serwis", "bezpieczeństwo", "stabilność",
+        "spokój", "pewność", "tradycja", "jakość"
+      ],
+      "quick_responses": {
+        "D": {
+          "immediate_reply": "Tesla - najwyższa jakość i niezawodność. Inwestycja na lata, nie eksperyment. Sprawdzone przez miliony właścicieli.",
+          "key_points": [
+            "Najwyższe oceny niezawodności w branży",
+            "8-letnia gwarancja - najdłuższa na rynku",
+            "Najniższe koszty eksploatacji w segmencie",
+            "Wartość odsprzedaży wyższa niż konkurencja"
+          ],
+          "next_action": "Prezentacja danych niezawodności i gwarancji"
+        },
+        "I": {
+          "immediate_reply": "Dołącz do grona zadowolonych seniorów Tesla! Komfort, prestiż i społeczność, która się wspiera.",
+          "key_points": [
+            "Tesla Senior Club - spotkania i wycieczki",
+            "Prestiż i uznanie w społeczności",
+            "Wsparcie innych właścicieli Tesla",
+            "Komfort jazdy doceniony przez seniorów"
+          ],
+          "next_action": "Spotkanie z innymi seniorami Tesla"
+        },
+        "S": {
+          "immediate_reply": "Tesla to spokój i bezpieczeństwo. Najprostszy w obsłudze samochód elektryczny + 24/7 wsparcie gdy potrzebujesz.",
+          "key_points": [
+            "Jedna pedał - prosta jazda bez stresu",
+            "Automatyczne systemy bezpieczeństwa",
+            "24/7 wsparcie Tesla - zawsze pomożemy",
+            "Cicha, komfortowa jazda bez wibracji"
+          ],
+          "next_action": "Spokojny test drive z pełnym wyjaśnieniem"
+        },
+        "C": {
+          "immediate_reply": "Najwyższe oceny niezawodności, 8-letnia gwarancja, najniższe koszty eksploatacji. Liczby potwierdzają jakość.",
+          "key_points": [
+            "Szczegółowe dane niezawodności vs konkurencja",
+            "Analiza kosztów eksploatacji przez 10 lat",
+            "Warunki gwarancji i serwisu",
+            "Certyfikaty bezpieczeństwa i jakości"
+          ],
+          "next_action": "Szczegółowa prezentacja danych i gwarancji"
+        }
+      },
+      "conversion_modifiers": [
+        "comfort_priority",
+        "simplicity_focus",
+        "reliability_assurance",
+        "support_emphasis",
+        "senior_community"
+      ]
+    },
+
+    "business_roi_fleet": {
+      "category": "business_financial",
+      "segment_target": "business_roi",
+      "description": "Business decision maker szuka ROI i korzyści dla firmy",
+      "detection_keywords": [
+        "ROI", "fleet", "business", "firma", "koszty eksploatacji",
+        "korzyści podatkowe", "leasing", "TCO", "amortyzacja",
+        "benefit dla pracowników", "image firmy", "CSR"
+      ],
+      "quick_responses": {
+        "D": {
+          "immediate_reply": "Tesla Business = najlepszy ROI w segmencie premium. 30% niższe TCO + korzyści podatkowe. Sprawdźmy Twoje liczby.",
+          "key_points": [
+            "ROI 25-35% w pierwszym roku",
+            "Korzyści podatkowe do 150% wartości",
+            "Najniższe TCO w segmencie premium",
+            "Fleet management tools included"
+          ],
+          "next_action": "Business case analysis w ciągu 24h"
+        },
+        "I": {
+          "immediate_reply": "Twoja firma z flotą Tesla? To statement o innowacyjności! Klienci i pracownicy będą pod wrażeniem.",
+          "key_points": [
+            "Pozytywny image firmy innowacyjnej",
+            "Atrakcyjny benefit dla top talentów",
+            "Marketing value - firma przyszłości",
+            "Networking z innymi Tesla Business owners"
+          ],
+          "next_action": "Case study podobnej firmy z Twojej branży"
+        },
+        "S": {
+          "immediate_reply": "Tesla Business to spokojne zarządzanie flotą. Przewidywalne koszty, zadowoleni pracownicy, zero stresu.",
+          "key_points": [
+            "Przewidywalne, stałe koszty eksploatacji",
+            "Mniej awarii = mniej problemów",
+            "Zadowoleni pracownicy = wyższa produktywność",
+            "Wsparcie Tesla Business 24/7"
+          ],
+          "next_action": "Spokojne omówienie korzyści operacyjnych"
+        },
+        "C": {
+          "immediate_reply": "Analiza TCO: Tesla vs konkurencja = 30% oszczędności + korzyści podatkowe + measurable CSR impact.",
+          "key_points": [
+            "Szczegółowa analiza TCO dla Twojej floty",
+            "Kalkulacja korzyści podatkowych",
+            "ROI analysis z real data",
+            "Compliance z regulacjami ESG"
+          ],
+          "next_action": "Przygotowanie szczegółowej analizy finansowej"
+        }
+      },
+      "conversion_modifiers": [
+        "business_roi_focus",
+        "tax_benefits",
+        "fleet_efficiency",
+        "corporate_image",
+        "employee_satisfaction"
+      ]
+    }
+  },
+
+  "combined_triggers": {
+    "safety_environmental_family": {
+      "trigger_combination": ["children_safety_priority", "environmental_consciousness"],
+      "segment_boost": "eco_family",
+      "combined_message": "Bezpieczna przyszłość dla dzieci + czysta planeta dla następnych pokoleń",
+      "urgency_multiplier": 1.3,
+      "conversion_bonus": 20
+    },
+    
+    "performance_tech_status": {
+      "trigger_combination": ["tech_professional_performance", "status_symbol"],
+      "segment_boost": "tech_professional",
+      "combined_message": "Ultimate tech performance + status symbol dla innowatorów",
+      "urgency_multiplier": 1.4,
+      "conversion_bonus": 25
+    },
+    
+    "comfort_reliability_senior": {
+      "trigger_combination": ["senior_comfort_simplicity", "reliability_focus"],
+      "segment_boost": "senior_comfort",
+      "combined_message": "Maksymalny komfort + niezawodność na lata",
+      "urgency_multiplier": 1.1,
+      "conversion_bonus": 15
+    },
+    
+    "roi_tax_business": {
+      "trigger_combination": ["business_roi_fleet", "tax_benefits"],
+      "segment_boost": "business_roi",
+      "combined_message": "Najlepszy ROI + maksymalne korzyści podatkowe",
+      "urgency_multiplier": 1.2,
+      "conversion_bonus": 18
+    },
+    
+    "pv_savings_family": {
+      "trigger_combination": ["eco_family_pv_synergy", "financial_savings"],
+      "segment_boost": "eco_family",
+      "combined_message": "Maksymalne oszczędności z PV + Tesla = darmowa mobilność",
+      "urgency_multiplier": 1.5,
+      "conversion_bonus": 30
+    }
+  },
+
+  "segment_priority_matrix": {
+    "eco_family": {
+      "priority_score": 95,
+      "key_triggers": ["eco_family_pv_synergy", "children_safety_priority", "environmental_consciousness"],
+      "follow_up_frequency": "weekly",
+      "preferred_channels": ["email", "phone", "home_visit"],
+      "decision_timeline": "2-4 weeks",
+      "key_decision_factors": ["safety", "savings", "environmental_impact", "family_benefits"]
+    },
+    
+    "tech_professional": {
+      "priority_score": 88,
+      "key_triggers": ["tech_professional_performance", "innovation_seeker", "status_symbol"],
+      "follow_up_frequency": "daily",
+      "preferred_channels": ["phone", "video_call", "demo"],
+      "decision_timeline": "1-2 weeks",
+      "key_decision_factors": ["performance", "technology", "status", "innovation"]
+    },
+    
+    "senior_comfort": {
+      "priority_score": 92,
+      "key_triggers": ["senior_comfort_simplicity", "reliability_focus", "support_emphasis"],
+      "follow_up_frequency": "bi_weekly",
+      "preferred_channels": ["phone", "email", "in_person"],
+      "decision_timeline": "4-8 weeks",
+      "key_decision_factors": ["comfort", "reliability", "support", "simplicity"]
+    },
+    
+    "business_roi": {
+      "priority_score": 85,
+      "key_triggers": ["business_roi_fleet", "tax_benefits", "corporate_image"],
+      "follow_up_frequency": "weekly",
+      "preferred_channels": ["email", "presentation", "meeting"],
+      "decision_timeline": "3-6 weeks",
+      "key_decision_factors": ["roi", "tax_benefits", "operational_efficiency", "image"]
+    },
+    
+    "young_urban": {
+      "priority_score": 75,
+      "key_triggers": ["lifestyle_upgrade", "tech_appeal", "environmental_consciousness"],
+      "follow_up_frequency": "every_other_day",
+      "preferred_channels": ["social_media", "video_call", "demo"],
+      "decision_timeline": "2-3 weeks",
+      "key_decision_factors": ["lifestyle", "technology", "affordability", "environmental"]
+    }
+  },
+
+  "personalization_rules": {
+    "message_adaptation": {
+      "eco_family": {
+        "focus_keywords": ["dzieci", "rodzina", "bezpieczeństwo", "oszczędności", "przyszłość"],
+        "avoid_keywords": ["ryzyko", "eksperyment", "nowość", "test"],
+        "emotional_triggers": ["family_protection", "environmental_legacy", "financial_security"]
+      },
+      "tech_professional": {
+        "focus_keywords": ["innowacja", "performance", "technologia", "przyszłość", "lider"],
+        "avoid_keywords": ["tradycyjny", "standardowy", "podstawowy", "przeciętny"],
+        "emotional_triggers": ["innovation_leadership", "status_achievement", "tech_mastery"]
+      },
+      "senior_comfort": {
+        "focus_keywords": ["niezawodność", "komfort", "wsparcie", "jakość", "spokój"],
+        "avoid_keywords": ["eksperyment", "ryzyko", "nowość", "zmiana"],
+        "emotional_triggers": ["security_assurance", "comfort_guarantee", "support_availability"]
+      }
+    },
+    
+    "timing_optimization": {
+      "eco_family": {
+        "best_contact_times": ["18:00-20:00", "weekend_morning"],
+        "avoid_times": ["07:00-09:00", "15:00-17:00"],
+        "seasonal_factors": ["back_to_school", "summer_vacation_planning"]
+      },
+      "tech_professional": {
+        "best_contact_times": ["09:00-11:00", "14:00-16:00"],
+        "avoid_times": ["12:00-13:00", "after_18:00"],
+        "seasonal_factors": ["tech_conferences", "quarterly_reviews"]
+      },
+      "senior_comfort": {
+        "best_contact_times": ["10:00-12:00", "14:00-16:00"],
+        "avoid_times": ["early_morning", "late_evening"],
+        "seasonal_factors": ["holiday_seasons", "weather_considerations"]
+      }
+    }
+  }
+}

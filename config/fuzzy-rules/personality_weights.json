@@ -1,0 +1,6 @@
+{
+  "D": { "dominance": 0.4, "results_focus": 0.3, "time_pressure": 0.3 },
+  "I": { "social_proof": 0.4, "enthusiasm": 0.3, "relationship": 0.3 },
+  "S": { "security": 0.4, "stability": 0.3, "support": 0.3 },
+  "C": { "data_focus": 0.4, "precision": 0.3, "analysis": 0.3 }
+}

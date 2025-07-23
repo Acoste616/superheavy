@@ -13,7 +13,7 @@ class TeslaCusomerDecoderApp {
         this.analysisCount = 0;
         this.isInitialized = false;
         this.currentCustomerId = null;
-        this.apiBase = 'http://localhost:3001/api';
+        this.apiBase = 'http://localhost:8080/api';
         this.data = {};
         
         // UI Elements
@@ -46,6 +46,298 @@ class TeslaCusomerDecoderApp {
 
         this.init();
     }
+
+    getDISCProfile(disc) {
+         const profiles = {
+             'D': {
+                 name: 'Dominujący',
+                 description: 'Zorientowany na wyniki, decyzyjny, lubi kontrolę',
+                 traits: ['Bezpośredni w komunikacji', 'Szybko podejmuje decyzje', 'Lubi wyzwania', 'Zorientowany na cele', 'Preferuje efektywność']
+             },
+             'I': {
+                 name: 'Wpływowy',
+                 description: 'Towarzyski, entuzjastyczny, lubi ludzi',
+                 traits: ['Energiczny i optymistyczny', 'Lubi być w centrum uwagi', 'Buduje relacje', 'Kreatywny i innowacyjny', 'Motywowany uznaniem']
+             },
+             'S': {
+                 name: 'Stabilny',
+                 description: 'Spokojny, lojalny, lubi bezpieczeństwo',
+                 traits: ['Cierpliwy i wytrwały', 'Lubi rutynę', 'Wspiera innych', 'Unika konfliktów', 'Ceni bezpieczeństwo']
+             },
+             'C': {
+                 name: 'Sumienność',
+                 description: 'Analityczny, dokładny, lubi fakty',
+                 traits: ['Dokładny i precyzyjny', 'Analityczne myślenie', 'Wysokie standardy', 'Ostrożny w decyzjach', 'Zorientowany na jakość']
+             }
+         };
+         return profiles[disc] || profiles['S'];
+     }
+
+     getMotivations(disc) {
+         const motivations = {
+             'D': [
+                 'Osiągnięcie przewagi konkurencyjnej',
+                 'Kontrola nad sytuacją i procesami',
+                 'Szybkie osiąganie rezultatów',
+                 'Bycie liderem w swojej dziedzinie',
+                 'Maksymalizacja efektywności'
+             ],
+             'I': [
+                 'Bycie częścią innowacyjnej społeczności',
+                 'Robienie wrażenia na innych',
+                 'Uczestnictwo w czymś wyjątkowym',
+                 'Dzielenie się doświadczeniami',
+                 'Bycie trendseterem'
+             ],
+             'S': [
+                 'Zapewnienie bezpieczeństwa rodzinie',
+                 'Stabilność finansowa',
+                 'Długoterminowa niezawodność',
+                 'Spokój ducha',
+                 'Wsparcie bliskich'
+             ],
+             'C': [
+                 'Podejmowanie przemyślanych decyzji',
+                 'Maksymalizacja wartości inwestycji',
+                 'Minimalizacja ryzyka',
+                 'Doskonałość techniczna',
+                 'Weryfikowalne korzyści'
+             ]
+         };
+         return motivations[disc] || motivations['S'];
+     }
+
+     getFears(disc) {
+         const fears = {
+             'D': [
+                 'Utrata kontroli nad sytuacją',
+                 'Bycie postrzeganym jako nieskuteczny',
+                 'Marnowanie czasu na niepotrzebne szczegóły',
+                 'Zależność od innych',
+                 'Stagnacja i brak postępu'
+             ],
+             'I': [
+                 'Bycie ignorowanym lub odrzuconym',
+                 'Nudne, techniczne szczegóły',
+                 'Izolacja społeczna',
+                 'Krytyka publiczna',
+                 'Rutyna i monotonia'
+             ],
+             'S': [
+                 'Nagłe zmiany i niepewność',
+                 'Konflikty i napięcia',
+                 'Ryzyko finansowe',
+                 'Presja czasowa',
+                 'Niezawodność nowych technologii'
+             ],
+             'C': [
+                 'Podejmowanie pochopnych decyzji',
+                 'Brak wystarczających informacji',
+                 'Błędy i niedoskonałości',
+                 'Nieprzewidywalne konsekwencje',
+                 'Krytyka jakości pracy'
+             ]
+         };
+         return fears[disc] || fears['S'];
+     }
+
+     getDecisionStyle(disc) {
+         const styles = {
+             'D': {
+                 speed: 'Szybkie, zdecydowane',
+                 process: 'Indywidualny, autorytarny',
+                 focus: 'Wyniki i efektywność'
+             },
+             'I': {
+                 speed: 'Spontaniczne, intuicyjne',
+                 process: 'Konsultacje z innymi',
+                 focus: 'Ludzie i relacje'
+             },
+             'S': {
+                 speed: 'Powolne, przemyślane',
+                 process: 'Konsensus i zgodność',
+                 focus: 'Stabilność i bezpieczeństwo'
+             },
+             'C': {
+                 speed: 'Metodyczne, dokładne',
+                 process: 'Analiza i weryfikacja',
+                 focus: 'Fakty i dane'
+             }
+         };
+         return styles[disc] || styles['S'];
+     }
+
+     getPartnerStrategy(disc) {
+         const strategies = {
+             'D': {
+                 likelyPartnerProfile: 'Prawdopodobnie partner o profilu S lub C - szukający stabilności i bezpieczeństwa',
+                 decisionRole: 'Główny decydent, partner może mieć prawo veta',
+                 dynamics: 'Może być niecierpliwy wobec wahań partnera, potrzebuje szybkich decyzji',
+                 conflicts: 'Partner może obawiać się ryzyka i kosztów, potrzebuje więcej czasu',
+                 dualStrategy: [
+                     'Dla D: Podkreśl przewagę konkurencyjną i ROI',
+                     'Dla partnera: Zapewnij o bezpieczeństwie i gwarancjach',
+                     'Użyj danych i faktów, aby przekonać obie strony',
+                     'Zaproponuj etapowe wdrożenie, aby zmniejszyć ryzyko'
+                 ],
+                 argumentsForMain: [
+                     'To da Ci przewagę nad konkurencją',
+                     'Szybki zwrot z inwestycji',
+                     'Kontrola nad kosztami eksploatacji',
+                     'Liderska pozycja w branży'
+                 ],
+                 argumentsForPartner: [
+                     'Gwarancja i wsparcie producenta',
+                     'Stabilne koszty eksploatacji',
+                     'Bezpieczeństwo dla rodziny',
+                     'Sprawdzona technologia'
+                 ]
+             },
+             'I': {
+                 likelyPartnerProfile: 'Partner może być bardziej analityczny (C) lub stabilny (S)',
+                 decisionRole: 'Współdecydent, lubi konsultować się z partnerem',
+                 dynamics: 'Entuzjastyczny, ale partner może być bardziej ostrożny',
+                 conflicts: 'Partner może chcieć więcej analiz i mniej emocji w decyzji',
+                 dualStrategy: [
+                     'Dla I: Pokaż społeczny aspekt i prestiż',
+                     'Dla partnera: Przedstaw konkretne dane i analizy',
+                     'Organizuj wspólne spotkania i prezentacje',
+                     'Daj czas na przemyślenie i analizę'
+                 ],
+                 argumentsForMain: [
+                     'Będziesz trendseterem w swojej społeczności',
+                     'Niesamowite wrażenia z jazdy',
+                     'Część ekskluzywnej grupy właścicieli',
+                     'Możliwość dzielenia się doświadczeniami'
+                 ],
+                 argumentsForPartner: [
+                     'Konkretne oszczędności i kalkulacje',
+                     'Porównanie z alternatywami',
+                     'Długoterminowe korzyści',
+                     'Bezpieczeństwo inwestycji'
+                 ]
+             },
+             'S': {
+                 likelyPartnerProfile: 'Partner prawdopodobnie ma podobny profil lub jest bardziej decyzyjny (D)',
+                 decisionRole: 'Decyzja wspólna, potrzebuje zgody partnera',
+                 dynamics: 'Ostrożny, potrzebuje czasu i pewności od partnera',
+                 conflicts: 'Obaj mogą być niezdecydowani, potrzebują zewnętrznego wsparcia',
+                 dualStrategy: [
+                     'Zapewnij o wsparciu i gwarancjach',
+                     'Nie wywieraj presji czasowej',
+                     'Przedstaw testimoniale innych rodzin',
+                     'Zaproponuj okres próbny lub test drive'
+                 ],
+                 argumentsForMain: [
+                     'Bezpieczeństwo dla całej rodziny',
+                     'Stabilne koszty na lata',
+                     'Niezawodność i wsparcie',
+                     'Spokój ducha'
+                 ],
+                 argumentsForPartner: [
+                     'Te same argumenty - zgodność w wartościach',
+                     'Wspólne bezpieczeństwo finansowe',
+                     'Długoterminowa stabilność',
+                     'Wsparcie społeczności użytkowników'
+                 ]
+             },
+             'C': {
+                 likelyPartnerProfile: 'Partner może być bardziej emocjonalny (I) lub praktyczny (S)',
+                 decisionRole: 'Główny analityk, ale potrzebuje akceptacji partnera',
+                 dynamics: 'Dokładna analiza, partner może być niecierpliwy',
+                 conflicts: 'Partner może chcieć szybszej decyzji, mniej analiz',
+                 dualStrategy: [
+                     'Dla C: Dostarcz pełną dokumentację i analizy',
+                     'Dla partnera: Podsumuj kluczowe korzyści w prosty sposób',
+                     'Pozwól na dokładne sprawdzenie wszystkich aspektów',
+                     'Zapewnij dostęp do ekspertów technicznych'
+                 ],
+                 argumentsForMain: [
+                     'Kompletna analiza TCO',
+                     'Porównanie wszystkich opcji',
+                     'Najwyższa jakość i precyzja',
+                     'Weryfikowalne dane i statystyki'
+                 ],
+                 argumentsForPartner: [
+                     'Przemyślana i bezpieczna decyzja',
+                     'Najlepsza wartość za pieniądze',
+                     'Praktyczne korzyści codzienne',
+                     'Zaufanie do eksperta (C)'
+                 ]
+             }
+         };
+         return strategies[disc] || strategies['S'];
+     }
+
+     getPredictions(disc, conversionProbability) {
+         const baseTimeline = {
+             'D': ['Decyzja w ciągu 1-2 tygodni', 'Szybka finalizacja', 'Odbiór w ciągu miesiąca'],
+             'I': ['Entuzjastyczne zainteresowanie', 'Konsultacje ze znajomymi', 'Decyzja w ciągu miesiąca'],
+             'S': ['Długie rozważania (2-3 miesiące)', 'Konsultacje z rodziną', 'Ostrożna finalizacja'],
+             'C': ['Dokładna analiza (1-2 miesiące)', 'Porównanie opcji', 'Przemyślana decyzja']
+         };
+
+         const preferredModels = {
+             'D': {
+                 name: 'Model S Plaid',
+                 reason: 'Najwyższa wydajność i prestiż',
+                 features: ['Najszybsze przyspieszenie', 'Maksymalny zasięg', 'Najnowsza technologia', 'Status symbol']
+             },
+             'I': {
+                 name: 'Model Y Performance',
+                 reason: 'Idealny balans stylu i praktyczności',
+                 features: ['Atrakcyjny design', 'Sportowe osiągi', 'Przestronność', 'Najnowsze funkcje']
+             },
+             'S': {
+                 name: 'Model 3 Long Range',
+                 reason: 'Niezawodność i oszczędność',
+                 features: ['Sprawdzona technologia', 'Długi zasięg', 'Niskie koszty eksploatacji', 'Bezpieczeństwo']
+             },
+             'C': {
+                 name: 'Model S Long Range',
+                 reason: 'Najlepsza technologia i efektywność',
+                 features: ['Najwyższa jakość', 'Optymalna efektywność', 'Zaawansowane systemy', 'Długoterminowa wartość']
+             }
+         };
+
+         const factors = [
+             { name: 'Profil osobowości', impact: `+${Math.round(conversionProbability * 0.3)}%` },
+             { name: 'Wybrane triggery', impact: `+${Math.round(conversionProbability * 0.25)}%` },
+             { name: 'Sytuacja finansowa', impact: `+${Math.round(conversionProbability * 0.2)}%` },
+             { name: 'Timing rynkowy', impact: `+${Math.round(conversionProbability * 0.15)}%` },
+             { name: 'Czynniki zewnętrzne', impact: `+${Math.round(conversionProbability * 0.1)}%` }
+         ];
+
+         const nextSteps = {
+             'D': [
+                 { action: 'Umów test drive', timing: 'W ciągu 24h', details: 'Skup się na wydajności i technologii' },
+                 { action: 'Przedstaw ofertę finansową', timing: 'Po test drive', details: 'Podkreśl ROI i korzyści biznesowe' },
+                 { action: 'Finalizacja', timing: 'W ciągu tygodnia', details: 'Szybka decyzja, minimalne wahania' }
+             ],
+             'I': [
+                 { action: 'Zaproś na event Tesla', timing: 'W ciągu tygodnia', details: 'Społeczny aspekt i networking' },
+                 { action: 'Test drive z rodziną/znajomymi', timing: 'Po evencie', details: 'Dzielenie się doświadczeniem' },
+                 { action: 'Personalizowana oferta', timing: 'Po pozytywnym test drive', details: 'Podkreśl unikalność i prestiż' }
+             ],
+             'S': [
+                 { action: 'Materiały informacyjne', timing: 'Natychmiast', details: 'Pełna dokumentacja i gwarancje' },
+                 { action: 'Spotkanie z rodziną', timing: 'W ciągu 2 tygodni', details: 'Wspólne omówienie korzyści' },
+                 { action: 'Spokojny test drive', timing: 'Po akceptacji rodziny', details: 'Bez presji, skupienie na bezpieczeństwie' }
+             ],
+             'C': [
+                 { action: 'Szczegółowa analiza TCO', timing: 'W ciągu 48h', details: 'Kompletne porównanie kosztów' },
+                 { action: 'Konsultacja techniczna', timing: 'Po analizie', details: 'Odpowiedzi na wszystkie pytania' },
+                 { action: 'Test drive z pomiarem', timing: 'Po konsultacji', details: 'Weryfikacja parametrów w praktyce' }
+             ]
+         };
+
+         return {
+             factors: factors,
+             timeline: baseTimeline[disc] || baseTimeline['S'],
+             preferredModel: preferredModels[disc] || preferredModels['S'],
+             nextSteps: nextSteps[disc] || nextSteps['S']
+         };
+     }
 
     async init() {
         try {
@@ -196,6 +488,18 @@ class TeslaCusomerDecoderApp {
                 description: 'Typowe obiekcje i zastrzeżenia klientów',
                 triggers: [],
                 color: 'border-red-400'
+            },
+            family_context: { 
+                name: '👨‍👩‍👧‍👦 Kontekst Rodzinny', 
+                description: 'Partner, dzieci, decyzje rodzinne, bezpieczeństwo',
+                triggers: [],
+                color: 'border-pink-500'
+            },
+            experience_level: { 
+                name: '🎓 Doświadczenie z Tesla', 
+                description: 'Pierwszy kontakt, polecenia, znajomość marki',
+                triggers: [],
+                color: 'border-indigo-500'
             }
         };
 
@@ -290,7 +594,7 @@ class TeslaCusomerDecoderApp {
                 <div class="text-xs text-tesla-gray-500 border-t border-tesla-gray-700 pt-2 leading-tight">
                     <div class="flex items-start">
                         <span class="mr-1 mt-0.5 text-tesla-red">⚡</span>
-                        <span class="line-clamp-2"><strong class="text-tesla-gray-400">Szybka odpowiedź:</strong> "${quickResponse.length > 80 ? quickResponse.substring(0, 80) + '...' : quickResponse}"</span>
+                        <span><strong class="text-tesla-gray-400">Szybka odpowiedź:</strong> "${quickResponse}"</span>
                     </div>
                 </div>
             </div>
@@ -305,7 +609,9 @@ class TeslaCusomerDecoderApp {
             'lifestyle': '🚗',
             'environmental': '🌱',
             'decision_process': '🎯',
-            'objections': '🚫'
+            'objections': '🚫',
+            'family_context': '👨‍👩‍👧‍👦',
+            'experience_level': '🎓'
         };
         return icons[category] || '📋';
     }
@@ -318,7 +624,9 @@ class TeslaCusomerDecoderApp {
             'lifestyle': 'Lifestyle',
             'environmental': 'Ekologia',
             'decision_process': 'Decyzje',
-            'objections': 'Obiekcje'
+            'objections': 'Obiekcje',
+            'family_context': 'Rodzina',
+            'experience_level': 'Doświadczenie'
         };
         return labels[category] || category;
     }
@@ -337,11 +645,14 @@ class TeslaCusomerDecoderApp {
     }
 
     toggleTrigger(element) {
+        console.log('🔄 toggleTrigger called for element:', element);
+        
         // Prevent double-clicking/rapid clicking
         if (element.dataset.processing === 'true') return;
         element.dataset.processing = 'true';
         
         const triggerText = element.dataset.triggerText;
+        console.log('📝 Trigger text:', triggerText);
         const icon = element.querySelector('i');
         
         if (this.selectedTriggers.has(triggerText)) {
@@ -372,6 +683,9 @@ class TeslaCusomerDecoderApp {
 
     updateTriggerDisplay() {
         const count = this.selectedTriggers.size;
+        console.log('📊 updateTriggerDisplay - count:', count);
+        console.log('📊 Selected triggers:', Array.from(this.selectedTriggers));
+        
         this.ui.selectedTriggerCount.textContent = count;
         
         if (count === 0) {
@@ -382,7 +696,9 @@ class TeslaCusomerDecoderApp {
         }
 
         // Enable/disable analysis button
+        console.log('🔘 Setting runAnalysis.disabled to:', count === 0);
         this.ui.runAnalysis.disabled = count === 0;
+        console.log('🔘 runAnalysis.disabled is now:', this.ui.runAnalysis.disabled);
     }
 
     toggleCategory(categoryKey) {
@@ -412,7 +728,12 @@ class TeslaCusomerDecoderApp {
     }
 
     async performAnalysis() {
+        console.log('🚀 performAnalysis called!');
+        console.log('📊 Selected triggers:', this.selectedTriggers);
+        console.log('📊 Triggers size:', this.selectedTriggers.size);
+        
         if (this.selectedTriggers.size === 0) {
+            console.log('❌ No triggers selected');
             this.showError('Proszę wybrać przynajmniej jeden trigger.');
             return;
         }
@@ -428,9 +749,22 @@ class TeslaCusomerDecoderApp {
                     age: document.getElementById('ageRange')?.value,
                     housingType: document.getElementById('housingType')?.value,
                     hasPV: document.getElementById('hasPV')?.value,
-                    region: document.getElementById('region')?.value
-                }
+                    region: document.getElementById('region')?.value,
+                    relationshipStatus: document.getElementById('relationshipStatus')?.value,
+                    hasChildren: document.getElementById('hasChildren')?.value,
+                    teslaExperience: document.getElementById('teslaExperience')?.value,
+                    carRole: document.getElementById('carRole')?.value
+                },
+                context: document.getElementById('additionalContext')?.value || ''
             };
+            
+            // Basic client-side validation
+            const validationErrors = this.validateInputData(inputData);
+            if (validationErrors.length > 0) {
+                this.showError('Błędy walidacji: ' + validationErrors.join(', '));
+                this.showLoading(false);
+                return;
+            }
             
             console.log('🔬 Sending analysis request:', inputData);
 
@@ -474,9 +808,91 @@ class TeslaCusomerDecoderApp {
 
         } catch (error) {
             console.error('Analysis failed:', error);
-            this.showError('Błąd podczas analizy: ' + error.message);
+            
+            // Enhanced error handling
+            let errorMessage = 'Błąd podczas analizy: ';
+            
+            if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                errorMessage += 'Brak połączenia z serwerem. Sprawdź połączenie internetowe.';
+            } else if (error.message.includes('HTTP 429')) {
+                errorMessage += 'Zbyt wiele żądań. Spróbuj ponownie za chwilę.';
+            } else if (error.message.includes('HTTP 500')) {
+                errorMessage += 'Błąd serwera. Spróbuj ponownie lub skontaktuj się z administratorem.';
+            } else if (error.message.includes('validation')) {
+                errorMessage += 'Nieprawidłowe dane wejściowe. Sprawdź formularz.';
+            } else {
+                errorMessage += error.message || 'Nieznany błąd';
+            }
+            
+            this.showError(errorMessage);
             this.showLoading(false);
         }
+    }
+    
+    // Client-side input validation
+    validateInputData(inputData) {
+        const errors = [];
+        
+        // Validate triggers
+        if (!inputData.selectedTriggers || inputData.selectedTriggers.length === 0) {
+            errors.push('Brak wybranych triggerów');
+        }
+        
+        // Validate demographics
+        const demographics = inputData.demographics;
+        if (demographics) {
+            // Age validation - dopasowane do rzeczywistych wartości w HTML
+            if (demographics.age && !['25-35', '35-45', '45-55', '55+'].includes(demographics.age)) {
+                errors.push('Nieprawidłowy przedział wiekowy');
+            }
+            
+            // Housing type validation - dopasowane do rzeczywistych wartości w HTML
+            if (demographics.housingType && !['dom', 'mieszkanie_parking', 'mieszkanie_ulica'].includes(demographics.housingType)) {
+                errors.push('Nieprawidłowy typ mieszkania');
+            }
+            
+            // PV validation - dopasowane do rzeczywistych wartości w HTML
+            if (demographics.hasPV && !['true', 'false'].includes(demographics.hasPV)) {
+                errors.push('Nieprawidłowa wartość dla paneli PV');
+            }
+            
+            // Region validation - dopasowane do rzeczywistych wartości w HTML
+            if (demographics.region && !['mazowieckie', 'slaskie', 'wielkopolskie', 'malopolskie', 'other'].includes(demographics.region)) {
+                errors.push('Nieprawidłowy region');
+            }
+            
+            // Relationship status validation
+            if (demographics.relationshipStatus && !['single', 'partner', 'divorced'].includes(demographics.relationshipStatus)) {
+                errors.push('Nieprawidłowy status związku');
+            }
+            
+            // Children validation
+            if (demographics.hasChildren && !['none', 'young', 'teen', 'adult'].includes(demographics.hasChildren)) {
+                errors.push('Nieprawidłowa wartość dla dzieci');
+            }
+            
+            // Tesla experience validation
+            if (demographics.teslaExperience && !['first_time', 'researching', 'test_driven', 'owner_friend'].includes(demographics.teslaExperience)) {
+                errors.push('Nieprawidłowe doświadczenie z Tesla');
+            }
+            
+            // Car role validation
+            if (demographics.carRole && !['primary', 'secondary', 'replacement', 'additional'].includes(demographics.carRole)) {
+                errors.push('Nieprawidłowa rola auta');
+            }
+        }
+        
+        // Validate tone - dopasowane do rzeczywistych wartości w HTML
+        if (inputData.tone && !['entuzjastyczny', 'neutralny', 'sceptyczny', 'negatywny'].includes(inputData.tone)) {
+            errors.push('Nieprawidłowy ton komunikacji');
+        }
+        
+        // Validate context length
+        if (inputData.context && inputData.context.length > 1000) {
+            errors.push('Kontekst zbyt długi (max 1000 znaków)');
+        }
+        
+        return errors;
     }
 
     displayResults(analysis) {
@@ -492,12 +908,18 @@ class TeslaCusomerDecoderApp {
         this.ui.progressBar.style.width = analysis.conversion_probability + '%';
 
         // Update personality match
-        this.ui.personalityMatch.textContent = analysis.personality.detected.confidence + '%';
+        const personalityConfidence = analysis.personality?.detected?.confidence || analysis.personality?.confidence || 0;
+        this.ui.personalityMatch.textContent = Math.round(personalityConfidence * 100) + '%';
         
         // Update other metrics
         this.ui.triggerIntensity.textContent = this.selectedTriggers.size > 3 ? 'High' : 'Medium';
         this.ui.toneCompatibility.textContent = 'Good';
-        this.ui.confidenceLevel.textContent = Math.round((analysis.personality.detected.confidence + analysis.conversion_probability) / 2) + '%';
+        
+        // Fix NaN issue in confidence calculation
+        const personalityConf = (analysis.personality?.detected?.confidence || analysis.personality?.confidence || 0.5) * 100;
+        const conversionProb = analysis.conversion_probability || 50;
+        const confidenceScore = Math.round((personalityConf + conversionProb) / 2);
+        this.ui.confidenceLevel.textContent = confidenceScore + '%';
 
         // Populate strategy tab
         this.populateStrategyTab(analysis);
@@ -511,12 +933,42 @@ class TeslaCusomerDecoderApp {
         const strategyElement = document.getElementById('salesStrategy');
         
         if (profileElement) {
+            // Pobierz dane demograficzne z formularza
+            const demographics = {
+                age: document.getElementById('ageRange')?.value,
+                housingType: document.getElementById('housingType')?.value,
+                hasPV: document.getElementById('hasPV')?.value,
+                region: document.getElementById('region')?.value,
+                relationshipStatus: document.getElementById('relationshipStatus')?.value,
+                hasChildren: document.getElementById('hasChildren')?.value,
+                teslaExperience: document.getElementById('teslaExperience')?.value,
+                carRole: document.getElementById('carRole')?.value
+            };
+            
             profileElement.innerHTML = `
                 <div class="bg-tesla-gray-800 p-4 rounded-lg mb-4">
                     <h5 class="text-tesla-red font-semibold mb-2">Typ Osobowości DISC</h5>
-                    <div class="text-2xl font-bold text-white mb-2">${analysis.personality.detected.DISC}</div>
-                    <div class="text-sm text-tesla-gray-300 mb-3">${this.getPersonalityDescription(analysis.personality.detected.DISC)}</div>
-                    <div class="text-xs text-tesla-gray-400">Pewność: ${analysis.personality.detected.confidence}%</div>
+                    <div class="text-2xl font-bold text-white mb-2">${analysis.personality?.detected?.DISC || analysis.personality?.primary_type || 'Nieznany'}</div>
+                    <div class="text-sm text-tesla-gray-300 mb-3">${this.getPersonalityDescription(analysis.personality?.detected?.DISC || analysis.personality?.primary_type || 'S')}</div>
+                    <div class="text-xs text-tesla-gray-400">Pewność: ${Math.round((analysis.personality?.detected?.confidence || analysis.personality?.confidence || 0) * 100)}%</div>
+                </div>
+                <div class="bg-tesla-gray-800 p-4 rounded-lg mb-4">
+                    <h5 class="text-tesla-red font-semibold mb-2">Profil Demograficzny</h5>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        ${demographics.age ? `<div class="text-tesla-gray-300"><span class="text-tesla-gray-400">Wiek:</span> ${this.getAgeLabel(demographics.age)}</div>` : ''}
+                        ${demographics.housingType ? `<div class="text-tesla-gray-300"><span class="text-tesla-gray-400">Mieszkanie:</span> ${this.getHousingLabel(demographics.housingType)}</div>` : ''}
+                        ${demographics.hasPV ? `<div class="text-tesla-gray-300"><span class="text-tesla-gray-400">Panele PV:</span> ${this.getPVLabel(demographics.hasPV)}</div>` : ''}
+                        ${demographics.region ? `<div class="text-tesla-gray-300"><span class="text-tesla-gray-400">Region:</span> ${demographics.region}</div>` : ''}
+                    </div>
+                </div>
+                <div class="bg-tesla-gray-800 p-4 rounded-lg mb-4">
+                    <h5 class="text-tesla-red font-semibold mb-2">Kontekst Rodzinny i Doświadczenie</h5>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        ${demographics.relationshipStatus ? `<div class="text-tesla-gray-300"><span class="text-tesla-gray-400">Status:</span> ${this.getRelationshipLabel(demographics.relationshipStatus)}</div>` : ''}
+                        ${demographics.hasChildren ? `<div class="text-tesla-gray-300"><span class="text-tesla-gray-400">Dzieci:</span> ${this.getChildrenLabel(demographics.hasChildren)}</div>` : ''}
+                        ${demographics.teslaExperience ? `<div class="text-tesla-gray-300"><span class="text-tesla-gray-400">Doświadczenie:</span> ${this.getTeslaExperienceLabel(demographics.teslaExperience)}</div>` : ''}
+                        ${demographics.carRole ? `<div class="text-tesla-gray-300"><span class="text-tesla-gray-400">Rola auta:</span> ${this.getCarRoleLabel(demographics.carRole)}</div>` : ''}
+                    </div>
                 </div>
                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
                     <h5 class="text-tesla-red font-semibold mb-2">Wybrane Triggery</h5>
@@ -530,15 +982,27 @@ class TeslaCusomerDecoderApp {
         }
         
         if (strategyElement) {
+            const strategies = analysis.recommendations?.strategy_recommendations || [];
+            const keyRecommendations = analysis.recommendations?.key_recommendations || [];
+            
             strategyElement.innerHTML = `
                 <div class="bg-tesla-gray-800 p-4 rounded-lg mb-4">
                     <h5 class="text-tesla-red font-semibold mb-2">Strategia Sprzedażowa</h5>
-                    <div class="text-sm text-tesla-gray-300 mb-3">${analysis.recommendations.strategy}</div>
-                    <div class="space-y-2">
-                        ${analysis.recommendations.key_messages.map(message => 
-                            `<div class="text-sm text-white bg-tesla-gray-700 p-2 rounded">• ${message}</div>`
-                        ).join('')}
-                    </div>
+                    ${strategies.length > 0 ? `
+                        <div class="space-y-2 mb-4">
+                            ${strategies.map(strategy => 
+                                `<div class="text-sm text-white bg-tesla-gray-700 p-2 rounded border-l-2 border-tesla-red">• ${strategy.strategy}</div>`
+                            ).join('')}
+                        </div>
+                    ` : ''}
+                    ${keyRecommendations.length > 0 ? `
+                        <h6 class="text-tesla-red font-semibold mb-2 mt-4">Kluczowe Rekomendacje</h6>
+                        <div class="space-y-2">
+                            ${keyRecommendations.map(rec => 
+                                `<div class="text-sm text-white bg-tesla-gray-700 p-2 rounded">• ${rec.recommendation}</div>`
+                            ).join('')}
+                        </div>
+                    ` : ''}
                 </div>
                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
                     <h5 class="text-tesla-red font-semibold mb-2">Szybkie Odpowiedzi</h5>
@@ -568,8 +1032,11 @@ class TeslaCusomerDecoderApp {
         }
 
         // Populate other tabs
+        this.populatePsychologyTab(analysis);
         this.populateLanguageTab(analysis);
         this.populateObjectionsTab(analysis);
+        this.populatePartnerTab(analysis);
+        this.populatePredictionsTab(analysis);
         this.populateActionsTab(analysis);
         this.populateExplainabilityTab(analysis);
     }
@@ -577,8 +1044,10 @@ class TeslaCusomerDecoderApp {
     populateLanguageTab(analysis) {
         const keyWordsElement = document.getElementById('keyWords');
         const readyPhrasesElement = document.getElementById('readyPhrases');
+        const communicationStyleElement = document.getElementById('communicationStyle');
+        const avoidPhrasesElement = document.getElementById('avoidPhrases');
         
-        const discType = analysis.personality.detected.DISC;
+        const discType = analysis.personality?.detected?.DISC || analysis.personality?.primary_type || 'S';
         
         if (keyWordsElement) {
             const keywords = this.getKeywordsForPersonality(discType);
@@ -607,31 +1076,87 @@ class TeslaCusomerDecoderApp {
                 </div>
             `;
         }
+        
+        if (communicationStyleElement) {
+            const style = this.getCommunicationStyle(discType);
+            communicationStyleElement.innerHTML = `
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-volume-up text-tesla-red mr-2"></i>
+                            <span class="text-sm text-tesla-gray-300">${style.tone}</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-tesla-red mr-2"></i>
+                            <span class="text-sm text-tesla-gray-300">${style.pace}</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-chart-bar text-tesla-red mr-2"></i>
+                            <span class="text-sm text-tesla-gray-300">${style.detail}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        if (avoidPhrasesElement) {
+            const avoidPhrases = this.getAvoidPhrases(discType);
+            avoidPhrasesElement.innerHTML = `
+                <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                    <div class="space-y-2">
+                        ${avoidPhrases.map(phrase => 
+                            `<div class="text-sm text-red-400 bg-red-900 bg-opacity-20 p-2 rounded border-l-2 border-red-500">❌ "${phrase}"</div>`
+                        ).join('')}
+                    </div>
+                </div>
+            `;
+        }
     }
 
     populateObjectionsTab(analysis) {
-        const objectionsListElement = document.getElementById('objectionsList');
+        const commonObjectionsElement = document.getElementById('commonObjections');
+        const timeObjectionsElement = document.getElementById('timeObjections');
+        const financialObjectionsElement = document.getElementById('financialObjections');
+        const technicalObjectionsElement = document.getElementById('technicalObjections');
         
-        if (objectionsListElement) {
-            const objections = this.getCommonObjections();
-            objectionsListElement.innerHTML = objections.map(objection => `
-                <div class="bg-tesla-gray-800 p-6 rounded-lg border-l-4 border-orange-500">
-                    <h6 class="text-tesla-red font-semibold mb-3">💬 "${objection.objection}"</h6>
-                    <div class="space-y-3">
-                        ${objection.rebuttals.map(rebuttal => `
-                            <div class="bg-tesla-gray-700 p-4 rounded">
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-xs bg-tesla-gray-600 px-2 py-1 rounded text-tesla-gray-300">${rebuttal.technique}</span>
-                                    <span class="text-xs text-tesla-gray-400">Poziom ${rebuttal.level}</span>
-                                </div>
-                                <div class="text-sm text-white mb-2">${rebuttal.script}</div>
-                                ${rebuttal.ethical_warning !== 'Brak.' ? 
-                                    `<div class="text-xs text-yellow-400 bg-yellow-900 bg-opacity-20 p-2 rounded">⚠️ ${rebuttal.ethical_warning}</div>` 
-                                    : ''
-                                }
-                            </div>
-                        `).join('')}
-                    </div>
+        const objections = this.getCommonObjections();
+        const timeObjections = this.getTimeObjections();
+        const financialObjections = this.getFinancialObjections();
+        const technicalObjections = this.getTechnicalObjections();
+        
+        if (commonObjectionsElement) {
+            commonObjectionsElement.innerHTML = objections.slice(0, 3).map(objection => `
+                <div class="bg-tesla-gray-800 p-4 rounded-lg border-l-4 border-orange-500">
+                    <h6 class="text-tesla-red font-semibold mb-2">💬 "${objection.objection}"</h6>
+                    <div class="text-sm text-tesla-gray-300 mb-2">${objection.rebuttals[0].script}</div>
+                    <div class="text-xs text-tesla-gray-400">${objection.rebuttals[0].technique}</div>
+                </div>
+            `).join('');
+        }
+        
+        if (timeObjectionsElement) {
+            timeObjectionsElement.innerHTML = timeObjections.map(objection => `
+                <div class="bg-tesla-gray-800 p-4 rounded-lg border-l-4 border-blue-500">
+                    <h6 class="text-tesla-red font-semibold mb-2">⏰ "${objection.objection}"</h6>
+                    <div class="text-sm text-tesla-gray-300">${objection.response}</div>
+                </div>
+            `).join('');
+        }
+        
+        if (financialObjectionsElement) {
+            financialObjectionsElement.innerHTML = financialObjections.map(objection => `
+                <div class="bg-tesla-gray-800 p-4 rounded-lg border-l-4 border-green-500">
+                    <h6 class="text-tesla-red font-semibold mb-2">💰 "${objection.objection}"</h6>
+                    <div class="text-sm text-tesla-gray-300">${objection.response}</div>
+                </div>
+            `).join('');
+        }
+        
+        if (technicalObjectionsElement) {
+            technicalObjectionsElement.innerHTML = technicalObjections.map(objection => `
+                <div class="bg-tesla-gray-800 p-4 rounded-lg border-l-4 border-purple-500">
+                    <h6 class="text-tesla-red font-semibold mb-2">🔧 "${objection.objection}"</h6>
+                    <div class="text-sm text-tesla-gray-300">${objection.response}</div>
                 </div>
             `).join('');
         }
@@ -642,11 +1167,19 @@ class TeslaCusomerDecoderApp {
         const ethicalWarningsElement = document.getElementById('ethicalWarnings');
         
         if (nextStepsElement) {
+            const nextSteps = analysis.recommendations?.next_steps || [];
+            const strategies = analysis.recommendations?.strategy_recommendations || [];
+            
+            // Jeśli brak next_steps, generuj na podstawie strategii
+            const actionItems = nextSteps.length > 0 ? nextSteps : 
+                strategies.length > 0 ? strategies.map(s => s.strategy) : 
+                ['Nawiąż kontakt z klientem', 'Przedstaw kluczowe korzyści', 'Zaproponuj test drive', 'Przygotuj ofertę'];
+            
             nextStepsElement.innerHTML = `
                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
                     <h6 class="text-tesla-red font-semibold mb-3">Zalecane działania</h6>
                     <div class="space-y-3">
-                        ${analysis.recommendations.next_steps.map((step, index) => 
+                        ${actionItems.map((step, index) => 
                             `<div class="flex items-center text-sm text-tesla-gray-300">
                                 <span class="bg-tesla-red text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3">${index + 1}</span>
                                 ${step}
@@ -663,7 +1196,7 @@ class TeslaCusomerDecoderApp {
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-phone text-tesla-red mr-2"></i>
-                            Preferowany kanał: ${this.getPreferredChannel(analysis.personality.detected.DISC)}
+                            Preferowany kanał: ${this.getPreferredChannel(analysis.personality?.detected?.DISC || 'S')}
                         </div>
                     </div>
                 </div>
@@ -684,7 +1217,7 @@ class TeslaCusomerDecoderApp {
                 <div class="bg-tesla-gray-800 p-4 rounded-lg mt-4">
                     <h6 class="text-tesla-red font-semibold mb-3">Dostosowane podejście</h6>
                     <div class="text-sm text-tesla-gray-300">
-                        ${this.getEthicalGuidanceForPersonality(analysis.personality.detected.DISC)}
+                        ${this.getEthicalGuidanceForPersonality(analysis.personality?.detected?.DISC || 'S')}
                     </div>
                 </div>
             `;
@@ -700,8 +1233,8 @@ class TeslaCusomerDecoderApp {
             featureContributionsElement.innerHTML = `
                 <div class="space-y-3">
                     <div class="flex items-center justify-between bg-tesla-gray-800 p-3 rounded">
-                        <span class="text-sm">Typ osobowości (${analysis.personality.detected.DISC})</span>
-                        <span class="text-tesla-red font-semibold">+${analysis.personality.detected.confidence}%</span>
+                        <span class="text-sm">Typ osobowości (${analysis.personality?.detected?.DISC || 'S'})</span>
+                        <span class="text-tesla-red font-semibold">+${analysis.personality?.detected?.confidence || 0}%</span>
                     </div>
                     <div class="flex items-center justify-between bg-tesla-gray-800 p-3 rounded">
                         <span class="text-sm">Wybrane triggery (${this.selectedTriggers.size})</span>
@@ -877,6 +1410,354 @@ class TeslaCusomerDecoderApp {
         return bonuses[tone] || 0;
     }
 
+    getCommunicationStyle(disc) {
+        const styles = {
+            'D': {
+                tone: 'Bezpośredni, pewny siebie, zorientowany na wyniki',
+                pace: 'Szybkie tempo, krótkie rozmowy',
+                detail: 'Skupienie na kluczowych faktach i korzyściach'
+            },
+            'I': {
+                tone: 'Entuzjastyczny, przyjazny, energiczny',
+                pace: 'Dynamiczne, z miejscem na rozmowę',
+                detail: 'Historie, przykłady, wizualizacje'
+            },
+            'S': {
+                tone: 'Spokojny, cierpliwy, wspierający',
+                pace: 'Powolne, bez presji czasowej',
+                detail: 'Szczegółowe wyjaśnienia, gwarancje'
+            },
+            'C': {
+                tone: 'Profesjonalny, oparty na faktach',
+                pace: 'Metodyczne, z czasem na analizę',
+                detail: 'Pełne dane, porównania, dokumentacja'
+            }
+        };
+        return styles[disc] || styles['S'];
+    }
+
+    getAvoidPhrases(disc) {
+        const avoidPhrases = {
+            'D': [
+                'Musimy to przedyskutować z zespołem',
+                'To może potrwać trochę czasu',
+                'Nie jestem pewien czy to najlepsze rozwiązanie'
+            ],
+            'I': [
+                'Skupmy się tylko na liczbach',
+                'To bardzo skomplikowane technicznie',
+                'Nie ma czasu na pytania'
+            ],
+            'S': [
+                'Musi Pan/Pani zdecydować się dzisiaj',
+                'To ostatnia taka okazja',
+                'Nie ma gwarancji zwrotu'
+            ],
+            'C': [
+                'Po prostu mi Pan/Pani zaufaj',
+                'Nie potrzebuje Pan/Pani wszystkich szczegółów',
+                'To działa dla wszystkich'
+            ]
+        };
+        return avoidPhrases[disc] || avoidPhrases['S'];
+    }
+
+    getTimeObjections() {
+        return [
+            {
+                objection: 'Nie mam teraz czasu na to',
+                response: 'Rozumiem, że czas to cenny zasób. Czy moglibyśmy umówić się na krótką 15-minutową rozmowę w dogodnym dla Pana/Pani terminie? Pokażę konkretne oszczędności, które może Pan/Pani osiągnąć.'
+            },
+            {
+                objection: 'Muszę to przedyskutować z rodziną/partnerem',
+                response: 'To bardzo mądre podejście - tak ważne decyzje powinny być podejmowane wspólnie. Czy mogę przygotować materiały, które pomogą Panu/Pani w tej rozmowie? Mogę też zorganizować spotkanie dla Was obojga.'
+            },
+            {
+                objection: 'To nie jest dobry moment na takie wydatki',
+                response: 'Rozumiem Pana/Pani obawy. Warto jednak pamiętać, że każdy miesiąc opóźnienia to stracone oszczędności na paliwie. Mamy też elastyczne opcje finansowania, które mogą dopasować się do Pana/Pani budżetu.'
+            }
+        ];
+    }
+
+    getFinancialObjections() {
+        return [
+            {
+                objection: 'Nie stać mnie na to',
+                response: 'Rozumiem, że budżet jest ważny. Sprawdźmy razem opcje leasingu i dopłat - często miesięczna rata może być niższa niż obecne koszty paliwa. Dodatkowo program NaszEauto może pokryć do 18.750 zł.'
+            },
+            {
+                objection: 'Leasing/kredyt to dodatkowe koszty',
+                response: 'To prawda, że finansowanie ma swój koszt. Jednak przy obecnych promocyjnych stopach i oszczędnościach na eksploatacji, całkowity koszt posiadania często jest niższy niż w przypadku samochodu spalinowego.'
+            },
+            {
+                objection: 'A co z wartością odsprzedaży?',
+                response: 'Świetne pytanie! Dane z rynku wtórnego pokazują, że Tesle zachowują wartość lepiej niż większość samochodów spalinowych. Dodatkowo, rosnąca popularność elektryków zwiększa popyt na używane modele.'
+            }
+        ];
+    }
+
+    getTechnicalObjections() {
+         return [
+             {
+                 objection: 'Bateria się zepsuje i będzie droga wymiana',
+                 response: 'Tesla oferuje 8-letnią gwarancję na baterię z zachowaniem minimum 70% pojemności. Statystyki pokazują, że baterie Tesla tracą tylko 10% pojemności po 200.000 km. Koszt wymiany też systematycznie spada.'
+             },
+             {
+                 objection: 'Ładowanie trwa za długo',
+                 response: 'W codziennym użytkowaniu ładuje się w nocy jak telefon - rano zawsze pełna bateria. Na trasach Supercharger doda 300 km zasięgu w 20 minut - tyle co przerwa na kawę i toaletę.'
+             },
+             {
+                 objection: 'Technologia się zmienia, lepiej poczekać',
+                 response: 'Tesla regularnie aktualizuje oprogramowanie, więc Pana/Pani samochód będzie się ulepszał przez lata. Czekanie oznacza tracenie oszczędności już dziś - a różnice w kolejnych generacjach są coraz mniejsze.'
+             }
+         ];
+     }
+
+     populatePsychologyTab(analysis) {
+         const discAnalysisElement = document.getElementById('discAnalysis');
+         const motivationsValuesElement = document.getElementById('motivationsValues');
+         const fearsWorriesElement = document.getElementById('fearsWorries');
+         const decisionStyleElement = document.getElementById('decisionStyle');
+         
+         const disc = analysis.personality?.detected?.DISC || 'S';
+         const discProfile = this.getDISCProfile(disc);
+         const motivations = this.getMotivations(disc);
+         const fears = this.getFears(disc);
+         const decisionStyle = this.getDecisionStyle(disc);
+         
+         if (discAnalysisElement) {
+             discAnalysisElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="text-center mb-4">
+                         <div class="text-4xl font-bold text-tesla-red mb-2">${disc}</div>
+                         <div class="text-lg text-white mb-2">${discProfile.name}</div>
+                         <div class="text-sm text-tesla-gray-300">${discProfile.description}</div>
+                     </div>
+                     <div class="space-y-2">
+                         ${discProfile.traits.map(trait => 
+                             `<div class="flex items-center text-sm text-tesla-gray-300">
+                                 <i class="fas fa-check text-tesla-red mr-2"></i>${trait}
+                             </div>`
+                         ).join('')}
+                     </div>
+                 </div>
+             `;
+         }
+         
+         if (motivationsValuesElement) {
+             motivationsValuesElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="space-y-3">
+                         ${motivations.map(motivation => 
+                             `<div class="flex items-start">
+                                 <i class="fas fa-heart text-tesla-red mr-2 mt-1"></i>
+                                 <span class="text-sm text-tesla-gray-300">${motivation}</span>
+                             </div>`
+                         ).join('')}
+                     </div>
+                 </div>
+             `;
+         }
+         
+         if (fearsWorriesElement) {
+             fearsWorriesElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="space-y-3">
+                         ${fears.map(fear => 
+                             `<div class="flex items-start">
+                                 <i class="fas fa-exclamation-triangle text-yellow-500 mr-2 mt-1"></i>
+                                 <span class="text-sm text-tesla-gray-300">${fear}</span>
+                             </div>`
+                         ).join('')}
+                     </div>
+                 </div>
+             `;
+         }
+         
+         if (decisionStyleElement) {
+             decisionStyleElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="space-y-3">
+                         <div class="flex items-center">
+                             <i class="fas fa-clock text-tesla-red mr-2"></i>
+                             <span class="text-sm text-tesla-gray-300">Tempo: ${decisionStyle.speed}</span>
+                         </div>
+                         <div class="flex items-center">
+                             <i class="fas fa-users text-tesla-red mr-2"></i>
+                             <span class="text-sm text-tesla-gray-300">Proces: ${decisionStyle.process}</span>
+                         </div>
+                         <div class="flex items-center">
+                             <i class="fas fa-chart-bar text-tesla-red mr-2"></i>
+                             <span class="text-sm text-tesla-gray-300">Fokus: ${decisionStyle.focus}</span>
+                         </div>
+                     </div>
+                 </div>
+             `;
+         }
+     }
+
+     populatePartnerTab(analysis) {
+         const partnerAnalysisElement = document.getElementById('partnerAnalysis');
+         const dualSalesStrategyElement = document.getElementById('dualSalesStrategy');
+         const decisionDynamicsElement = document.getElementById('decisionDynamics');
+         const partnerArgumentsElement = document.getElementById('partnerArguments');
+         
+         const disc = analysis.personality?.detected?.DISC || 'S';
+         const partnerStrategy = this.getPartnerStrategy(disc);
+         
+         if (partnerAnalysisElement) {
+             partnerAnalysisElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="space-y-3">
+                         <div class="text-sm text-tesla-gray-300">
+                             <strong class="text-tesla-red">Prawdopodobny profil partnera:</strong><br>
+                             ${partnerStrategy.likelyPartnerProfile}
+                         </div>
+                         <div class="text-sm text-tesla-gray-300">
+                             <strong class="text-tesla-red">Rola w decyzji:</strong><br>
+                             ${partnerStrategy.decisionRole}
+                         </div>
+                     </div>
+                 </div>
+             `;
+         }
+         
+         if (dualSalesStrategyElement) {
+             dualSalesStrategyElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="space-y-2">
+                         ${partnerStrategy.dualStrategy.map(strategy => 
+                             `<div class="text-sm text-tesla-gray-300 border-l-2 border-tesla-red pl-3">${strategy}</div>`
+                         ).join('')}
+                     </div>
+                 </div>
+             `;
+         }
+         
+         if (decisionDynamicsElement) {
+             decisionDynamicsElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="space-y-3">
+                         <div class="text-sm text-tesla-gray-300">
+                             <strong class="text-tesla-red">Dynamika:</strong><br>
+                             ${partnerStrategy.dynamics}
+                         </div>
+                         <div class="text-sm text-tesla-gray-300">
+                             <strong class="text-tesla-red">Potencjalne konflikty:</strong><br>
+                             ${partnerStrategy.conflicts}
+                         </div>
+                     </div>
+                 </div>
+             `;
+         }
+         
+         if (partnerArgumentsElement) {
+             partnerArgumentsElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="space-y-4">
+                         <div>
+                             <h6 class="text-tesla-red font-semibold mb-2">Dla głównego klienta:</h6>
+                             <div class="space-y-1">
+                                 ${partnerStrategy.argumentsForMain.map(arg => 
+                                     `<div class="text-sm text-tesla-gray-300">• ${arg}</div>`
+                                 ).join('')}
+                             </div>
+                         </div>
+                         <div>
+                             <h6 class="text-tesla-red font-semibold mb-2">Dla partnera:</h6>
+                             <div class="space-y-1">
+                                 ${partnerStrategy.argumentsForPartner.map(arg => 
+                                     `<div class="text-sm text-tesla-gray-300">• ${arg}</div>`
+                                 ).join('')}
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             `;
+         }
+     }
+
+     populatePredictionsTab(analysis) {
+         const purchaseProbabilityElement = document.getElementById('purchaseProbability');
+         const predictedTimelineElement = document.getElementById('predictedTimeline');
+         const preferredModelElement = document.getElementById('preferredModel');
+         const nextStepsElement = document.getElementById('predictedNextSteps');
+         
+         const disc = analysis.personality?.detected?.DISC || 'S';
+         const predictions = this.getPredictions(disc, analysis.conversion_probability);
+         
+         if (purchaseProbabilityElement) {
+             purchaseProbabilityElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="text-center mb-4">
+                         <div class="text-3xl font-bold text-tesla-red mb-2">${analysis.conversion_probability}%</div>
+                         <div class="text-sm text-tesla-gray-300">Prawdopodobieństwo zakupu</div>
+                     </div>
+                     <div class="space-y-2">
+                         ${predictions.factors.map(factor => 
+                             `<div class="flex justify-between text-sm">
+                                 <span class="text-tesla-gray-300">${factor.name}</span>
+                                 <span class="text-tesla-red">${factor.impact}</span>
+                             </div>`
+                         ).join('')}
+                     </div>
+                 </div>
+             `;
+         }
+         
+         if (predictedTimelineElement) {
+             predictedTimelineElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="space-y-3">
+                         ${predictions.timeline.map((phase, index) => 
+                             `<div class="flex items-center">
+                                 <div class="bg-tesla-red text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3">${index + 1}</div>
+                                 <div class="text-sm text-tesla-gray-300">${phase}</div>
+                             </div>`
+                         ).join('')}
+                     </div>
+                 </div>
+             `;
+         }
+         
+         if (preferredModelElement) {
+             preferredModelElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="text-center mb-3">
+                         <div class="text-xl font-bold text-tesla-red mb-1">${predictions.preferredModel.name}</div>
+                         <div class="text-sm text-tesla-gray-300">${predictions.preferredModel.reason}</div>
+                     </div>
+                     <div class="space-y-2">
+                         ${predictions.preferredModel.features.map(feature => 
+                             `<div class="flex items-center text-sm text-tesla-gray-300">
+                                 <i class="fas fa-check text-tesla-red mr-2"></i>${feature}
+                             </div>`
+                         ).join('')}
+                     </div>
+                 </div>
+             `;
+         }
+         
+         if (nextStepsElement) {
+             nextStepsElement.innerHTML = `
+                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
+                     <div class="space-y-3">
+                         ${predictions.nextSteps.map((step, index) => 
+                             `<div class="flex items-start">
+                                 <div class="bg-tesla-red text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3 mt-0.5">${index + 1}</div>
+                                 <div>
+                                     <div class="text-sm text-white font-semibold">${step.action}</div>
+                                     <div class="text-xs text-tesla-gray-400">${step.timing}</div>
+                                     <div class="text-xs text-tesla-gray-300 mt-1">${step.details}</div>
+                                 </div>
+                             </div>`
+                         ).join('')}
+                     </div>
+                 </div>
+             `;
+         }
+     }
+
     switchTab(tabName) {
         // Hide all tab contents
         document.querySelectorAll('.tab-content').forEach(tab => {
@@ -956,6 +1837,78 @@ class TeslaCusomerDecoderApp {
         a.download = `tesla-customer-analysis-${Date.now()}.json`;
         a.click();
         URL.revokeObjectURL(url);
+    }
+
+    // Metody pomocnicze do formatowania etykiet
+    getAgeLabel(age) {
+        const labels = {
+            '18-25': '18-25 lat',
+            '26-35': '26-35 lat',
+            '36-45': '36-45 lat',
+            '46-55': '46-55 lat',
+            '56-65': '56-65 lat',
+            '65+': '65+ lat'
+        };
+        return labels[age] || age;
+    }
+
+    getHousingLabel(housing) {
+        const labels = {
+            'house': 'Dom',
+            'apartment': 'Mieszkanie',
+            'townhouse': 'Szeregowiec'
+        };
+        return labels[housing] || housing;
+    }
+
+    getPVLabel(pv) {
+        const labels = {
+            'yes': 'Tak',
+            'no': 'Nie',
+            'planned': 'Planowane'
+        };
+        return labels[pv] || pv;
+    }
+
+    getRelationshipLabel(status) {
+        const labels = {
+            'single': 'Singiel',
+            'relationship': 'W związku',
+            'married': 'Żonaty/Zamężna',
+            'divorced': 'Rozwiedziony/a'
+        };
+        return labels[status] || status;
+    }
+
+    getChildrenLabel(children) {
+        const labels = {
+            'none': 'Brak',
+            'young': 'Małe dzieci',
+            'school': 'Dzieci szkolne',
+            'adult': 'Dorosłe dzieci'
+        };
+        return labels[children] || children;
+    }
+
+    getTeslaExperienceLabel(experience) {
+        const labels = {
+            'first_time': 'Pierwszy kontakt',
+            'test_driven': 'Jazda testowa',
+            'researching': 'Badanie rynku',
+            'owner_referral': 'Polecenie właściciela',
+            'previous_owner': 'Były właściciel'
+        };
+        return labels[experience] || experience;
+    }
+
+    getCarRoleLabel(role) {
+        const labels = {
+            'primary': 'Główne auto',
+            'secondary': 'Drugie auto',
+            'replacement': 'Zamiana obecnego',
+            'additional': 'Dodatkowe auto'
+        };
+        return labels[role] || role;
     }
 }
 

@@ -1,0 +1,11 @@
+Czynnik,Obecna Waga (%),Nowa Waga ML 2025 (%),Typ Czynnika,Waga Znormalizowana (%),Zmiana (p.p.)
+Trigger Match,40,28,Behavioral,19.44,-20.56
+Profile Match,30,20,Psychographic,13.89,-16.11
+Sentiment Match,20,15,Emotional,10.42,-9.58
+Demographic Match,10,12,Demographic,8.33,-1.67
+Personality Alignment,0,20,Psychographic,13.89,13.89
+Charger Density,0,15,Infrastructure,10.42,10.42
+Financing Affordability,0,12,Financial,8.33,8.33
+Competitor Price Pressure,0,10,Market,6.94,6.94
+Tone Compatibility,0,8,Communication,5.56,5.56
+Subsidy Availability,0,4,Policy,2.78,2.78

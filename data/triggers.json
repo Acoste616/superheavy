@@ -50,6 +50,18 @@
       "description": "Typowe obiekcje i zastrzeżenia klientów",
       "weight": 25,
       "personality_alignment": {"S": 0.8, "C": 0.9, "D": 0.6, "I": 0.5}
+    },
+    "family_context": {
+      "name": "👨‍👩‍👧‍👦 Kontekst Rodzinny",
+      "description": "Partner, dzieci, decyzje rodzinne",
+      "weight": 18,
+      "personality_alignment": {"S": 0.95, "I": 0.8, "C": 0.7, "D": 0.6}
+    },
+    "experience_level": {
+      "name": "🎓 Doświadczenie z Tesla",
+      "description": "Poziom znajomości marki i technologii EV",
+      "weight": 15,
+      "personality_alignment": {"C": 0.9, "S": 0.8, "I": 0.7, "D": 0.6}
     }
   },
 
@@ -874,6 +886,138 @@
       },
       "conversion_modifiers": {
         "early_adopter_cautious": -10, "technology_mature": 15, "proven_track_record": 12
+      }
+    },
+
+    {
+      "id": "partner_needs_convincing",
+      "text": "Muszę przekonać żonę/męża/partnera",
+      "category": "family_context",
+      "subcategory": "partner_approval",
+      "base_conversion_rate": 55,
+      "intent_level": "medium_high",
+      "decision_stage": "consensus_building",
+      "personality_resonance": {"S": 0.95, "I": 0.8, "C": 0.7, "D": 0.5},
+      "quick_response": {
+        "immediate_reply": "Rozumiem, to ważna decyzja dla całej rodziny. Przygotujmy materiały pokazujące korzyści - oszczędności, bezpieczeństwo, wygodę. Może jazda próbna we dwoje?",
+        "key_points": ["Materiały dla partnera", "Korzyści rodzinne", "Jazda próbna we dwoje"],
+        "next_action": "Przygotowuję pakiet informacyjny dla partnera",
+        "avoid": ["Naciski na szybką decyzję", "Ignorowanie roli partnera"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Family security and financial benefits focus",
+          "key_messages": ["Bezpieczeństwo rodziny na pierwszym miejscu", "Długoterminowe oszczędności dla budżetu", "Gwarancja i wsparcie Tesla"],
+          "proof_points": ["Safety ratings", "Family savings calculator", "Warranty details"]
+        },
+        "I": {
+          "approach": "Social proof and community benefits",
+          "key_messages": ["Rodziny Tesla w społeczności", "Pozytywny wpływ na środowisko dla dzieci", "Prestiż odpowiedzialnej rodziny"],
+          "proof_points": ["Family testimonials", "Environmental impact", "Community stories"]
+        }
+      },
+      "conversion_modifiers": {
+        "partner_involved": 20, "family_decision": 15, "consensus_seeker": 18, "relationship_harmony": 12
+      }
+    },
+
+    {
+      "id": "children_safety_priority",
+      "text": "Najważniejsze jest bezpieczeństwo dzieci",
+      "category": "family_context",
+      "subcategory": "child_safety",
+      "base_conversion_rate": 75,
+      "intent_level": "high",
+      "decision_stage": "value_alignment",
+      "personality_resonance": {"S": 0.98, "C": 0.85, "I": 0.7, "D": 0.6},
+      "quick_response": {
+        "immediate_reply": "Doskonale! Tesla ma najwyższe oceny bezpieczeństwa - 5 gwiazdek Euro NCAP we wszystkich kategoriach. Plus funkcje jak automatyczne hamowanie awaryjne.",
+        "key_points": ["5 gwiazdek Euro NCAP", "Automatyczne hamowanie", "Najbezpieczniejsze auto na rynku"],
+        "next_action": "Pokażę szczegóły systemów bezpieczeństwa",
+        "avoid": ["Pomijanie bezpieczeństwa", "Skupianie się tylko na technologii"]
+      },
+      "conversion_modifiers": {
+        "safety_priority": 25, "family_protection": 20, "child_focused": 18
+      }
+    },
+
+    {
+      "id": "first_tesla_experience",
+      "text": "To mój pierwszy kontakt z Tesla",
+      "category": "experience_level",
+      "subcategory": "newcomer",
+      "base_conversion_rate": 60,
+      "intent_level": "medium_high",
+      "decision_stage": "education_needed",
+      "personality_resonance": {"S": 0.9, "C": 0.8, "I": 0.7, "D": 0.6},
+      "quick_response": {
+        "immediate_reply": "Świetnie, że się zainteresowałeś! Przejdziemy przez wszystko krok po kroku. Tesla to nie tylko auto - to ekosystem, który zmieni Twoje podejście do jazdy.",
+        "key_points": ["Krok po kroku", "Pełny ekosystem", "Zmiana podejścia do jazdy"],
+        "next_action": "Zacznę od podstaw i korzyści",
+        "avoid": ["Przytłaczanie szczegółami", "Założenia o wiedzy"]
+      },
+      "conversion_modifiers": {
+        "first_time_buyer": 15, "education_needed": 12, "open_minded": 18
+      }
+    },
+
+    {
+      "id": "tesla_owner_referral",
+      "text": "Znajomy ma Teslę i polecił",
+      "category": "experience_level",
+      "subcategory": "social_proof",
+      "base_conversion_rate": 80,
+      "intent_level": "very_high",
+      "decision_stage": "validation_seeking",
+      "personality_resonance": {"I": 0.95, "S": 0.8, "C": 0.7, "D": 0.6},
+      "quick_response": {
+        "immediate_reply": "Fantastyczne! Właściciele Tesla to najlepsi ambasadorzy marki. Co konkretnie Ci opowiadał? Sprawdźmy, czy jego doświadczenia pasują do Twoich potrzeb.",
+        "key_points": ["Najlepsi ambasadorzy", "Co konkretnie mówił", "Dopasowanie do potrzeb"],
+        "next_action": "Zapytam o szczegóły rekomendacji",
+        "avoid": ["Ignorowanie referencji", "Ogólne informacje"]
+      },
+      "conversion_modifiers": {
+        "referral_bonus": 25, "social_proof": 20, "trust_factor": 18
+      }
+    },
+
+    {
+      "id": "primary_car_replacement",
+      "text": "To ma być nasze główne auto",
+      "category": "family_context",
+      "subcategory": "primary_vehicle",
+      "base_conversion_rate": 70,
+      "intent_level": "high",
+      "decision_stage": "serious_consideration",
+      "personality_resonance": {"S": 0.9, "C": 0.85, "D": 0.7, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Rozumiem, to kluczowa decyzja. Główne auto musi być niezawodne, praktyczne i ekonomiczne. Tesla sprawdzi się idealnie - zasięg 500km, ładowanie w domu, minimalne koszty serwisu.",
+        "key_points": ["Niezawodność", "Zasięg 500km", "Minimalne koszty serwisu"],
+        "next_action": "Pokażę praktyczne aspekty codziennego użytkowania",
+        "avoid": ["Pomijanie praktyczności", "Skupianie się tylko na gadżetach"]
+      },
+      "conversion_modifiers": {
+        "primary_vehicle": 20, "reliability_focus": 15, "daily_driver": 18
+      }
+    },
+
+    {
+      "id": "second_car_luxury",
+      "text": "To będzie drugie auto, bardziej luksusowe",
+      "category": "lifestyle",
+      "subcategory": "luxury_positioning",
+      "base_conversion_rate": 65,
+      "intent_level": "medium_high",
+      "decision_stage": "luxury_justification",
+      "personality_resonance": {"I": 0.9, "D": 0.8, "C": 0.6, "S": 0.5},
+      "quick_response": {
+        "immediate_reply": "Doskonały wybór! Tesla to połączenie luksusu z inteligencją. Cicha jazda, premium materiały, technologia przyszłości - to auto na specjalne okazje i przyjemność.",
+        "key_points": ["Luksus + inteligencja", "Premium materiały", "Auto na specjalne okazje"],
+        "next_action": "Pokażę luksusowe aspekty i technologie",
+        "avoid": ["Skupianie się na oszczędnościach", "Praktyczne argumenty"]
+      },
+      "conversion_modifiers": {
+        "luxury_buyer": 18, "second_car": 12, "premium_focus": 15
       }
     }
   ],
