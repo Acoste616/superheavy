@@ -1,0 +1,19 @@
+{
+  "hesitation_patterns": {
+    "wahanie >3s": { "uncertainty": 0.15, "type_S": 0.1 },
+    "słowa typu 'chyba', 'może'": { "uncertainty": 0.2, "type_S": 0.15 },
+    "powtarzanie pytań": { "confusion": 0.1, "type_C": 0.1 }
+  },
+  "behavioral_signals": {
+    "przerywa sprzedawcę 2x+": { "type_D": 0.25, "dominance": 0.2 },
+    "śmiech po wyjaśnieniu": { "type_I": 0.3, "engagement": 0.15 },
+    "długie milczenie": { "type_S": 0.1, "processing": 0.1 },
+    "zadaje szczegółowe pytania": { "type_C": 0.2, "analysis": 0.15 }
+  },
+  "contextual_signals": {
+    "mieszka w bloku": { "charging_anxiety": 0.2, "infrastructure_dependency": 0.15 },
+    "ma dzieci": { "safety_focus": 0.15, "family_oriented": 0.2 },
+    "prowadzi firmę": { "business_focus": 0.25, "tax_benefits": 0.2 },
+    "pierwszy EV": { "education_needed": 0.2, "uncertainty": 0.1 }
+  }
+}

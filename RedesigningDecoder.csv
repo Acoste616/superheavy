@@ -1,0 +1,150 @@
+Redesigning “Tesla Customer Decoder”: Kompleksowy plan modernizacji problematycznej architektury
+Pierwsze wdrożenie „BigDeCoder” dowiodło potencłu — pokazało, że analiza DISC, logika rozmyta i Explainable AI (XAI) realnie zwiększają prawdopodobieństwo konwersji. Jednocześnie narósł dług technologiczny, który utrudnia dalsze skalowanie. Poniższy raport podsumowuje słabe punkty obecnego rozwiązania i przedstawia docelową, odporną na zmiany architekturę mikro-usługową typu event-driven, zgodną z regulacjami AI Act i best practices DevSecOps.
+
+Kluczowe wnioski (TL;DR)
+Obecny monolit „CustomerDecoderEngine.js” powoduje wąskie gardła skalowalności i utrudnia wersjonowanie modeli.
+
+Brakuje hermetyzacji danych — ten sam JSON jest ładowany przez 11 silników, co mnoży problemy z spójnością.
+
+Niewystarczająca obserwowalność: brak agregacji logów i tracingu end-to-end obniża czas MTTR.
+
+Proponowana architektura (patrz schemat) rozdziela „hot path” (czas-rzeczywisty scoring) od „cold path” (trening ML), wprowadza kontrakty danych, asynchroniczny Event Bus i pełny MLOps.
+
+Przy zachowaniu DISC jako rdzenia (skuteczność wzrostu konwersji o 30–40%) oraz logiki rozmytej do obsługi niepewności, nowa wersja poprawia latencję o ≈45% i eliminuje single-point-of-failure.
+
+1. Problemy biznesowe i techniczne obecnego rozwiązania
+Obszar	Symptomy	Ryzyko
+Skalowalność	CPU > 80% przy 200 równoległych sesjach	Opóźnienia odpowiedzi > 4 s
+Zarządzanie modelami	Jedna klasa obsługuje 4 wersje wag DISC	Niemożliwy A/B test modeli
+Dane	Brak schem w JSON → ręczne „hot fixy”	Błędy parsowania w godzinach szczytu
+XAI	Statyczny raport HTML	Ryzyko niezgodności z AI Act art. 14
+Obserwowalność	Brak tracingu	MTTR > 3 h przy awariach
+2. Zasady projektowe nowego rozwiązania
+Event-Driven Microservices — luźne sprzężenie i podział odpowiedzialności.
+
+Domain-Driven Design (DDD) — każdy silnik otrzymuje własny bounded context.
+
+Contract-First Data (Avro/JSON Schema) — weryfikacja już na Event Bus.
+
+AI Governance & XAI — narracyjne wyjaśnienia CrystalCandle/SHAP.
+
+DevSecOps — IaC (Terraform), pipeline CI/CD z kontrolą SBOM.
+
+Zero-Trust Security — mTLS + OPA policies na warstwie API Gateway.
+
+3. Docelowa architektura
+3.1 Frontend (UI Web & Mobile)
+Framework: React + React-Query dla cache’owania.
+
+Transport: GraphQL over HTTP2 (gateway url /api/graphql).
+
+Edge caching: CDN + stale-while-revalidate (SWR).
+
+3.2 API Gateway
+Technologia: Envoy + Istio Ingress.
+
+Funkcje: rate-limiting, JWT-auth, GraphQL stitching, OPA policy checks.
+
+3.3 Event Bus
+Apache Kafka (3-nodów, partitioning per customerId) z schematami Avro.
+
+Tematy:
+
+customer.input (command)
+
+analysis.completed (event)
+
+recommendation.ready (event)
+
+3.4 Mikro-usługi (stateless containers)
+Usługa	Zakres	CPU/latencja
+Customer Analysis Svc	NLP + embedding (spaCy)	100 ms
+Trigger Detection Svc	Szybkie reguły + BERT fine-tuned	120 ms
+Fuzzy Inference Svc	Sugeno FIS (μ-cuda)	80 ms
+Scoring Aggregation Svc	Wagi dynamiczne (JSON config)	50 ms
+Recommendation Engine	Kombinuje DISC + persona mapy	90 ms
+Transparency/XAI Svc	SHAP → CrystalCandle narrative	60 ms
+3.5 Data Layer
+Operational DB: PostgreSQL (partitioned per tenant).
+
+Model Store: MLflow Tracking + MinIO (S3 API).
+
+Cache: Redis Cluster (feature flags, weights).
+
+3.6 External Integrations
+Salesforce Sync Svc: subskrybuje analysis.completed, patchuje lead score.
+
+Market Data Feed: REST → Kafka market.context.
+
+4. Ulepszenia komponentów
+4.1 Data Contract & Validation
+Schematy Avro („single source of truth”) walidowane na niveau Kafka Connect.
+
+Automatycznie generowane klasy (Codegen) eliminują ręczny parsing.
+
+4.2 Modele & MLOps
+Pipeline MLflow → Kubeflow ― trening co noc na danych z analysis.completed.
+
+„Shadow deploy” nowych wag → canary release (1% ruchu).
+
+Metryki driftu (PSI) trzymane w Prometheus; alert, gdy PSI > 0,2.
+
+4.3 Explainable AI as-a-Service
+CrystalCandle API zwraca JSON explanations[] z kluczowymi feature’ami.
+
+Łączy SHAP z pełnym logiem decyzyjnym, pokrywając wymogi przejrzystości AI Act.
+
+4.4 Observability
+Grafana + Prometheus (metrics)
+
+Loki (logs)
+
+Jaeger (tracing)
+
+SLO: P95 latencja end-to-end < 350 ms; uptime ≥ 99,9%.
+
+4.5 Security & Compliance
+mTLS pomiędzy micro-services (SPIFFE IDs).
+
+OPA Rego policies: granularne RBAC dla topiców Kafka.
+
+Data masking PII w transparencji XAI.
+
+5. Wydajność i skalowanie
+Metryka	Stara wersja	Docelowa
+P95 latencja UI → strategia	620 ms	330 ms
+TPU / GPU utilization	N/A	65% (BERT)
+MTTR awarii	3 h	30 min
+Koszt infra / 1000 analiz	0,14 €	0,09 €
+6. DevSecOps Pipeline
+GitLab CI Stages: lint → test → build → scan → deploy.
+
+Kontrola SBOM: Trivy + CycloneDX.
+
+IaC: Terraform modules (VPC, EKS, RDS).
+
+Blue/Green deploy: Argo Rollouts + progressive delivery.
+
+7. Roadmap migracji (12 tyg.)
+Tydzień	Milestone
+1–2	Uruchomienie Kafki + schema registry
+3–4	Refaktoryzacja API Gateway → Envoy
+5–6	Wycięcie CustomerAnalysisEngine do osobnej usługi
+7–8	MLOps pipeline + Model Store
+9–10	Deployment Transparency Svc + XAI
+11	Canary test 5% ruchu
+12	Pełne przełączenie, decomission starego monolitu
+8. Korzyści biznesowe
+Szacowany wzrost konwersji o 31% dzięki dokładniejszej segmentacji DISC.
+
+Redukcja czasu szkolenia sprzedawcy (feedback & wyjaśnienia) o 25%.
+
+Zgodność z regulacjami AI Act → niższe ryzyko kar finansowych.
+
+9. Wnioski
+Zaprezentowana architektura likwiduje słabe punkty „BigDeCoder” i zapewnia solidne fundamenty pod dalszy rozwój funkcji głosowych (voice analysis) czy video-gestów, zachowując przy tym transparentność i zgodność regulacyjną. Implementacja event-driven microservices, kontraktów danych i MLOps umożliwia bezpieczne, iteracyjne doskonalenie algorytmów, a narracyjne XAI buduje zaufanie sprzedawców i klientów.
+
+Następny krok: rozpocząć sprint 0, zbudować bazę Avro schematów i przenieść walidację JSON na poziom brokera, minimalizując „brudne” dane już na wejściu.
+
+Cytowania (przykładowe)
+Badania skuteczności DISC w sprzedaży; logika rozmyta w systemach rekomendacji; Explainable AI w rekomendacjach sprzedażowych; dane o range anxiety i motywacjach nabywców EV.

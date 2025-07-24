@@ -1,0 +1,236 @@
+{
+  "responses": {
+    "green_pioneer_family": {
+      "opening_lines": [
+        "Jako rodzina dbająca o środowisko, Tesla to idealny wybór dla Was - zero emisji, maksymalne bezpieczeństwo dla dzieci.",
+        "Wyobraźcie sobie - dzieci będą dumne, że jeździcie samochodem, który chroni ich przyszłość.",
+        "Tesla to nie tylko samochód, to inwestycja w czystą przyszłość Waszej rodziny."
+      ],
+      "argument_stacks": {
+        "soft": [
+          "Tesla oferuje spokój ducha - najwyższe oceny bezpieczeństwa dla rodzin z dziećmi.",
+          "Oszczędności na paliwie pozwolą więcej wydać na potrzeby rodziny.",
+          "Cicha jazda - dzieci będą lepiej spać podczas podróży."
+        ],
+        "medium": [
+          "5-gwiazdkowe bezpieczeństwo w każdej kategorii - najlepsze dla Waszych dzieci.",
+          "Autopilot zmniejsza ryzyko wypadków o 40% - statystyki nie kłamią.",
+          "Zero emisji lokalnych - czyste powietrze dla dzieci w mieście.",
+          "Najniższe koszty eksploatacji na rynku - więcej pieniędzy na rodzinę."
+        ],
+        "strong": [
+          "Tesla Model Y - jedyny SUV z 5 gwiazdkami w każdej kategorii bezpieczeństwa.",
+          "Autopilot to przyszłość - Wasze dzieci będą bezpieczniejsze niż kiedykolwiek.",
+          "ROI 15-20% rocznie dzięki oszczędnościom - lepsza inwestycja niż lokata.",
+          "Zero wizyt na stacji - więcej czasu z rodziną."
+        ]
+      },
+      "objection_handling": {
+        "price": "Tak, Tesla to inwestycja - ale pomyślcie o oszczędnościach: brak paliwa, brak serwisów, dotacje rządowe. W 5 lat zwróci się z nawiązką.",
+        "range": "Model Y ma zasięg 533 km - to wystarczy na wyjazd nad morze i z powrotem. A ładowanie w domu to jak ładowanie telefonu.",
+        "charging": "W domu ładujecie przez noc, jak telefon. Na trasie - Superchargery co 150 km. Dzieci zdążą się przespać."
+      },
+      "social_proof": [
+        "Ponad 2 miliony rodzin na świecie wybrało Teslę dla bezpieczeństwa dzieci.",
+        "Tesla to najczęściej kupowany samochód premium przez młode rodziny w Europie.",
+        "95% właścicieli Tesla poleca ją znajomym - najwyższy wskaźnik w branży."
+      ],
+      "roi_hooks": [
+        "Oszczędności 2000-3000 zł miesięcznie na paliwie",
+        "Brak kosztów serwisu przez pierwsze 4 lata",
+        "Dotacja do 27 000 zł + ulgi podatkowe",
+        "Wartość odsprzedaży najwyższa w segmencie"
+      ],
+      "next_questions": [
+        "Ile kilometrów dziennie przejeżdżacie z dziećmi?",
+        "Czy macie możliwość ładowania w domu lub w pracy?",
+        "Jakie są Wasze główne obawy dotyczące bezpieczeństwa w samochodzie?"
+      ],
+      "emotional_triggers": [
+        "bezpieczeństwo dzieci",
+        "czysta przyszłość",
+        "odpowiedzialność rodzicielska",
+        "spokój ducha"
+      ]
+    },
+    "tech_executive": {
+      "opening_lines": [
+        "Tesla to nie tylko samochód - to platforma technologiczna na kółkach, która się ciągle rozwija.",
+        "Jako lider technologiczny, docenisz OTA updates, Autopilot i ekosystem Tesla.",
+        "Model S Plaid - 1020 KM, 0-100 w 2.1s. Najszybszy sedan produkcyjny na świecie."
+      ],
+      "argument_stacks": {
+        "soft": [
+          "Tesla to jedyna marka, która dostarcza aktualizacje oprogramowania jak Apple.",
+          "Autopilot to najbardziej zaawansowany system autonomicznej jazdy na rynku.",
+          "Minimalistyczny design wnętrza - wszystko sterowane z jednego ekranu."
+        ],
+        "medium": [
+          "Neural Network Processing - Tesla używa AI do ciągłego uczenia się.",
+          "Over-the-Air Updates - Twój samochód się ulepsza podczas snu.",
+          "Supercomputer on wheels - moc obliczeniowa jak w data center.",
+          "API dostęp - możesz integrować Teslę z Twoimi systemami."
+        ],
+        "strong": [
+          "Tesla FSD Beta - jesteś częścią największego eksperymentu AI w historii.",
+          "Dojo supercomputer - Tesla trenuje AI na własnej infrastrukturze.",
+          "Vertical integration - Tesla kontroluje cały stack technologiczny.",
+          "Space-grade technology - ta sama technologia co w SpaceX."
+        ]
+      },
+      "objection_handling": {
+        "price": "To inwestycja w technologię przyszłości. Porównaj to do kosztu najnowszego iPhone'a - Tesla daje Ci cutting-edge tech na lata.",
+        "reliability": "Tesla ma najwyższą satysfakcję klientów w branży. OTA fixes oznaczają, że problemy są rozwiązywane zdalnie.",
+        "competition": "Konkurencja kopiuje Teslę z 5-letnim opóźnieniem. Tesla już dziś ma technologię, którą inni będą mieć w 2030."
+      },
+      "social_proof": [
+        "Elon Musk, Tim Cook, Jeff Bezos - wszyscy liderzy tech jeżdżą Teslą.",
+        "Tesla to najcenniejsza firma motoryzacyjna świata - rynek docenia innowacje.",
+        "Silicon Valley standard - 70% tech executives wybiera Teslę."
+      ],
+      "roi_hooks": [
+        "Najwyższa wartość odsprzedaży w segmencie premium",
+        "OTA updates zwiększają wartość samochodu w czasie",
+        "Tax benefits dla firm - 100% odliczenie w pierwszym roku",
+        "Produktywność - Autopilot pozwala pracować podczas jazdy"
+      ],
+      "next_questions": [
+        "Jakie technologie w Twoim biznesie są dla Ciebie najważniejsze?",
+        "Czy interesuje Cię integracja Tesla API z Twoimi systemami?",
+        "Chciałbyś przetestować Autopilot w rzeczywistych warunkach?"
+      ],
+      "emotional_triggers": [
+        "bycie pierwszym",
+        "przewaga technologiczna",
+        "status innowatora",
+        "kontrola nad technologią"
+      ]
+    },
+    "budget_conscious_family": {
+      "opening_lines": [
+        "Tesla Model 3 to najlepszy stosunek jakości do ceny w segmencie premium.",
+        "Pomimo wyższej ceny zakupu, Tesla zwraca się przez oszczędności w eksploatacji.",
+        "Z dotacjami i oszczędnościami, Tesla może kosztować mniej niż premium ICE."
+      ],
+      "argument_stacks": {
+        "soft": [
+          "Oszczędności na paliwie to 2000-3000 zł miesięcznie.",
+          "Brak kosztów serwisu przez pierwsze lata eksploatacji.",
+          "Dotacje rządowe do 27 000 zł zmniejszają cenę zakupu."
+        ],
+        "medium": [
+          "TCO (Total Cost of Ownership) niższy o 30% niż premium ICE.",
+          "Wartość odsprzedaży Tesla najwyższa w branży - mniejsza deprecjacja.",
+          "Ubezpieczenie często tańsze dzięki systemom bezpieczeństwa.",
+          "Leasing 0% - Tesla oferuje najlepsze warunki finansowania."
+        ],
+        "strong": [
+          "ROI 15-20% rocznie - lepsza inwestycja niż większość funduszy.",
+          "Payback period 4-5 lat, potem czyste oszczędności.",
+          "Model 3 tańszy w eksploatacji niż Corolla - sprawdzone kalkulacje.",
+          "Wartość odsprzedaży po 3 latach: Tesla 70%, BMW 45%."
+        ]
+      },
+      "objection_handling": {
+        "upfront_cost": "Tak, początkowy koszt wyższy, ale spójrz na całkowity koszt przez 5 lat - Tesla wygrywa o 50 000 zł.",
+        "financing": "Tesla oferuje leasing 0% i kredyt na preferencyjnych warunkach. Rata może być niższa niż koszty paliwa.",
+        "maintenance": "Przez pierwsze 4 lata praktycznie zero kosztów serwisu. Tylko wymiana opon i płynu spryskiwacza."
+      },
+      "social_proof": [
+        "Model 3 to bestseller w segmencie premium w Europie - ludzie liczą pieniądze.",
+        "Średnie oszczędności właścicieli Tesla: 30 000 zł rocznie.",
+        "98% właścicieli Tesla kupuje ponownie tę markę - najwyższy wskaźnik lojalności."
+      ],
+      "roi_hooks": [
+        "Oszczędności 30 000 zł rocznie na eksploatacji",
+        "Dotacje i ulgi podatkowe do 40 000 zł",
+        "Najwyższa wartość odsprzedaży w branży",
+        "Leasing 0% - najlepsze warunki na rynku"
+      ],
+      "next_questions": [
+        "Ile wydajecie miesięcznie na paliwo i serwis obecnego samochodu?",
+        "Czy rozważaliście leasing jako opcję finansowania?",
+        "Jakie są Wasze główne obawy dotyczące kosztów eksploatacji?"
+      ],
+      "emotional_triggers": [
+        "mądre wydawanie pieniędzy",
+        "długoterminowe oszczędności",
+        "wartość dla rodziny",
+        "bezpieczeństwo finansowe"
+      ]
+    },
+    "general": {
+      "opening_lines": [
+        "Tesla to lider innowacji i wydajności w branży motoryzacyjnej.",
+        "Dołącz do rewolucji elektrycznej z najlepszą marką na świecie.",
+        "Tesla oferuje najlepszą kombinację technologii, wydajności i wartości."
+      ],
+      "argument_stacks": {
+        "soft": [
+          "Najwyższe oceny bezpieczeństwa w każdej kategorii.",
+          "Globalna sieć Supercharger - ładowanie wszędzie.",
+          "Minimalne koszty eksploatacji i serwisu."
+        ],
+        "medium": [
+          "Najnowsza technologia EV na świecie.",
+          "Autopilot - najbardziej zaawansowany system wspomagania.",
+          "OTA updates - samochód się ciągle ulepsza.",
+          "Najlepszy zasięg w każdym segmencie."
+        ],
+        "strong": [
+          "Tesla to przyszłość motoryzacji - bądź częścią rewolucji.",
+          "Najwyższa wartość odsprzedaży i najniższe TCO.",
+          "Vertical integration - kontrola nad całym łańcuchem wartości.",
+          "Space-grade technology w codziennym użytkowaniu."
+        ]
+      },
+      "objection_handling": {
+        "price": "Tesla to inwestycja długoterminowa - niższe TCO i wyższa wartość odsprzedaży.",
+        "range": "Zasięg Tesla wystarczy na 99% codziennych potrzeb, a Superchargery pokrywają całą Europę.",
+        "charging": "Ładowanie w domu to jak ładowanie telefonu - wygodnie i tanio."
+      },
+      "social_proof": [
+        "Ponad 5 milionów zadowolonych klientów na całym świecie.",
+        "Najwyższa satysfakcja klientów w branży motoryzacyjnej.",
+        "Tesla to najcenniejsza firma motoryzacyjna świata."
+      ],
+      "roi_hooks": [
+        "Oszczędności na paliwie i serwisie",
+        "Najwyższa wartość odsprzedaży",
+        "Dotacje i ulgi podatkowe",
+        "Minimalne koszty eksploatacji"
+      ],
+      "next_questions": [
+        "Jakie są Twoje główne potrzeby transportowe?",
+        "Czy rozważałeś wcześniej samochód elektryczny?",
+        "Co jest dla Ciebie najważniejsze w samochodzie?"
+      ],
+      "emotional_triggers": [
+        "innowacyjność",
+        "prestiż",
+        "niezawodność",
+        "przyszłość"
+      ]
+    }
+  },
+  "response_selection_rules": {
+    "disc_alignment": {
+      "D": "strong",
+      "I": "medium", 
+      "S": "soft",
+      "C": "medium"
+    },
+    "trigger_intensity": {
+      "low": "soft",
+      "medium": "medium",
+      "high": "strong"
+    },
+    "objection_priority": [
+      "price",
+      "range", 
+      "charging",
+      "reliability",
+      "competition"
+    ]
+  }
+}

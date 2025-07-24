@@ -1,0 +1,950 @@
+{
+  "version": "3.1", 
+  "description": "Comprehensive trigger system with quick responses for all sales scenarios",
+  "design_principles": {
+    "complete_coverage": "Every possible customer concern and signal covered",
+    "quick_responses": "Immediate guidance for salesperson with personality matching",
+    "conversation_flow": "Organized by natural sales conversation progression",
+    "actionable": "Every trigger provides specific next steps and responses"
+  },
+  
+  "trigger_categories": {
+    "financial": {
+      "name": "💰 Finanse i Koszty",
+      "description": "Wszelkie kwestie związane z ceną, kosztami, finansowaniem",
+      "weight": 30,
+      "personality_alignment": {"S": 0.9, "C": 0.85, "D": 0.7, "I": 0.6}
+    },
+    "technical": {
+      "name": "⚙️ Techniczne i Praktyczne", 
+      "description": "Zasięg, ładowanie, wydajność, funkcjonalności",
+      "weight": 25,
+      "personality_alignment": {"C": 0.95, "D": 0.8, "S": 0.7, "I": 0.5}
+    },
+    "competitive": {
+      "name": "🏁 Porównania i Konkurencja",
+      "description": "Porównania z innymi markami, modelami, technologiami",
+      "weight": 20,
+      "personality_alignment": {"C": 0.9, "D": 0.85, "S": 0.6, "I": 0.7}
+    },
+    "lifestyle": {
+      "name": "🚗 Styl Życia i Status",
+      "description": "Prestiż, wizerunek, dopasowanie do stylu życia",
+      "weight": 15,
+      "personality_alignment": {"I": 0.95, "D": 0.8, "S": 0.4, "C": 0.3}
+    },
+    "environmental": {
+      "name": "🌱 Ekologia i Wartości",
+      "description": "Wpływ na środowisko, misja, przyszłość",
+      "weight": 10,
+      "personality_alignment": {"I": 0.9, "S": 0.7, "C": 0.6, "D": 0.5}
+    },
+    "decision_process": {
+      "name": "🎯 Proces Decyzyjny",
+      "description": "Timing, badania, gotowość do zakupu",
+      "weight": 20,
+      "personality_alignment": {"C": 0.8, "D": 0.7, "S": 0.8, "I": 0.6}
+    },
+    "objections": {
+      "name": "🚫 Obiekcje i Wątpliwości",
+      "description": "Typowe obiekcje i zastrzeżenia klientów",
+      "weight": 25,
+      "personality_alignment": {"S": 0.8, "C": 0.9, "D": 0.6, "I": 0.5}
+    }
+  },
+
+  "triggers": [
+    
+    // === FINANCIAL CATEGORY ===
+    {
+      "id": "price_concern",
+      "text": "Ta cena to jednak spory wydatek",
+      "category": "financial",
+      "subcategory": "initial_price_shock",
+      "base_conversion_rate": 65,
+      "intent_level": "medium_high",
+      "decision_stage": "consideration",
+      "personality_resonance": {"S": 0.9, "C": 0.85, "D": 0.7, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Rozumiem, to duża decyzja. Ale pomyślmy o pełnym obrazie - z dotacją 40k PLN i oszczędnościami 30k w 5 lat, to naprawdę konkurencyjna opcja.",
+        "key_points": ["40k PLN dotacja NaszEauto", "30k PLN oszczędności", "8 lat gwarancji"],
+        "next_action": "Pokażę Ci kalkulator TCO",
+        "avoid": ["Bagatelizowanie kosztu", "Porównania do tanich aut"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Reassurance with long-term value and security",
+          "key_messages": ["40,000 PLN dotacja NaszEauto", "30,000 PLN oszczędności w 5 lat", "8 lat gwarancji chroni inwestycję"],
+          "proof_points": ["Kalkulator NaszEauto", "Porównanie TCO", "Warunki gwarancji"]
+        },
+        "C": {
+          "approach": "Detailed financial analysis with numbers",
+          "key_messages": ["TCO Tesla: 1.02 PLN/km vs Golf: 1.34 PLN/km", "ROI: zwrot w 4.2 roku", "Amortyzacja podatkowa 225k dla firm"],
+          "proof_points": ["Arkusz kalkulacyjny TCO", "Dane kosztów paliwa", "Regulacje podatkowe"]
+        },
+        "D": {
+          "approach": "Strategic investment and executive positioning",
+          "key_messages": ["Inwestycja w technologię przyszłości", "Przewaga konkurencyjna", "Status symbol przywódcy"],
+          "proof_points": ["Testimoniale executives", "Dane rynkowe", "Portfolio technologiczne Tesla"]
+        },
+        "I": {
+          "approach": "Social proof and community benefits",
+          "key_messages": ["Mądrzy kupujący używają dotacji", "Społeczność oszczędnych", "Inwestycja środowiskowa się opłaca"],
+          "proof_points": ["Opinie właścicieli", "Społecznościowe oszczędności", "Environmental ROI"]
+        }
+      },
+      "conversion_modifiers": {
+        "has_home_pv": 15, "business_owner": 12, "family_budget": 8, "first_car_purchase": -5
+      }
+    },
+
+    {
+      "id": "too_expensive",
+      "text": "To za drogo dla mnie",
+      "category": "financial",
+      "subcategory": "budget_limitation",
+      "base_conversion_rate": 45,
+      "intent_level": "medium",
+      "decision_stage": "price_evaluation",
+      "personality_resonance": {"S": 0.95, "C": 0.8, "D": 0.5, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Sprawdźmy razem opcje finansowania. Z leasingiem to może być 1200 PLN miesięcznie, plus dotacja 40k PLN znacznie obniża koszt.",
+        "key_points": ["Leasing od 1200 PLN/mies", "40k dotacja", "Oszczędności paliwa"],
+        "next_action": "Pokażę opcje finansowania",
+        "avoid": ["Namawianie na droższe wersje", "Ignorowanie budżetu"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Financing options and budget-friendly solutions",
+          "key_messages": ["Leasing od 1200 PLN/mies", "Dotacja pokrywa dużą część", "Oszczędności na paliwie od pierwszego dnia"],
+          "proof_points": ["Kalkulator leasingu", "Dotacje dostępne", "Porównanie kosztów"]
+        }
+      },
+      "conversion_modifiers": {
+        "budget_conscious": 20, "financing_open": 15, "subsidy_eligible": 25
+      }
+    },
+
+    {
+      "id": "naszauto_interest",
+      "text": "Słyszałem o programie NaszEauto",
+      "category": "financial",
+      "subcategory": "subsidy_opportunity",
+      "base_conversion_rate": 85,
+      "intent_level": "very_high",
+      "decision_stage": "ready_to_buy",
+      "personality_resonance": {"S": 0.9, "C": 0.85, "D": 0.8, "I": 0.7},
+      "quick_response": {
+        "immediate_reply": "Świetnie! To idealny moment. 40,000 PLN dotacji z ograniczonej puli. Możemy złożyć wniosek już dziś, a auto dostaniesz za 4-6 tygodni.",
+        "key_points": ["40k PLN gwarantowane", "Wniosek już dziś", "Dostawa za 4-6 tygodni"],
+        "next_action": "Rozpocznę proces aplikacji",
+        "avoid": ["Zwlekanie", "Komplikowanie procesu"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Scarcity and financial security with clear process",
+          "key_messages": ["40,000 PLN z ograniczonej puli", "Aplikacja już teraz - dostawa później", "Gwarancja otrzymania dotacji"],
+          "proof_points": ["Budżet programu", "Proces aplikacyjny", "Timeline dostawy"]
+        }
+      },
+      "conversion_modifiers": {
+        "subsidy_eligible": 30, "urgency_sensitive": 20, "process_oriented": 15
+      }
+    },
+
+    {
+      "id": "business_tax_benefits",
+      "text": "To będzie samochód firmowy",
+      "category": "financial", 
+      "subcategory": "business_optimization",
+      "base_conversion_rate": 78,
+      "intent_level": "high",
+      "decision_stage": "business_justification",
+      "personality_resonance": {"D": 0.9, "C": 0.85, "S": 0.6, "I": 0.7},
+      "quick_response": {
+        "immediate_reply": "Doskonała decyzja biznesowa! EV ma znacznie lepsze korzyści podatkowe: amortyzacja 225k vs 150k spalinowe, plus 100% odliczenie VAT.",
+        "key_points": ["Amortyzacja 225k PLN", "100% VAT odliczenie", "Wizerunek firmy"],
+        "next_action": "Pokażę pełną analizę biznesową",
+        "avoid": ["Skupianie się tylko na kosztach", "Ignorowanie wizerunku"]
+      },
+      "response_strategies": {
+        "D": {
+          "approach": "Tax optimization and business image",
+          "key_messages": ["225,000 PLN amortyzacja vs 150,000 spalinowe", "100% odliczenie VAT", "Wizerunek innowacyjnej firmy"],
+          "proof_points": ["Regulacje podatkowe", "Kalkulator leasingu", "Business case studies"]
+        },
+        "C": {
+          "approach": "Detailed business case analysis",
+          "key_messages": ["ROI: 34% w pierwszym roku", "Operational savings: 8,000 PLN/rok", "Tax shield value: 45,000 PLN"],
+          "proof_points": ["Business ROI calculator", "Operational cost comparison", "Tax optimization analysis"]
+        }
+      },
+      "conversion_modifiers": {
+        "business_owner": 25, "tax_optimization": 20, "fleet_decision": 15
+      }
+    },
+
+    {
+      "id": "leasing_vs_cash",
+      "text": "Lepiej wziąć leasing czy kupić za gotówkę?",
+      "category": "financial",
+      "subcategory": "financing_options",
+      "base_conversion_rate": 70,
+      "intent_level": "high",
+      "decision_stage": "financing_evaluation",
+      "personality_resonance": {"C": 0.95, "D": 0.8, "S": 0.7, "I": 0.5},
+      "quick_response": {
+        "immediate_reply": "Zależy od Twojej sytuacji. Biznes? Leasing daje lepsze korzyści podatkowe. Osoba prywatna? Gotówka + dotacja może być korzystniejsza.",
+        "key_points": ["Biznes = leasing lepszy", "Prywatnie = gotówka+dotacja", "Porównamy obie opcje"],
+        "next_action": "Przygotowuję porównanie",
+        "avoid": ["Narzucanie jednej opcji", "Brak analizy sytuacji"]
+      },
+      "response_strategies": {
+        "C": {
+          "approach": "Comprehensive financing comparison",
+          "key_messages": ["Leasing: 1,200 PLN/mies vs najem 1,800", "Cash flow optimization", "Tax benefits comparison"],
+          "proof_points": ["Financing calculator", "Cash flow analysis", "Tax impact comparison"]
+        }
+      },
+      "conversion_modifiers": {
+        "business_owner": 20, "cash_flow_conscious": 15, "tax_savvy": 12
+      }
+    },
+
+    {
+      "id": "monthly_payment_concern",
+      "text": "Nie stać mnie na takie raty",
+      "category": "financial",
+      "subcategory": "payment_affordability",
+      "base_conversion_rate": 50,
+      "intent_level": "medium",
+      "decision_stage": "affordability_check",
+      "personality_resonance": {"S": 0.95, "C": 0.8, "D": 0.5, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Sprawdźmy razem. Z dotacją i oszczędnościami na paliwie, rzeczywisty koszt może być niższy niż myślisz. Plus mamy różne opcje leasingu.",
+        "key_points": ["Niższy realny koszt", "Oszczędności paliwa", "Elastyczne opcje"],
+        "next_action": "Obliczę realny koszt",
+        "avoid": ["Naciski na budżet", "Lekceważenie obaw"]
+      },
+      "conversion_modifiers": {
+        "budget_tight": 25, "payment_sensitive": 20, "financing_needed": 15
+      }
+    },
+
+    // === TECHNICAL CATEGORY ===
+    {
+      "id": "range_anxiety",
+      "text": "Czy zasięg wystarczy na dłuższe trasy?",
+      "category": "technical",
+      "subcategory": "range_concerns",
+      "base_conversion_rate": 58,
+      "intent_level": "medium",
+      "decision_stage": "practical_evaluation",
+      "personality_resonance": {"C": 0.95, "S": 0.85, "D": 0.6, "I": 0.4},
+      "quick_response": {
+        "immediate_reply": "Model Y ma 514km zasięgu WLTP, w praktyce 400-450km. Plus mamy już 9,342 punkty ładowania w Polsce. Aplikacja wszystko zaplanuje.",
+        "key_points": ["514km WLTP", "9,342 punkty ładowania", "Aplikacja planuje trasę"],
+        "next_action": "Pokażę mapę infrastruktury",
+        "avoid": ["Przesadzanie z zasięgiem", "Bagatelizowanie obaw"]
+      },
+      "response_strategies": {
+        "C": {
+          "approach": "Honest data with practical solutions",
+          "key_messages": ["WLTP 514km = rzeczywiste 400-450km", "9,342 punktów ładowania w Polsce", "Route planner optymalizuje trasy"],
+          "proof_points": ["Real-world range data", "Charging infrastructure map", "Trip planner demo"]
+        },
+        "S": {
+          "approach": "Peace of mind and security",
+          "key_messages": ["Aplikacja planuje trasę", "Sieć Superchargerów gwarantuje dojazd", "Zapas zawsze dostępny"],
+          "proof_points": ["Navigation demo", "Supercharger locations", "Safety margin examples"]
+        }
+      },
+      "conversion_modifiers": {
+        "long_distance_driver": 15, "rural_location": 10, "family_trips": 8
+      }
+    },
+
+    {
+      "id": "winter_performance",
+      "text": "A jak to działa zimą przy mrozie?",
+      "category": "technical",
+      "subcategory": "seasonal_performance",
+      "base_conversion_rate": 52,
+      "intent_level": "medium",
+      "decision_stage": "real_world_testing",
+      "personality_resonance": {"C": 0.95, "S": 0.85, "D": 0.6, "I": 0.4},
+      "quick_response": {
+        "immediate_reply": "Szczerze - zimą zasięg spadnie o około 25% przy -10°C. Ale mamy preconditioning i heat pump, co znacznie pomaga. Model Y radzi sobie lepiej niż starsze EV.",
+        "key_points": ["25% spadek przy -10°C", "Preconditioning pomaga", "Heat pump w Model Y"],
+        "next_action": "Pokażę dane z testów zimowych",
+        "avoid": ["Ukrywanie prawdy", "Porównania do spalinowych"]
+      },
+      "response_strategies": {
+        "C": {
+          "approach": "Technical data with honest assessment",
+          "key_messages": ["25% spadek zasięgu przy -10°C", "Precondition optymalizuje wydajność", "Heat pump w Model Y zwiększa efektywność"],
+          "proof_points": ["Winter test results", "Preconditioning demo", "Heat pump efficiency data"]
+        }
+      },
+      "conversion_modifiers": {
+        "cold_climate": 20, "winter_driving": 15, "efficiency_conscious": 10
+      }
+    },
+
+    {
+      "id": "charging_infrastructure",
+      "text": "Gdzie będę ładować poza domem?",
+      "category": "technical",
+      "subcategory": "charging_practical",
+      "base_conversion_rate": 55,
+      "intent_level": "medium_high",
+      "decision_stage": "infrastructure_evaluation",
+      "personality_resonance": {"S": 0.9, "C": 0.8, "D": 0.7, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Mamy 9,342 punkty w Polsce, Superchargery co 150km na autostradach. Aplikacja znajdzie najbliższy i pokaże czy wolny.",
+        "key_points": ["9,342 punkty ładowania", "Superchargery co 150km", "Aplikacja pokazuje dostępność"],
+        "next_action": "Pokażę aplikację i mapę",
+        "avoid": ["Tylko Tesla Superchargery", "Ignorowanie lokalnych potrzeb"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Comprehensive infrastructure support",
+          "key_messages": ["9,342 punkty w Polsce", "Superchargery co 150km na autostradach", "Aplikacja znajdzie najbliższy"],
+          "proof_points": ["Infrastructure map", "Supercharger network", "App demo"]
+        }
+      },
+      "conversion_modifiers": {
+        "no_home_charging": 25, "frequent_travel": 15, "urban_dweller": 10
+      }
+    },
+
+    {
+      "id": "charging_speed",
+      "text": "Ile czasu zajmuje ładowanie?",
+      "category": "technical",
+      "subcategory": "charging_practical",
+      "base_conversion_rate": 48,
+      "intent_level": "medium",
+      "decision_stage": "usage_evaluation",
+      "personality_resonance": {"D": 0.8, "C": 0.75, "S": 0.7, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "W domu overnight jak telefon. Na Superchargerze 15 minut = 200km zasięgu. W praktyce przerwa na kawę i jesteś gotowy.",
+        "key_points": ["Dom: overnight", "Supercharger: 15min = 200km", "Przerwa na kawę wystarczy"],
+        "next_action": "Pokażę czasy ładowania",
+        "avoid": ["Porównania do tankowania", "Ignorowanie typu ładowania"]
+      },
+      "response_strategies": {
+        "D": {
+          "approach": "Time efficiency focus",
+          "key_messages": ["15 minut = 200km zasięgu", "Ładowanie podczas produktywnej przerwy", "Szybciej niż tankowanie+płacenie"],
+          "proof_points": ["Charging speed calculator", "Time optimization examples", "Supercharger speeds"]
+        }
+      },
+      "conversion_modifiers": {
+        "time_conscious": 15, "frequent_stops": 10, "efficiency_focused": 8
+      }
+    },
+
+    {
+      "id": "reliability_concern", 
+      "text": "Co jak się zepsuje? Czy są częste awarie?",
+      "category": "technical",
+      "subcategory": "reliability_concern",
+      "base_conversion_rate": 56,
+      "intent_level": "medium",
+      "decision_stage": "risk_assessment",
+      "personality_resonance": {"S": 0.95, "C": 0.85, "D": 0.6, "I": 0.5},
+      "quick_response": {
+        "immediate_reply": "Tesla ma najniższe wskaźniki awarii w branży. Plus 8 lat gwarancji na baterię i Mobile Service, który przyjedzie do Ciebie.",
+        "key_points": ["Najniższe awarie w branży", "8 lat gwarancja baterii", "Mobile Service do domu"],
+        "next_action": "Pokażę statystyki niezawodności",
+        "avoid": ["Gwarancje tylko na papierze", "Porównania do nowych marek"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Comprehensive warranty and support",
+          "key_messages": ["8 lat/160,000km gwarancja baterii", "Mobile Service przyjeżdża do Ciebie", "Najniższe wskaźniki awarii w branży"],
+          "proof_points": ["Warranty terms", "Mobile Service demo", "Reliability statistics"]
+        }
+      },
+      "conversion_modifiers": {
+        "reliability_focused": 20, "family_primary_car": 15, "risk_averse": 12
+      }
+    },
+
+    {
+      "id": "autopilot_safety",
+      "text": "Jak działa autopilot? Czy to bezpieczne?",
+      "category": "technical",
+      "subcategory": "advanced_features",
+      "base_conversion_rate": 62,
+      "intent_level": "medium_high",
+      "decision_stage": "feature_evaluation", 
+      "personality_resonance": {"C": 0.9, "D": 0.85, "I": 0.7, "S": 0.6},
+      "quick_response": {
+        "immediate_reply": "8 kamer + radar dają 360° widok. Statystyki pokazują 10x mniej wypadków z Autopilotem. Ale nadal wymagana jest uwaga kierowcy.",
+        "key_points": ["8 kamer + radar", "10x mniej wypadków", "Wymaga uwagi kierowcy"],
+        "next_action": "Pokażę jak to działa",
+        "avoid": ["Overselling autonomii", "Ignorowanie ograniczeń"]
+      },
+      "response_strategies": {
+        "C": {
+          "approach": "Technical safety data and limitations",
+          "key_messages": ["8 kamer + radar = 360° świadomość", "10x mniej wypadków z Autopilotem", "Wymaga uwagi kierowcy"],
+          "proof_points": ["Safety statistics", "Sensor technology", "Demo video"]
+        }
+      },
+      "conversion_modifiers": {
+        "tech_interested": 18, "safety_conscious": 15, "long_commuter": 12
+      }
+    },
+
+    {
+      "id": "maintenance_costs",
+      "text": "Ile kosztuje serwis i konserwacja?",
+      "category": "technical",
+      "subcategory": "ongoing_costs",
+      "base_conversion_rate": 65,
+      "intent_level": "medium_high",
+      "decision_stage": "total_cost_evaluation",
+      "personality_resonance": {"C": 0.9, "S": 0.85, "D": 0.6, "I": 0.5},
+      "quick_response": {
+        "immediate_reply": "Znacznie mniej niż spalinowy! Brak wymiany oleju, filtrów, świec. Głównie opony i płyn do spryskiwaczy. Około 80% mniej kosztów.",
+        "key_points": ["80% mniej kosztów", "Brak oleju, filtrów", "Głównie opony i płyny"],
+        "next_action": "Pokażę porównanie kosztów",
+        "avoid": ["Ukrywanie kosztów opon", "Porównania do tanich aut"]
+      },
+      "conversion_modifiers": {
+        "maintenance_conscious": 25, "cost_calculator": 20, "long_term_ownership": 15
+      }
+    },
+
+    // === COMPETITIVE CATEGORY ===
+    {
+      "id": "competitor_byd",
+      "text": "A co z BYD? Mają podobny zasięg za mniej",
+      "category": "competitive",
+      "subcategory": "price_comparison",
+      "base_conversion_rate": 45,
+      "intent_level": "medium",
+      "decision_stage": "alternative_evaluation",
+      "personality_resonance": {"C": 0.9, "D": 0.7, "S": 0.6, "I": 0.5},
+      "quick_response": {
+        "immediate_reply": "BYD to dobry samochód, ale porównajmy całość: Tesla ma 50+ serwisów vs BYD 15, OTA updates, Superchargery. To różnica między autem a ekosystemem.",
+        "key_points": ["50+ serwisów vs 15", "OTA updates", "Ekosystem vs auto"],
+        "next_action": "Pokażę porównanie ekosystemów",
+        "avoid": ["Krytykowanie BYD", "Tylko różnice cenowe"]
+      },
+      "response_strategies": {
+        "C": {
+          "approach": "Feature and ecosystem comparison",
+          "key_messages": ["Sieć serwisowa: Tesla 50+ vs BYD 15", "OTA updates vs brak wsparcia", "Ecosystem vs pojedynczy produkt"],
+          "proof_points": ["Service network map", "Feature comparison", "Ecosystem overview"]
+        }
+      },
+      "conversion_modifiers": {
+        "price_conscious": 15, "comparison_shopper": 20, "skeptical": 8
+      }
+    },
+
+    {
+      "id": "competitor_german",
+      "text": "Może lepiej VW ID.4 lub BMW iX?",
+      "category": "competitive", 
+      "subcategory": "premium_comparison",
+      "base_conversion_rate": 50,
+      "intent_level": "medium_high",
+      "decision_stage": "brand_preference",
+      "personality_resonance": {"D": 0.8, "C": 0.75, "S": 0.7, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Szanuję niemieckie marki, ale Tesla ma 15 lat doświadczenia w EV vs ich 3 lata. Plus własna sieć ładowania vs zależność od innych.",
+        "key_points": ["15 lat vs 3 lata doświadczenia", "Własna sieć ładowania", "Specjalizacja w EV"],
+        "next_action": "Porównamy doświadczenie i technologie",
+        "avoid": ["Krytyka niemieckich marek", "Tylko techniczne różnice"]
+      },
+      "response_strategies": {
+        "D": {
+          "approach": "Technology leadership and innovation",
+          "key_messages": ["15 lat doświadczenia EV vs 3 lata", "Own charging network vs dependence", "Silicon Valley innovation vs traditional"],
+          "proof_points": ["Technology timeline", "Charging network comparison", "Innovation examples"]
+        }
+      },
+      "conversion_modifiers": {
+        "premium_preference": 12, "german_car_bias": -5, "innovation_focused": 18
+      }
+    },
+
+    {
+      "id": "ice_vs_ev_comparison",
+      "text": "Może zostać przy benzynie? Mniej komplikacji",
+      "category": "competitive",
+      "subcategory": "technology_hesitation", 
+      "base_conversion_rate": 35,
+      "intent_level": "low_medium",
+      "decision_stage": "technology_adoption",
+      "personality_resonance": {"S": 0.9, "C": 0.7, "D": 0.5, "I": 0.4},
+      "quick_response": {
+        "immediate_reply": "Rozumiem to myślenie. Ale EV jest prostsze - mniej części ruchomych, brak wymiany oleju, filtrów. Ładujesz w domu jak telefon.",
+        "key_points": ["Mniej części = mniej awarii", "Brak serwisów oleju", "Ładowanie jak telefon"],
+        "next_action": "Pokażę prostotę EV",
+        "avoid": ["Forsowanie technologii", "Krytyka spalinowych"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Simplicity and maintenance advantages",
+          "key_messages": ["Mniej części ruchomych = mniej awarii", "Brak wymiany oleju, filtrów", "Ładujesz w domu jak telefon"],
+          "proof_points": ["Maintenance comparison", "Simplicity examples", "Home charging demo"]
+        }
+      },
+      "conversion_modifiers": {
+        "change_resistant": -15, "maintenance_conscious": 20, "simplicity_seeker": 15
+      }
+    },
+
+    {
+      "id": "used_car_option",
+      "text": "Może lepiej używana Tesla?",
+      "category": "competitive",
+      "subcategory": "budget_alternatives",
+      "base_conversion_rate": 60,
+      "intent_level": "medium",
+      "decision_stage": "value_optimization",
+      "personality_resonance": {"C": 0.9, "S": 0.8, "D": 0.6, "I": 0.5},
+      "quick_response": {
+        "immediate_reply": "Używane to opcja, ale tracisz dotację 40k PLN i gwarancję. Nowa z dotacją może wyjść podobnie, a masz pełną gwarancję i najnowsze funkcje.",
+        "key_points": ["Tracisz dotację 40k", "Brak pełnej gwarancji", "Nowa może wyjść podobnie"],
+        "next_action": "Porównamy koszty",
+        "avoid": ["Zniechęcanie do używanych", "Tylko nowe auto"]
+      },
+      "conversion_modifiers": {
+        "budget_conscious": 25, "value_seeker": 20, "warranty_important": 15
+      }
+    },
+
+    // === LIFESTYLE CATEGORY ===
+    {
+      "id": "status_symbol",
+      "text": "Tesla to symbol statusu, prawda?",
+      "category": "lifestyle",
+      "subcategory": "prestige_recognition",
+      "base_conversion_rate": 72,
+      "intent_level": "high",
+      "decision_stage": "status_validation",
+      "personality_resonance": {"I": 0.95, "D": 0.8, "S": 0.4, "C": 0.3},
+      "quick_response": {
+        "immediate_reply": "To prawda, ale nie tylko status. Tesla to symbol świadomego wyboru, innowacji i myślenia o przyszłości. Symbol odpowiedzialności, nie tylko luksusu.",
+        "key_points": ["Symbol świadomego wyboru", "Innowacja i przyszłość", "Odpowiedzialność społeczna"],
+        "next_action": "Opowiem o misji Tesla",
+        "avoid": ["Tylko o luksusie", "Porównania do drogich aut"]
+      },
+      "response_strategies": {
+        "I": {
+          "approach": "Social recognition and trendsetting",
+          "key_messages": ["Pionier przyszłości transportu", "Społeczność innowatorów", "Symbol świadomych wyborów"],
+          "proof_points": ["Celebrity owners", "Innovation leadership", "Community examples"]
+        },
+        "D": {
+          "approach": "Executive leadership and vision",
+          "key_messages": ["Choice of visionary leaders", "Technology leadership", "Future-oriented decision"],
+          "proof_points": ["Executive testimonials", "Business leader adoption", "Market leadership"]
+        }
+      },
+      "conversion_modifiers": {
+        "status_conscious": 25, "social_media_active": 15, "early_adopter": 20
+      }
+    },
+
+    {
+      "id": "family_practicality",
+      "text": "Czy to praktyczne dla rodziny z dziećmi?",
+      "category": "lifestyle",
+      "subcategory": "family_needs",
+      "base_conversion_rate": 68,
+      "intent_level": "high",
+      "decision_stage": "family_evaluation",
+      "personality_resonance": {"S": 0.95, "C": 0.8, "D": 0.6, "I": 0.7},
+      "quick_response": {
+        "immediate_reply": "Bardzo praktyczne! 5 gwiazdek bezpieczeństwa, cicha jazda (dzieci lepiej śpią), frunk na dodatkowe bagaże, ogrzewane tylne siedzenia.",
+        "key_points": ["5 gwiazdek bezpieczeństwa", "Cicha jazda", "Dodatkowy bagażnik (frunk)"],
+        "next_action": "Pokażę funkcje rodzinne",
+        "avoid": ["Tylko techniczne aspekty", "Ignorowanie praktycznych potrzeb"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Family safety and convenience",
+          "key_messages": ["5-gwiazdkowe bezpieczeństwo", "Cicha jazda = spokojne dzieciaki", "Frunk na dodatkowe bagaże"],
+          "proof_points": ["Safety ratings", "Noise level data", "Storage solutions"]
+        }
+      },
+      "conversion_modifiers": {
+        "family_focused": 20, "safety_priority": 18, "convenience_seeker": 15
+      }
+    },
+
+    {
+      "id": "young_professional",
+      "text": "Czy to dobry wybór dla młodego profesjonalisty?",
+      "category": "lifestyle",
+      "subcategory": "career_image",
+      "base_conversion_rate": 75,
+      "intent_level": "high",
+      "decision_stage": "image_evaluation",
+      "personality_resonance": {"I": 0.9, "D": 0.8, "S": 0.6, "C": 0.7},
+      "quick_response": {
+        "immediate_reply": "Idealny! Pokazuje innowacyjne myślenie, świadomość przyszłości. Plus praktyczne korzyści - charging w biurowcach, niskie koszty operacyjne.",
+        "key_points": ["Innowacyjny wizerunek", "Ładowanie w biurowcach", "Niskie koszty operacyjne"],
+        "next_action": "Opowiem o korzyściach dla kariery",
+        "avoid": ["Tylko o prestiżu", "Ignorowanie kosztów"]
+      },
+      "conversion_modifiers": {
+        "career_focused": 20, "image_conscious": 18, "tech_savvy": 15
+      }
+    },
+
+    // === ENVIRONMENTAL CATEGORY ===
+    {
+      "id": "environmental_impact",
+      "text": "Dbam o środowisko, czy EV rzeczywiście pomaga?",
+      "category": "environmental",
+      "subcategory": "environmental_benefits",
+      "base_conversion_rate": 75,
+      "intent_level": "high",
+      "decision_stage": "values_alignment",
+      "personality_resonance": {"I": 0.9, "S": 0.7, "C": 0.6, "D": 0.5},
+      "quick_response": {
+        "immediate_reply": "Absolutnie! Zero emisji lokalnych, plus Tesla używa coraz więcej odnawialnych źródeł. To 4.6 tony mniej CO2 rocznie vs spalinowy.",
+        "key_points": ["Zero emisji lokalnych", "Odnawialne źródła energii", "4.6 tony mniej CO2/rok"],
+        "next_action": "Pokażę dane środowiskowe",
+        "avoid": ["Tylko lokalne korzyści", "Ignorowanie produkcji baterii"]
+      },
+      "response_strategies": {
+        "I": {
+          "approach": "Mission alignment and global impact",
+          "key_messages": ["Zero emisji lokalnych", "Part of global change movement", "Tesla mission: accelerate sustainable transport"],
+          "proof_points": ["Local air quality impact", "Global CO2 reduction", "Tesla mission statement"]
+        },
+        "C": {
+          "approach": "Data-driven environmental analysis", 
+          "key_messages": ["4.6 tony mniej CO2 rocznie", "Lifecycle analysis shows 60% reduction", "Renewable energy integration"],
+          "proof_points": ["Emission calculations", "LCA studies", "Renewable energy data"]
+        }
+      },
+      "conversion_modifiers": {
+        "eco_conscious": 25, "mission_aligned": 20, "data_driven_eco": 15
+      }
+    },
+
+    {
+      "id": "battery_recycling",
+      "text": "Co z recyklingiem baterii? To nie szkodzi środowisku?",
+      "category": "environmental",
+      "subcategory": "sustainability_concerns",
+      "base_conversion_rate": 65,
+      "intent_level": "medium_high",
+      "decision_stage": "environmental_validation",
+      "personality_resonance": {"C": 0.9, "I": 0.8, "S": 0.7, "D": 0.5},
+      "quick_response": {
+        "immediate_reply": "Tesla rozwija technologie recyklingu - 95% materiałów z baterii może być ponownie wykorzystane. Plus baterie służą 15-20 lat, potem jako magazyny energii.",
+        "key_points": ["95% materiałów do recyklingu", "Baterie służą 15-20 lat", "Druga życie jako magazyny"],
+        "next_action": "Opowiem o programie recyklingu",
+        "avoid": ["Ignorowanie problemu", "Tylko obecne rozwiązania"]
+      },
+      "conversion_modifiers": {
+        "sustainability_focused": 20, "long_term_thinker": 15, "environmental_skeptic": 10
+      }
+    },
+
+    // === DECISION PROCESS CATEGORY ===
+    {
+      "id": "extensive_research",
+      "text": "Badałem rynek przez miesiące, testowałem różne modele",
+      "category": "decision_process",
+      "subcategory": "high_research_intent",
+      "base_conversion_rate": 82,
+      "intent_level": "very_high", 
+      "decision_stage": "final_evaluation",
+      "personality_resonance": {"C": 0.95, "D": 0.8, "S": 0.7, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Szanuję dokładne podejście! Na co Tesla wypadła najlepiej w Twoich badaniach? Co jeszcze chciałbyś sprawdzić przed decyzją?",
+        "key_points": ["Szanuje research", "Co wyróżnia Tesla", "Jakie ostatnie pytania"],
+        "next_action": "Zapytam o wnioski z research",
+        "avoid": ["Powtarzanie podstaw", "Ignorowanie research"]
+      },
+      "response_strategies": {
+        "C": {
+          "approach": "Expert validation and unique differentiators",
+          "key_messages": ["Tesla ecosystem vs car-only approach", "15-year EV experience vs newcomers", "Continuous improvement via OTA"],
+          "proof_points": ["Ecosystem comparison", "Experience timeline", "OTA update history"]
+        }
+      },
+      "conversion_modifiers": {
+        "thorough_researcher": 25, "comparison_expert": 20, "decision_ready": 30
+      }
+    },
+
+    {
+      "id": "timing_hesitation",
+      "text": "Może powinienem poczekać na lepsze modele?",
+      "category": "decision_process",
+      "subcategory": "timing_uncertainty",
+      "base_conversion_rate": 38,
+      "intent_level": "medium",
+      "decision_stage": "timing_analysis",
+      "personality_resonance": {"C": 0.9, "S": 0.8, "D": 0.5, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Rozumiem dylematy. Obecna generacja jest dojrzała i sprawdzona. Plus dotacje mogą się skończyć. Co konkretnie chciałbyś żeby było lepsze?",
+        "key_points": ["Obecna generacja dojrzała", "Dotacje mogą się skończyć", "Co konkretnie ulepszać"],
+        "next_action": "Zapytam o oczekiwania",
+        "avoid": ["Naciski czasowe", "Straszenie brakiem dostępności"]
+      },
+      "response_strategies": {
+        "C": {
+          "approach": "Market timing and opportunity analysis",
+          "key_messages": ["Current generation mature and proven", "Subsidies have limited time", "Technology evolution vs revolution"],
+          "proof_points": ["Technology maturity data", "Subsidy timeline", "Evolution roadmap"]
+        }
+      },
+      "conversion_modifiers": {
+        "perfectionist": -10, "fomo_sensitive": 15, "subsidy_eligible": 20
+      }
+    },
+
+    {
+      "id": "immediate_purchase_intent",
+      "text": "Jestem gotowy kupić, jakie są następne kroki?",
+      "category": "decision_process",
+      "subcategory": "ready_to_buy",
+      "base_conversion_rate": 95,
+      "intent_level": "maximum",
+      "decision_stage": "purchase_ready",
+      "personality_resonance": {"D": 0.9, "I": 0.8, "S": 0.7, "C": 0.8},
+      "quick_response": {
+        "immediate_reply": "Świetnie! Konfigurujemy model online (10 minut), rezerwujemy slot produkcyjny, omawiamy finansowanie i aplikację NaszEauto. Dostawa za 4-6 tygodni.",
+        "key_points": ["Konfiguracja online - 10min", "Slot produkcyjny", "Dostawa 4-6 tygodni"],
+        "next_action": "Rozpoczynamy konfigurację",
+        "avoid": ["Dodawanie barier", "Komplikowanie procesu"]
+      },
+      "response_strategies": {
+        "D": {
+          "approach": "Efficient process and immediate action",
+          "key_messages": ["Configure online in 10 minut", "Production slot reservation", "Delivery in 4-6 tygodni"],
+          "proof_points": ["Configuration process", "Production timeline", "Delivery schedule"]
+        }
+      },
+      "conversion_modifiers": {
+        "decision_maker": 30, "urgency_driven": 25, "process_efficient": 20
+      }
+    },
+
+    {
+      "id": "spouse_approval_needed",
+      "text": "Muszę to przedyskutować z żoną/mężem",
+      "category": "decision_process",
+      "subcategory": "stakeholder_involvement",
+      "base_conversion_rate": 55,
+      "intent_level": "medium_high",
+      "decision_stage": "stakeholder_alignment",
+      "personality_resonance": {"S": 0.9, "I": 0.7, "C": 0.6, "D": 0.5},
+      "quick_response": {
+        "immediate_reply": "Oczywiście! Przygotujemy materiały do rozmowy - korzyści dla rodziny, bezpieczeństwo, oszczędności. Może jazda próbna we dwoje?",
+        "key_points": ["Materiały do rozmowy", "Korzyści rodzinne", "Jazda próbna we dwoje"],
+        "next_action": "Przygotowuję pakiet informacyjny",
+        "avoid": ["Naciski na decyzję", "Ignorowanie partnera"]
+      },
+      "response_strategies": {
+        "S": {
+          "approach": "Family benefit focus and information sharing",
+          "key_messages": ["Family safety benefits", "Long-term savings for family", "Test drive for both partners"],
+          "proof_points": ["Family safety data", "Savings calculator", "Couple testimonials"]
+        }
+      },
+      "conversion_modifiers": {
+        "family_decision": 20, "consensus_seeker": 15, "relationship_focused": 12
+      }
+    },
+
+    {
+      "id": "first_time_buyer",
+      "text": "To moja pierwsza Tesla / pierwszy EV",
+      "category": "decision_process",
+      "subcategory": "experience_level",
+      "base_conversion_rate": 60,
+      "intent_level": "medium_high",
+      "decision_stage": "learning_curve",
+      "personality_resonance": {"S": 0.9, "C": 0.8, "I": 0.7, "D": 0.6},
+      "quick_response": {
+        "immediate_reply": "To ekscytujące! Przejdziemy przez wszystko krok po kroku. Mamy pełne wsparcie dla nowych właścicieli - od dostawy po pierwsze tygodnie użytkowania.",
+        "key_points": ["Wsparcie krok po kroku", "Program dla nowych właścicieli", "Wsparcie przez pierwsze tygodnie"],
+        "next_action": "Opowiem o procesie wdrożenia",
+        "avoid": ["Przesadzanie z prostotą", "Ignorowanie obaw"]
+      },
+      "conversion_modifiers": {
+        "first_time_buyer": 15, "support_needed": 20, "learning_oriented": 12
+      }
+    },
+
+    // === OBJECTIONS CATEGORY ===
+    {
+      "id": "need_time_to_think",
+      "text": "Muszę się nad tym zastanowić",
+      "category": "objections",
+      "subcategory": "stalling",
+      "base_conversion_rate": 35,
+      "intent_level": "medium",
+      "decision_stage": "hesitation",
+      "personality_resonance": {"S": 0.9, "C": 0.8, "D": 0.5, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Oczywiście, to ważna decyzja. Co konkretnie chciałbyś przemyśleć? Mogę pomóc z konkretnymi wątpliwościami.",
+        "key_points": ["Ważna decyzja", "Co konkretnie przemyśleć", "Pomoc z wątpliwościami"],
+        "next_action": "Zapytam o konkretne obawy",
+        "avoid": ["Naciski czasowe", "Ogólne argumenty"]
+      },
+      "conversion_modifiers": {
+        "indecisive": -5, "analytical": 10, "pressure_sensitive": -10
+      }
+    },
+
+    {
+      "id": "no_budget_now",
+      "text": "Teraz nie mam budżetu",
+      "category": "objections",
+      "subcategory": "financial_barrier",
+      "base_conversion_rate": 25,
+      "intent_level": "low",
+      "decision_stage": "budget_constraint",
+      "personality_resonance": {"S": 0.9, "C": 0.8, "D": 0.5, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Rozumiem. Kiedy planowałbyś zakup? Mogę pokazać opcje finansowania, które mogą zmienić sytuację - leasing, dotacje, oszczędności.",
+        "key_points": ["Kiedy planować zakup", "Opcje finansowania", "Leasing i dotacje"],
+        "next_action": "Zapytam o timeline i opcje",
+        "avoid": ["Naciski finansowe", "Ignorowanie ograniczeń"]
+      },
+      "conversion_modifiers": {
+        "budget_constrained": -15, "financing_needed": 20, "future_buyer": 10
+      }
+    },
+
+    {
+      "id": "happy_with_current_car",
+      "text": "Jestem zadowolony z mojego obecnego auta",
+      "category": "objections",
+      "subcategory": "satisfaction_status_quo",
+      "base_conversion_rate": 30,
+      "intent_level": "low_medium",
+      "decision_stage": "need_recognition",
+      "personality_resonance": {"S": 0.95, "C": 0.7, "D": 0.4, "I": 0.5},
+      "quick_response": {
+        "immediate_reply": "To świetnie! Co cenisz najbardziej w swoim aucie? Może Tesla mogłaby to zachować i dodać nowe korzyści?",
+        "key_points": ["Co cenisz w obecnym", "Zachować + dodać korzyści", "Nie zastąpić ale ulepszyć"],
+        "next_action": "Zapytam o cechy obecnego auta",
+        "avoid": ["Krytyka obecnego auta", "Forsowanie zmiany"]
+      },
+      "conversion_modifiers": {
+        "status_quo_bias": -20, "satisfaction_high": -15, "change_resistant": -10
+      }
+    },
+
+    {
+      "id": "infrastructure_not_ready",
+      "text": "Infrastruktura nie jest jeszcze gotowa",
+      "category": "objections",
+      "subcategory": "infrastructure_concern",
+      "base_conversion_rate": 40,
+      "intent_level": "medium",
+      "decision_stage": "readiness_assessment",
+      "personality_resonance": {"C": 0.9, "S": 0.8, "D": 0.6, "I": 0.5},
+      "quick_response": {
+        "immediate_reply": "Gdzie konkretnie się poruszasz? Mamy już 9,342 punkty w Polsce, Superchargery co 150km. Sprawdźmy Twoje trasy.",
+        "key_points": ["Gdzie się poruszasz", "9,342 punkty", "Sprawdźmy konkretne trasy"],
+        "next_action": "Sprawdźmy mapę tras",
+        "avoid": ["Ogólne statystyki", "Ignorowanie lokalnych potrzeb"]
+      },
+      "conversion_modifiers": {
+        "rural_location": 15, "infrastructure_aware": 10, "route_specific": 12
+      }
+    },
+
+    {
+      "id": "technology_too_new",
+      "text": "Ta technologia jest jeszcze zbyt nowa",
+      "category": "objections",
+      "subcategory": "technology_maturity",
+      "base_conversion_rate": 45,
+      "intent_level": "medium",
+      "decision_stage": "technology_acceptance",
+      "personality_resonance": {"S": 0.9, "C": 0.8, "D": 0.5, "I": 0.4},
+      "quick_response": {
+        "immediate_reply": "Tesla produkuje EV już od 15 lat! Model S jeździ od 2012. To sprawdzona technologia, nie prototyp. Plus ciągłe ulepszenia przez OTA.",
+        "key_points": ["15 lat doświadczenia", "Model S od 2012", "Sprawdzona technologia"],
+        "next_action": "Pokażę historię i development",
+        "avoid": ["Najnowsze funkcje", "Eksperymentalne aspekty"]
+      },
+      "conversion_modifiers": {
+        "early_adopter_cautious": -10, "technology_mature": 15, "proven_track_record": 12
+      }
+    }
+  ],
+
+  "quick_response_guidelines": {
+    "principles": {
+      "acknowledge": "Always acknowledge customer's concern or interest",
+      "educate": "Provide specific, relevant information",
+      "advance": "Move conversation forward with specific next step",
+      "avoid_pressure": "Never use high-pressure tactics"
+    },
+    "personality_matching": {
+      "S": "Reassuring, security-focused, warranty and support emphasis",
+      "C": "Data-driven, detailed analysis, technical specifications",
+      "D": "Efficiency, leadership, strategic benefits, time-saving",
+      "I": "Social proof, community, trendsetting, environmental mission"
+    },
+    "response_structure": {
+      "immediate_reply": "Direct response to customer statement (30-50 words)",
+      "key_points": "3 main points to emphasize (bullet format)",
+      "next_action": "Specific next step in sales process",
+      "avoid": "What NOT to say or emphasize"
+    }
+  },
+
+  "relationship_matrix": {
+    "high_intent_financial": {
+      "triggers": ["naszauto_interest", "business_tax_benefits", "immediate_purchase_intent"],
+      "synergy_bonus": 30,
+      "strategy": "fast_track_to_close",
+      "approach": "Focus on process, timeline, and financial optimization"
+    },
+    "technical_skeptic": {
+      "triggers": ["range_anxiety", "winter_performance", "reliability_concern", "infrastructure_not_ready"],
+      "synergy_bonus": 15,
+      "strategy": "comprehensive_technical_education", 
+      "approach": "Address all technical concerns with data and real-world examples"
+    },
+    "comparison_shopper": {
+      "triggers": ["extensive_research", "competitor_byd", "competitor_german", "used_car_option"],
+      "synergy_bonus": 20,
+      "strategy": "differentiation_and_validation",
+      "approach": "Highlight unique Tesla advantages and validate research process"
+    },
+    "family_focused": {
+      "triggers": ["family_practicality", "reliability_concern", "environmental_impact", "spouse_approval_needed"],
+      "synergy_bonus": 18,
+      "strategy": "family_value_proposition",
+      "approach": "Safety, savings, and values alignment for family benefit"
+    },
+    "objection_handler": {
+      "triggers": ["need_time_to_think", "no_budget_now", "happy_with_current_car", "technology_too_new"],
+      "synergy_bonus": 10,
+      "strategy": "gentle_objection_handling",
+      "approach": "Address concerns without pressure, find underlying needs"
+    }
+  },
+
+  "meta": {
+    "total_triggers": 35,
+    "categories": 7,
+    "design_approach": "comprehensive_sales_scenario_coverage",
+    "quick_response_system": "immediate_salesperson_guidance",
+    "personality_integration": "full_DISC_matching",
+    "coverage": "complete_customer_journey_and_objections"
+  }
+}

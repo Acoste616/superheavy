@@ -1,0 +1,115 @@
+{
+  "name": "tesla-customer-decoder-v2",
+  "version": "2.0.0",
+  "description": "Tesla Customer Decoder - Microservices Architecture v2.0",
+  "main": "start-all-services.js",
+  "scripts": {
+    "start": "node start-all-services.js",
+    "start:dev": "node start-all-services.js",
+    "start:service": "node start-all-services.js start",
+    "stop": "node start-all-services.js stop",
+    "restart": "node start-all-services.js restart",
+    "status": "node start-all-services.js status",
+    "install:all": "npm run install:gateway && npm run install:services",
+    "install:gateway": "cd api-gateway && npm install",
+    "install:services": "cd services/customer-analysis && npm install && cd ../trigger-detection && npm install && cd ../fuzzy-inference && npm install && cd ../scoring-aggregation && npm install && cd ../recommendation-engine && npm install && cd ../transparency-xai && npm install",
+    "test:all": "npm run test:gateway && npm run test:services",
+    "test:gateway": "cd api-gateway && npm test",
+    "test:services": "cd services/customer-analysis && npm test && cd ../trigger-detection && npm test && cd ../fuzzy-inference && npm test && cd ../scoring-aggregation && npm test && cd ../recommendation-engine && npm test && cd ../transparency-xai && npm test",
+    "lint:all": "npm run lint:gateway && npm run lint:services",
+    "lint:gateway": "cd api-gateway && npm run lint",
+    "lint:services": "cd services/customer-analysis && npm run lint && cd ../trigger-detection && npm run lint && cd ../fuzzy-inference && npm run lint && cd ../scoring-aggregation && npm run lint && cd ../recommendation-engine && npm run lint && cd ../transparency-xai && npm run lint",
+    "health:all": "npm run health:gateway && npm run health:services",
+    "health:gateway": "curl -f http://localhost:3000/health || echo 'API Gateway not responding'",
+    "health:services": "curl -f http://localhost:3001/health && curl -f http://localhost:3002/health && curl -f http://localhost:3003/health && curl -f http://localhost:3004/health && curl -f http://localhost:3005/health && curl -f http://localhost:3006/health || echo 'Some services not responding'",
+    "logs": "echo 'Use PM2 or Docker for centralized logging in production'",
+    "build": "echo 'Building all services...' && npm run install:all",
+    "deploy": "echo 'Deployment script - configure for your environment'",
+    "migrate": "echo 'Run data migration scripts if needed'",
+    "backup": "echo 'Backup shared data directory'"
+  },
+  "keywords": [
+    "tesla",
+    "customer-decoder",
+    "microservices",
+    "ai",
+    "machine-learning",
+    "customer-analysis",
+    "disc-profiling",
+    "fuzzy-logic",
+    "recommendation-engine",
+    "explainable-ai"
+  ],
+  "author": "TRAE AI Assistant",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/tesla-customer-decoder-v2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/tesla-customer-decoder-v2/issues"
+  },
+  "homepage": "https://github.com/your-org/tesla-customer-decoder-v2#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0",
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.0"
+  },
+  "config": {
+    "api_gateway_port": 3000,
+    "customer_analysis_port": 3001,
+    "trigger_detection_port": 3002,
+    "fuzzy_inference_port": 3003,
+    "scoring_aggregation_port": 3004,
+    "recommendation_engine_port": 3005,
+    "transparency_xai_port": 3006
+  },
+  "microservices": {
+    "api-gateway": {
+      "path": "./api-gateway",
+      "port": 3000,
+      "description": "Main API Gateway - orchestrates all microservices"
+    },
+    "customer-analysis": {
+      "path": "./services/customer-analysis",
+      "port": 3001,
+      "description": "Customer analysis and DISC profiling service"
+    },
+    "trigger-detection": {
+      "path": "./services/trigger-detection",
+      "port": 3002,
+      "description": "Customer trigger detection and analysis service"
+    },
+    "fuzzy-inference": {
+      "path": "./services/fuzzy-inference",
+      "port": 3003,
+      "description": "Fuzzy logic inference engine service"
+    },
+    "scoring-aggregation": {
+      "path": "./services/scoring-aggregation",
+      "port": 3004,
+      "description": "Score aggregation and calculation service"
+    },
+    "recommendation-engine": {
+      "path": "./services/recommendation-engine",
+      "port": 3005,
+      "description": "Personalized recommendation generation service"
+    },
+    "transparency-xai": {
+      "path": "./services/transparency-xai",
+      "port": 3006,
+      "description": "Explainable AI and transparency service"
+    }
+  }
+}

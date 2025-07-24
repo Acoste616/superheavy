@@ -1,0 +1,220 @@
+{
+  "version": "2.0",
+  "description": "Advanced customer personality profiles with psychological insights",
+  "personas": [
+    {
+      "id": "FAMILIA_SAVER",
+      "name": "Ojciec Rodziny Oszczędny",
+      "DISC": "S",
+      "category": "family_oriented",
+      "demographics": {
+        "age_range": "35-50",
+        "income_pln": "8000-15000",
+        "family_status": "married_with_children",
+        "location": "suburban"
+      },
+      "psychological_profile": {
+        "core_values": ["safety", "security", "family_wellbeing", "long_term_stability"],
+        "motivations": [
+          "Lower monthly expenses",
+          "Secure family transportation", 
+          "Environmental responsibility for children's future",
+          "Reliable technology"
+        ],
+        "fears_and_concerns": [
+          "High upfront costs affecting family budget",
+          "Technology failure risks",
+          "Insufficient charging infrastructure",
+          "Unknown long-term costs"
+        ],
+        "decision_making_style": "thorough_research",
+        "decision_speed": "slow",
+        "trust_factors": ["warranties", "testimonials", "official_data", "family_recommendations"]
+      },
+      "communication_preferences": {
+        "style": "Patient and detailed",
+        "key_language": ["family", "bezpieczeństwo", "oszczędności", "gwarancja", "niezawodność"],
+        "avoid_language": ["ryzyko", "eksperyment", "nowość", "presja_czasowa"],
+        "preferred_media": ["detailed_brochures", "family_testimonials", "safety_videos"],
+        "meeting_preference": "family_consultation"
+      },
+      "trigger_sensitivity": {
+        "high_positive": ["family_safety", "long_term_savings", "environmental_legacy"],
+        "high_negative": ["high_upfront_cost", "technology_complexity", "charging_anxiety"],
+        "conversion_accelerators": ["warranty_extension", "family_discount", "referral_program"]
+      },
+      "sales_approach": {
+        "primary_strategy": "Safety-first with TCO analysis",
+        "key_messages": [
+          "Tesla has the highest safety ratings - 5 stars across all categories",
+          "Home charging saves your family 30,000 PLN over 5 years",
+          "8-year battery warranty provides long-term peace of mind"
+        ],
+        "proof_points": ["Euro NCAP ratings", "TCO calculator", "warranty terms"],
+        "closing_technique": "family_consensus_building"
+      }
+    },
+    {
+      "id": "SOCIAL_TRENDSETTER", 
+      "name": "Młody Influencer Technologiczny",
+      "DISC": "I",
+      "category": "social_status",
+      "demographics": {
+        "age_range": "25-35",
+        "income_pln": "10000-25000",
+        "family_status": "single_or_young_couple", 
+        "location": "urban"
+      },
+      "psychological_profile": {
+        "core_values": ["innovation", "social_recognition", "environmental_impact", "lifestyle_enhancement"],
+        "motivations": [
+          "Being first with latest technology",
+          "Social media content opportunities",
+          "Environmental statement", 
+          "Unique driving experience"
+        ],
+        "fears_and_concerns": [
+          "Przegapienie nowszych modeli",
+          "Brak atrakcyjności na Instagramie",
+          "Ocena ze strony znajomych",
+          "Szybkie dezaktualizowanie się technologii"
+        ],
+        "decision_making_style": "emocjonalny",
+        "decision_speed": "szybka",
+        "trust_factors": ["rekomendacje znajomych", "endorsement influencerów", "atrakcyjność wizualna", "specyfikacje techniczne"]
+      },
+      "communication_preferences": {
+        "style": "Entuzjastyczny i wizualny",
+        "key_language": ["przyszłość", "innowacja", "wyjątkowy", "społeczność", "trendy"],
+        "avoid_language": ["tradycyjny", "standardowy", "powszechny", "analiza_długoterminowa"],
+        "preferred_media": ["treści video", "prezentacje interaktywne", "dowody społeczne", "recenzje influencerów"],
+        "meeting_preference": "prezentacja dynamiczna"
+      },
+      "trigger_sensitivity": {
+        "high_positive": ["najnowsza technologia", "status społeczny", "aktywizm ekologiczny"],
+        "high_negative": ["stawanie się mainstreamem", "skomplikowana własność", "opóźniona gratyfikacja"],
+        "conversion_accelerators": ["ekskluzywny dostęp", "możliwości social media", "pokazy technologiczne"]
+      },
+      "sales_approach": {
+        "primary_strategy": "Pokaz innowacyjności z dowodem społecznym",
+        "key_messages": [
+          "Tesla przewodzi rewolucji motoryzacyjnej - bądź częścią przyszłości",
+          "Dołącz do społeczności myślących przyszłościowo",
+          "Twoja Tesla będzie przyciągać uwagę i wywoływać rozmowy"
+        ],
+        "proof_points": ["aktualizacje OTA", "wydarzenia społeczności", "właściciele celebryci"],
+        "closing_technique": "ekskluzywność ograniczona w czasie"
+      }
+    },
+    {
+      "id": "ANALYTICAL_SKEPTIC",
+      "name": "Inżynier Analityczny",
+      "DISC": "C", 
+      "category": "data_driven",
+      "demographics": {
+        "age_range": "35-55",
+        "income_pln": "12000-30000",
+        "family_status": "varied",
+        "location": "urban_suburban"
+      },
+      "psychological_profile": {
+        "core_values": ["precision", "efficiency", "logical_decisions", "technical_excellence"],
+        "motivations": [
+          "Optimal ROI and TCO analysis",
+          "Technical superiority",
+          "Energy efficiency metrics",
+          "Data-driven decision making"
+        ],
+        "fears_and_concerns": [
+          "Niewystarczające dane techniczne",
+          "Przepłacanie za marketing",
+          "Niesprawdzona długoterminowa niezawodność",
+          "Uzależnienie od dostawcy"
+        ],
+        "decision_making_style": "analityczny i dokładny",
+        "decision_speed": "bardzo wolna",
+        "trust_factors": ["niezależne dane", "specyfikacje techniczne", "analiza porównawcza", "recenzje ekspertów"]
+      },
+      "communication_preferences": {
+        "style": "Techniczny i oparty na faktach",
+        "key_language": ["dane", "analiza", "efektywność", "porównanie", "specyfikacja"],
+        "avoid_language": ["emocje", "uczucia", "presja", "ograniczona_oferta"],
+        "preferred_media": ["dokumenty techniczne", "wykresy porównawcze", "filmy inżynierskie", "białe księgi"],
+        "meeting_preference": "głębokie zagłębienie techniczne"
+      },
+      "trigger_sensitivity": {
+        "high_positive": ["wyższość techniczna", "dane efektywności", "optymalizacja kosztów"],
+        "high_negative": ["presja marketingowa", "apele emocjonalne", "pośpieszne decyzje"],
+        "conversion_accelerators": ["techniczny test drive", "konsultacja inżynieryjna", "szczegółowa analiza"]
+      },
+      "sales_approach": {
+        "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+        "key_messages": [
+          "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+          "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat", 
+          "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+        ],
+        "proof_points": ["specyfikacje inżynierskie", "oceny efektywności", "kalkulacje TCO"],
+        "closing_technique": "logiczny wniosek oparty na danych"
+      }
+    },
+    {
+      "id": "EXECUTIVE_LEADER",
+      "name": "Dyrektor Biznesowy",
+      "DISC": "D",
+      "category": "executive_decision_maker",
+      "demographics": {
+        "age_range": "40-60",
+        "income_pln": "20000+",
+        "family_status": "established_family",
+        "location": "urban_premium"
+      },
+      "psychological_profile": {
+        "core_values": ["leadership", "efficiency", "status", "strategic_thinking"],
+        "motivations": [
+          "Executive status symbol",
+          "Business tax advantages", 
+          "Corporate sustainability leadership",
+          "Time efficiency and convenience"
+        ],
+        "fears_and_concerns": [
+          "Wyglądanie nieprofesjonalnie lub niepraktycznie",
+          "Nieadekwatne uzasadnienie biznesowe",
+          "Zakłócenia serwisu wpływające na pracę",
+          "Postrzeganie przez kolegów w kręgach biznesowych"
+        ],
+        "decision_making_style": "strategiczny i szybki",
+        "decision_speed": "szybka",
+        "trust_factors": ["referencje biznesowe", "partnerstwa korporacyjne", "testimoniale dyrektorów", "analiza ROI"]
+      },
+      "communication_preferences": {
+        "style": "Bezpośredni i na poziomie dyrektorskim",
+        "key_language": ["strategia", "przewaga", "liderowanie", "efektywność", "ROI"],
+        "avoid_language": ["czas_do_namysłu", "szczegóły_techniczne", "osobiste_korzyści"],
+        "preferred_media": ["briefingi dyrektorskie", "studia przypadków biznesowych", "filmy korporacyjne"],
+        "meeting_preference": "konsultacja dyrektorska"
+      },
+      "trigger_sensitivity": {
+        "high_positive": ["status dyrektorski", "przewagi biznesowe", "pozycjonowanie liderskie"],
+        "high_negative": ["skomplikowane procesy", "osobiste niedogodności", "niejasna wartość biznesowa"],
+        "conversion_accelerators": ["traktowanie VIP", "networking biznesowy", "zniżki korporacyjne"]
+      },
+      "sales_approach": {
+        "primary_strategy": "Pozycjonowanie dyrektorskie z wartością biznesową",
+        "key_messages": [
+          "Tesla reprezentuje przyszłościowe przywództwo w Twojej branży",
+          "Znaczące korzyści podatkowe: amortyzacja 225k vs 150k PLN",
+          "Dołącz do społeczności dyrektorów prowadzących zrównoważony biznes"
+        ],
+        "proof_points": ["korzyści podatkowe biznesowe", "testimoniale dyrektorów", "partnerstwa korporacyjne"],
+        "closing_technique": "potwierdzenie decyzji dyrektorskiej"
+      }
+    }
+  ],
+  "meta": {
+    "total_personas": 4,
+    "coverage_percentage": "85%",
+    "last_updated": "2025-07-20",
+    "validation_status": "research_backed"
+  }
+}

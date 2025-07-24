@@ -1,0 +1,880 @@
+{
+  "timestamp": "2025-07-24T15:25:12.900Z",
+  "summary": {
+    "totalErrors": 0,
+    "pageLoaded": true,
+    "interactiveElementsFound": 76,
+    "successfulClicks": 19,
+    "failedClicks": 1
+  },
+  "details": {
+    "pageLoaded": true,
+    "title": "BigDeCoder - Advanced Customer Analysis",
+    "interactiveElements": [
+      {
+        "tag": "A",
+        "id": "",
+        "class": "bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center space-x-2",
+        "text": "Historia Analiz",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "A",
+        "id": "",
+        "class": "bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center space-x-2",
+        "text": "Dashboard",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "startAnalysis",
+        "class": "bg-bigdecoder-primary hover:bg-bigdecoder-secondary text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105",
+        "text": "Rozpocznij Analizę Klienta",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "SELECT",
+        "id": "toneSelect",
+        "class": "w-full bg-gray-700 border border-gray-500 rounded-lg px-4 py-3 text-white focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors",
+        "text": "😊 Entuzjastyczny\n                        😐 Neutr",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+        "text": "",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Ta cena to jednak spory wydatek\n                  ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "To za drogo dla mnie\n                    \n        ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Słyszałem o programie NaszEauto\n                  ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "To będzie samochód firmowy\n                    \n  ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Lepiej wziąć leasing czy kupić za gotówkę?\n       ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Nie stać mnie na takie raty\n                    \n ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Rozważamy flotę elektryczną dla firmy\n            ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+        "text": "",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Czy zasięg wystarczy na dłuższe trasy?\n           ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "A jak to działa zimą przy mrozie?\n                ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Gdzie będę ładować poza domem?\n                   ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Ile czasu zajmuje ładowanie?\n                    \n",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Co jak się zepsuje? Czy są częste awarie?\n        ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Jak działa autopilot? Czy to bezpieczne?\n         ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Ile kosztuje serwis i konserwacja?\n               ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Interesuje mnie wydajność i przyspieszenie\n       ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Czy to nie będzie zbyt skomplikowane w obsłudze?\n ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+        "text": "",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "A co z BYD? Mają podobny zasięg za mniej\n         ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Może lepiej VW ID.4 lub BMW iX?\n                  ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Może zostać przy benzynie? Mniej komplikacji\n     ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Może lepiej używana Tesla?\n                    \n  ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+        "text": "",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Tesla to symbol statusu, prawda?\n                 ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Czy to praktyczne dla rodziny z dziećmi?\n         ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Czy to dobry wybór dla młodego profesjonalisty?\n  ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "To będzie drugie auto, bardziej luksusowe\n        ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Mieszkam w centrum miasta, często podróżuję\n      ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+        "text": "",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Dbam o środowisko, czy EV rzeczywiście pomaga?\n   ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Co z recyklingiem baterii? To nie szkodzi środowis",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Mamy panele fotowoltaiczne w domu\n                ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+        "text": "",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Badałem rynek przez miesiące, testowałem różne mod",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Może powinienem poczekać na lepsze modele?\n       ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Jestem gotowy kupić, jakie są następne kroki?\n    ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Muszę to przedyskutować z żoną/mężem\n             ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "To moja pierwsza Tesla / pierwszy EV\n             ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+        "text": "",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Muszę się nad tym zastanowić\n                    \n",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Teraz nie mam budżetu\n                    \n       ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Jestem zadowolony z mojego obecnego auta\n         ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Infrastruktura nie jest jeszcze gotowa\n           ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Ta technologia jest jeszcze zbyt nowa\n            ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+        "text": "",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Muszę przekonać żonę/męża/partnera\n               ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Najważniejsze jest bezpieczeństwo dzieci\n         ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "To ma być nasze główne auto\n                    \n ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+        "text": "",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "To mój pierwszy kontakt z Tesla\n                  ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+        "text": "Znajomy ma Teslę i polecił\n                    \n  ",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "SELECT",
+        "id": "ageRange",
+        "class": "w-full bg-gray-700 border border-gray-500 rounded px-3 py-2 text-white text-sm",
+        "text": "Nie określono\n                            25-35 la",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "SELECT",
+        "id": "housingType",
+        "class": "w-full bg-gray-700 border border-gray-500 rounded px-3 py-2 text-white text-sm",
+        "text": "Nie określono\n                            🏠 Dom z",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "SELECT",
+        "id": "hasPV",
+        "class": "w-full bg-gray-700 border border-gray-500 rounded px-3 py-2 text-white text-sm",
+        "text": "Nie wiem\n                            Tak, ma PV\n  ",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "SELECT",
+        "id": "region",
+        "class": "w-full bg-gray-700 border border-gray-500 rounded px-3 py-2 text-white text-sm",
+        "text": "Nie określono\n                            Mazowiec",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "SELECT",
+        "id": "relationshipStatus",
+        "class": "w-full bg-gray-600 border border-gray-500 rounded px-3 py-2 text-white text-sm",
+        "text": "Nie określono\n                                💼 S",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "SELECT",
+        "id": "hasChildren",
+        "class": "w-full bg-gray-600 border border-gray-500 rounded px-3 py-2 text-white text-sm",
+        "text": "Nie określono\n                                🚫 B",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "SELECT",
+        "id": "teslaExperience",
+        "class": "w-full bg-gray-600 border border-gray-500 rounded px-3 py-2 text-white text-sm",
+        "text": "Nie określono\n                                🆕 P",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "SELECT",
+        "id": "carRole",
+        "class": "w-full bg-gray-600 border border-gray-500 rounded px-3 py-2 text-white text-sm",
+        "text": "Nie określono\n                                🚗 G",
+        "hasClick": false,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "runAnalysis",
+        "class": "w-full bg-gradient-to-r from-bigdecoder-primary to-bigdecoder-secondary hover:from-bigdecoder-secondary hover:to-bigdecoder-primary text-white font-bold py-4 rounded-lg text-lg transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed",
+        "text": "Analizuj Klienta",
+        "hasClick": true,
+        "visible": true
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "tab-button active flex-1 min-w-0 px-4 py-4 text-center hover:bg-gray-700 transition-colors text-sm text-gray-200",
+        "text": "Strategia",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-gray-700 transition-colors text-sm text-gray-200",
+        "text": "Psychologia",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-gray-700 transition-colors text-sm text-gray-200",
+        "text": "Język",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-gray-700 transition-colors text-sm text-gray-200",
+        "text": "Obiekcje",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-gray-700 transition-colors text-sm text-gray-200",
+        "text": "Partner",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-gray-700 transition-colors text-sm text-gray-200",
+        "text": "Segmentacja",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-gray-700 transition-colors text-sm text-gray-200",
+        "text": "Predykcje",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-gray-700 transition-colors text-sm text-gray-200",
+        "text": "Działania",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "BUTTON",
+        "id": "",
+        "class": "tab-button flex-1 min-w-0 px-4 py-4 text-center hover:bg-gray-700 transition-colors text-sm text-gray-200",
+        "text": "Analityka",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "BUTTON",
+        "id": "exportReport",
+        "class": "bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg transition-colors border border-gray-600",
+        "text": "Eksport Raportu",
+        "hasClick": true,
+        "visible": false
+      },
+      {
+        "tag": "BUTTON",
+        "id": "newAnalysis",
+        "class": "bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg transition-colors",
+        "text": "Nowa Analiza",
+        "hasClick": true,
+        "visible": false
+      }
+    ],
+    "clickTests": [
+      {
+        "element": {
+          "tag": "A",
+          "id": "",
+          "class": "bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center space-x-2",
+          "text": "Historia Analiz",
+          "hasClick": false,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "A",
+          "id": "",
+          "class": "bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center space-x-2",
+          "text": "Dashboard",
+          "hasClick": false,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "BUTTON",
+          "id": "startAnalysis",
+          "class": "bg-bigdecoder-primary hover:bg-bigdecoder-secondary text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105",
+          "text": "Rozpocznij Analizę Klienta",
+          "hasClick": true,
+          "visible": false
+        },
+        "success": false,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "SELECT",
+          "id": "toneSelect",
+          "class": "w-full bg-gray-700 border border-gray-500 rounded-lg px-4 py-3 text-white focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors",
+          "text": "😊 Entuzjastyczny\n                        😐 Neutr",
+          "hasClick": false,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "BUTTON",
+          "id": "",
+          "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+          "text": "",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Ta cena to jednak spory wydatek\n                  ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "To za drogo dla mnie\n                    \n        ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Słyszałem o programie NaszEauto\n                  ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "To będzie samochód firmowy\n                    \n  ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Lepiej wziąć leasing czy kupić za gotówkę?\n       ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Nie stać mnie na takie raty\n                    \n ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Rozważamy flotę elektryczną dla firmy\n            ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "BUTTON",
+          "id": "",
+          "class": "category-toggle text-tesla-gray-400 hover:text-white transition-colors",
+          "text": "",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Czy zasięg wystarczy na dłuższe trasy?\n           ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "A jak to działa zimą przy mrozie?\n                ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Gdzie będę ładować poza domem?\n                   ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Ile czasu zajmuje ładowanie?\n                    \n",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Co jak się zepsuje? Czy są częste awarie?\n        ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Jak działa autopilot? Czy to bezpieczne?\n         ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      },
+      {
+        "element": {
+          "tag": "DIV",
+          "id": "",
+          "class": "trigger-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 cursor-pointer transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 hover:shadow-lg select-none group",
+          "text": "Ile kosztuje serwis i konserwacja?\n               ",
+          "hasClick": true,
+          "visible": true
+        },
+        "success": true,
+        "error": null
+      }
+    ],
+    "consoleErrors": [],
+    "networkErrors": [],
+    "pageErrors": [],
+    "comprehensiveTest": {
+      "triggerGridFound": true,
+      "eventListenersAttached": true,
+      "triggerButtonsCount": 43,
+      "clickableButtons": 10,
+      "functionalButtons": 10,
+      "selectedTriggersCount": 7
+    }
+  },
+  "recommendations": [
+    "Fix non-responsive interactive elements"
+  ]
+}

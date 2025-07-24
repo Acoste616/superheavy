@@ -14,11 +14,15 @@ class RecommendationEngine {
         const personality = analysis.personality.detected;
         if (!personality) return {};
 
+        // Extract Tesla archetype information if available
+        const teslaArchetype = analysis.tesla_archetype?.analysis?.archetype || null;
+        const triggers = analysis.triggers?.matched || analysis.input?.selectedTriggers || [];
+
         return {
             language: {
                 keywords: this.getKeywords(personality),
                 avoidWords: this.getAvoidWords(personality),
-                phrases: this.generatePersonalizedPhrases(personality, analysis.triggers.matched)
+                phrases: this.generatePersonalizedPhrases(personality, triggers, teslaArchetype)
             },
             objectionHandling: this.generateObjectionHandling(analysis),
             nextSteps: this.generateNextSteps(analysis)
@@ -76,15 +80,24 @@ class RecommendationEngine {
         return this.cheatsheet.profiles[personality.DISC]?.avoid_words || [];
     }
 
-    generatePersonalizedPhrases(personality, triggers) {
+    generatePersonalizedPhrases(personality, triggers, teslaArchetype = null) {
         const disc = personality?.DISC;
         if (!disc || !this.cheatsheet?.profiles) return [];
 
         const phrases = this.cheatsheet.profiles[disc]?.phrases || [];
-        const triggerKeywords = triggers.map(t => t.keywords).flat();
+        const triggerKeywords = triggers.map(t => t.keywords || []).flat();
 
-        // Proste dopasowanie frazy do słów kluczowych triggera
-        return phrases.filter(p => p && triggerKeywords.some(kw => kw && p.toLowerCase().includes(kw)));
+        // Filter base DISC phrases by trigger keywords
+        let filteredPhrases = phrases.filter(p => p && triggerKeywords.some(kw => kw && p.toLowerCase().includes(kw)));
+        
+        // If no filtered phrases, return all base phrases
+        if (filteredPhrases.length === 0) {
+            filteredPhrases = phrases;
+        }
+        
+        // Note: Tesla archetype-specific phrases are handled in CustomerDecoderEngine
+        // This service focuses on DISC-based filtering
+        return filteredPhrases;
     }
 
     generateObjectionHandling(analysis) {

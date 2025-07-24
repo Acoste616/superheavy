@@ -6,14 +6,14 @@
  * @author Claude AI Assistant
  */
 
-class TeslaCusomerDecoderApp {
+class TeslaCustomerDecoderApp {
     constructor() {
         this.currentAnalysis = null;
         this.selectedTriggers = new Set();
         this.analysisCount = 0;
         this.isInitialized = false;
         this.currentCustomerId = null;
-        this.apiBase = 'http://localhost:8000/api';
+        this.apiBase = 'http://localhost:3000/api';
         this.data = {};
         
         // UI Elements
@@ -278,26 +278,27 @@ class TeslaCusomerDecoderApp {
              'C': ['Dokładna analiza (1-2 miesiące)', 'Porównanie opcji', 'Przemyślana decyzja']
          };
 
+         // Zwiększony nacisk na Model Y i Model 3 zgodnie z żądaniem
          const preferredModels = {
              'D': {
-                 name: 'Model S Plaid',
-                 reason: 'Najwyższa wydajność i prestiż',
-                 features: ['Najszybsze przyspieszenie', 'Maksymalny zasięg', 'Najnowsza technologia', 'Status symbol']
+                 name: 'Model Y Performance',
+                 reason: 'Najlepszy SUV elektryczny - moc i praktyczność',
+                 features: ['Przyspieszenie 0-100 w 3.7s', 'Zasięg 514 km WLTP', 'Autopilot Enhanced', 'Przestronność 7 osób']
              },
              'I': {
-                 name: 'Model Y Performance',
-                 reason: 'Idealny balans stylu i praktyczności',
-                 features: ['Atrakcyjny design', 'Sportowe osiągi', 'Przestronność', 'Najnowsze funkcje']
+                 name: 'Model Y Long Range',
+                 reason: 'Idealny dla aktywnego stylu życia',
+                 features: ['Zasięg 533 km WLTP', 'Napęd AWD', 'Premium interior', 'Najnowsze funkcje Tesla']
              },
              'S': {
                  name: 'Model 3 Long Range',
-                 reason: 'Niezawodność i oszczędność',
-                 features: ['Sprawdzona technologia', 'Długi zasięg', 'Niskie koszty eksploatacji', 'Bezpieczeństwo']
+                 reason: 'Niezawodność i najlepsza efektywność',
+                 features: ['Zasięg 602 km WLTP', 'Najniższe koszty eksploatacji', '5-gwiazdkowe bezpieczeństwo', 'Autopilot Standard']
              },
              'C': {
-                 name: 'Model S Long Range',
-                 reason: 'Najlepsza technologia i efektywność',
-                 features: ['Najwyższa jakość', 'Optymalna efektywność', 'Zaawansowane systemy', 'Długoterminowa wartość']
+                 name: 'Model 3 Performance',
+                 reason: 'Najlepsza technologia w segmencie premium',
+                 features: ['Przyspieszenie 0-100 w 3.3s', 'Track Mode', 'Carbon fiber spoiler', 'Optymalne TCO']
              }
          };
 
@@ -897,6 +898,8 @@ class TeslaCusomerDecoderApp {
     }
 
     displayResults(analysis) {
+        console.log('🎯 displayResults called with analysis:', analysis);
+        
         // Show results section
         this.ui.analysisInterface.style.display = 'none';
         this.ui.resultsSection.style.display = 'block';
@@ -925,8 +928,17 @@ class TeslaCusomerDecoderApp {
         // Populate strategy tab
         this.populateStrategyTab(analysis);
         
-        // Show first tab
+        // Show first tab with debugging
+        console.log('🔄 Switching to strategy tab...');
         this.switchTab('strategy');
+        
+        // Verify tab switching worked
+        setTimeout(() => {
+            const strategyTab = document.getElementById('strategyTab');
+            const strategyButton = document.querySelector('[data-tab="strategy"]');
+            console.log('📋 Strategy tab visible:', strategyTab && !strategyTab.classList.contains('hidden'));
+            console.log('🔘 Strategy button active:', strategyButton && strategyButton.classList.contains('active'));
+        }, 100);
     }
 
     populateStrategyTab(analysis) {
@@ -1761,26 +1773,40 @@ class TeslaCusomerDecoderApp {
      }
 
     switchTab(tabName) {
+        console.log('🔄 switchTab called with:', tabName);
+        
         // Hide all tab contents
-        document.querySelectorAll('.tab-content').forEach(tab => {
+        const allTabs = document.querySelectorAll('.tab-content');
+        console.log('📋 Found tab contents:', allTabs.length);
+        allTabs.forEach(tab => {
             tab.classList.add('hidden');
         });
         
         // Remove active class from all buttons
-        document.querySelectorAll('.tab-button').forEach(btn => {
+        const allButtons = document.querySelectorAll('.tab-button');
+        console.log('🔘 Found tab buttons:', allButtons.length);
+        allButtons.forEach(btn => {
             btn.classList.remove('active');
         });
         
         // Show selected tab
         const targetTab = document.getElementById(tabName + 'Tab');
+        console.log('🎯 Target tab element:', targetTab);
         if (targetTab) {
             targetTab.classList.remove('hidden');
+            console.log('✅ Showed tab:', tabName + 'Tab');
+        } else {
+            console.error('❌ Tab not found:', tabName + 'Tab');
         }
         
         // Add active class to clicked button
         const targetButton = document.querySelector(`[data-tab="${tabName}"]`);
+        console.log('🔘 Target button element:', targetButton);
         if (targetButton) {
             targetButton.classList.add('active');
+            console.log('✅ Activated button for tab:', tabName);
+        } else {
+            console.error('❌ Button not found for tab:', tabName);
         }
     }
 
@@ -1847,8 +1873,11 @@ class TeslaCusomerDecoderApp {
         const conversionPotentialElement = document.getElementById('conversionPotential');
         const personalizedActionsElement = document.getElementById('personalizedActions');
         
-        // Sprawdź czy dane segmentacji istnieją
-        if (!analysis.segmentAnalysis && !analysis.segmentStrategy) {
+        // Sprawdź czy dane segmentacji istnieją - poprawione mapowanie
+        const segmentAnalysis = analysis.segment?.analysis || analysis.segmentAnalysis;
+        const segmentStrategy = analysis.segment?.strategy || analysis.segmentStrategy;
+        
+        if (!segmentAnalysis && !segmentStrategy) {
             // Wyświetl komunikat o braku danych segmentacji
             if (segmentIdentificationElement) {
                 segmentIdentificationElement.innerHTML = `
@@ -1886,8 +1915,8 @@ class TeslaCusomerDecoderApp {
             return;
         }
         
-        if (analysis.segmentAnalysis && segmentIdentificationElement) {
-            const segment = analysis.segmentAnalysis;
+        if (segmentAnalysis && segmentIdentificationElement) {
+            const segment = segmentAnalysis;
             segmentIdentificationElement.innerHTML = `
                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
                     <h6 class="text-tesla-red font-semibold mb-3">Zidentyfikowany Segment</h6>
@@ -1911,8 +1940,8 @@ class TeslaCusomerDecoderApp {
             `;
         }
         
-        if (analysis.segmentStrategy && segmentStrategyElement) {
-            const strategy = analysis.segmentStrategy;
+        if (segmentStrategy && segmentStrategyElement) {
+            const strategy = segmentStrategy;
             segmentStrategyElement.innerHTML = `
                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
                     <h6 class="text-tesla-red font-semibold mb-3">Główne Przesłania</h6>
@@ -1939,8 +1968,8 @@ class TeslaCusomerDecoderApp {
             `;
         }
         
-        if (analysis.segmentAnalysis && conversionPotentialElement) {
-            const segment = analysis.segmentAnalysis;
+        if (segmentAnalysis && conversionPotentialElement) {
+            const segment = segmentAnalysis;
             conversionPotentialElement.innerHTML = `
                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
                     <h6 class="text-tesla-red font-semibold mb-3">Mnożnik Konwersji</h6>
@@ -1971,8 +2000,8 @@ class TeslaCusomerDecoderApp {
             `;
         }
         
-        if (analysis.segmentStrategy && personalizedActionsElement) {
-            const strategy = analysis.segmentStrategy;
+        if (segmentStrategy && personalizedActionsElement) {
+            const strategy = segmentStrategy;
             personalizedActionsElement.innerHTML = `
                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
                     <h6 class="text-tesla-red font-semibold mb-3">Następne Kroki</h6>
@@ -2313,5 +2342,5 @@ class TeslaCusomerDecoderApp {
 // Initialize application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🏁 Starting Tesla Customer Decoder SHU PRO...');
-    window.app = new TeslaCusomerDecoderApp();
+    window.app = new TeslaCustomerDecoderApp();
 });

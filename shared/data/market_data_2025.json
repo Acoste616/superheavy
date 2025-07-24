@@ -1,0 +1,102 @@
+{
+  "version": "2.0",
+  "last_updated": "2025-07-21",
+  "description": "Real-time market data for Tesla Customer Decoder based on Q2 2025 research",
+  
+  "infrastructure": {
+    "total_charging_points": 9342,
+    "dc_percentage": 32,
+    "ac_percentage": 68,
+    "growth_rate": 29,
+    "regional_density": {
+      "mazowieckie": {
+        "points_per_100km2": 45,
+        "dc_fast_percentage": 38,
+        "charging_anxiety_modifier": 8
+      },
+      "slaskie": {
+        "points_per_100km2": 42,
+        "dc_fast_percentage": 35,
+        "charging_anxiety_modifier": 6
+      },
+      "wielkopolskie": {
+        "points_per_100km2": 38,
+        "dc_fast_percentage": 30,
+        "charging_anxiety_modifier": 4
+      },
+      "malopolskie": {
+        "points_per_100km2": 35,
+        "dc_fast_percentage": 28,
+        "charging_anxiety_modifier": 3
+      },
+      "other": {
+        "points_per_100km2": 25,
+        "dc_fast_percentage": 25,
+        "charging_anxiety_modifier": -5
+      }
+    }
+  },
+  
+  "subsidies": {
+    "naszEauto": {
+      "total_budget_pln": 1613000000,
+      "period_start": "2025-02-03",
+      "period_end": "2026-04-30",
+      "utilization_rate": 0.05,
+      "income_limit_pln": 225000,
+      "expected_availability": 0.95,
+      "pressure_effectiveness": 0.2
+    }
+  },
+  
+  "competitor_pricing": {
+    "tesla_model_y_lr": 224990,
+    "competitors": {
+      "byd_sealion_7": {
+        "price": 219900,
+        "gap_percentage": -2.3,
+        "range_wltp": 542,
+        "charging_speed": "150kW"
+      },
+      "mg_zs_ev": {
+        "price": 179900,
+        "gap_percentage": -25.1,
+        "range_wltp": 440,
+        "charging_speed": "94kW"
+      },
+      "vw_id4_pro": {
+        "price": 199900,
+        "gap_percentage": -12.5,
+        "range_wltp": 520,
+        "charging_speed": "125kW"
+      }
+    }
+  },
+  
+  "financing": {
+    "credit_rrso_range": {
+      "min": 9.3,
+      "max": 26.3
+    },
+    "leasing_margin": {
+      "min": 4.1,
+      "max": 5.7
+    },
+    "affordability_threshold": 0.25,
+    "pain_threshold": 0.35,
+    "regional_income_estimates": {
+      "mazowieckie": 8500,
+      "slaskie": 7200,
+      "wielkopolskie": 7000,
+      "malopolskie": 6800,
+      "other": 6200
+    }
+  },
+  
+  "compliance": {
+    "uokik_penalty_rate": 0.10,
+    "scarcity_block_threshold": 0.40,
+    "pressure_tactics_forbidden": ["countdown", "false_scarcity", "decoy_pricing"],
+    "audit_required": true
+  }
+}

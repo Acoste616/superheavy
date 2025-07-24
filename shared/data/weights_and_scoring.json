@@ -1,0 +1,155 @@
+{
+  "scoring_weights": {
+    "trigger_match": 0.4,
+    "disc_compatibility": 0.3,
+    "demographic_fit": 0.2,
+    "context_modifiers": 0.1
+  },
+  "conversion_thresholds": {
+    "high": 70,
+    "medium": 50,
+    "low": 30
+  },
+  "demographic_modifiers": {
+    "age": {
+      "25-35": {"I": 5, "D": 3, "S": -2, "C": 0},
+      "35-45": {"D": 8, "I": 3, "S": 5, "C": 3},
+      "45-55": {"C": 8, "S": 8, "D": 5, "I": -2},
+      "55+": {"C": 5, "S": 10, "D": -3, "I": -5}
+    },
+    "income": {
+      "low": {"S": 5, "I": -3, "D": -8, "C": 2},
+      "medium": {"S": 3, "C": 5, "I": 3, "D": 0},
+      "high": {"D": 10, "C": 8, "I": 5, "S": -3},
+      "very_high": {"D": 15, "ENTJ": 20, "INTP": 8}
+    },
+    "region": {
+      "mazowieckie": {"D": 8, "I": 5, "C": 3},
+      "slaskie": {"C": 5, "S": 3, "D": 3},
+      "wielkopolskie": {"D": 5, "C": 5, "S": 2},
+      "malopolskie": {"I": 5, "C": 3, "S": 3},
+      "other": {"S": 2, "C": 2}
+    },
+    "has_pv": {
+      "true": 15,
+      "false": 0
+    },
+    "family_status": {
+      "single": {"D": 5, "I": 8, "S": -5, "C": 0},
+      "married_no_children": {"D": 3, "I": 5, "S": 2, "C": 5},
+      "family_with_children": {"S": 15, "C": 5, "D": -3, "I": 0}
+    },
+    "relationship_status": {
+      "single": {"D": 8, "I": 10, "S": -3, "C": 2},
+      "partner": {"S": 12, "I": 5, "C": 8, "D": 3},
+      "divorced": {"S": 5, "C": 8, "D": 5, "I": -2}
+    },
+    "children_status": {
+      "none": {"D": 5, "I": 8, "S": -2, "C": 3},
+      "young": {"S": 20, "C": 8, "I": 5, "D": -5},
+      "teen": {"S": 15, "C": 10, "I": 8, "D": 0},
+      "adult": {"S": 8, "C": 5, "I": 3, "D": 5}
+    },
+    "tesla_experience": {
+      "first_time": {"S": 5, "C": 8, "I": 3, "D": 0},
+      "researching": {"C": 15, "S": 8, "D": 5, "I": 3},
+      "test_driven": {"I": 12, "D": 10, "S": 8, "C": 5},
+      "owner_friend": {"I": 18, "S": 10, "D": 5, "C": 3}
+    },
+    "car_role": {
+      "primary": {"S": 15, "C": 12, "D": 5, "I": 3},
+      "secondary": {"I": 10, "D": 8, "S": 5, "C": 3},
+      "replacement": {"C": 10, "S": 8, "D": 8, "I": 5},
+      "additional": {"D": 12, "I": 15, "S": 0, "C": 3}
+    }
+  },
+  "trigger_combinations": {
+    "price_concern + business_use": {
+      "modifier": 15,
+      "reason": "Business tax benefits offset price concerns"
+    },
+    "environmental_interest + status_seeking": {
+      "modifier": 12,
+      "reason": "Social status through environmental consciousness"
+    },
+    "reliability_concern + family_safety": {
+      "modifier": 18,
+      "reason": "Family responsibility amplifies reliability needs"
+    },
+    "decision_delay + competition_comparison": {
+      "modifier": -5,
+      "reason": "Analysis paralysis - needs urgency creation"
+    },
+    "technology_enthusiast + early_adopter": {
+      "modifier": 20,
+      "reason": "Perfect match for Tesla's innovation positioning"
+    },
+    "partner_needs_convincing + family_safety": {
+      "modifier": 25,
+      "reason": "Family safety arguments help convince hesitant partners"
+    },
+    "children_safety_priority + primary_car": {
+      "modifier": 30,
+      "reason": "Safety-focused families choosing primary vehicle"
+    },
+    "tesla_owner_referral + first_time_buyer": {
+      "modifier": 35,
+      "reason": "Strong social proof for newcomers"
+    },
+    "second_car_luxury + high_income": {
+      "modifier": 22,
+      "reason": "Luxury positioning for affluent secondary car buyers"
+    },
+    "partner_approval + consensus_building": {
+      "modifier": 18,
+      "reason": "Joint decision-making process indicates serious intent"
+    },
+    "young_children + environmental_values": {
+      "modifier": 20,
+      "reason": "Parents concerned about children's future environment"
+    }
+  },
+  "tone_adjustments": {
+    "entuzjastyczny": {
+      "I": 10,
+      "D": 5,
+      "S": -3,
+      "C": -8
+    },
+    "neutralny": {
+      "all": 0
+    },
+    "sceptyczny": {
+      "C": 8,
+      "S": 5,
+      "D": -5,
+      "I": -10
+    }
+  },
+  "risk_factors": {
+    "high_price_sensitivity": -10,
+    "technology_skeptic": -15,
+    "no_home_charging": -12,
+    "long_commute_rural": -8,
+    "low_environmental_awareness": -5,
+    "partner_strongly_opposed": -20,
+    "single_income_family": -8,
+    "technology_anxiety": -12,
+    "brand_loyalty_competitor": -15,
+    "immediate_need_traditional": -10
+  },
+  "boost_factors": {
+    "current_tesla_consideration": 25,
+    "referral_from_owner": 15,
+    "test_drive_completed": 20,
+    "financing_preapproved": 12,
+    "trade_in_ready": 10,
+    "family_consensus": 18,
+    "safety_priority_parent": 22,
+    "environmental_conscious_family": 15,
+    "tech_enthusiast_household": 20,
+    "luxury_car_experience": 12,
+    "early_adopter_network": 16,
+    "dual_income_family": 14
+  }
+}

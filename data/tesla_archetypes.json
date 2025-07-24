@@ -1,0 +1,467 @@
+{
+  "archetypes": {
+    "green_pioneer_family": {
+      "name": "Green Pioneer Family",
+      "disc_mix": "S+I",
+      "primary_disc": "S",
+      "secondary_disc": "I",
+      "motivations": [
+        "environmental_impact",
+        "family_safety",
+        "future_generations",
+        "cost_savings_long_term",
+        "technology_adoption"
+      ],
+      "fears": [
+        "environmental_damage",
+        "high_upfront_costs",
+        "technology_reliability",
+        "charging_infrastructure",
+        "family_inconvenience"
+      ],
+      "triggers": [
+        "environmental_benefits",
+        "family_safety_features",
+        "long_term_savings",
+        "charging_convenience",
+        "government_incentives"
+      ],
+      "objections": [
+        "battery_lifespan_concern",
+        "charging_time_worry",
+        "upfront_cost_high",
+        "range_anxiety",
+        "maintenance_unknown"
+      ],
+      "conversion_weight": 0.85,
+      "market_scope": "families_eco_conscious",
+      "country": "PL"
+    },
+    "safety_first_parents": {
+      "name": "Safety-First Parents",
+      "disc_mix": "S+C",
+      "primary_disc": "S",
+      "secondary_disc": "C",
+      "motivations": [
+        "family_protection",
+        "advanced_safety_features",
+        "reliability",
+        "peace_of_mind",
+        "proven_technology"
+      ],
+      "fears": [
+        "family_risk",
+        "technology_failure",
+        "unknown_reliability",
+        "emergency_situations",
+        "maintenance_complexity"
+      ],
+      "triggers": [
+        "safety_ratings",
+        "autopilot_features",
+        "emergency_response",
+        "child_safety",
+        "crash_protection"
+      ],
+      "objections": [
+        "new_technology_risk",
+        "autopilot_safety_concern",
+        "emergency_charging",
+        "service_availability",
+        "resale_value_unknown"
+      ],
+      "conversion_weight": 0.78,
+      "market_scope": "families_safety_focused",
+      "country": "PL"
+    },
+    "budget_conscious_family": {
+      "name": "Budget-Conscious Family",
+      "disc_mix": "C+S",
+      "primary_disc": "C",
+      "secondary_disc": "S",
+      "motivations": [
+        "cost_optimization",
+        "long_term_savings",
+        "fuel_cost_elimination",
+        "maintenance_reduction",
+        "government_incentives"
+      ],
+      "fears": [
+        "high_initial_investment",
+        "hidden_costs",
+        "depreciation_risk",
+        "charging_costs",
+        "repair_expenses"
+      ],
+      "triggers": [
+        "tco_calculator",
+        "fuel_savings",
+        "tax_benefits",
+        "financing_options",
+        "maintenance_savings"
+      ],
+      "objections": [
+        "upfront_cost_too_high",
+        "financing_terms",
+        "insurance_costs",
+        "charging_infrastructure_cost",
+        "battery_replacement_cost"
+      ],
+      "conversion_weight": 0.72,
+      "market_scope": "families_budget_focused",
+      "country": "PL"
+    },
+    "tech_executive": {
+      "name": "Tech Executive",
+      "disc_mix": "D+I",
+      "primary_disc": "D",
+      "secondary_disc": "I",
+      "motivations": [
+        "cutting_edge_technology",
+        "performance_leadership",
+        "innovation_adoption",
+        "status_symbol",
+        "efficiency_optimization"
+      ],
+      "fears": [
+        "technology_obsolescence",
+        "performance_compromise",
+        "status_loss",
+        "early_adopter_risks",
+        "competitive_disadvantage"
+      ],
+      "triggers": [
+        "fsd_capabilities",
+        "ota_updates",
+        "performance_specs",
+        "tech_integration",
+        "innovation_leadership"
+      ],
+      "objections": [
+        "fsd_not_ready",
+        "charging_time_business",
+        "range_business_travel",
+        "service_network_limited",
+        "resale_uncertainty"
+      ],
+      "conversion_weight": 0.88,
+      "market_scope": "executives_tech_oriented",
+      "country": "PL"
+    },
+    "early_adopter": {
+      "name": "Early Adopter",
+      "disc_mix": "I+D",
+      "primary_disc": "I",
+      "secondary_disc": "D",
+      "motivations": [
+        "innovation_excitement",
+        "social_influence",
+        "trendsetting",
+        "technology_enthusiasm",
+        "community_belonging"
+      ],
+      "fears": [
+        "missing_out",
+        "social_irrelevance",
+        "technology_disappointment",
+        "peer_judgment",
+        "investment_regret"
+      ],
+      "triggers": [
+        "latest_features",
+        "exclusive_access",
+        "community_membership",
+        "social_sharing",
+        "innovation_stories"
+      ],
+      "objections": [
+        "waiting_time_delivery",
+        "feature_availability",
+        "social_acceptance",
+        "technology_maturity",
+        "support_community"
+      ],
+      "conversion_weight": 0.82,
+      "market_scope": "innovators_early_adopters",
+      "country": "PL"
+    },
+    "data_driven_professional": {
+      "name": "Data-Driven Professional",
+      "disc_mix": "C+D",
+      "primary_disc": "C",
+      "secondary_disc": "D",
+      "motivations": [
+        "analytical_validation",
+        "performance_metrics",
+        "efficiency_optimization",
+        "data_transparency",
+        "rational_decision_making"
+      ],
+      "fears": [
+        "insufficient_data",
+        "performance_gaps",
+        "hidden_variables",
+        "measurement_inaccuracy",
+        "decision_regret"
+      ],
+      "triggers": [
+        "performance_data",
+        "efficiency_metrics",
+        "comparative_analysis",
+        "roi_calculations",
+        "technical_specifications"
+      ],
+      "objections": [
+        "data_transparency_lack",
+        "performance_verification",
+        "long_term_reliability_data",
+        "comparative_benchmarks",
+        "measurement_accuracy"
+      ],
+      "conversion_weight": 0.75,
+      "market_scope": "professionals_analytical",
+      "country": "PL"
+    },
+    "luxury_traditionalist": {
+      "name": "Luxury Traditionalist",
+      "disc_mix": "S+C",
+      "primary_disc": "S",
+      "secondary_disc": "C",
+      "motivations": [
+        "luxury_experience",
+        "brand_prestige",
+        "comfort_priority",
+        "quality_assurance",
+        "status_maintenance"
+      ],
+      "fears": [
+        "comfort_compromise",
+        "brand_reputation_risk",
+        "service_quality_decline",
+        "luxury_standard_loss",
+        "social_status_impact"
+      ],
+      "triggers": [
+        "luxury_features",
+        "premium_materials",
+        "exclusive_service",
+        "brand_heritage",
+        "comfort_technology"
+      ],
+      "objections": [
+        "traditional_luxury_missing",
+        "service_network_concern",
+        "brand_newness",
+        "comfort_features_lack",
+        "prestige_perception"
+      ],
+      "conversion_weight": 0.68,
+      "market_scope": "luxury_traditional_buyers",
+      "country": "PL"
+    },
+    "social_influencer": {
+      "name": "Social Influencer",
+      "disc_mix": "I+S",
+      "primary_disc": "I",
+      "secondary_disc": "S",
+      "motivations": [
+        "social_impact",
+        "influence_expansion",
+        "content_creation",
+        "community_leadership",
+        "trend_setting"
+      ],
+      "fears": [
+        "social_irrelevance",
+        "influence_loss",
+        "content_limitation",
+        "community_disconnect",
+        "trend_missing"
+      ],
+      "triggers": [
+        "social_sharing_features",
+        "content_opportunities",
+        "community_access",
+        "influence_tools",
+        "viral_potential"
+      ],
+      "objections": [
+        "social_acceptance_concern",
+        "content_creation_limits",
+        "community_size",
+        "sharing_capabilities",
+        "influence_measurement"
+      ],
+      "conversion_weight": 0.79,
+      "market_scope": "influencers_social_leaders",
+      "country": "PL"
+    },
+    "performance_enthusiast": {
+      "name": "Performance Enthusiast",
+      "disc_mix": "D+C",
+      "primary_disc": "D",
+      "secondary_disc": "C",
+      "motivations": [
+        "performance_excellence",
+        "technical_superiority",
+        "driving_experience",
+        "engineering_appreciation",
+        "competitive_advantage"
+      ],
+      "fears": [
+        "performance_compromise",
+        "technical_limitations",
+        "driving_experience_loss",
+        "engineering_quality_doubt",
+        "competitive_disadvantage"
+      ],
+      "triggers": [
+        "acceleration_specs",
+        "track_performance",
+        "technical_innovation",
+        "engineering_excellence",
+        "performance_data"
+      ],
+      "objections": [
+        "performance_vs_ice",
+        "track_capability_concern",
+        "technical_complexity",
+        "maintenance_performance",
+        "upgrade_limitations"
+      ],
+      "conversion_weight": 0.84,
+      "market_scope": "performance_car_enthusiasts",
+      "country": "PL"
+    },
+    "business_optimizer": {
+      "name": "Business Optimizer",
+      "disc_mix": "D+C",
+      "primary_disc": "D",
+      "secondary_disc": "C",
+      "motivations": [
+        "business_efficiency",
+        "cost_optimization",
+        "operational_excellence",
+        "competitive_advantage",
+        "roi_maximization"
+      ],
+      "fears": [
+        "business_disruption",
+        "cost_overrun",
+        "operational_inefficiency",
+        "competitive_disadvantage",
+        "roi_failure"
+      ],
+      "triggers": [
+        "business_benefits",
+        "cost_analysis",
+        "operational_efficiency",
+        "tax_advantages",
+        "fleet_optimization"
+      ],
+      "objections": [
+        "business_case_unclear",
+        "operational_complexity",
+        "cost_benefit_doubt",
+        "implementation_risk",
+        "roi_timeline_long"
+      ],
+      "conversion_weight": 0.81,
+      "market_scope": "business_fleet_buyers",
+      "country": "PL"
+    },
+    "eco_economist": {
+      "name": "Eco-Economist",
+      "disc_mix": "C+S",
+      "primary_disc": "C",
+      "secondary_disc": "S",
+      "motivations": [
+        "environmental_economics",
+        "sustainable_investment",
+        "long_term_value",
+        "ecological_responsibility",
+        "future_proofing"
+      ],
+      "fears": [
+        "greenwashing_concern",
+        "economic_inefficiency",
+        "environmental_impact_doubt",
+        "investment_risk",
+        "sustainability_failure"
+      ],
+      "triggers": [
+        "environmental_impact_data",
+        "sustainability_metrics",
+        "long_term_economics",
+        "carbon_footprint",
+        "renewable_integration"
+      ],
+      "objections": [
+        "environmental_impact_question",
+        "economic_viability_doubt",
+        "sustainability_verification",
+        "long_term_cost_concern",
+        "carbon_calculation_accuracy"
+      ],
+      "conversion_weight": 0.76,
+      "market_scope": "eco_conscious_economists",
+      "country": "PL"
+    },
+    "cautious_adopter": {
+      "name": "Cautious Adopter",
+      "disc_mix": "S+C",
+      "primary_disc": "S",
+      "secondary_disc": "C",
+      "motivations": [
+        "risk_minimization",
+        "proven_reliability",
+        "gradual_transition",
+        "safety_assurance",
+        "conservative_approach"
+      ],
+      "fears": [
+        "technology_risk",
+        "reliability_concern",
+        "change_disruption",
+        "safety_uncertainty",
+        "investment_loss"
+      ],
+      "triggers": [
+        "reliability_proof",
+        "safety_evidence",
+        "gradual_adoption",
+        "risk_mitigation",
+        "conservative_benefits"
+      ],
+      "objections": [
+        "technology_maturity_doubt",
+        "reliability_track_record",
+        "safety_long_term",
+        "change_resistance",
+        "risk_assessment_need"
+      ],
+      "conversion_weight": 0.65,
+      "market_scope": "conservative_late_adopters",
+      "country": "PL"
+    }
+  },
+  "archetype_detection_rules": {
+    "trigger_patterns": {
+      "environmental_focus": ["green_pioneer_family", "eco_economist"],
+      "safety_priority": ["safety_first_parents", "cautious_adopter"],
+      "cost_optimization": ["budget_conscious_family", "business_optimizer"],
+      "technology_enthusiasm": ["tech_executive", "early_adopter"],
+      "performance_focus": ["performance_enthusiast", "tech_executive"],
+      "social_influence": ["social_influencer", "early_adopter"],
+      "luxury_preference": ["luxury_traditionalist"],
+      "data_driven": ["data_driven_professional", "business_optimizer"],
+      "risk_averse": ["cautious_adopter", "safety_first_parents"]
+    },
+    "disc_mapping": {
+      "D_primary": ["tech_executive", "performance_enthusiast", "business_optimizer"],
+      "I_primary": ["early_adopter", "social_influencer"],
+      "S_primary": ["green_pioneer_family", "safety_first_parents", "luxury_traditionalist", "cautious_adopter"],
+      "C_primary": ["budget_conscious_family", "data_driven_professional", "eco_economist"]
+    }
+  }
+}

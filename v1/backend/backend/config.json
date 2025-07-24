@@ -1,0 +1,313 @@
+{
+  "customerDecoderEngine": {
+    "version": "2.0",
+    "name": "Tesla Customer Decoder Engine 2.0 - Polish Market Optimized",
+    "description": "Enhanced engine based on Polish market data (waznedane.csv), predictive factors (dane1.txt), and global insights (dane2.csv)",
+    
+    "weights": {
+      "polish_market_priority": true,
+      "predictive_factors": {
+        "home_work_charging": 0.20,
+        "daily_commute": 0.18,
+        "competitor_consideration": 0.16,
+        "financing_questions": 0.08,
+        "main_motivator": 0.08,
+        "purchase_timeline": 0.08,
+        "decision_maker_present": 0.07,
+        "postal_code_context": 0.07,
+        "other_vehicles": 0.07,
+        "future_language": 0.06,
+        "test_drive_reaction": 0.06,
+        "rental_car_arrival": 0.06,
+        "configuration_questions": 0.06,
+        "clean_trade_in": 0.05,
+        "current_brand": 0.05,
+        "warranty_questions": 0.05,
+        "age_factor": 0.04,
+        "residence_type": 0.04,
+        "prepared_documents": 0.04,
+        "current_frustration": 0.04
+      },
+      "polish_segments": {
+        "tech_innovators": 0.18,
+        "eco_luxury": 0.16,
+        "performance_enthusiasts": 0.15,
+        "family_premium": 0.22,
+        "business_fleet": 0.14,
+        "young_professionals": 0.15
+      },
+      "global_market_factors": {
+        "demographic_fit": 0.25,
+        "technology_adoption": 0.20,
+        "purchase_behavior": 0.20,
+        "competitive_analysis": 0.20,
+        "experience_expectations": 0.15
+      }
+    },
+    
+    "question_system": {
+      "max_questions": 50,
+      "adaptive_questioning": true,
+      "category_based": true,
+      "categories": {
+        "charging_infrastructure": {
+          "weight": 0.20,
+          "max_questions": 8,
+          "priority": 1
+        },
+        "daily_usage": {
+          "weight": 0.18,
+          "max_questions": 7,
+          "priority": 2
+        },
+        "competitive_analysis": {
+          "weight": 0.16,
+          "max_questions": 8,
+          "priority": 3
+        },
+        "financial_process": {
+          "weight": 0.15,
+          "max_questions": 8,
+          "priority": 4
+        },
+        "demographics_lifestyle": {
+          "weight": 0.12,
+          "max_questions": 7,
+          "priority": 5
+        },
+        "technology_features": {
+          "weight": 0.10,
+          "max_questions": 6,
+          "priority": 6
+        },
+        "environmental_values": {
+          "weight": 0.09,
+          "max_questions": 6,
+          "priority": 7
+        }
+      }
+    },
+    
+    "polish_market_segments": {
+      "tech_innovators": {
+        "percentage": 18,
+        "avg_income": 25000,
+        "conversion_rate": 0.32,
+        "key_motivators": ["technology", "innovation", "status"],
+        "primary_models": ["Model S", "Model X", "Model 3 Performance"]
+      },
+      "eco_luxury": {
+        "percentage": 16,
+        "avg_income": 22000,
+        "conversion_rate": 0.28,
+        "key_motivators": ["sustainability", "luxury", "values"],
+        "primary_models": ["Model S", "Model X"]
+      },
+      "performance_enthusiasts": {
+        "percentage": 15,
+        "avg_income": 20000,
+        "conversion_rate": 0.35,
+        "key_motivators": ["performance", "acceleration", "design"],
+        "primary_models": ["Model 3 Performance", "Model S Plaid"]
+      },
+      "family_premium": {
+        "percentage": 22,
+        "avg_income": 18000,
+        "conversion_rate": 0.25,
+        "key_motivators": ["safety", "space", "reliability"],
+        "primary_models": ["Model Y", "Model X"]
+      },
+      "business_fleet": {
+        "percentage": 14,
+        "avg_income": 30000,
+        "conversion_rate": 0.40,
+        "key_motivators": ["cost_efficiency", "fleet_management"],
+        "primary_models": ["Model 3", "Model Y"]
+      },
+      "young_professionals": {
+        "percentage": 15,
+        "avg_income": 15000,
+        "conversion_rate": 0.22,
+        "key_motivators": ["style", "future_oriented", "social_status"],
+        "primary_models": ["Model 3"]
+      }
+    },
+    
+    "competitive_analysis": {
+      "main_competitors": {
+        "BMW": {
+          "models": ["iX", "i4", "iX3"],
+          "threat_level": "high",
+          "key_advantages": ["brand_prestige", "build_quality", "dealer_network"],
+          "tesla_counters": ["technology", "supercharger_network", "ota_updates"]
+        },
+        "Mercedes": {
+          "models": ["EQC", "EQS", "EQA"],
+          "threat_level": "high",
+          "key_advantages": ["luxury", "comfort", "brand_heritage"],
+          "tesla_counters": ["innovation", "performance", "value"]
+        },
+        "Audi": {
+          "models": ["e-tron", "Q4 e-tron"],
+          "threat_level": "medium",
+          "key_advantages": ["interior_quality", "quattro", "design"],
+          "tesla_counters": ["range", "charging_speed", "tech_features"]
+        },
+        "Volvo": {
+          "models": ["XC40 Recharge", "C40"],
+          "threat_level": "medium",
+          "key_advantages": ["safety", "scandinavian_design", "sustainability"],
+          "tesla_counters": ["performance", "technology", "charging_network"]
+        },
+        "Polestar": {
+          "models": ["Polestar 2", "Polestar 3"],
+          "threat_level": "medium",
+          "key_advantages": ["design", "google_integration", "sustainability"],
+          "tesla_counters": ["supercharger_access", "autopilot", "brand_recognition"]
+        }
+      }
+    },
+    
+    "fuzzy_logic": {
+      "enabled": true,
+      "confidence_threshold": 0.7,
+      "uncertainty_handling": true,
+      "linguistic_variables": {
+        "purchase_intent": ["very_low", "low", "medium", "high", "very_high"],
+        "price_sensitivity": ["very_low", "low", "medium", "high", "very_high"],
+        "tech_adoption": ["laggard", "late_majority", "early_majority", "early_adopter", "innovator"]
+      }
+    },
+    
+    "advanced_triggers": {
+      "enabled": true,
+      "micro_linguistic_analysis": true,
+      "behavioral_signals": true,
+      "contextual_awareness": true,
+      "real_time_adaptation": true
+    },
+    
+    "transparency_engine": {
+      "enabled": true,
+      "explanation_depth": "detailed",
+      "confidence_reporting": true,
+      "factor_breakdown": true,
+      "recommendation_reasoning": true
+    },
+    
+    "learning_parameters": {
+      "adaptive_weights": true,
+      "feedback_integration": true,
+      "continuous_improvement": true,
+      "a_b_testing": true,
+      "performance_tracking": true
+    },
+    
+    "api_settings": {
+      "rate_limiting": {
+        "requests_per_minute": 100,
+        "burst_limit": 20
+      },
+      "caching": {
+        "enabled": true,
+        "ttl_seconds": 300,
+        "cache_predictions": true
+      },
+      "logging": {
+        "level": "info",
+        "include_personal_data": false,
+        "audit_trail": true
+      }
+    },
+    
+    "data_sources": {
+      "polish_market_data": {
+        "source": "waznedane.csv",
+        "priority": "high",
+        "weight": 0.6
+      },
+      "predictive_factors": {
+        "source": "dane1.txt",
+        "priority": "high",
+        "weight": 0.3
+      },
+      "global_insights": {
+        "source": "dane2.csv",
+        "priority": "medium",
+        "weight": 0.1
+      }
+    },
+    
+    "performance_optimization": {
+      "parallel_processing": true,
+      "memory_optimization": true,
+      "lazy_loading": true,
+      "result_caching": true,
+      "batch_processing": false
+    },
+    
+    "security": {
+      "data_encryption": true,
+      "anonymization": true,
+      "gdpr_compliance": true,
+      "audit_logging": true,
+      "access_control": true
+    },
+    
+    "ui_preferences": {
+      "language": "pl",
+      "theme": "tesla_dark",
+      "animations": true,
+      "progressive_disclosure": true,
+      "mobile_optimized": true
+    },
+    
+    "alert_thresholds": {
+      "high_intent": 0.8,
+      "medium_intent": 0.6,
+      "low_intent": 0.4,
+      "competitor_risk": 0.7,
+      "price_sensitivity": 0.6
+    },
+    
+    "experimental_features": {
+      "ai_powered_insights": true,
+      "predictive_analytics": true,
+      "sentiment_analysis": true,
+      "voice_analysis": false,
+      "behavioral_biometrics": false
+    },
+    
+    "integration": {
+      "crm_sync": true,
+      "email_automation": true,
+      "calendar_integration": true,
+      "analytics_tracking": true,
+      "webhook_notifications": true
+    }
+  },
+  
+  "environment": {
+    "mode": "production",
+    "debug": false,
+    "verbose_logging": false,
+    "performance_monitoring": true
+  },
+  
+  "version_info": {
+    "engine_version": "2.0",
+    "data_version": "2024.1",
+    "last_updated": "2024-01-15",
+    "polish_market_focus": true,
+    "question_limit": 50,
+    "enhanced_features": [
+      "polish_market_segmentation",
+      "predictive_factor_analysis",
+      "global_market_insights",
+      "competitive_brand_comparison",
+      "decision_maker_tracking",
+      "adaptive_questioning",
+      "enhanced_triggers"
+    ]
+  }
+}

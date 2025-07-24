@@ -1,0 +1,410 @@
+{
+  "rules": [
+    {
+      "id": "price_concern_universal",
+      "name": "Obawa cenowa - uniwersalna strategia",
+      "conditions": {
+        "triggers": ["price_concern"],
+        "disc_type": "any",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Acknowledge price concern, use NaszEauto subsidy (40k PLN) and TCO savings (30k PLN) to counter negative market perception and create urgency",
+        "script": "Rozumiem Pana obawy cenowe. Tesla rzeczywiście to inwestycja, ale z programem NaszEauto otrzymuje Pan aż 40,000 PLN dotacji. Dodatkowo oszczędności w eksploatacji to kolejne 30,000 PLN przez 5 lat. Łącznie 70,000 PLN korzyści finansowych.",
+        "objection_handling": "Jeśli porówna Pan TCO - Model 3 kosztuje 92,250 PLN, a Golf 127,500 PLN przez 5 lat. Tesla faktycznie oszczędza pieniądze.",
+        "facts": [
+          "NaszEauto: do 40,000 PLN dotacji, budżet 1.6 mld PLN",
+          "Model 3 TCO: 92,250 PLN vs Golf 127,500 PLN (5 lat)",
+          "Ładowanie domowe: 0.50-0.70 PLN/kWh vs benzyna",
+          "Tesla udział rynku spadł z 30% do 17.6% - konkurencja rośnie"
+        ],
+        "persuasion_technique": "Scarcity (limited budget) + Financial logic",
+        "next_steps": "Przedstaw kalkulację TCO i podkreśl ograniczony budżet programu"
+      },
+      "scoring": {
+        "base_score": 55,
+        "modifiers": {
+          "has_pv": 8,
+          "business_use": 12,
+          "high_income": 10,
+          "early_in_process": 5
+        }
+      }
+    },
+    {
+      "id": "decision_delay_competition",
+      "name": "Odkładanie decyzji w czasach rosnącej konkurencji", 
+      "conditions": {
+        "triggers": ["decision_delay"],
+        "disc_type": "any",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Frame the decision as a choice between an established leader (Tesla) and new challengers. Emphasize Tesla's proven technology, service network, and the upcoming Model Y Juniper refresh as reasons not to wait. Use the growing competition to create FOMO",
+        "script": "Rozumiem chęć poczekania. Ale zastanówmy się: Tesla ma 15 lat doświadczenia w EV, gdy chińskie marki dopiero zaczynają w Polsce. Model Y Juniper już w drodze - ewolucja sprawdzonej technologii. Czy warto eksperymentować z nieznanymi markami?",
+        "objection_handling": "Konkurencja faktycznie rośnie - chińskie marki zdobyły już 5% rynku w Q1. Ale Tesla to pewność - sprawdzona technologia, sieć Superchargerów, wsparcie serwisowe.",
+        "facts": [
+          "Tesla: 15 lat doświadczenia w EV vs nowe marki",
+          "Chińskie marki: 5% udziału w Q1 2025, brak historii serwisowej",
+          "Model Y Juniper - nadchodząca aktualizacja",
+          "Największa sieć Superchargerów na świecie"
+        ],
+        "persuasion_technique": "FOMO + Authority + Social proof",
+        "next_steps": "Pokaż porównanie Tesla vs chińskie marki, zaproponuj rezerwację przed Juniper"
+      },
+      "scoring": {
+        "base_score": 45,
+        "modifiers": {
+          "market_aware": 8,
+          "comparison_shopper": 6,
+          "early_adopter": 5,
+          "risk_averse": -3
+        }
+      }
+    },
+    {
+      "id": "c_type_data_driven",
+      "name": "Typ C - podejście analityczne z danymi rynkowymi",
+      "conditions": {
+        "triggers": ["competition_comparison", "maintenance_cost", "resale_value"],
+        "disc_type": "C", 
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Present the C-Type with hard data. Show the 60.9% YoY BEV market growth as evidence of a smart, data-driven trend. Provide detailed TCO analysis, leveraging the 30k PLN savings vs. ICE, and frame the purchase as a logical, financially sound investment based on market direction",
+        "script": "Przygotowałem szczegółową analizę rynku i finansów. Rynek BEV wzrósł o 60.9% YoY w Q1 2025 - to trend oparty na danych, nie modzie. Model 3 TCO: 92,250 PLN vs Golf 127,500 PLN przez 5 lat. Matematycznie jasne: 35,250 PLN oszczędności plus 40,000 PLN dotacji.",
+        "objection_handling": "To nie kwestia wiary w technologię - to matematyka. Dane SAMAR, Komisji Europejskiej i NBP jednoznacznie wskazują opłacalność EV.",
+        "facts": [
+          "BEV market growth: +60.9% YoY (Q1 2025 SAMAR)",
+          "94,275 EV w Polsce (+46% YoY, maj 2025)",
+          "Model 3 TCO: 35,250 PLN oszczędności vs Golf",
+          "Ładowanie domowe: 4x tańsze niż publiczne DC",
+          "8-letnia gwarancja baterii: 160,000-192,000 km"
+        ],
+        "persuasion_technique": "Data-driven logic + Authority (official sources)",
+        "next_steps": "Przedstaw pełny arkusz TCO i raporty rynkowe"
+      },
+      "scoring": {
+        "base_score": 70,
+        "modifiers": {
+          "engineer_profession": 12,
+          "financial_analysis_skills": 10,
+          "detail_oriented": 8,
+          "research_intensive": 6
+        }
+      }
+    },
+    {
+      "id": "reliability_concern_s_type",
+      "name": "Obawy niezawodności - typ S (rodzinny)",
+      "conditions": {
+        "triggers": ["reliability_concern", "family_safety"],
+        "disc_type": "S",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Address long-term ownership concerns, emphasize 8-year warranty, safety ratings, and Tesla's reliability record",
+        "script": "Doskonale rozumiem Pana obawy jako odpowiedzialnego ojca rodziny. Tesla oferuje 8-letnią gwarancję na baterię (160,000-192,000 km), 5-gwiazdkowy rating bezpieczeństwa i Mobile Service - serwis przyjeżdża do domu. Dodatkowo aktualizacje software poprawiają samochód automatycznie.",
+        "objection_handling": "Ryzyko awarii baterii po gwarancji rzeczywiście istnieje - może kosztować 110,000 PLN. Ale statystyki pokazują, że Tesla ma jedną z najniższych częstotliwości awarii w branży.",
+        "facts": [
+          "8-letnia gwarancja baterii: 160,000-192,000 km",
+          "5-gwiazdkowy rating bezpieczeństwa NHTSA/Euro NCAP",
+          "Mobile Service - serwis w domu lub biurze",
+          "Aktualizacje OTA poprawiają funkcje zdalnie",
+          "Potencjalny koszt wymiany baterii po gwarancji: 110,000 PLN"
+        ],
+        "persuasion_technique": "Safety first + Honesty about risks + Support",
+        "next_steps": "Zaproś na szczegółową prezentację systemów bezpieczeństwa i Mobile Service"
+      },
+      "scoring": {
+        "base_score": 55,
+        "modifiers": {
+          "has_children": 15,
+          "home_ownership": 8,
+          "stable_employment": 6,
+          "safety_focused": 10
+        }
+      }
+    },
+    {
+      "id": "charging_duration_practical",
+      "name": "Pytania o czas ładowania - praktyczne podejście",
+      "conditions": {
+        "triggers": ["charging_duration", "infrastructure_concern"],
+        "disc_type": "any",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Emphasize home charging economics, show dramatic cost differences and infrastructure growth",
+        "script": "W domu ładuje Pan przez noc jak telefon - 8 godzin daje 400km zasięgu. Na trasie Supercharger: 200km w 15 minut podczas kawy. W Polsce mamy już 10,889 punktów ładowania (+50% rocznie). Koszt domowy: 0.50-0.70 PLN/kWh vs 2.40-3.50 PLN publiczne DC.",
+        "objection_handling": "90% właścicieli EV ładuje w domu. To jak przejście z chodzenia na stacje benzynowe do ładowania w garażu - wygodniej.",
+        "facts": [
+          "Ładowanie domowe: 8h = 400km zasięgu",
+          "Supercharger V3: 200km w 15 minut",
+          "10,889 punktów ładowania w Polsce (+50% YoY)",
+          "Koszt domowy: 0.50-0.70 PLN/kWh",
+          "Koszt publiczny DC: 2.40-3.50 PLN/kWh (4x drożej)"
+        ],
+        "persuasion_technique": "Convenience + Cost comparison + Growth data",
+        "next_steps": "Pokaż mapę Superchargerów i zaproponuj test ładowania"
+      },
+      "scoring": {
+        "base_score": 45,
+        "modifiers": {
+          "has_pv": 12,
+          "home_ownership": 8,
+          "urban_area": 5,
+          "frequent_traveler": 6
+        }
+      }
+    },
+    {
+      "id": "environmental_i_type",
+      "name": "Zainteresowanie ekologią - typ I (społeczny wpływ)",
+      "conditions": {
+        "triggers": ["environmental_interest"],
+        "disc_type": "I",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Connect ecology with social status and influence on others, emphasize Tesla's mission and community impact",
+        "script": "Fantastycznie! Tesla to nie tylko zero emisji lokalnych, ale symbol zmiany świata. Elon Musk zrewolucjonizował branżę dla planety. Jako właściciel Tesla staje się Pan ambasadorem tej misji. Wyobraża Pan sobie reakcje znajomych?",
+        "objection_handling": "Tesla to pełny ekosystem - Gigafactory na 100% energii odnawialnej, Solar Roof, Powerwall. Kompletna wizja przyszłości.",
+        "facts": [
+          "Zero emisji lokalnych podczas jazdy",
+          "Gigafactory Berlin: 100% energia odnawialna", 
+          "Solar Roof + Powerwall = dom energetycznie niezależny",
+          "1 Tesla = 4.6 tony mniej CO2 rocznie vs spalinowy",
+          "Misja: przyspieszenie przejścia na zrównoważony transport"
+        ],
+        "persuasion_technique": "Mission-driven + Social influence + Environmental impact",
+        "next_steps": "Pokaż materiały o Gigafactory i wpływie na środowisko, zaproś do społeczności właścicieli"
+      },
+      "scoring": {
+        "base_score": 65,
+        "modifiers": {
+          "social_media_active": 10,
+          "environmental_profession": 15,
+          "influencer_role": 12,
+          "community_leader": 8
+        }
+      }
+    },
+    {
+      "id": "business_tax_benefits", 
+      "name": "Firmowe korzyści podatkowe",
+      "conditions": {
+        "triggers": ["business_use"],
+        "disc_type": "any",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Highlight business tax advantages for corporate customers, emphasize higher depreciation limits and VAT benefits",
+        "script": "Dla firmy Tesla to podwójna korzyść. Amortyzacja EV: 225,000 PLN vs spalinowy: 150,000 PLN. Koszty eksploatacji: energia vs paliwo to różnica 0.15 PLN/km. Plus 100% odliczenie VAT-u przy użytku mieszanym. Księgowy będzie zachwycony.",
+        "objection_handling": "Ministerstwo Finansów jasno określiło wyższą amortyzację dla EV - to zachęta państwa do elektromobilności biznesowej.",
+        "facts": [
+          "Amortyzacja EV: 225,000 PLN vs ICE: 150,000 PLN",
+          "Oszczędność eksploatacyjna: ~0.15 PLN/km",
+          "VAT 100% odliczalny przy użytku mieszanym",
+          "Brak podatku od środków transportu",
+          "Preferencyjne leasing rates: 4.4-4.9% RRSO"
+        ],
+        "persuasion_technique": "Tax optimization + Financial benefits",
+        "next_steps": "Połącz z księgowym klienta, przygotuj szczegółową kalkulację podatkową"
+      },
+      "scoring": {
+        "base_score": 62,
+        "modifiers": {
+          "business_owner": 18,
+          "tax_optimization_focused": 12,
+          "fleet_decision_maker": 15,
+          "company_car_user": 8
+        }
+      }
+    },
+    {
+      "id": "status_seeking_d_type",
+      "name": "Dążenie do statusu - typ D (dominujący)",
+      "conditions": {
+        "triggers": ["status_seeking", "technology_enthusiast"],
+        "disc_type": "D",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Focus on luxury innovation and executive status positioning, emphasize Tesla as the leader's choice",
+        "script": "Tesla to nie samochód - to statement. Najcenniejsza marka motoryzacyjna świata, symbol przywództwa technologicznego. Model S Plaid: 0-100 w 2.1s - żaden BMW tego nie osiągnie. To wybór liderów branży na całym świecie.",
+        "objection_handling": "Konkurencja kopiuje Tesla od lat. Pan wybiera oryginał czy kopię? Liderzy wybierają Tesla - Tim Cook, Jeff Bezos, cała Dolina Krzemowa.",
+        "facts": [
+          "Tesla - najcenniejsza marka motoryzacyjna świata",
+          "Model S Plaid: 0-100 km/h w 2.1 sekundy",
+          "Autopilot - najbardziej zaawansowany system na rynku",
+          "Supercharger - największa sieć szybkiego ładowania",
+          "15 lat przewagi technologicznej nad konkurencją"
+        ],
+        "persuasion_technique": "Status + Authority + Exclusivity",
+        "next_steps": "Zaproponuj test drive Performance model, pokaż ekskluzywne funkcje"
+      },
+      "scoring": {
+        "base_score": 70,
+        "modifiers": {
+          "c_level": 20,
+          "luxury_buyer": 15,
+          "competitive_personality": 10,
+          "early_adopter": 8
+        }
+      }
+    },
+    {
+      "id": "winter_range_honest",
+      "name": "Szczere podejście do zasięgu zimowego",
+      "conditions": {
+        "triggers": ["winter_range"],
+        "disc_type": "any",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Be honest about winter range reduction but show practical solutions and comparisons",
+        "script": "Szczerze mówiąc, zimą zasięg spada o 20-30% - tak jak spalanie w spalinowych rośnie. Model Y ma 514km WLTP, zimą 350-400km. Plus prekondycjonowanie przez aplikację, pompa ciepła, inteligentne planowanie trasy z ładowaniem.",
+        "objection_handling": "Spalinowe też zużywają więcej zimą. Różnica: Tesla automatycznie planuje ładowanie i przygotowuje baterię.",
+        "facts": [
+          "Model Y: 514km WLTP, zimą realistycznie 350-400km",
+          "Prekondycjonowanie baterii przez aplikację Tesla",
+          "Pompa ciepła zwiększa efektywność zimą",
+          "Navigation automatycznie planuje ładowanie",
+          "Ogrzewanie foteli: 50W vs dmuchawa: 2-3kW"
+        ],
+        "persuasion_technique": "Honesty + Solutions + Practical comparisons",
+        "next_steps": "Zaproponuj zimową jazdę testową lub symulację długiej trasy"
+      },
+      "scoring": {
+        "base_score": 40,
+        "modifiers": {
+          "cold_climate": 8,
+          "long_distance_driver": 6,
+          "practical_mindset": 5,
+          "honesty_appreciator": 8
+        }
+      }
+    },
+    {
+      "id": "extensive_research_high_intent",
+      "name": "Ekstensywne badania - wysokie zainteresowanie",
+      "conditions": {
+        "triggers": ["extensive_research"],
+        "disc_type": "any",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Leverage customer's research depth to position Tesla as the logical choice after thorough analysis",
+        "script": "Widzę, że jest Pan bardzo dokładny w swoich decyzjach - przetestowanie ponad 20 aut to imponujący research! Po tak gruntownej analizie rynku, Tesla prawdopodobnie wyróżniła się czymś szczególnym. Co skłoniło Pana do bliższego przyjrzenia się naszej ofercie?",
+        "objection_handling": "Skoro przetestował Pan tyle aut, rozumie Pan różnice. Tesla oferuje to, czego nie ma żadna inna marka - kompletny ekosystem, nie tylko samochód.",
+        "facts": [
+          "15 lat doświadczenia w produkcji EV",
+          "Największa sieć Superchargerów na świecie",
+          "Jedyna marka z pełną autonomią produkcji baterii",
+          "OTA updates - samochód się ulepsza po zakupie"
+        ],
+        "persuasion_technique": "Expert validation + Differentiation",
+        "next_steps": "Skup się na unikalnych features Tesla, zaproponuj porównanie z ostatnio testowanymi autami"
+      },
+      "scoring": {
+        "base_score": 75,
+        "modifiers": {
+          "comparison_shopper": 10,
+          "detail_oriented": 8,
+          "premium_segment": 12
+        }
+      }
+    },
+    {
+      "id": "battery_replacement_honest",
+      "name": "Szczere podejście do kosztów wymiany baterii",
+      "conditions": {
+        "triggers": ["battery_replacement_concern"],
+        "disc_type": "any",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Address battery replacement concern honestly while emphasizing warranty and statistical reality",
+        "script": "Szczerze mówiąc, wymiana baterii po gwarancji może kosztować około 110,000 PLN. Ale statystyki pokazują, że 95% baterii Tesla działą bez problemów przez całą żywotność samochodu. Dodatkowo, do końca 8-letniej gwarancji (160-192 tys. km) wszystko pokrywa Tesla.",
+        "objection_handling": "To jak obawiać się awarii silnika w spalinowym po 10 latach. Większość właścicieli nigdy nie potrzebuje wymiany baterii.",
+        "facts": [
+          "8-letnia gwarancja baterii: 160,000-192,000 km",
+          "95% baterii Tesla działa bez problemów przez cały okres życia",
+          "Statystyki degradacji: <10% po 300,000 km",
+          "Koszt wymiany spada co roku dzięki technologii"
+        ],
+        "persuasion_technique": "Honesty + Statistical reassurance",
+        "next_steps": "Pokaż statystyki degradacji baterii, porównaj z kosztami napraw spalinowych"
+      },
+      "scoring": {
+        "base_score": 35,
+        "modifiers": {
+          "long_term_planning": 8,
+          "risk_conscious": 5,
+          "financial_analysis": 6
+        }
+      }
+    },
+    {
+      "id": "no_home_charging_alternative",
+      "name": "Brak ładowania domowego - alternatywne rozwiązania",
+      "conditions": {
+        "triggers": ["charging_at_home_impossible"],
+        "disc_type": "any",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Acknowledge limitation but present alternative solutions and calculate realistic costs",
+        "script": "Rozumiem - to rzeczywiście wyzwanie. Bez ładowania domowego koszty będą wyższe. Publiczne DC kosztuje 2.40-3.50 PLN/kWh vs 0.60 PLN domowe. Ale sprawdźmy alternatywy: ładowanie w pracy, galerie handlowe, hotele często oferują darmowe ładowanie.",
+        "objection_handling": "Nawet z publicznym ładowaniem, łączny TCO może być konkurencyjny vs spalinowy, szczególnie z dotacją 40k PLN.",
+        "facts": [
+          "Publiczne DC: 2.40-3.50 PLN/kWh vs domowe 0.60 PLN/kWh",
+          "10,889 punktów ładowania w Polsce (+50% YoY)",
+          "Darmowe ładowanie: galerie, hotele, niektóre pracodawcy",
+          "Mobile Connector - ładowanie z gniazdka 230V (wolne ale możliwe)"
+        ],
+        "persuasion_technique": "Problem solving + Cost mitigation",
+        "next_steps": "Sprawdź mapy ładowania w okolicy klienta, policz realny TCO z publicznym ładowaniem"
+      },
+      "scoring": {
+        "base_score": 25,
+        "modifiers": {
+          "urban_area": 8,
+          "workplace_charging": 15,
+          "frequent_traveler": 5
+        }
+      }
+    },
+    {
+      "id": "naszauto_aware_high_potential",
+      "name": "Świadomość programu NaszEauto - wysokie szanse",
+      "conditions": {
+        "triggers": ["naszauto_program_interest"],
+        "disc_type": "any",
+        "tone": "any"
+      },
+      "response": {
+        "strategy": "Leverage customer's awareness of subsidy program to accelerate decision with urgency",
+        "script": "Doskonale! Słyszenie o NaszEauto oznacza, że jest Pan na bieżąco z rynkiem EV. 40,000 PLN dotacji z budżetu 1.6 mld PLN - to ograniczona pula. Razem z oszczędnościami TCO (30k PLN przez 5 lat) daje to 70,000 PLN korzyści vs spalinowy. Kiedy planuje Pan złożyć wniosek?",
+        "objection_handling": "Program ma ograniczony budżet i rosnące zainteresowanie. Każdy miesiąc zwłoki to ryzyko wyczerpania dotacji.",
+        "facts": [
+          "NaszEauto: 40,000 PLN dotacji (budżet 1.6 mld PLN)",
+          "TCO Model 3: 30,000 PLN oszczędności vs Golf przez 5 lat",
+          "Łączna korzyść: 70,000 PLN",
+          "Wniosek można złożyć jeszcze przed dostawą auta"
+        ],
+        "persuasion_technique": "Scarcity + Financial advantage + Urgency",
+        "next_steps": "Pomóż w kalkulacji dokładnych korzyści, zaproponuj pomoc w złożeniu wniosku"
+      },
+      "scoring": {
+        "base_score": 65,
+        "modifiers": {
+          "subsidy_eligible": 15,
+          "financial_motivated": 10,
+          "early_adopter": 8
+        }
+      }
+    }
+  ]
+}

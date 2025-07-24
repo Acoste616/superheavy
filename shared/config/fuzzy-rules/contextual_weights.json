@@ -1,0 +1,5 @@
+{
+  "early_conversation": { "uncertainty": 1.2, "exploration": 1.1 },
+  "mid_conversation": { "engagement": 1.0, "interest": 1.0 },
+  "late_conversation": { "decision": 1.3, "objection": 1.2 }
+}

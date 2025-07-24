@@ -7,7 +7,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const FuzzyInferenceEngine = require('../services/fuzzy-inference-service/engine.js');
 const AdvancedTriggersDatabase = require('./AdvancedTriggersDatabase');
-const TransparencyEngine = require('./TransparencyEngine.js');
+const TransparencyEngine = require('./transparencyengine.js');
 const AnalysisHistoryManager = require('./AnalysisHistoryManager');
 const APIManager = require('./APIManager');
 const DataValidator = require('./DataValidator');
@@ -209,6 +209,10 @@ class CustomerDecoderEngine {
             decision_maker_present: 0.10     // Weight 7 - Process advancement
         };
         
+        // Tesla Archetypes System
+        this.teslaArchetypes = null;
+        this.archetypeResponses = null;
+        
         // Polish market segments from waznedane.csv
         this.polishSegments = {
             'tech_innovators': { percentage: 28, income: 180000, conversion: 0.32, models: ['Model S', 'Cybertruck'] },
@@ -255,6 +259,23 @@ class CustomerDecoderEngine {
                     console.warn(`⚠️ Failed to load ${key} from ${filePath}:`, error.message);
                     this.data[key] = {};
                 }
+            }
+            
+            // Load Tesla Archetypes System
+            try {
+                const archetypesPath = path.join(__dirname, '..', 'data/tesla_archetypes.json');
+                const archetypesContent = await fs.readFile(archetypesPath, 'utf8');
+                this.teslaArchetypes = JSON.parse(archetypesContent);
+                console.log('✅ Tesla Archetypes loaded successfully');
+                
+                const responsesPath = path.join(__dirname, '..', 'data/archetype_responses.json');
+                const responsesContent = await fs.readFile(responsesPath, 'utf8');
+                this.archetypeResponses = JSON.parse(responsesContent);
+                console.log('✅ Archetype Responses loaded successfully');
+            } catch (error) {
+                console.warn('⚠️ Tesla Archetypes system not found:', error.message);
+                this.teslaArchetypes = { archetypes: {}, archetype_detection_rules: {} };
+                this.archetypeResponses = { responses: {}, response_selection_rules: {} };
             }
             
             // Load market data 2025
@@ -356,6 +377,23 @@ class CustomerDecoderEngine {
                 triggerAnalysis,
                 coreAnalysis.personality.dominant_type || 'S'
             );
+            
+            // Tesla Archetypes Detection and Response Generation
+            const teslaArchetypeAnalysis = this.detectTeslaArchetype(
+                coreAnalysis.personality,
+                cleanInputData.selectedTriggers || [],
+                coreAnalysis.demographics.data || {}
+            );
+            
+            const archetypeResponse = this.generateArchetypeResponse(
+                teslaArchetypeAnalysis.archetype,
+                coreAnalysis.personality,
+                cleanInputData.selectedTriggers || [],
+                {
+                    segment: segmentAnalysis.segment,
+                    demographics: coreAnalysis.demographics.data
+                }
+            );
 
             const analysis = {
                 timestamp: new Date().toISOString(),
@@ -369,6 +407,10 @@ class CustomerDecoderEngine {
                 segment: {
                     analysis: segmentAnalysis,
                     strategy: segmentStrategy
+                },
+                tesla_archetype: {
+                    analysis: teslaArchetypeAnalysis,
+                    response: archetypeResponse
                 },
                 scores: {},
                 recommendations: {},
@@ -2285,9 +2327,12 @@ class CustomerDecoderEngine {
         return compliance;
     }
 
-    generatePersonalizedPhrases(personality) {
+    generatePersonalizedPhrases(personality, teslaArchetype = null, triggers = []) {
         if (!personality) return [];
         
+        const phrases = [];
+        
+        // Get base DISC phrases
         const cheatsheet = this.data.cheatsheet?.profiles || {};
         const discType = personality.DISC;
         
@@ -2300,7 +2345,40 @@ class CustomerDecoderEngine {
         };
         
         const profileName = discMapping[discType];
-        return cheatsheet[profileName]?.phrases || [];
+        const basePhrases = cheatsheet[profileName]?.phrases || [];
+        phrases.push(...basePhrases);
+        
+        // Add Tesla Archetype-specific phrases if available
+        if (teslaArchetype && this.archetypeResponses?.archetypes?.[teslaArchetype]) {
+            const archetypeData = this.archetypeResponses.archetypes[teslaArchetype];
+            
+            // Add opening lines
+            if (archetypeData.opening_lines) {
+                phrases.push(...archetypeData.opening_lines);
+            }
+            
+            // Add argument stack phrases based on trigger intensity
+            const triggerCount = triggers.length;
+            let argumentStack = 'soft';
+            
+            if (triggerCount >= 5) {
+                argumentStack = 'strong';
+            } else if (triggerCount >= 3) {
+                argumentStack = 'medium';
+            }
+            
+            if (archetypeData.argument_stacks?.[argumentStack]) {
+                phrases.push(...archetypeData.argument_stacks[argumentStack]);
+            }
+            
+            // Add ROI hooks if available
+            if (archetypeData.roi_hooks) {
+                phrases.push(...archetypeData.roi_hooks);
+            }
+        }
+        
+        // Remove duplicates and return
+        return [...new Set(phrases)];
     }
 
     getKeywords(personality) {
@@ -2871,6 +2949,395 @@ class CustomerDecoderEngine {
             score: Math.min(100, Math.max(0, score)),
             factors: ['service_expectations', 'communication', 'delivery', 'personalization']
         };
+    }
+    
+    /**
+     * Tesla Archetypes Detection System
+     * Detects customer archetype based on DISC profile and triggers
+     */
+    detectTeslaArchetype(discProfile, triggers, demographics) {
+        console.log('🔍 Tesla Archetype Detection:', {
+            discProfile,
+            triggers: triggers?.map(t => t.text || t),
+            demographics,
+            hasArchetypes: !!this.teslaArchetypes?.archetypes
+        });
+        
+        if (!this.teslaArchetypes || !this.teslaArchetypes.archetypes) {
+            return { archetype: 'general', confidence: 0, reasoning: 'Archetypes system not loaded' };
+        }
+        
+        const archetypeScores = {};
+        const detectionRules = this.teslaArchetypes.archetype_detection_rules;
+        
+        // Score each archetype based on DISC alignment and trigger patterns
+        for (const [archetypeKey, archetypeData] of Object.entries(this.teslaArchetypes.archetypes)) {
+            let score = 0;
+            let reasoning = [];
+            
+            // DISC Profile Matching (40% weight)
+            const discScore = this.calculateDiscAlignment(discProfile, archetypeData.disc_mix);
+            score += discScore * 0.4;
+            if (discScore > 0.7) reasoning.push(`Strong DISC alignment (${archetypeData.disc_mix})`);
+            
+            // Trigger Pattern Matching (35% weight)
+            const triggerScore = this.calculateTriggerAlignment(triggers, archetypeData.triggers);
+            score += triggerScore * 0.35;
+            if (triggerScore > 0.6) reasoning.push(`Matching trigger patterns`);
+            
+            // Demographics Alignment (15% weight)
+            const demoScore = this.calculateDemographicsAlignment(demographics, archetypeData);
+            score += demoScore * 0.15;
+            if (demoScore > 0.5) reasoning.push(`Demographics fit`);
+            
+            // Market Scope Alignment (10% weight)
+            const marketScore = this.calculateMarketScopeAlignment(demographics, archetypeData.market_scope);
+            score += marketScore * 0.1;
+            
+            archetypeScores[archetypeKey] = {
+                score: Math.round(score * 100),
+                reasoning: reasoning,
+                archetype_data: archetypeData
+            };
+        }
+        
+        // Find best matching archetype
+        const bestMatch = Object.entries(archetypeScores)
+            .sort(([,a], [,b]) => b.score - a.score)[0];
+        
+        if (!bestMatch || bestMatch[1].score < 50) {
+            return {
+                archetype: 'general',
+                confidence: 0,
+                reasoning: 'No strong archetype match found',
+                all_scores: archetypeScores
+            };
+        }
+        
+        return {
+            archetype: bestMatch[0],
+            confidence: bestMatch[1].score,
+            reasoning: bestMatch[1].reasoning.join(', '),
+            archetype_data: bestMatch[1].archetype_data,
+            all_scores: archetypeScores
+        };
+    }
+    
+    /**
+     * Calculate DISC profile alignment with archetype
+     */
+    calculateDiscAlignment(discProfile, archetypeDiscMix) {
+        if (!discProfile || !archetypeDiscMix) return 0;
+        
+        const primaryDisc = discProfile.primary || discProfile.type || discProfile.DISC;
+        const secondaryDisc = discProfile.secondary;
+        
+        // Parse archetype DISC mix (e.g., "S+I", "D+C")
+        const [archetypePrimary, archetypeSecondary] = archetypeDiscMix.split('+');
+        
+        let alignment = 0;
+        
+        // Primary DISC match (70% weight)
+        if (primaryDisc === archetypePrimary) {
+            alignment += 0.7;
+        }
+        
+        // Secondary DISC match (30% weight)
+        if (secondaryDisc === archetypeSecondary) {
+            alignment += 0.3;
+        } else if (primaryDisc === archetypeSecondary) {
+            alignment += 0.15; // Partial match
+        }
+        
+        // If no secondary DISC, give partial credit for primary match
+        if (!secondaryDisc && primaryDisc === archetypePrimary) {
+            alignment += 0.15;
+        }
+        
+        return Math.min(1, alignment);
+    }
+    
+    /**
+     * Calculate trigger pattern alignment
+     */
+    calculateTriggerAlignment(customerTriggers, archetypeTriggers) {
+        if (!customerTriggers || !archetypeTriggers || customerTriggers.length === 0) {
+            return 0;
+        }
+        
+        // Extract text from trigger objects if needed
+        const customerTriggerTexts = customerTriggers.map(trigger => 
+            typeof trigger === 'string' ? trigger : trigger.text || trigger.name || ''
+        );
+        
+        const matches = customerTriggerTexts.filter(triggerText => 
+            archetypeTriggers.some(archTrigger => {
+                const lowerTrigger = triggerText.toLowerCase();
+                const lowerArchTrigger = archTrigger.toLowerCase();
+                return lowerTrigger.includes(lowerArchTrigger) || 
+                       lowerArchTrigger.includes(lowerTrigger) ||
+                       this.checkTriggerSemantic(lowerTrigger, lowerArchTrigger);
+            })
+        );
+        
+        return matches.length / Math.max(customerTriggerTexts.length, archetypeTriggers.length);
+    }
+    
+    /**
+     * Check semantic similarity between triggers
+     */
+    checkTriggerSemantic(trigger1, trigger2) {
+        const semanticMappings = {
+            'środowisko': ['environmental', 'eco', 'green', 'planet'],
+            'dzieci': ['family', 'children', 'kids', 'safety'],
+            'technologia': ['tech', 'innovation', 'autopilot', 'fsd'],
+            'oszczędności': ['savings', 'cost', 'financial', 'money'],
+            'bezpieczeństwo': ['safety', 'protection', 'secure'],
+            'wydajność': ['performance', 'speed', 'power'],
+            'przyszłość': ['future', 'innovation', 'advanced']
+        };
+        
+        for (const [key, synonyms] of Object.entries(semanticMappings)) {
+            if ((trigger1.includes(key) || synonyms.some(s => trigger1.includes(s))) &&
+                (trigger2.includes(key) || synonyms.some(s => trigger2.includes(s)))) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Calculate demographics alignment
+     */
+    calculateDemographicsAlignment(demographics, archetypeData) {
+        if (!demographics) return 0.5; // Neutral if no demographics
+        
+        let score = 0.5; // Base score
+        
+        // Age-based alignment
+        if (demographics.age) {
+            if (archetypeData.name.includes('Family') && demographics.hasChildren) score += 0.2;
+            if (archetypeData.name.includes('Executive') && demographics.age >= 35) score += 0.2;
+            if (archetypeData.name.includes('Young') && demographics.age <= 35) score += 0.2;
+        }
+        
+        // Income-based alignment
+        if (demographics.income) {
+            if (archetypeData.name.includes('Budget') && demographics.income < 100000) score += 0.15;
+            if (archetypeData.name.includes('Luxury') && demographics.income > 150000) score += 0.15;
+        }
+        
+        return Math.min(1, score);
+    }
+    
+    /**
+     * Calculate market scope alignment
+     */
+    calculateMarketScopeAlignment(demographics, marketScope) {
+        // Simple market scope matching - can be enhanced
+        if (!demographics || !marketScope) return 0.5;
+        
+        if (marketScope.includes('family') && demographics.hasChildren) return 1;
+        if (marketScope.includes('executive') && demographics.income > 120000) return 1;
+        if (marketScope.includes('budget') && demographics.income < 100000) return 1;
+        
+        return 0.5;
+    }
+    
+    /**
+     * Generate personalized response based on detected archetype
+     */
+    generateArchetypeResponse(archetype, discProfile, triggers, context = {}) {
+        if (!this.archetypeResponses || !this.archetypeResponses.responses[archetype]) {
+            return this.generateFallbackResponse(discProfile, triggers);
+        }
+        
+        const archetypeData = this.archetypeResponses.responses[archetype];
+        const selectionRules = this.archetypeResponses.response_selection_rules;
+        
+        // Select appropriate argument stack based on DISC
+        let argumentLevel = 'medium'; // Default
+        if (discProfile.primary === 'D') argumentLevel = 'strong';
+        else if (discProfile.primary === 'S') argumentLevel = 'soft';
+        else if (discProfile.primary === 'C') argumentLevel = 'medium';
+        
+        // Select opening line
+        const openingLine = this.selectRandomFromArray(archetypeData.opening_lines);
+        
+        // Select arguments based on triggers and DISC
+        const keyArguments = this.selectRelevantArguments(
+            archetypeData.argument_stacks[argumentLevel],
+            triggers
+        );
+        
+        // Handle objections if present
+        const objectionHandling = this.selectObjectionHandling(
+            archetypeData.objection_handling,
+            triggers
+        );
+        
+        // Select social proof
+        const socialProof = this.selectRandomFromArray(archetypeData.social_proof || []);
+        
+        // Select ROI hooks
+        const roiHooks = this.selectRelevantROIHooks(
+            archetypeData.roi_hooks || [],
+            triggers
+        );
+        
+        return {
+            archetype: archetype,
+            opening_line: openingLine,
+            key_arguments: keyArguments,
+            objection_handling: objectionHandling,
+            social_proof: socialProof,
+            roi_hooks: roiHooks,
+            next_questions: archetypeData.next_questions || [],
+            emotional_triggers: archetypeData.emotional_triggers || [],
+            communication_style: this.getArchetypeCommunicationStyle(archetype, discProfile)
+        };
+    }
+    
+    /**
+     * Select relevant arguments based on customer triggers
+     */
+    selectRelevantArguments(argumentStack, triggers) {
+        if (!argumentStack || !triggers) return [];
+        
+        const relevantArgs = [];
+        
+        // Match arguments to customer triggers
+        for (const [key, argument] of Object.entries(argumentStack)) {
+            const isRelevant = triggers.some(trigger => 
+                key.includes(trigger) || trigger.includes(key) ||
+                argument.toLowerCase().includes(trigger.toLowerCase())
+            );
+            
+            if (isRelevant) {
+                relevantArgs.push({ key, argument });
+            }
+        }
+        
+        // If no specific matches, return top 3 arguments
+        if (relevantArgs.length === 0) {
+            return Object.entries(argumentStack)
+                .slice(0, 3)
+                .map(([key, argument]) => ({ key, argument }));
+        }
+        
+        return relevantArgs.slice(0, 3); // Limit to top 3
+    }
+    
+    /**
+     * Select objection handling based on triggers
+     */
+    selectObjectionHandling(objectionHandling, triggers) {
+        if (!objectionHandling || !triggers) return null;
+        
+        // Find matching objections in customer triggers
+        for (const trigger of triggers) {
+            for (const [objectionKey, objectionData] of Object.entries(objectionHandling)) {
+                if (trigger.includes(objectionKey) || objectionKey.includes(trigger)) {
+                    return {
+                        objection: objectionKey,
+                        response: objectionData.response,
+                        proof_points: objectionData.proof_points || []
+                    };
+                }
+            }
+        }
+        
+        return null;
+    }
+    
+    /**
+     * Select relevant ROI hooks based on triggers
+     */
+    selectRelevantROIHooks(roiHooks, triggers) {
+        if (!roiHooks || !triggers) return [];
+        
+        const relevantHooks = roiHooks.filter(hook => 
+            triggers.some(trigger => 
+                hook.toLowerCase().includes(trigger.toLowerCase()) ||
+                trigger.toLowerCase().includes('cost') ||
+                trigger.toLowerCase().includes('price') ||
+                trigger.toLowerCase().includes('saving')
+            )
+        );
+        
+        return relevantHooks.length > 0 ? relevantHooks.slice(0, 3) : roiHooks.slice(0, 2);
+    }
+    
+    /**
+     * Get communication style for archetype and DISC combination
+     */
+    getArchetypeCommunicationStyle(archetype, discProfile) {
+        const baseStyle = {
+            tone: 'professional',
+            pace: 'medium',
+            detail_level: 'medium',
+            emotional_appeal: 'medium'
+        };
+        
+        // Adjust based on DISC
+        switch (discProfile.primary) {
+            case 'D':
+                baseStyle.tone = 'direct';
+                baseStyle.pace = 'fast';
+                baseStyle.detail_level = 'low';
+                baseStyle.emotional_appeal = 'low';
+                break;
+            case 'I':
+                baseStyle.tone = 'enthusiastic';
+                baseStyle.pace = 'fast';
+                baseStyle.detail_level = 'medium';
+                baseStyle.emotional_appeal = 'high';
+                break;
+            case 'S':
+                baseStyle.tone = 'supportive';
+                baseStyle.pace = 'slow';
+                baseStyle.detail_level = 'medium';
+                baseStyle.emotional_appeal = 'medium';
+                break;
+            case 'C':
+                baseStyle.tone = 'analytical';
+                baseStyle.pace = 'slow';
+                baseStyle.detail_level = 'high';
+                baseStyle.emotional_appeal = 'low';
+                break;
+        }
+        
+        return baseStyle;
+    }
+    
+    /**
+     * Generate fallback response when archetype system is not available
+     */
+    generateFallbackResponse(discProfile, triggers) {
+        return {
+            archetype: 'general',
+            opening_line: 'Tesla oferuje najlepszą kombinację technologii, wydajności i wartości na rynku.',
+            key_arguments: [
+                { key: 'technology', argument: 'Najnowsza technologia EV na świecie' },
+                { key: 'performance', argument: 'Niezrównana wydajność i zasięg' },
+                { key: 'value', argument: 'Najlepszy stosunek jakości do ceny' }
+            ],
+            objection_handling: null,
+            social_proof: 'Ponad 5 milionów zadowolonych klientów na całym świecie',
+            roi_hooks: ['Oszczędności na paliwie', 'Niskie koszty serwisu'],
+            next_questions: ['Jakie są Twoje główne potrzeby transportowe?'],
+            emotional_triggers: ['innovation', 'quality', 'savings'],
+            communication_style: this.getArchetypeCommunicationStyle('general', discProfile)
+        };
+    }
+    
+    /**
+     * Utility function to select random item from array
+     */
+    selectRandomFromArray(array) {
+        if (!array || array.length === 0) return null;
+        return array[Math.floor(Math.random() * array.length)];
     }
 }
 

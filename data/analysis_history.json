@@ -19411,5 +19411,2755 @@
     "status": "active",
     "reviewed": false,
     "starred": false
+  },
+  {
+    "number": 54,
+    "timestamp": "2025-07-24T07:01:53.791Z",
+    "session_id": "session_1753340513791_9cogfjte6",
+    "input_data": {
+      "selected_triggers": [
+        "Nie stać mnie na takie raty",
+        "Jak działa autopilot? Czy to bezpieczne?",
+        "Może lepiej VW ID.4 lub BMW iX?",
+        "To moja pierwsza Tesla / pierwszy EV",
+        "Mamy panele fotowoltaiczne w domu",
+        "To ma być nasze główne auto",
+        "Infrastruktura nie jest jeszcze gotowa"
+      ],
+      "tone": "entuzjastyczny",
+      "demographics": {
+        "age": "35-45",
+        "housingType": "",
+        "hasPV": "",
+        "region": "slaskie",
+        "relationshipStatus": "partner",
+        "hasChildren": "teen",
+        "teslaExperience": "researching",
+        "carRole": "primary"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": {
+          "id": "ANALYTICAL_SKEPTIC",
+          "name": "Inżynier Analityczny",
+          "DISC": "C",
+          "category": "data_driven",
+          "demographics": {
+            "age_range": "35-55",
+            "income_pln": "12000-30000",
+            "family_status": "varied",
+            "location": "urban_suburban"
+          },
+          "psychological_profile": {
+            "core_values": [
+              "precision",
+              "efficiency",
+              "logical_decisions",
+              "technical_excellence"
+            ],
+            "motivations": [
+              "Optimal ROI and TCO analysis",
+              "Technical superiority",
+              "Energy efficiency metrics",
+              "Data-driven decision making"
+            ],
+            "fears_and_concerns": [
+              "Niewystarczające dane techniczne",
+              "Przepłacanie za marketing",
+              "Niesprawdzona długoterminowa niezawodność",
+              "Uzależnienie od dostawcy"
+            ],
+            "decision_making_style": "analityczny i dokładny",
+            "decision_speed": "bardzo wolna",
+            "trust_factors": [
+              "niezależne dane",
+              "specyfikacje techniczne",
+              "analiza porównawcza",
+              "recenzje ekspertów"
+            ]
+          },
+          "communication_preferences": {
+            "style": "Techniczny i oparty na faktach",
+            "key_language": [
+              "dane",
+              "analiza",
+              "efektywność",
+              "porównanie",
+              "specyfikacja"
+            ],
+            "avoid_language": [
+              "emocje",
+              "uczucia",
+              "presja",
+              "ograniczona_oferta"
+            ],
+            "preferred_media": [
+              "dokumenty techniczne",
+              "wykresy porównawcze",
+              "filmy inżynierskie",
+              "białe księgi"
+            ],
+            "meeting_preference": "głębokie zagłębienie techniczne"
+          },
+          "trigger_sensitivity": {
+            "high_positive": [
+              "wyższość techniczna",
+              "dane efektywności",
+              "optymalizacja kosztów"
+            ],
+            "high_negative": [
+              "presja marketingowa",
+              "apele emocjonalne",
+              "pośpieszne decyzje"
+            ],
+            "conversion_accelerators": [
+              "techniczny test drive",
+              "konsultacja inżynieryjna",
+              "szczegółowa analiza"
+            ]
+          },
+          "sales_approach": {
+            "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+            "key_messages": [
+              "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+              "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+              "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+            ],
+            "proof_points": [
+              "specyfikacje inżynierskie",
+              "oceny efektywności",
+              "kalkulacje TCO"
+            ],
+            "closing_technique": "logiczny wniosek oparty na danych"
+          }
+        },
+        "confidence": 0.4,
+        "autoDetected": true,
+        "fallback_used": true,
+        "alternatives": [
+          {
+            "id": "FAMILIA_SAVER",
+            "name": "Ojciec Rodziny Oszczędny",
+            "DISC": "S",
+            "category": "family_oriented",
+            "demographics": {
+              "age_range": "35-50",
+              "income_pln": "8000-15000",
+              "family_status": "married_with_children",
+              "location": "suburban"
+            },
+            "psychological_profile": {
+              "core_values": [
+                "safety",
+                "security",
+                "family_wellbeing",
+                "long_term_stability"
+              ],
+              "motivations": [
+                "Lower monthly expenses",
+                "Secure family transportation",
+                "Environmental responsibility for children's future",
+                "Reliable technology"
+              ],
+              "fears_and_concerns": [
+                "High upfront costs affecting family budget",
+                "Technology failure risks",
+                "Insufficient charging infrastructure",
+                "Unknown long-term costs"
+              ],
+              "decision_making_style": "thorough_research",
+              "decision_speed": "slow",
+              "trust_factors": [
+                "warranties",
+                "testimonials",
+                "official_data",
+                "family_recommendations"
+              ]
+            },
+            "communication_preferences": {
+              "style": "Patient and detailed",
+              "key_language": [
+                "family",
+                "bezpieczeństwo",
+                "oszczędności",
+                "gwarancja",
+                "niezawodność"
+              ],
+              "avoid_language": [
+                "ryzyko",
+                "eksperyment",
+                "nowość",
+                "presja_czasowa"
+              ],
+              "preferred_media": [
+                "detailed_brochures",
+                "family_testimonials",
+                "safety_videos"
+              ],
+              "meeting_preference": "family_consultation"
+            },
+            "trigger_sensitivity": {
+              "high_positive": [
+                "family_safety",
+                "long_term_savings",
+                "environmental_legacy"
+              ],
+              "high_negative": [
+                "high_upfront_cost",
+                "technology_complexity",
+                "charging_anxiety"
+              ],
+              "conversion_accelerators": [
+                "warranty_extension",
+                "family_discount",
+                "referral_program"
+              ]
+            },
+            "sales_approach": {
+              "primary_strategy": "Safety-first with TCO analysis",
+              "key_messages": [
+                "Tesla has the highest safety ratings - 5 stars across all categories",
+                "Home charging saves your family 30,000 PLN over 5 years",
+                "8-year battery warranty provides long-term peace of mind"
+              ],
+              "proof_points": [
+                "Euro NCAP ratings",
+                "TCO calculator",
+                "warranty terms"
+              ],
+              "closing_technique": "family_consensus_building"
+            }
+          },
+          {
+            "id": "SOCIAL_TRENDSETTER",
+            "name": "Młody Influencer Technologiczny",
+            "DISC": "I",
+            "category": "social_status",
+            "demographics": {
+              "age_range": "25-35",
+              "income_pln": "10000-25000",
+              "family_status": "single_or_young_couple",
+              "location": "urban"
+            },
+            "psychological_profile": {
+              "core_values": [
+                "innovation",
+                "social_recognition",
+                "environmental_impact",
+                "lifestyle_enhancement"
+              ],
+              "motivations": [
+                "Being first with latest technology",
+                "Social media content opportunities",
+                "Environmental statement",
+                "Unique driving experience"
+              ],
+              "fears_and_concerns": [
+                "Przegapienie nowszych modeli",
+                "Brak atrakcyjności na Instagramie",
+                "Ocena ze strony znajomych",
+                "Szybkie dezaktualizowanie się technologii"
+              ],
+              "decision_making_style": "emocjonalny",
+              "decision_speed": "szybka",
+              "trust_factors": [
+                "rekomendacje znajomych",
+                "endorsement influencerów",
+                "atrakcyjność wizualna",
+                "specyfikacje techniczne"
+              ]
+            },
+            "communication_preferences": {
+              "style": "Entuzjastyczny i wizualny",
+              "key_language": [
+                "przyszłość",
+                "innowacja",
+                "wyjątkowy",
+                "społeczność",
+                "trendy"
+              ],
+              "avoid_language": [
+                "tradycyjny",
+                "standardowy",
+                "powszechny",
+                "analiza_długoterminowa"
+              ],
+              "preferred_media": [
+                "treści video",
+                "prezentacje interaktywne",
+                "dowody społeczne",
+                "recenzje influencerów"
+              ],
+              "meeting_preference": "prezentacja dynamiczna"
+            },
+            "trigger_sensitivity": {
+              "high_positive": [
+                "najnowsza technologia",
+                "status społeczny",
+                "aktywizm ekologiczny"
+              ],
+              "high_negative": [
+                "stawanie się mainstreamem",
+                "skomplikowana własność",
+                "opóźniona gratyfikacja"
+              ],
+              "conversion_accelerators": [
+                "ekskluzywny dostęp",
+                "możliwości social media",
+                "pokazy technologiczne"
+              ]
+            },
+            "sales_approach": {
+              "primary_strategy": "Pokaz innowacyjności z dowodem społecznym",
+              "key_messages": [
+                "Tesla przewodzi rewolucji motoryzacyjnej - bądź częścią przyszłości",
+                "Dołącz do społeczności myślących przyszłościowo",
+                "Twoja Tesla będzie przyciągać uwagę i wywoływać rozmowy"
+              ],
+              "proof_points": [
+                "aktualizacje OTA",
+                "wydarzenia społeczności",
+                "właściciele celebryci"
+              ],
+              "closing_technique": "ekskluzywność ograniczona w czasie"
+            }
+          }
+        ]
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 29,
+      "confidence": 0.5800000000000001,
+      "dominant_triggers": [
+        "Nie stać mnie na takie raty",
+        "Jak działa autopilot? Czy to bezpieczne?",
+        "Może lepiej VW ID.4 lub BMW iX?",
+        "To moja pierwsza Tesla / pierwszy EV",
+        "Mamy panele fotowoltaiczne w domu"
+      ],
+      "recommendations": {
+        "language": {
+          "keywords": [],
+          "avoidWords": [],
+          "phrases": []
+        },
+        "objectionHandling": [
+          {
+            "objection": "Price is too high",
+            "rebuttal": "Let's talk about the total cost of ownership..."
+          }
+        ],
+        "nextSteps": [
+          "Send a follow-up email"
+        ],
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 55,
+    "timestamp": "2025-07-24T07:56:24.354Z",
+    "session_id": "session_1753343784354_z66sj90db",
+    "input_data": {
+      "selected_triggers": [
+        "Ta cena to jednak spory wydatek",
+        "A jak to działa zimą przy mrozie?",
+        "Czy to nie będzie zbyt skomplikowane w obsłudze?",
+        "Mamy panele fotowoltaiczne w domu",
+        "Jestem zadowolony z mojego obecnego auta"
+      ],
+      "tone": "entuzjastyczny",
+      "demographics": {
+        "age": "45-55",
+        "housingType": "dom",
+        "hasPV": "true",
+        "region": "slaskie",
+        "relationshipStatus": "",
+        "hasChildren": "young",
+        "teslaExperience": "",
+        "carRole": ""
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": {
+          "id": "FAMILIA_SAVER",
+          "name": "Ojciec Rodziny Oszczędny",
+          "DISC": "S",
+          "category": "family_oriented",
+          "demographics": {
+            "age_range": "35-50",
+            "income_pln": "8000-15000",
+            "family_status": "married_with_children",
+            "location": "suburban"
+          },
+          "psychological_profile": {
+            "core_values": [
+              "safety",
+              "security",
+              "family_wellbeing",
+              "long_term_stability"
+            ],
+            "motivations": [
+              "Lower monthly expenses",
+              "Secure family transportation",
+              "Environmental responsibility for children's future",
+              "Reliable technology"
+            ],
+            "fears_and_concerns": [
+              "High upfront costs affecting family budget",
+              "Technology failure risks",
+              "Insufficient charging infrastructure",
+              "Unknown long-term costs"
+            ],
+            "decision_making_style": "thorough_research",
+            "decision_speed": "slow",
+            "trust_factors": [
+              "warranties",
+              "testimonials",
+              "official_data",
+              "family_recommendations"
+            ]
+          },
+          "communication_preferences": {
+            "style": "Patient and detailed",
+            "key_language": [
+              "family",
+              "bezpieczeństwo",
+              "oszczędności",
+              "gwarancja",
+              "niezawodność"
+            ],
+            "avoid_language": [
+              "ryzyko",
+              "eksperyment",
+              "nowość",
+              "presja_czasowa"
+            ],
+            "preferred_media": [
+              "detailed_brochures",
+              "family_testimonials",
+              "safety_videos"
+            ],
+            "meeting_preference": "family_consultation"
+          },
+          "trigger_sensitivity": {
+            "high_positive": [
+              "family_safety",
+              "long_term_savings",
+              "environmental_legacy"
+            ],
+            "high_negative": [
+              "high_upfront_cost",
+              "technology_complexity",
+              "charging_anxiety"
+            ],
+            "conversion_accelerators": [
+              "warranty_extension",
+              "family_discount",
+              "referral_program"
+            ]
+          },
+          "sales_approach": {
+            "primary_strategy": "Safety-first with TCO analysis",
+            "key_messages": [
+              "Tesla has the highest safety ratings - 5 stars across all categories",
+              "Home charging saves your family 30,000 PLN over 5 years",
+              "8-year battery warranty provides long-term peace of mind"
+            ],
+            "proof_points": [
+              "Euro NCAP ratings",
+              "TCO calculator",
+              "warranty terms"
+            ],
+            "closing_technique": "family_consensus_building"
+          }
+        },
+        "confidence": 0.4,
+        "autoDetected": true,
+        "fallback_used": true,
+        "alternatives": [
+          {
+            "id": "SOCIAL_TRENDSETTER",
+            "name": "Młody Influencer Technologiczny",
+            "DISC": "I",
+            "category": "social_status",
+            "demographics": {
+              "age_range": "25-35",
+              "income_pln": "10000-25000",
+              "family_status": "single_or_young_couple",
+              "location": "urban"
+            },
+            "psychological_profile": {
+              "core_values": [
+                "innovation",
+                "social_recognition",
+                "environmental_impact",
+                "lifestyle_enhancement"
+              ],
+              "motivations": [
+                "Being first with latest technology",
+                "Social media content opportunities",
+                "Environmental statement",
+                "Unique driving experience"
+              ],
+              "fears_and_concerns": [
+                "Przegapienie nowszych modeli",
+                "Brak atrakcyjności na Instagramie",
+                "Ocena ze strony znajomych",
+                "Szybkie dezaktualizowanie się technologii"
+              ],
+              "decision_making_style": "emocjonalny",
+              "decision_speed": "szybka",
+              "trust_factors": [
+                "rekomendacje znajomych",
+                "endorsement influencerów",
+                "atrakcyjność wizualna",
+                "specyfikacje techniczne"
+              ]
+            },
+            "communication_preferences": {
+              "style": "Entuzjastyczny i wizualny",
+              "key_language": [
+                "przyszłość",
+                "innowacja",
+                "wyjątkowy",
+                "społeczność",
+                "trendy"
+              ],
+              "avoid_language": [
+                "tradycyjny",
+                "standardowy",
+                "powszechny",
+                "analiza_długoterminowa"
+              ],
+              "preferred_media": [
+                "treści video",
+                "prezentacje interaktywne",
+                "dowody społeczne",
+                "recenzje influencerów"
+              ],
+              "meeting_preference": "prezentacja dynamiczna"
+            },
+            "trigger_sensitivity": {
+              "high_positive": [
+                "najnowsza technologia",
+                "status społeczny",
+                "aktywizm ekologiczny"
+              ],
+              "high_negative": [
+                "stawanie się mainstreamem",
+                "skomplikowana własność",
+                "opóźniona gratyfikacja"
+              ],
+              "conversion_accelerators": [
+                "ekskluzywny dostęp",
+                "możliwości social media",
+                "pokazy technologiczne"
+              ]
+            },
+            "sales_approach": {
+              "primary_strategy": "Pokaz innowacyjności z dowodem społecznym",
+              "key_messages": [
+                "Tesla przewodzi rewolucji motoryzacyjnej - bądź częścią przyszłości",
+                "Dołącz do społeczności myślących przyszłościowo",
+                "Twoja Tesla będzie przyciągać uwagę i wywoływać rozmowy"
+              ],
+              "proof_points": [
+                "aktualizacje OTA",
+                "wydarzenia społeczności",
+                "właściciele celebryci"
+              ],
+              "closing_technique": "ekskluzywność ograniczona w czasie"
+            }
+          },
+          {
+            "id": "ANALYTICAL_SKEPTIC",
+            "name": "Inżynier Analityczny",
+            "DISC": "C",
+            "category": "data_driven",
+            "demographics": {
+              "age_range": "35-55",
+              "income_pln": "12000-30000",
+              "family_status": "varied",
+              "location": "urban_suburban"
+            },
+            "psychological_profile": {
+              "core_values": [
+                "precision",
+                "efficiency",
+                "logical_decisions",
+                "technical_excellence"
+              ],
+              "motivations": [
+                "Optimal ROI and TCO analysis",
+                "Technical superiority",
+                "Energy efficiency metrics",
+                "Data-driven decision making"
+              ],
+              "fears_and_concerns": [
+                "Niewystarczające dane techniczne",
+                "Przepłacanie za marketing",
+                "Niesprawdzona długoterminowa niezawodność",
+                "Uzależnienie od dostawcy"
+              ],
+              "decision_making_style": "analityczny i dokładny",
+              "decision_speed": "bardzo wolna",
+              "trust_factors": [
+                "niezależne dane",
+                "specyfikacje techniczne",
+                "analiza porównawcza",
+                "recenzje ekspertów"
+              ]
+            },
+            "communication_preferences": {
+              "style": "Techniczny i oparty na faktach",
+              "key_language": [
+                "dane",
+                "analiza",
+                "efektywność",
+                "porównanie",
+                "specyfikacja"
+              ],
+              "avoid_language": [
+                "emocje",
+                "uczucia",
+                "presja",
+                "ograniczona_oferta"
+              ],
+              "preferred_media": [
+                "dokumenty techniczne",
+                "wykresy porównawcze",
+                "filmy inżynierskie",
+                "białe księgi"
+              ],
+              "meeting_preference": "głębokie zagłębienie techniczne"
+            },
+            "trigger_sensitivity": {
+              "high_positive": [
+                "wyższość techniczna",
+                "dane efektywności",
+                "optymalizacja kosztów"
+              ],
+              "high_negative": [
+                "presja marketingowa",
+                "apele emocjonalne",
+                "pośpieszne decyzje"
+              ],
+              "conversion_accelerators": [
+                "techniczny test drive",
+                "konsultacja inżynieryjna",
+                "szczegółowa analiza"
+              ]
+            },
+            "sales_approach": {
+              "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+              "key_messages": [
+                "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+                "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+                "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+              ],
+              "proof_points": [
+                "specyfikacje inżynierskie",
+                "oceny efektywności",
+                "kalkulacje TCO"
+              ],
+              "closing_technique": "logiczny wniosek oparty na danych"
+            }
+          }
+        ]
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 33,
+      "confidence": 0.5800000000000001,
+      "dominant_triggers": [
+        "Ta cena to jednak spory wydatek",
+        "A jak to działa zimą przy mrozie?",
+        "Czy to nie będzie zbyt skomplikowane w obsłudze?",
+        "Mamy panele fotowoltaiczne w domu",
+        "Jestem zadowolony z mojego obecnego auta"
+      ],
+      "recommendations": {
+        "language": {
+          "keywords": [],
+          "avoidWords": [],
+          "phrases": []
+        },
+        "objectionHandling": [
+          {
+            "objection": "Price is too high",
+            "rebuttal": "Let's talk about the total cost of ownership..."
+          }
+        ],
+        "nextSteps": [
+          "Send a follow-up email"
+        ],
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 56,
+    "timestamp": "2025-07-24T08:01:14.694Z",
+    "session_id": "session_1753344074693_drvvz8pfk",
+    "input_data": {
+      "selected_triggers": [
+        "A jak to działa zimą przy mrozie?",
+        "To będzie samochód firmowy",
+        "Interesuje mnie wydajność i przyspieszenie",
+        "Może lepiej VW ID.4 lub BMW iX?",
+        "Czy to dobry wybór dla młodego profesjonalisty?",
+        "Może powinienem poczekać na lepsze modele?",
+        "Co z recyklingiem baterii? To nie szkodzi środowisku?",
+        "Najważniejsze jest bezpieczeństwo dzieci",
+        "Teraz nie mam budżetu"
+      ],
+      "tone": "entuzjastyczny",
+      "demographics": {
+        "age": "",
+        "housingType": "dom",
+        "hasPV": "true",
+        "region": "slaskie",
+        "relationshipStatus": "partner",
+        "hasChildren": "teen",
+        "teslaExperience": "first_time",
+        "carRole": ""
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": {
+          "id": "ANALYTICAL_SKEPTIC",
+          "name": "Inżynier Analityczny",
+          "DISC": "C",
+          "category": "data_driven",
+          "demographics": {
+            "age_range": "35-55",
+            "income_pln": "12000-30000",
+            "family_status": "varied",
+            "location": "urban_suburban"
+          },
+          "psychological_profile": {
+            "core_values": [
+              "precision",
+              "efficiency",
+              "logical_decisions",
+              "technical_excellence"
+            ],
+            "motivations": [
+              "Optimal ROI and TCO analysis",
+              "Technical superiority",
+              "Energy efficiency metrics",
+              "Data-driven decision making"
+            ],
+            "fears_and_concerns": [
+              "Niewystarczające dane techniczne",
+              "Przepłacanie za marketing",
+              "Niesprawdzona długoterminowa niezawodność",
+              "Uzależnienie od dostawcy"
+            ],
+            "decision_making_style": "analityczny i dokładny",
+            "decision_speed": "bardzo wolna",
+            "trust_factors": [
+              "niezależne dane",
+              "specyfikacje techniczne",
+              "analiza porównawcza",
+              "recenzje ekspertów"
+            ]
+          },
+          "communication_preferences": {
+            "style": "Techniczny i oparty na faktach",
+            "key_language": [
+              "dane",
+              "analiza",
+              "efektywność",
+              "porównanie",
+              "specyfikacja"
+            ],
+            "avoid_language": [
+              "emocje",
+              "uczucia",
+              "presja",
+              "ograniczona_oferta"
+            ],
+            "preferred_media": [
+              "dokumenty techniczne",
+              "wykresy porównawcze",
+              "filmy inżynierskie",
+              "białe księgi"
+            ],
+            "meeting_preference": "głębokie zagłębienie techniczne"
+          },
+          "trigger_sensitivity": {
+            "high_positive": [
+              "wyższość techniczna",
+              "dane efektywności",
+              "optymalizacja kosztów"
+            ],
+            "high_negative": [
+              "presja marketingowa",
+              "apele emocjonalne",
+              "pośpieszne decyzje"
+            ],
+            "conversion_accelerators": [
+              "techniczny test drive",
+              "konsultacja inżynieryjna",
+              "szczegółowa analiza"
+            ]
+          },
+          "sales_approach": {
+            "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+            "key_messages": [
+              "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+              "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+              "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+            ],
+            "proof_points": [
+              "specyfikacje inżynierskie",
+              "oceny efektywności",
+              "kalkulacje TCO"
+            ],
+            "closing_technique": "logiczny wniosek oparty na danych"
+          }
+        },
+        "confidence": 0.4,
+        "autoDetected": true,
+        "fallback_used": true,
+        "alternatives": [
+          {
+            "id": "FAMILIA_SAVER",
+            "name": "Ojciec Rodziny Oszczędny",
+            "DISC": "S",
+            "category": "family_oriented",
+            "demographics": {
+              "age_range": "35-50",
+              "income_pln": "8000-15000",
+              "family_status": "married_with_children",
+              "location": "suburban"
+            },
+            "psychological_profile": {
+              "core_values": [
+                "safety",
+                "security",
+                "family_wellbeing",
+                "long_term_stability"
+              ],
+              "motivations": [
+                "Lower monthly expenses",
+                "Secure family transportation",
+                "Environmental responsibility for children's future",
+                "Reliable technology"
+              ],
+              "fears_and_concerns": [
+                "High upfront costs affecting family budget",
+                "Technology failure risks",
+                "Insufficient charging infrastructure",
+                "Unknown long-term costs"
+              ],
+              "decision_making_style": "thorough_research",
+              "decision_speed": "slow",
+              "trust_factors": [
+                "warranties",
+                "testimonials",
+                "official_data",
+                "family_recommendations"
+              ]
+            },
+            "communication_preferences": {
+              "style": "Patient and detailed",
+              "key_language": [
+                "family",
+                "bezpieczeństwo",
+                "oszczędności",
+                "gwarancja",
+                "niezawodność"
+              ],
+              "avoid_language": [
+                "ryzyko",
+                "eksperyment",
+                "nowość",
+                "presja_czasowa"
+              ],
+              "preferred_media": [
+                "detailed_brochures",
+                "family_testimonials",
+                "safety_videos"
+              ],
+              "meeting_preference": "family_consultation"
+            },
+            "trigger_sensitivity": {
+              "high_positive": [
+                "family_safety",
+                "long_term_savings",
+                "environmental_legacy"
+              ],
+              "high_negative": [
+                "high_upfront_cost",
+                "technology_complexity",
+                "charging_anxiety"
+              ],
+              "conversion_accelerators": [
+                "warranty_extension",
+                "family_discount",
+                "referral_program"
+              ]
+            },
+            "sales_approach": {
+              "primary_strategy": "Safety-first with TCO analysis",
+              "key_messages": [
+                "Tesla has the highest safety ratings - 5 stars across all categories",
+                "Home charging saves your family 30,000 PLN over 5 years",
+                "8-year battery warranty provides long-term peace of mind"
+              ],
+              "proof_points": [
+                "Euro NCAP ratings",
+                "TCO calculator",
+                "warranty terms"
+              ],
+              "closing_technique": "family_consensus_building"
+            }
+          },
+          {
+            "id": "SOCIAL_TRENDSETTER",
+            "name": "Młody Influencer Technologiczny",
+            "DISC": "I",
+            "category": "social_status",
+            "demographics": {
+              "age_range": "25-35",
+              "income_pln": "10000-25000",
+              "family_status": "single_or_young_couple",
+              "location": "urban"
+            },
+            "psychological_profile": {
+              "core_values": [
+                "innovation",
+                "social_recognition",
+                "environmental_impact",
+                "lifestyle_enhancement"
+              ],
+              "motivations": [
+                "Being first with latest technology",
+                "Social media content opportunities",
+                "Environmental statement",
+                "Unique driving experience"
+              ],
+              "fears_and_concerns": [
+                "Przegapienie nowszych modeli",
+                "Brak atrakcyjności na Instagramie",
+                "Ocena ze strony znajomych",
+                "Szybkie dezaktualizowanie się technologii"
+              ],
+              "decision_making_style": "emocjonalny",
+              "decision_speed": "szybka",
+              "trust_factors": [
+                "rekomendacje znajomych",
+                "endorsement influencerów",
+                "atrakcyjność wizualna",
+                "specyfikacje techniczne"
+              ]
+            },
+            "communication_preferences": {
+              "style": "Entuzjastyczny i wizualny",
+              "key_language": [
+                "przyszłość",
+                "innowacja",
+                "wyjątkowy",
+                "społeczność",
+                "trendy"
+              ],
+              "avoid_language": [
+                "tradycyjny",
+                "standardowy",
+                "powszechny",
+                "analiza_długoterminowa"
+              ],
+              "preferred_media": [
+                "treści video",
+                "prezentacje interaktywne",
+                "dowody społeczne",
+                "recenzje influencerów"
+              ],
+              "meeting_preference": "prezentacja dynamiczna"
+            },
+            "trigger_sensitivity": {
+              "high_positive": [
+                "najnowsza technologia",
+                "status społeczny",
+                "aktywizm ekologiczny"
+              ],
+              "high_negative": [
+                "stawanie się mainstreamem",
+                "skomplikowana własność",
+                "opóźniona gratyfikacja"
+              ],
+              "conversion_accelerators": [
+                "ekskluzywny dostęp",
+                "możliwości social media",
+                "pokazy technologiczne"
+              ]
+            },
+            "sales_approach": {
+              "primary_strategy": "Pokaz innowacyjności z dowodem społecznym",
+              "key_messages": [
+                "Tesla przewodzi rewolucji motoryzacyjnej - bądź częścią przyszłości",
+                "Dołącz do społeczności myślących przyszłościowo",
+                "Twoja Tesla będzie przyciągać uwagę i wywoływać rozmowy"
+              ],
+              "proof_points": [
+                "aktualizacje OTA",
+                "wydarzenia społeczności",
+                "właściciele celebryci"
+              ],
+              "closing_technique": "ekskluzywność ograniczona w czasie"
+            }
+          }
+        ]
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5800000000000001,
+      "dominant_triggers": [
+        "A jak to działa zimą przy mrozie?",
+        "To będzie samochód firmowy",
+        "Interesuje mnie wydajność i przyspieszenie",
+        "Może lepiej VW ID.4 lub BMW iX?",
+        "Czy to dobry wybór dla młodego profesjonalisty?"
+      ],
+      "recommendations": {
+        "language": {
+          "keywords": [],
+          "avoidWords": [],
+          "phrases": []
+        },
+        "objectionHandling": [
+          {
+            "objection": "Price is too high",
+            "rebuttal": "Let's talk about the total cost of ownership..."
+          }
+        ],
+        "nextSteps": [
+          "Send a follow-up email"
+        ],
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 57,
+    "timestamp": "2025-07-24T08:07:13.972Z",
+    "session_id": "session_1753344433972_c5s103ag9",
+    "input_data": {
+      "selected_triggers": [
+        "Nie stać mnie na takie raty",
+        "Rozważamy flotę elektryczną dla firmy",
+        "Interesuje mnie wydajność i przyspieszenie",
+        "To będzie drugie auto, bardziej luksusowe",
+        "Może lepiej używana Tesla?",
+        "To moja pierwsza Tesla / pierwszy EV",
+        "Mamy panele fotowoltaiczne w domu",
+        "To ma być nasze główne auto",
+        "Ta technologia jest jeszcze zbyt nowa"
+      ],
+      "tone": "entuzjastyczny",
+      "demographics": {
+        "age": "",
+        "housingType": "",
+        "hasPV": "",
+        "region": "",
+        "relationshipStatus": "",
+        "hasChildren": "young",
+        "teslaExperience": "",
+        "carRole": ""
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": {
+          "id": "ANALYTICAL_SKEPTIC",
+          "name": "Inżynier Analityczny",
+          "DISC": "C",
+          "category": "data_driven",
+          "demographics": {
+            "age_range": "35-55",
+            "income_pln": "12000-30000",
+            "family_status": "varied",
+            "location": "urban_suburban"
+          },
+          "psychological_profile": {
+            "core_values": [
+              "precision",
+              "efficiency",
+              "logical_decisions",
+              "technical_excellence"
+            ],
+            "motivations": [
+              "Optimal ROI and TCO analysis",
+              "Technical superiority",
+              "Energy efficiency metrics",
+              "Data-driven decision making"
+            ],
+            "fears_and_concerns": [
+              "Niewystarczające dane techniczne",
+              "Przepłacanie za marketing",
+              "Niesprawdzona długoterminowa niezawodność",
+              "Uzależnienie od dostawcy"
+            ],
+            "decision_making_style": "analityczny i dokładny",
+            "decision_speed": "bardzo wolna",
+            "trust_factors": [
+              "niezależne dane",
+              "specyfikacje techniczne",
+              "analiza porównawcza",
+              "recenzje ekspertów"
+            ]
+          },
+          "communication_preferences": {
+            "style": "Techniczny i oparty na faktach",
+            "key_language": [
+              "dane",
+              "analiza",
+              "efektywność",
+              "porównanie",
+              "specyfikacja"
+            ],
+            "avoid_language": [
+              "emocje",
+              "uczucia",
+              "presja",
+              "ograniczona_oferta"
+            ],
+            "preferred_media": [
+              "dokumenty techniczne",
+              "wykresy porównawcze",
+              "filmy inżynierskie",
+              "białe księgi"
+            ],
+            "meeting_preference": "głębokie zagłębienie techniczne"
+          },
+          "trigger_sensitivity": {
+            "high_positive": [
+              "wyższość techniczna",
+              "dane efektywności",
+              "optymalizacja kosztów"
+            ],
+            "high_negative": [
+              "presja marketingowa",
+              "apele emocjonalne",
+              "pośpieszne decyzje"
+            ],
+            "conversion_accelerators": [
+              "techniczny test drive",
+              "konsultacja inżynieryjna",
+              "szczegółowa analiza"
+            ]
+          },
+          "sales_approach": {
+            "primary_strategy": "Doskonałość techniczna z kompleksowymi danymi",
+            "key_messages": [
+              "Inżynieria Tesla prowadzi w branży w efektywności i innowacji",
+              "Kompleksowa analiza TCO pokazuje 30,000 PLN oszczędności przez 5 lat",
+              "Zaawansowany system zarządzania baterią zapewnia optymalną wydajność"
+            ],
+            "proof_points": [
+              "specyfikacje inżynierskie",
+              "oceny efektywności",
+              "kalkulacje TCO"
+            ],
+            "closing_technique": "logiczny wniosek oparty na danych"
+          }
+        },
+        "confidence": 0.4,
+        "autoDetected": true,
+        "fallback_used": true,
+        "alternatives": [
+          {
+            "id": "FAMILIA_SAVER",
+            "name": "Ojciec Rodziny Oszczędny",
+            "DISC": "S",
+            "category": "family_oriented",
+            "demographics": {
+              "age_range": "35-50",
+              "income_pln": "8000-15000",
+              "family_status": "married_with_children",
+              "location": "suburban"
+            },
+            "psychological_profile": {
+              "core_values": [
+                "safety",
+                "security",
+                "family_wellbeing",
+                "long_term_stability"
+              ],
+              "motivations": [
+                "Lower monthly expenses",
+                "Secure family transportation",
+                "Environmental responsibility for children's future",
+                "Reliable technology"
+              ],
+              "fears_and_concerns": [
+                "High upfront costs affecting family budget",
+                "Technology failure risks",
+                "Insufficient charging infrastructure",
+                "Unknown long-term costs"
+              ],
+              "decision_making_style": "thorough_research",
+              "decision_speed": "slow",
+              "trust_factors": [
+                "warranties",
+                "testimonials",
+                "official_data",
+                "family_recommendations"
+              ]
+            },
+            "communication_preferences": {
+              "style": "Patient and detailed",
+              "key_language": [
+                "family",
+                "bezpieczeństwo",
+                "oszczędności",
+                "gwarancja",
+                "niezawodność"
+              ],
+              "avoid_language": [
+                "ryzyko",
+                "eksperyment",
+                "nowość",
+                "presja_czasowa"
+              ],
+              "preferred_media": [
+                "detailed_brochures",
+                "family_testimonials",
+                "safety_videos"
+              ],
+              "meeting_preference": "family_consultation"
+            },
+            "trigger_sensitivity": {
+              "high_positive": [
+                "family_safety",
+                "long_term_savings",
+                "environmental_legacy"
+              ],
+              "high_negative": [
+                "high_upfront_cost",
+                "technology_complexity",
+                "charging_anxiety"
+              ],
+              "conversion_accelerators": [
+                "warranty_extension",
+                "family_discount",
+                "referral_program"
+              ]
+            },
+            "sales_approach": {
+              "primary_strategy": "Safety-first with TCO analysis",
+              "key_messages": [
+                "Tesla has the highest safety ratings - 5 stars across all categories",
+                "Home charging saves your family 30,000 PLN over 5 years",
+                "8-year battery warranty provides long-term peace of mind"
+              ],
+              "proof_points": [
+                "Euro NCAP ratings",
+                "TCO calculator",
+                "warranty terms"
+              ],
+              "closing_technique": "family_consensus_building"
+            }
+          },
+          {
+            "id": "SOCIAL_TRENDSETTER",
+            "name": "Młody Influencer Technologiczny",
+            "DISC": "I",
+            "category": "social_status",
+            "demographics": {
+              "age_range": "25-35",
+              "income_pln": "10000-25000",
+              "family_status": "single_or_young_couple",
+              "location": "urban"
+            },
+            "psychological_profile": {
+              "core_values": [
+                "innovation",
+                "social_recognition",
+                "environmental_impact",
+                "lifestyle_enhancement"
+              ],
+              "motivations": [
+                "Being first with latest technology",
+                "Social media content opportunities",
+                "Environmental statement",
+                "Unique driving experience"
+              ],
+              "fears_and_concerns": [
+                "Przegapienie nowszych modeli",
+                "Brak atrakcyjności na Instagramie",
+                "Ocena ze strony znajomych",
+                "Szybkie dezaktualizowanie się technologii"
+              ],
+              "decision_making_style": "emocjonalny",
+              "decision_speed": "szybka",
+              "trust_factors": [
+                "rekomendacje znajomych",
+                "endorsement influencerów",
+                "atrakcyjność wizualna",
+                "specyfikacje techniczne"
+              ]
+            },
+            "communication_preferences": {
+              "style": "Entuzjastyczny i wizualny",
+              "key_language": [
+                "przyszłość",
+                "innowacja",
+                "wyjątkowy",
+                "społeczność",
+                "trendy"
+              ],
+              "avoid_language": [
+                "tradycyjny",
+                "standardowy",
+                "powszechny",
+                "analiza_długoterminowa"
+              ],
+              "preferred_media": [
+                "treści video",
+                "prezentacje interaktywne",
+                "dowody społeczne",
+                "recenzje influencerów"
+              ],
+              "meeting_preference": "prezentacja dynamiczna"
+            },
+            "trigger_sensitivity": {
+              "high_positive": [
+                "najnowsza technologia",
+                "status społeczny",
+                "aktywizm ekologiczny"
+              ],
+              "high_negative": [
+                "stawanie się mainstreamem",
+                "skomplikowana własność",
+                "opóźniona gratyfikacja"
+              ],
+              "conversion_accelerators": [
+                "ekskluzywny dostęp",
+                "możliwości social media",
+                "pokazy technologiczne"
+              ]
+            },
+            "sales_approach": {
+              "primary_strategy": "Pokaz innowacyjności z dowodem społecznym",
+              "key_messages": [
+                "Tesla przewodzi rewolucji motoryzacyjnej - bądź częścią przyszłości",
+                "Dołącz do społeczności myślących przyszłościowo",
+                "Twoja Tesla będzie przyciągać uwagę i wywoływać rozmowy"
+              ],
+              "proof_points": [
+                "aktualizacje OTA",
+                "wydarzenia społeczności",
+                "właściciele celebryci"
+              ],
+              "closing_technique": "ekskluzywność ograniczona w czasie"
+            }
+          }
+        ]
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 36,
+      "confidence": 0.5800000000000001,
+      "dominant_triggers": [
+        "Nie stać mnie na takie raty",
+        "Rozważamy flotę elektryczną dla firmy",
+        "Interesuje mnie wydajność i przyspieszenie",
+        "To będzie drugie auto, bardziej luksusowe",
+        "Może lepiej używana Tesla?"
+      ],
+      "recommendations": {
+        "language": {
+          "keywords": [],
+          "avoidWords": [],
+          "phrases": []
+        },
+        "objectionHandling": [
+          {
+            "objection": "Price is too high",
+            "rebuttal": "Let's talk about the total cost of ownership..."
+          }
+        ],
+        "nextSteps": [
+          "Send a follow-up email"
+        ],
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 58,
+    "timestamp": "2025-07-24T13:05:18.483Z",
+    "session_id": "test-green-pioneer",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Chcę chronić środowisko",
+          "category": "environmental"
+        },
+        {
+          "text": "Myślę o przyszłości moich dzieci",
+          "category": "family"
+        },
+        {
+          "text": "Interesują mnie dotacje",
+          "category": "financial"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 38,
+        "income": 8000,
+        "family_size": 4,
+        "city": "Warsaw"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Chcę chronić środowisko",
+          "category": "environmental"
+        },
+        {
+          "text": "Myślę o przyszłości moich dzieci",
+          "category": "family"
+        },
+        {
+          "text": "Interesują mnie dotacje",
+          "category": "financial"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 59,
+    "timestamp": "2025-07-24T13:05:18.566Z",
+    "session_id": "test-tech-executive",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Interesuje mnie najnowsza technologia",
+          "category": "technical"
+        },
+        {
+          "text": "Chcę mieć przewagę konkurencyjną",
+          "category": "business"
+        },
+        {
+          "text": "Autopilot to przyszłość",
+          "category": "technical"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 42,
+        "income": 15000,
+        "occupation": "executive",
+        "city": "Krakow"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Interesuje mnie najnowsza technologia",
+          "category": "technical"
+        },
+        {
+          "text": "Chcę mieć przewagę konkurencyjną",
+          "category": "business"
+        },
+        {
+          "text": "Autopilot to przyszłość",
+          "category": "technical"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 60,
+    "timestamp": "2025-07-24T13:05:18.626Z",
+    "session_id": "test-budget-family",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Czy to się opłaca finansowo?",
+          "category": "financial"
+        },
+        {
+          "text": "Martwię się o koszty eksploatacji",
+          "category": "financial"
+        },
+        {
+          "text": "Potrzebuję samochodu dla rodziny",
+          "category": "family"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 35,
+        "income": 6000,
+        "family_size": 3,
+        "city": "Gdansk"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Czy to się opłaca finansowo?",
+          "category": "financial"
+        },
+        {
+          "text": "Martwię się o koszty eksploatacji",
+          "category": "financial"
+        },
+        {
+          "text": "Potrzebuję samochodu dla rodziny",
+          "category": "family"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 61,
+    "timestamp": "2025-07-24T13:20:59.307Z",
+    "session_id": "test-green-pioneer",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Chcę chronić środowisko",
+          "category": "environmental"
+        },
+        {
+          "text": "Myślę o przyszłości moich dzieci",
+          "category": "family"
+        },
+        {
+          "text": "Interesują mnie dotacje",
+          "category": "financial"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 38,
+        "income": 8000,
+        "family_size": 4,
+        "city": "Warsaw"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Chcę chronić środowisko",
+          "category": "environmental"
+        },
+        {
+          "text": "Myślę o przyszłości moich dzieci",
+          "category": "family"
+        },
+        {
+          "text": "Interesują mnie dotacje",
+          "category": "financial"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 62,
+    "timestamp": "2025-07-24T13:20:59.379Z",
+    "session_id": "test-tech-executive",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Interesuje mnie najnowsza technologia",
+          "category": "technical"
+        },
+        {
+          "text": "Chcę mieć przewagę konkurencyjną",
+          "category": "business"
+        },
+        {
+          "text": "Autopilot to przyszłość",
+          "category": "technical"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 42,
+        "income": 15000,
+        "occupation": "executive",
+        "city": "Krakow"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Interesuje mnie najnowsza technologia",
+          "category": "technical"
+        },
+        {
+          "text": "Chcę mieć przewagę konkurencyjną",
+          "category": "business"
+        },
+        {
+          "text": "Autopilot to przyszłość",
+          "category": "technical"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 1
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 63,
+    "timestamp": "2025-07-24T13:20:59.448Z",
+    "session_id": "test-budget-family",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Czy to się opłaca finansowo?",
+          "category": "financial"
+        },
+        {
+          "text": "Martwię się o koszty eksploatacji",
+          "category": "financial"
+        },
+        {
+          "text": "Potrzebuję samochodu dla rodziny",
+          "category": "family"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 35,
+        "income": 6000,
+        "family_size": 3,
+        "city": "Gdansk"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Czy to się opłaca finansowo?",
+          "category": "financial"
+        },
+        {
+          "text": "Martwię się o koszty eksploatacji",
+          "category": "financial"
+        },
+        {
+          "text": "Potrzebuję samochodu dla rodziny",
+          "category": "family"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 64,
+    "timestamp": "2025-07-24T13:21:52.329Z",
+    "session_id": "test-green-pioneer",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Chcę chronić środowisko",
+          "category": "environmental"
+        },
+        {
+          "text": "Myślę o przyszłości moich dzieci",
+          "category": "family"
+        },
+        {
+          "text": "Interesują mnie dotacje",
+          "category": "financial"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 38,
+        "income": 8000,
+        "family_size": 4,
+        "city": "Warsaw"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Chcę chronić środowisko",
+          "category": "environmental"
+        },
+        {
+          "text": "Myślę o przyszłości moich dzieci",
+          "category": "family"
+        },
+        {
+          "text": "Interesują mnie dotacje",
+          "category": "financial"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 65,
+    "timestamp": "2025-07-24T13:21:52.401Z",
+    "session_id": "test-tech-executive",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Interesuje mnie najnowsza technologia",
+          "category": "technical"
+        },
+        {
+          "text": "Chcę mieć przewagę konkurencyjną",
+          "category": "business"
+        },
+        {
+          "text": "Autopilot to przyszłość",
+          "category": "technical"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 42,
+        "income": 15000,
+        "occupation": "executive",
+        "city": "Krakow"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Interesuje mnie najnowsza technologia",
+          "category": "technical"
+        },
+        {
+          "text": "Chcę mieć przewagę konkurencyjną",
+          "category": "business"
+        },
+        {
+          "text": "Autopilot to przyszłość",
+          "category": "technical"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 66,
+    "timestamp": "2025-07-24T13:21:52.480Z",
+    "session_id": "test-budget-family",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Czy to się opłaca finansowo?",
+          "category": "financial"
+        },
+        {
+          "text": "Martwię się o koszty eksploatacji",
+          "category": "financial"
+        },
+        {
+          "text": "Potrzebuję samochodu dla rodziny",
+          "category": "family"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 35,
+        "income": 6000,
+        "family_size": 3,
+        "city": "Gdansk"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Czy to się opłaca finansowo?",
+          "category": "financial"
+        },
+        {
+          "text": "Martwię się o koszty eksploatacji",
+          "category": "financial"
+        },
+        {
+          "text": "Potrzebuję samochodu dla rodziny",
+          "category": "family"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 67,
+    "timestamp": "2025-07-24T13:24:15.235Z",
+    "session_id": "test-green-pioneer",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Chcę chronić środowisko",
+          "category": "environmental"
+        },
+        {
+          "text": "Myślę o przyszłości moich dzieci",
+          "category": "family"
+        },
+        {
+          "text": "Interesują mnie dotacje",
+          "category": "financial"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 38,
+        "income": 8000,
+        "family_size": 4,
+        "city": "Warsaw"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Chcę chronić środowisko",
+          "category": "environmental"
+        },
+        {
+          "text": "Myślę o przyszłości moich dzieci",
+          "category": "family"
+        },
+        {
+          "text": "Interesują mnie dotacje",
+          "category": "financial"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 68,
+    "timestamp": "2025-07-24T13:24:15.302Z",
+    "session_id": "test-tech-executive",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Interesuje mnie najnowsza technologia",
+          "category": "technical"
+        },
+        {
+          "text": "Chcę mieć przewagę konkurencyjną",
+          "category": "business"
+        },
+        {
+          "text": "Autopilot to przyszłość",
+          "category": "technical"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 42,
+        "income": 15000,
+        "occupation": "executive",
+        "city": "Krakow"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Interesuje mnie najnowsza technologia",
+          "category": "technical"
+        },
+        {
+          "text": "Chcę mieć przewagę konkurencyjną",
+          "category": "business"
+        },
+        {
+          "text": "Autopilot to przyszłość",
+          "category": "technical"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 69,
+    "timestamp": "2025-07-24T13:24:15.370Z",
+    "session_id": "test-budget-family",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Czy to się opłaca finansowo?",
+          "category": "financial"
+        },
+        {
+          "text": "Martwię się o koszty eksploatacji",
+          "category": "financial"
+        },
+        {
+          "text": "Potrzebuję samochodu dla rodziny",
+          "category": "family"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 35,
+        "income": 6000,
+        "family_size": 3,
+        "city": "Gdansk"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Czy to się opłaca finansowo?",
+          "category": "financial"
+        },
+        {
+          "text": "Martwię się o koszty eksploatacji",
+          "category": "financial"
+        },
+        {
+          "text": "Potrzebuję samochodu dla rodziny",
+          "category": "family"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 70,
+    "timestamp": "2025-07-24T13:25:19.072Z",
+    "session_id": "test-green-pioneer",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Chcę chronić środowisko",
+          "category": "environmental"
+        },
+        {
+          "text": "Myślę o przyszłości moich dzieci",
+          "category": "family"
+        },
+        {
+          "text": "Interesują mnie dotacje",
+          "category": "financial"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 38,
+        "income": 8000,
+        "family_size": 4,
+        "city": "Warsaw"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Chcę chronić środowisko",
+          "category": "environmental"
+        },
+        {
+          "text": "Myślę o przyszłości moich dzieci",
+          "category": "family"
+        },
+        {
+          "text": "Interesują mnie dotacje",
+          "category": "financial"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 71,
+    "timestamp": "2025-07-24T13:25:19.136Z",
+    "session_id": "test-tech-executive",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Interesuje mnie najnowsza technologia",
+          "category": "technical"
+        },
+        {
+          "text": "Chcę mieć przewagę konkurencyjną",
+          "category": "business"
+        },
+        {
+          "text": "Autopilot to przyszłość",
+          "category": "technical"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 42,
+        "income": 15000,
+        "occupation": "executive",
+        "city": "Krakow"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Interesuje mnie najnowsza technologia",
+          "category": "technical"
+        },
+        {
+          "text": "Chcę mieć przewagę konkurencyjną",
+          "category": "business"
+        },
+        {
+          "text": "Autopilot to przyszłość",
+          "category": "technical"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
+  },
+  {
+    "number": 72,
+    "timestamp": "2025-07-24T13:25:19.200Z",
+    "session_id": "test-budget-family",
+    "input_data": {
+      "selected_triggers": [
+        {
+          "text": "Czy to się opłaca finansowo?",
+          "category": "financial"
+        },
+        {
+          "text": "Martwię się o koszty eksploatacji",
+          "category": "financial"
+        },
+        {
+          "text": "Potrzebuję samochodu dla rodziny",
+          "category": "family"
+        }
+      ],
+      "tone": "neutralny",
+      "demographics": {
+        "age": 35,
+        "income": 6000,
+        "family_size": 3,
+        "city": "Gdansk"
+      },
+      "conversation_stage": "unknown"
+    },
+    "results": {
+      "personality": {
+        "detected": null,
+        "confidence": 0,
+        "autoDetected": true,
+        "fallback_used": true
+      },
+      "fuzzy_personality": {
+        "dominant_personality": "Unknown",
+        "scores": {
+          "D": 0,
+          "I": 0,
+          "S": 0,
+          "C": 0
+        },
+        "confidence": 0,
+        "version": "3.0"
+      },
+      "conversion_probability": 30,
+      "confidence": 0.5,
+      "dominant_triggers": [
+        {
+          "text": "Czy to się opłaca finansowo?",
+          "category": "financial"
+        },
+        {
+          "text": "Martwię się o koszty eksploatacji",
+          "category": "financial"
+        },
+        {
+          "text": "Potrzebuję samochodu dla rodziny",
+          "category": "family"
+        }
+      ],
+      "recommendations": {
+        "key_selling_points": []
+      },
+      "strategy": {
+        "name": "default",
+        "reason": "No specific strategy matched"
+      }
+    },
+    "metadata": {
+      "user_agent": "unknown",
+      "ip_hash": "unknown",
+      "source": "web_interface",
+      "version": "2.1",
+      "processing_time_ms": 0
+    },
+    "conversion_result": null,
+    "actual_personality": null,
+    "effectiveness_score": null,
+    "status": "active",
+    "reviewed": false,
+    "starred": false
   }
 ]

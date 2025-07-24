@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia Analiz - BigDeCoder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-tesla-gray-900 text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <div class="flex items-center justify-center mb-4">
+                <img src="bigd.logo.png" alt="BigDeCoder Logo" class="h-12 w-auto mr-4">
+                <h1 class="text-3xl font-bold text-bigdecoder-primary">Historia Analiz</h1>
+            </div>
+            <nav class="flex justify-center space-x-4 mb-6">
+                <a href="main.html" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center space-x-2">
+                    <span>🏠</span>
+                    <span>Główna</span>
+                </a>
+                <a href="analysis-history.html" class="bg-bigdecoder-primary hover:bg-bigdecoder-secondary text-white px-4 py-2 rounded-lg text-sm transition-colors flex items-center space-x-2">
+                    <span>📊</span>
+                    <span>Historia Analiz</span>
+                </a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="bg-tesla-gray-800 rounded-lg p-6 shadow-lg">
+                <h2 class="text-xl font-semibold mb-4">Poprzednie Analizy</h2>
+                <div id="historyContainer" class="space-y-4">
+                    <div class="text-center text-tesla-gray-400 py-8">
+                        <p>Brak zapisanych analiz</p>
+                        <p class="text-sm mt-2">Wykonaj pierwszą analizę, aby zobaczyć historię</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Placeholder for history functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Historia analiz załadowana');
+        });
+    </script>
+</body>
+</html>

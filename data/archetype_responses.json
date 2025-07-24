@@ -1,0 +1,170 @@
+{
+  "responses": {
+    "green_pioneer_family": {
+      "opening_lines": [
+        "Jako rodzina dbająca o środowisko, Tesla to inwestycja w przyszłość Waszych dzieci.",
+        "Wyobraźcie sobie, że każda podróż z rodziną to krok w stronę czystszej planety.",
+        "Tesla to nie tylko samochód - to sposób na pokazanie dzieciom, jak dbać o Ziemię."
+      ],
+      "argument_stacks": {
+        "soft": {
+          "environmental_impact": "Tesla eliminuje 100% emisji spalin, co oznacza czystsze powietrze dla Waszych dzieci.",
+          "family_safety": "5-gwiazdkowy rating bezpieczeństwa w każdej kategorii - najwyższy możliwy standard ochrony rodziny.",
+          "cost_savings": "Oszczędności na paliwie to nawet 8000 zł rocznie - pieniądze, które możecie przeznaczyć na rodzinę."
+        },
+        "medium": {
+          "environmental_data": "Jedna Tesla eliminuje rocznie 4,6 tony CO2 - to jak zasadzenie 200 drzew każdego roku.",
+          "safety_technology": "Autopilot redukuje ryzyko wypadku o 40% - technologia, która chroni to, co najważniejsze.",
+          "charging_convenience": "Ładowanie w domu to jak ładowanie telefonu - wstajecie rano z pełnym 'bakiem'."
+        },
+        "strong": {
+          "future_investment": "Tesla to inwestycja w przyszłość - wartość wzrasta, podczas gdy tradycyjne auta tracą na wartości.",
+          "health_benefits": "Zero emisji lokalnych = zdrowsze powietrze dla dzieci, mniej alergii i problemów oddechowych.",
+          "energy_independence": "Z panelami słonecznymi jeździcie praktycznie za darmo - pełna niezależność energetyczna."
+        }
+      },
+      "objection_handling": {
+        "battery_lifespan_concern": {
+          "response": "Bateria Tesla ma gwarancję 8 lat/160,000 km i zachowuje 90% pojemności po 200,000 km. To jak kupić samochód, który będzie służył dwóm pokoleniom.",
+          "proof_points": ["Gwarancja 8 lat", "90% pojemności po 200k km", "Przypadki z 500k+ km"]
+        },
+        "charging_time_worry": {
+          "response": "80% ładowania w 30 minut na Supercharger to czas na kawę i stretch. W domu ładujecie nocą - rano zawsze pełny zasięg.",
+          "proof_points": ["30 min = 80% baterii", "Ładowanie domowe nocą", "400+ Superchargerów w Polsce"]
+        }
+      },
+      "social_proof": [
+        "Rodzina Kowalskich z Warszawy: 'Dzieci są dumne, że jeździmy autem, które nie szkodzi planecie'",
+        "Ponad 50,000 polskich rodzin już wybrało Teslę jako samochód rodzinny",
+        "Tesla Model Y - najchętniej kupowany SUV przez rodziny w Europie"
+      ],
+      "roi_hooks": [
+        "8,000 zł oszczędności rocznie na paliwie",
+        "50% niższe koszty serwisu vs tradycyjne auto",
+        "Ulga podatkowa do 18,750 zł dla firm",
+        "Wzrost wartości auta zamiast deprecjacji"
+      ],
+      "next_questions": [
+        "Jakie są Wasze główne trasy rodzinne - praca, szkoła, weekendy?",
+        "Czy macie możliwość instalacji ładowarki domowej?",
+        "Co jest dla Was najważniejsze - oszczędności czy aspekt ekologiczny?",
+        "Jakie funkcje bezpieczeństwa są dla Was priorytetem?"
+      ],
+      "emotional_triggers": [
+        "przyszłość_dzieci",
+        "odpowiedzialność_środowiskowa",
+        "bezpieczeństwo_rodziny",
+        "oszczędności_długoterminowe"
+      ]
+    },
+    "tech_executive": {
+      "opening_lines": [
+        "Tesla to jedyny samochód, który się ulepsza podczas jazdy - jak Twój iPhone na kółkach.",
+        "Jako lider technologiczny, potrzebujesz auta, które jest o 5 lat przed konkurencją.",
+        "FSD to nie science fiction - to przewaga konkurencyjna dostępna już dziś."
+      ],
+      "argument_stacks": {
+        "soft": {
+          "technology_leadership": "Tesla to jedyna marka, która dostarcza aktualizacje OTA co miesiąc - Twój samochód stale się ulepsza.",
+          "performance_specs": "Model S Plaid: 0-100 km/h w 2.1s - szybszy niż większość supercarów za milion złotych.",
+          "innovation_access": "Masz dostęp do najnowszych technologii jako pierwszy - beta tester przyszłości motoryzacji."
+        },
+        "medium": {
+          "fsd_capabilities": "Full Self-Driving to 10 miliardów kilometrów danych treningowych - najbardziej zaawansowana AI na drogach.",
+          "integration_ecosystem": "Pełna integracja z ekosystemem - od Starlink po Solar Roof, wszystko w jednej aplikacji.",
+          "business_efficiency": "Autopilot to dodatkowe 2 godziny produktywności dziennie - pracujesz podczas jazdy."
+        },
+        "strong": {
+          "competitive_advantage": "Podczas gdy konkurencja kopiuje rozwiązania sprzed 5 lat, Tesla już projektuje przyszłość.",
+          "investment_potential": "Tesla to nie koszt, to inwestycja - wartość rośnie wraz z rozwojem technologii.",
+          "exclusive_access": "Dostęp do beta funkcji, priorytetowy serwis, społeczność innowatorów - to więcej niż samochód."
+        }
+      },
+      "objection_handling": {
+        "fsd_not_ready": {
+          "response": "FSD Beta już działa w 99% sytuacji. To jak iPhone w 2007 - nie był idealny, ale zmienił wszystko. Masz dostęp do przyszłości już dziś.",
+          "proof_points": ["99% sytuacji obsłużonych", "10 mld km danych", "Miesięczne ulepszenia"]
+        },
+        "charging_time_business": {
+          "response": "Supercharger V4: 15 minut = 300 km zasięgu. To czas na telefon konferencyjny. Plus ładowanie w biurze/domu = zero wizyt na stacji.",
+          "proof_points": ["15 min = 300 km", "Ładowanie w biurze", "1000+ Superchargerów w Polsce"]
+        }
+      },
+      "social_proof": [
+        "Elon Musk, Jeff Bezos, Tim Cook - wszyscy jeżdżą Tesla",
+        "70% CEO firm technologicznych w Dolinie Krzemowej wybiera Teslę",
+        "Tesla - oficjalny samochód największych konferencji tech w Europie"
+      ],
+      "roi_hooks": [
+        "2 godziny dziennie produktywności z Autopilot",
+        "Ulga podatkowa 18,750 zł + brak akcyzy",
+        "Wzrost wartości 15% rocznie (vs -20% tradycyjne auta)",
+        "Zero kosztów serwisu przez pierwsze 2 lata"
+      ]
+    },
+    "budget_conscious_family": {
+      "opening_lines": [
+        "Tesla to najlepsza inwestycja finansowa w historii motoryzacji - oszczędzacie od pierwszego dnia.",
+        "Wyobraźcie sobie: nigdy więcej stacji benzynowych, nigdy więcej drogich napraw silnika.",
+        "Tesla Model 3 kosztuje mniej niż Passat w całkowitym koszcie posiadania."
+      ],
+      "argument_stacks": {
+        "soft": {
+          "fuel_savings": "8,000 zł rocznie oszczędności na paliwie - to 80,000 zł w 10 lat.",
+          "maintenance_reduction": "Brak wymiany oleju, filtrów, świec - 70% mniej kosztów serwisu.",
+          "government_incentives": "Ulga podatkowa do 18,750 zł + brak akcyzy + darmowe parkowanie w centrach miast."
+        },
+        "medium": {
+          "tco_analysis": "Tesla Model 3 vs Passat: po 5 latach Tesla kosztuje 50,000 zł mniej w całkowitym koszcie.",
+          "financing_options": "Leasing od 1,299 zł/miesiąc - mniej niż tankowanie Passata.",
+          "insurance_benefits": "20% niższe ubezpieczenie dzięki systemom bezpieczeństwa."
+        },
+        "strong": {
+          "investment_return": "Tesla to jedyne auto, które może przynosić zysk - Robotaxi network, wzrost wartości.",
+          "energy_independence": "Z panelami słonecznymi koszt jazdy = 0 zł. Pełna niezależność od cen paliw.",
+          "future_proofing": "Zakaz sprzedaży aut spalinowych od 2035 = Tesla zachowa wartość, spalinowe staną się bezwartościowe."
+        }
+      },
+      "objection_handling": {
+        "upfront_cost_too_high": {
+          "response": "Leasing Tesla od 1,299 zł/miesiąc to mniej niż koszt paliwa do Passata. Płacicie mniej od pierwszego dnia.",
+          "proof_points": ["Leasing od 1,299 zł", "Oszczędności od dnia 1", "TCO niższy o 50,000 zł"]
+        },
+        "battery_replacement_cost": {
+          "response": "Gwarancja 8 lat na baterię. Koszt wymiany spada o 50% co 2 lata. Po 8 latach bateria wciąż ma 90% pojemności.",
+          "proof_points": ["Gwarancja 8 lat", "90% pojemności po 8 latach", "Koszt spada 50% co 2 lata"]
+        }
+      },
+      "social_proof": [
+        "Rodzina Nowak z Krakowa: 'Oszczędzamy 700 zł miesięcznie - to wakacje dla całej rodziny'",
+        "Tesla Model 3 - najtańszy samochód premium w całkowitym koszcie posiadania",
+        "Ponad 30,000 polskich rodzin już oszczędza z Tesla"
+      ],
+      "roi_hooks": [
+        "8,000 zł oszczędności rocznie na paliwie",
+        "3,000 zł mniej serwisu rocznie",
+        "18,750 zł ulga podatkowa",
+        "50,000 zł mniej TCO vs Passat w 5 lat"
+      ]
+    }
+  },
+  "response_selection_rules": {
+    "disc_alignment": {
+      "D": "strong_arguments",
+      "I": "social_proof_heavy",
+      "S": "soft_approach",
+      "C": "data_driven"
+    },
+    "trigger_matching": {
+      "price_concern": "roi_hooks_first",
+      "environmental_interest": "environmental_data_first",
+      "safety_priority": "safety_features_first",
+      "technology_enthusiasm": "innovation_first"
+    },
+    "objection_priority": {
+      "high_confidence": "direct_rebuttal",
+      "medium_confidence": "proof_points_focus",
+      "low_confidence": "redirect_to_benefits"
+    }
+  }
+}
