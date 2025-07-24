@@ -7,6 +7,7 @@ class RecommendationEngine {
         this.personas = config.personas || {};
         this.strategies = config.strategies || {};
         this.cheatsheet = config.cheatsheet || {};
+        this.discSubtypeStrategies = require('../../shared/strategies/disc_subtype_strategies');
         console.log('✅ Initializing RecommendationEngine...');
     }
 
@@ -32,9 +33,11 @@ class RecommendationEngine {
     generateEnhancedRecommendations(analysis) {
         const baseRecommendations = this.generate(analysis);
         const strategy = this.selectStrategy(analysis);
+        const discStrat = this.discSubtypeStrategies.getStrategy(analysis.subtypeId, analysis.personality.detected?.DISC);
 
         // Dodaj kluczowe punkty sprzedaży na podstawie strategii
         baseRecommendations.key_selling_points = strategy.key_selling_points || [];
+        if (discStrat) baseRecommendations.model_variant = discStrat.model;
 
         // Sugestia jazdy próbnej
         if (analysis.scores.total_score > 60 && !analysis.input.hasTakenTestDrive) {

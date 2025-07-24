@@ -19,16 +19,19 @@ class TriggerDetectionEngine {
         }
         const matched = [];
         let totalIntensity = 0;
+        const categoryCount = {};
 
         for (const triggerText of selectedTriggers) {
             if (!triggerText) continue;
-            const trigger = this.triggers.find(t => 
-                t.trigger && triggerText && 
+            const trigger = this.triggers.find(t =>
+                t.trigger && triggerText &&
                 t.trigger.toLowerCase() === triggerText.toLowerCase()
             );
             if (trigger) {
                 matched.push(trigger);
                 totalIntensity += trigger.base_conversion_rate;
+                const cat = trigger.category || 'other';
+                categoryCount[cat] = (categoryCount[cat] || 0) + 1;
             }
         }
 
@@ -36,6 +39,7 @@ class TriggerDetectionEngine {
             matched: matched,
             count: matched.length,
             intensity: totalIntensity,
+            categories: categoryCount
         };
     }
 

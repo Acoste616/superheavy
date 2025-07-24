@@ -14,9 +14,15 @@ class TransparencyEngine {
 
     explainDecision(analysisData) {
         console.log('🔍 Generating transparency report for:', analysisData);
-        // TODO: Move logic from backend/transparencyengine.js
+        const disc = analysisData.personality?.detected?.DISC;
+        const subtypeId = analysisData.subtypeId;
+        const chosenModel = analysisData.recommendations?.model_variant;
+        const snippetInfo = analysisData.adviceSnippetUsed || null;
         return {
-            message: 'Transparency report generation pending implementation.',
+            disc,
+            subtypeId,
+            chosenModel,
+            snippetInfo,
             version: this.version
         };
     }

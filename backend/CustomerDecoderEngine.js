@@ -15,6 +15,7 @@ const CustomerAnalysisEngine = require('../services/customer-analysis-service/en
 const TriggerDetectionEngine = require('../services/trigger-detection-service/engine.js');
 const ScoringAggregationEngine = require('../services/scoring-aggregation-service/engine.js');
 const RecommendationEngine = require('../services/recommendation-engine/engine.js');
+const AdviceSnippets = require('../shared/strategies/advice_snippets');
 
 // Import Customer Segmentation Engine
 class CustomerSegmentationEngine {
@@ -403,6 +404,7 @@ class CustomerDecoderEngine {
                 triggers: triggerAnalysis,
                 tone: coreAnalysis.tone,
                 demographics: coreAnalysis.demographics,
+                subtypeId: coreAnalysis.subtypeId,
                 temporal_analysis: temporalAnalysis,
                 segment: {
                     analysis: segmentAnalysis,
@@ -427,7 +429,13 @@ class CustomerDecoderEngine {
 
             // Generate recommendations using the new microservice
             analysis.recommendations = this.recommendationEngine.generateEnhancedRecommendations(analysis);
-            
+
+            const firstCategory = Object.keys(triggerAnalysis.categories || {})[0] || 'other';
+            const disc = coreAnalysis.personality.detected?.DISC;
+            const snippetArr = AdviceSnippets.getSnippets(coreAnalysis.subtypeId, disc, firstCategory);
+            const snippetUsed = snippetArr[0] || null;
+            analysis.adviceSnippetUsed = snippetUsed;
+
             // Select strategy
             analysis.strategy = this.recommendationEngine.selectStrategy(analysis);
             
@@ -441,8 +449,11 @@ class CustomerDecoderEngine {
                 conversion_probability: analysis.scores.enhanced_total,
                 confidence: analysis.confidence,
                 triggers: triggerAnalysis,
-                recommendations: analysis.recommendations
-            }, inputData);
+                recommendations: analysis.recommendations,
+                personality: coreAnalysis.personality,
+                subtypeId: coreAnalysis.subtypeId,
+                adviceSnippetUsed: snippetUsed
+            });
 
             // Add session tracking
             analysis.session_id = inputData.sessionId || this.generateSessionId();

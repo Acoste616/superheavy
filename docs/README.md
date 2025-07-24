@@ -47,6 +47,18 @@ http://localhost:8080/local_test.html
 
 4. **System automatycznie wykryje profil DISC i poda:**
 
+### **Nowe podtypy klientów (v3)**
+- 1 eco_family
+- 2 tech_professional
+- 3 senior_comfort
+- 4 business_roi
+- 5 young_urban
+- 6 luxury_enthusiast
+- 7 fleet_manager
+- 8 eco_commuter
+- 9 tech_early_adopter
+- 10 budget_driver
+
 ## 📊 **CO OTRZYMASZ:**
 
 ### **🎯 Podstawowa analiza:**
@@ -138,3 +150,10 @@ System analizuje triggery i automatycznie wykrywa:
 - ✅ **System gotowy** do użycia produkcyjnego
 
 **System wykorzystuje autentyczne badania rynku polskiego 2025 i jest gotowy dla zespołów sprzedażowych Tesla.**
+
+### 📌 Przykład rekomendacji
+```
+Input: DISC=D, subtype=tech_professional
+Output model variant: 3
+Sugestia: "tech advice 1 for D tech_professional"
+```

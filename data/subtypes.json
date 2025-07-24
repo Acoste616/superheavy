@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "subtypes": [
+    {"id": 1, "name": "eco_family"},
+    {"id": 2, "name": "tech_professional"},
+    {"id": 3, "name": "senior_comfort"},
+    {"id": 4, "name": "business_roi"},
+    {"id": 5, "name": "young_urban"},
+    {"id": 6, "name": "luxury_enthusiast"},
+    {"id": 7, "name": "fleet_manager"},
+    {"id": 8, "name": "eco_commuter"},
+    {"id": 9, "name": "tech_early_adopter"},
+    {"id": 10, "name": "budget_driver"}
+  ]
+}
