@@ -155,5 +155,8 @@ System analizuje triggery i automatycznie wykrywa:
 ```
 Input: DISC=D, subtype=tech_professional
 Output model variant: 3
-Sugestia: "tech advice 1 for D tech_professional"
+Sugestia: "tech advice for D tech_professional 1 ❓ TODO: refine with domain expert"
 ```
+
+### 🔍 Audyt i walidacja
+Uruchom `npm run audit`, aby wyszukać nieużywane pliki JS i braki w bazie porad.

@@ -10,7 +10,7 @@ subtypes.forEach(st => {
     strategies[st.id][disc] = {
       tone: `${disc}-tone for ${st.name} ❓ TODO: refine with domain expert`,
       phrasing: `${disc}-phrasing for ${st.name} ❓ TODO: refine with domain expert`,
-      highlights: Array.from({length:5},(_,i)=>`highlight ${i+1} for ${disc} ${st.name} ❓ TODO`),
+      highlights: Array.from({length:5}, (_,i)=>`highlight ${i+1} for ${disc} ${st.name} ❓ TODO`),
       model: modelVariants[(st.id + disc.charCodeAt(0)) % modelVariants.length]
     };
   });

@@ -7,7 +7,7 @@ subtypes.forEach(st => {
     adviceCategories.forEach(cat => {
       const arr = getSnippets(st.id, disc, cat);
       assert.ok(Array.isArray(arr));
-      assert.ok(arr.length >= 3);
+      assert.ok(arr.length >= 5);
     });
   });
 });

@@ -9,4 +9,5 @@ subtypes.forEach(st => {
 });
 const s = getStrategy(1,'D');
 assert.ok(s.tone && s.phrasing && s.model);
+assert.ok(Array.isArray(s.highlights) && s.highlights.length>=5);
 console.log('subtype mapping tests passed');
