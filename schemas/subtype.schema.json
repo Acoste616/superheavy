@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Subtype",
+  "type": "object",
+  "properties": {
+    "version": {"type":"string"},
+    "subtypes": {
+      "type": "array",
+      "items": {
+        "type":"object",
+        "properties": {
+          "id":{"type":"integer"},
+          "name":{"type":"string"}
+        },
+        "required":["id","name"]
+      }
+    }
+  },
+  "required":["subtypes"]
+}

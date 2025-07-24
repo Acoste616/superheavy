@@ -19,11 +19,13 @@ class CustomerAnalysisEngine {
         const personality = this.analyzePersonality(customerData);
         const tone = this.analyzeTone(customerData.tone);
         const demographics = this.analyzeDemographics(customerData.demographics);
+        const subtypeId = this.detectSubtype(demographics.data || demographics);
 
         return {
             personality,
             tone,
             demographics,
+            subtypeId,
             version: this.version
         };
     }
@@ -203,6 +205,16 @@ class CustomerAnalysisEngine {
         if (demographics.hasChildren === 'tak') modifiers.push({ factor: 'family_focus', value: 1.2 });
         if (demographics.teslaExperience === 'wlasciciel') modifiers.push({ factor: 'loyalty_boost', value: 1.5 });
         return modifiers;
+    }
+
+    detectSubtype(demographics) {
+        const age = parseInt(demographics.age) || 0;
+        if (demographics.hasChildren === 'tak' && demographics.hasPV === 'tak') return 1; // eco_family
+        if (demographics.carRole === 'business') return 4; // business_roi
+        if (age > 60) return 3; // senior_comfort
+        if (demographics.relationshipStatus === 'single' && age < 30) return 5; // young_urban
+        // ❓ TODO refine subtype rules
+        return 10; // default budget_driver
     }
 }
 
