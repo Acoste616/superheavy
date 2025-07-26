@@ -1,0 +1,218 @@
+metric,date,value,unit,segment,region,source,market_scope
+public_charging_points_total,2025-06-30,10255,points,AC+DC,ALL,"BE: Udział Nowych Aut Elektrycznych w Czerwcu 2025 – PEVO Index, PSNM / IBRM Samar / Otomoto (2025)",PL
+public_charging_points_yoy_growth,2025-06-30,40,percent,AC+DC,ALL,"PEVO Index: Liczba punktów ładowania e-aut wzrosła o 40% r/r do 10 255, PSNM / IBRM Samar / Otomoto (2025)",PL
+bev_registered_total,2025-06-30,98813,vehicles,BEV_passenger+LCV,ALL,"Informacja prasowa Czerwiec 2025 – Licznik Elektromobilności, PZPM & PSNM (2025)",PL
+bev_yoy_growth,2025-06-30,44,percent,BEV_passenger+LCV,ALL,"Licznik Elektromobilności: 68 792 BEV VI 2024 vs 98 813 BEV VI 2025, PZPM & PSNM (2025)",PL
+subsidy_max_NaszEauto,2025-02-03,40000,PLN,Subsidy,ALL,"Program „NaszEauto” – NFOŚiGW & MKiŚ (2025)",PL
+subsidy_max_MojElektryk_individual,2024-03-31,27000,PLN,Subsidy,ALL,"Program „Mój Elektryk” – Gov.pl (2024)",PL
+subsidy_max_MojElektryk_firm,2023-09-05,70000,PLN,Subsidy,ALL,"Mój Elektryk dla firm – Elektromobilni.pl (2023)",PL
+subsidy_max_eHDV_N2,2025-05-30,400000,PLN,Subsidy_N2,ALL,"Wsparcie zakupu pojazdów N2 – Fundusz Modernizacyjny (2025)",PL
+subsidy_max_eHDV_N3,2025-05-30,750000,PLN,Subsidy_N3,ALL,"Wsparcie zakupu pojazdów N3 – Fundusz Modernizacyjny (2025)",PL
+avg_energy_price_households,2024-12-31,0.83,PLN/kWh,Energy,ALL,"Średnia cena sprzedaży energii el. dla gosp. dom. 2024 – URE (2025)",PL
+avg_energy_price_max_cap,2025-09-30,0.6212,PLN/kWh,Energy_cap,ALL,"Taryfa G11 – cena maksymalna do 30.09.2025, enerad.pl (2025)",PL
+seasonal_peak_month,2025-06-30,June,month,Sales,ALL,"Rekordowy wzrost rejestracji aut elektrycznych w czerwcu – e-petrol.pl (2025)",PL
+infrastructure_new_points_Q2_2025,2025-06-30,1130,points,AC+DC,ALL,"PEVO Index + Licznik Elektromobilności (IX 2024 → VI 2025) PSNM/PZPM (2025)",PL
+public_charging_points,2025-06-30,795,points,AC+DC,Mazowieckie,"PEVO Index dane miast (VI 2025) – PSNM / IBRM Samar / Otomoto (2025)",PL
+public_charging_points,2025-06-30,348,points,AC+DC,Pomorskie,"PEVO Index dane miast (VI 2025) – PSNM / IBRM Samar / Otomoto (2025)",PL
+public_charging_points,2025-06-30,311,points,AC+DC,Małopolskie,"PEVO Index dane miast (VI 2025) – PSNM / IBRM Samar / Otomoto (2025)",PL
+public_charging_points,2025-06-30,294,points,AC+DC,Wielkopolskie,"PEVO Index dane miast (VI 2025) – PSNM / IBRM Samar / Otomoto (2025)",PL
+public_charging_points,2025-06-30,286,points,AC+DC,Zachodniopomorskie,"PEVO Index dane miast (VI 2025) – PSNM / IBRM Samar / Otomoto (2025)",PL
+
+b
+Rynek Elektromobilności w Polsce – Analiza Strategiczna 2024-2025: Park Pojazdów, Infrastruktura i Otoczenie Rynkowe
+Streszczenie Menedżerskie
+Rynek elektromobilności w Polsce w latach 2023-2025 charakteryzuje się dynamicznym, choć coraz bardziej złożonym wzrostem. Na koniec pierwszego kwartału 2025 roku po polskich drogach jeździło łącznie 87 461 w pełni elektrycznych samochodów osobowych i dostawczych (BEV), a publiczna sieć ładowania liczyła 9 342 punkty. Te liczby świadczą o rosnącej akceptacji technologii zeroemisyjnej, jednak głębsza analiza ujawnia fundamentalne napięcia, które zdefiniują przyszłość sektora.   
+
+Kluczowym motorem napędowym rynku pozostają rządowe programy dotacji, w szczególności program „Mój Elektryk”. Jego nowa odsłona, „Mój Elektryk 2.0”, zaplanowana na 2025 rok, poprzez zwiększenie kwoty wsparcia do 40 000 zł i wprowadzenie mechanizmów socjalnych, ma potencjał dalszego stymulowania popytu, zwłaszcza wśród klientów indywidualnych. Jednocześnie, dane za 2024 rok wskazują na pierwsze symptomy spowolnienia tempa wzrostu, określanego przez ekspertów mianem „roku stagnacji”, co dowodzi skrajnej wrażliwości rynku na cykle i warunki finansowania publicznego.   
+
+Rozwój infrastruktury, mimo historycznie rekordowych wyników instalacji, nie nadąża za rosnącą liczbą pojazdów. Głównym hamulcem nie jest brak kapitału czy technologii, lecz bariery administracyjne, zwłaszcza przewlekłe procedury przyłączeniowe do sieci elektroenergetycznej, które mogą opóźniać realizację projektów nawet o dwa lata. Prowadzi to do pogłębiającej się nierównowagi geograficznej – elektromobilność pozostaje zjawiskiem głównie miejskim, skoncentrowanym w najbogatszych regionach kraju, gdzie koncentruje się zarówno flota pojazdów, jak i sieć ładowania.   
+
+Analiza kosztów eksploatacji ujawnia rosnącą dychotomię. Z jednej strony, sztucznie zaniżone, subsydiowane ceny energii dla gospodarstw domowych czynią ładowanie w domu niezwykle atrakcyjnym finansowo. Z drugiej strony, rynkowe, znacznie wyższe ceny na publicznych stacjach szybkiego ładowania (DC) podważają ekonomiczny sens posiadania pojazdu elektrycznego dla osób niemających dostępu do prywatnego punktu ładowania. Ta „przepaść kosztowa” staje się kluczowym czynnikiem segmentującym rynek i stanowi poważne wyzwanie dla dalszej, masowej adopcji pojazdów elektrycznych. Niniejszy raport przedstawia szczegółową analizę tych trendów, identyfikując kluczowe wyzwania i strategiczne implikacje dla wszystkich uczestników rynku.   
+
+Analiza Parku Pojazdów W Pełni Elektrycznych (BEV)
+Dynamika i Skala Rynku: Od Fazy Wczesnej Adopcji do Początków Dojrzałości
+Ewolucja parku pojazdów w pełni elektrycznych (BEV) w Polsce w ostatnich latach ilustruje przejście od niszowej nowinki technologicznej do zauważalnego segmentu rynku motoryzacyjnego. Analiza danych od końca 2022 roku do pierwszego kwartału 2025 roku pokazuje gwałtowny wzrost w liczbach bezwzględnych, ale jednocześnie ujawnia subtelne zmiany w dynamice, które mogą sygnalizować wejście rynku w nową, bardziej dojrzałą, ale i wymagającą fazę.
+
+Na koniec 2022 roku polski park BEV, obejmujący samochody osobowe i lekkie pojazdy dostawcze (LCV), liczył około 32 728 sztuk, z czego 29 780 stanowiły auta osobowe. W ciągu następnych kilkunastu miesięcy rynek doświadczył bezprecedensowej ekspansji. Już pod koniec kwietnia 2023 roku łączna liczba BEV wzrosła do 40 912 sztuk , by na koniec października 2023 roku osiągnąć poziom 52 298 sztuk. Rok 2023 zamknął się liczbą 57 032 zarejestrowanych pojazdów BEV (51 211 osobowych i 5 821 dostawczych). Oznacza to, że w samym 2023 roku przybyło 23 651 nowych pojazdów tego typu.   
+
+Rok 2024 kontynuował ten trend wzrostowy w wartościach absolutnych. Na koniec grudnia 2024 roku flota BEV osiągnęła 80 651 sztuk, co oznacza przyrost o 24 223 pojazdy w ciągu dwunastu miesięcy. Wzrost ten był kontynuowany w pierwszym kwartale 2025 roku, kiedy to park powiększył się do 87 461 pojazdów.   
+
+Jednakże, podczas gdy liczby bezwzględne robią wrażenie, analiza tempa wzrostu dostarcza bardziej złożonego obrazu. Porównanie przyrostu rocznego pokazuje, że liczba nowo zarejestrowanych BEV w 2024 roku (24 223 szt.) była niemal identyczna jak w roku 2023 (23 651 szt.). Zjawisko to, przy znacznie większej bazie pojazdów na początku 2024 roku, oznacza wyraźne spowolnienie procentowej dynamiki wzrostu. Eksperci rynkowi wprost określili rok 2024 jako „rok stagnacji”. Ta stabilizacja liczby nowych rejestracji sugeruje, że rynek, przy obecnym poziomie cen pojazdów, dostępności infrastruktury i obowiązujących systemach wsparcia, mógł osiągnąć tymczasowy punkt nasycenia w segmencie tzw. „wczesnej większości” (early majority). Co istotne, spowolnienie to miało miejsce przed planowanym na początek 2025 roku uruchomieniem znacznie hojniejszego programu „Mój Elektryk 2.0”, co podkreśla, jak silnie rynek jest uzależniony od cyklicznych interwencji państwa. Wskazuje to, że przyszły wzrost prawdopodobnie nie będzie miał charakteru liniowego, lecz będzie przebiegał w formie skoków, silnie skorelowanych z wprowadzaniem nowych, atrakcyjnych programów dotacyjnych. Taka charakterystyka stwarza wysoce niestabilne i trudne do prognozowania środowisko dla producentów i dealerów samochodowych.   
+
+Tabela 1: Ewolucja Parku Pojazdów BEV w Polsce (osobowe + LCV), 2022-2025
+
+Data (Koniec okresu)	Całkowita Liczba BEV (szt.)	Przyrost r/r (szt.)	Przyrost r/r (%)
+Grudzień 2022	32 728	-	-
+Grudzień 2023	57 032	24 304	74.3%
+Grudzień 2024	80 651	23 619	41.4%
+Marzec 2025	87 461	-	-
+
+Eksportuj do Arkuszy
+Źródło: Opracowanie własne na podstawie danych z raportów PSPA/PZPM/PSNM.   
+
+Sezonowość i Trendy Rejestracyjne: Analiza Miesięczna
+Analiza miesięcznych danych rejestracyjnych, mimo ich fragmentaryczności, pozwala zidentyfikować wzorce zakupowe i wpływ czynników zewnętrznych na decyzje konsumentów i firm. Dane wskazują, że rynek charakteryzuje się nie tylko ogólnym trendem wzrostowym, ale również znaczną zmiennością w poszczególnych miesiącach, co jest bezpośrednio powiązane z cyklem życia programów dotacyjnych.
+
+W pierwszym kwartale 2024 roku zarejestrowano łącznie 5 916 nowych BEV (osobowych i dostawczych). W marcu tego roku zarejestrowano 1 705 osobowych aut elektrycznych. Skumulowane dane za okres styczeń-październik 2024 pokazują 17 948 nowych rejestracji samochodów osobowych BEV. Z kolei pierwszy kwartał 2025 roku przyniósł rejestrację 7 201 nowych pojazdów BEV, co stanowiło wzrost o 22% w porównaniu z analogicznym okresem roku 2024.   
+
+Szczególnie wymowny jest skokowy wzrost odnotowany w maju 2025 roku. Według doniesień rynkowych, liczba rejestracji w tym miesiącu podwoiła się w stosunku do maja 2024, osiągając najwyższy w historii miesięczny wolumen sprzedaży i rekordowy, 6-procentowy udział w rynku nowych samochodów osobowych. Ten gwałtowny wzrost nie był przypadkowy. Nastąpił on bezpośrednio po okresie, w którym zapowiadano i finalizowano szczegóły nowego programu „Mój Elektryk 2.0”, którego start planowano na początek 2025 roku.   
+
+Taka sekwencja zdarzeń – „stagnacja” w 2024 roku, kiedy program dotacji był stabilny, ale być może postrzegany jako niewystarczający, a następnie gwałtowny szczyt sprzedaży po ogłoszeniu bardziej korzystnych warunków – wskazuje na rosnącą strategiczną świadomość nabywców. Zarówno klienci indywidualni, jak i firmy, wstrzymują decyzje zakupowe w oczekiwaniu na nowe, lepsze warunki finansowania. Prowadzi to do powstawania sztucznych cykli „boom-bust” – okresów spowolnienia (gdy potencjalni nabywcy odkładają zakupy) i gwałtownych szczytów (gdy skumulowany popyt jest realizowany po uruchomieniu nowego programu). Taka niestabilność popytu stanowi poważne wyzwanie logistyczne i operacyjne dla całej branży, komplikując zarządzanie zapasami u dealerów oraz planowanie produkcji przez koncerny motoryzacyjne.
+
+Dystrybucja Geograficzna Floty BEV: Polska Dwóch Prędkości
+Rozwój elektromobilności w Polsce nie jest zjawiskiem jednolitym geograficznie. Dane jednoznacznie wskazują na głęboką polaryzację, tworząc obraz „Polski dwóch prędkości”, w której nowoczesny, zeroemisyjny transport jest w dużej mierze przywilejem mieszkańców największych i najzamożniejszych aglomeracji.
+
+W 2024 roku niemal połowa (49%) całej floty pojazdów w pełni elektrycznych była skoncentrowana w miastach liczących powyżej 300 tysięcy mieszkańców. Te same ośrodki miejskie odpowiadały również za 44% wszystkich nowych rejestracji BEV w kraju. Dalsza analiza pokazuje, że 40% wszystkich publicznych punktów ładowania znajduje się na terenie zaledwie trzech województw: mazowieckiego, śląskiego i pomorskiego. Ta koncentracja jest logiczną konsekwencją wczesnej fazy rozwoju rynku, gdzie pojazdy elektryczne są najbardziej praktyczne – krótsze codzienne dojazdy, większa gęstość zaludnienia i lepsza infrastruktura.   
+
+Jednakże, ta sytuacja tworzy samonapędzający się mechanizm. Operatorzy punktów ładowania (CPO), jako podmioty komercyjne, inwestują tam, gdzie mogą oczekiwać najwyższego wykorzystania stacji i najszybszego zwrotu z inwestycji – czyli w regionach o największej liczbie już zarejestrowanych pojazdów elektrycznych. To z kolei czyni posiadanie BEV jeszcze bardziej atrakcyjnym i praktycznym w tych właśnie lokalizacjach, co napędza dalszą koncentrację pojazdów i pogłębia dysproporcje w stosunku do regionów wiejskich i mniejszych miast.
+
+W efekcie, dla większości kraju powstaje klasyczny problem „jajka i kury”. Bez gęstej i niezawodnej sieci ładowania, adopcja pojazdów elektrycznych na terenach pozametropolitalnych będzie marginalna. Z drugiej strony, bez osiągnięcia masy krytycznej użytkowników na tych obszarach, operatorzy nie mają komercyjnej motywacji do budowy kosztownej infrastruktury. Przełamanie tego błędnego koła i zapewnienie bardziej sprawiedliwego dostępu do elektromobilności będzie wymagało celowanej interwencji państwa, na przykład w formie dedykowanych subsydiów na budowę ładowarek na obszarach o niskiej gęstości zaludnienia lub w ramach partnerstw publiczno-prywatnych.
+
+Tabela 2: Regionalny Podział Parku BEV i Publicznych Punktów Ładowania (dane szacunkowe, stan na Q1 2025)
+
+Województwo	Szacunkowa Liczba BEV (szt.)	Liczba Publicznych Punktów Ładowania (szt.)	Stosunek BEV na 1 Punkt Ładowania
+Mazowieckie	~25 000	~1 700	14.7
+Śląskie	~9 500	~1 050	9.0
+Pomorskie	~7 000	~950	7.4
+Pozostałe 13 województw	~45 961	~5 642	8.1
+Polska (łącznie)	87 461	9 342	9.4
+
+Eksportuj do Arkuszy
+Źródło: Opracowanie własne na podstawie danych PSPA/PZPM/PSNM oraz informacji o koncentracji regionalnej. Dane dla poszczególnych województw są ekstrapolacją opartą na ogólnych wskaźnikach koncentracji i mają charakter ilustracyjny.   
+
+Ocena Rozwoju Publicznej Infrastruktury Ładowania
+Tempo Rozbudowy Sieci: Rekordowe, Lecz Niewystarczające
+Rozwój publicznej infrastruktury ładowania jest krwiobiegiem systemu elektromobilności, a jego tempo determinuje realną użyteczność pojazdów elektrycznych. W Polsce obserwujemy w tym obszarze znaczący postęp ilościowy, jednak wciąż niewystarczający w stosunku do rosnących potrzeb i obarczony poważnymi barierami systemowymi.
+
+Sieć publicznych punktów ładowania rosła w ostatnich latach w imponującym tempie. Z poziomu 5 440 punktów w kwietniu 2023 roku , przez 6 378 punktów w październiku 2023 , aż do 9 342 punktów na koniec marca 2025 roku. Sam rok 2023 przyniósł instalację 1 513 nowych punktów, co było „historycznym rekordem” i stanowiło wzrost o 15% w porównaniu z liczbą instalacji z 2022 roku.   
+
+Mimo tych rekordowych liczb, przedstawiciele branży konsekwentnie alarmują, że tempo rozwoju jest zbyt wolne. Dyrektor zarządzający PSPA, komentując wyniki za 2023 rok, stwierdził, że „branża liczyła na znacznie lepszy wynik” i ostrzegł, że bez „zdecydowanego usprawnienia procedur przyłączeniowych” Polska nie ma szans na wypełnienie celów nowego, unijnego rozporządzenia AFIR (Alternative Fuels Infrastructure Regulation).   
+
+To właśnie te procedury, a nie brak kapitału czy woli inwestycyjnej, stanowią główne wąskie gardło. Proces instalacji publicznej stacji ładowania, zwłaszcza szybkiej stacji DC, jest skomplikowany i długotrwały. Wymaga on uzyskania warunków przyłączenia od operatora systemu dystrybucyjnego (OSD), szeregu pozwoleń administracyjnych i często fizycznej rozbudowy sieci elektroenergetycznej. Cały proces od decyzji inwestycyjnej do uruchomienia ładowarki może trwać od 18 do nawet 24 miesięcy. Potwierdza to komentarz eksperta, że obserwowany w 2024 roku skok liczby nowych punktów DC był „efektem decyzji podejmowanych często nawet 2 lata wcześniej”.   
+
+Tworzy to sytuację, w której obecny stan infrastruktury jest opóźnionym wskaźnikiem decyzji inwestycyjnych podjętych w przeszłości. Ewentualne obecne spowolnienie w wydawaniu pozwoleń i warunków przyłączeniowych, spowodowane np. ograniczeniami sieciowymi, ujawni się z pełną siłą dopiero za 1-2 lata. W tym czasie park pojazdów elektrycznych znacząco się powiększy, co grozi powstaniem dotkliwego deficytu infrastrukturalnego. Jest to jedno z najpoważniejszych ryzyk systemowych dla całego polskiego rynku elektromobilności, mogące w przyszłości zahamować sprzedaż pojazdów z powodu braku możliwości ich wygodnego ładowania.
+
+Struktura Technologiczna i Dostępność: Strategiczny Zwrot w Kierunku DC
+Równie ważna jak liczba punktów ładowania jest ich struktura technologiczna, czyli proporcja między wolniejszymi ładowarkami prądu przemiennego (AC) a szybkimi stacjami prądu stałego (DC). Dane z ostatnich kilkunastu miesięcy wskazują na wyraźny i strategiczny zwrot w kierunku technologii szybkiego ładowania, co ma fundamentalne znaczenie dla funkcjonalności całego ekosystemu.
+
+Na koniec 2023 roku struktura sieci była zdominowana przez wolniejsze punkty: 74% stanowiły ładowarki AC (o mocy do 22 kW), a jedynie 26% szybkie punkty DC. Jednak już w kolejnych kwartałach proporcje te zaczęły się systematycznie zmieniać. Na koniec kwietnia 2024 roku udział DC wzrósł do 28% , w październiku 2024 do 30% , by na koniec pierwszego kwartału 2025 roku osiągnąć poziom 32%. Oznacza to, że w ciągu zaledwie 15 miesięcy udział szybkich ładowarek w całej publicznej sieci wzrósł o sześć punktów procentowych.   
+
+Ten trend jest odpowiedzią operatorów na zmieniające się potrzeby rynku. O ile tanie w instalacji punkty AC doskonale sprawdzają się w tzw. ładowaniu docelowym (w miejscu pracy, hotelu, centrum handlowym, gdzie pojazd pozostaje zaparkowany przez kilka godzin), o tyle szybkie ładowarki DC są niezbędne do obsługi podróży międzymiastowych oraz do zaspokojenia potrzeb kierowców nieposiadających dostępu do prywatnego garażu. Rozbudowa sieci DC jest kluczowa dla przezwyciężenia tzw. „lęku przed zasięgiem” (range anxiety) i uczynienia z pojazdów elektrycznych pełnoprawnej alternatywy dla aut spalinowych.
+
+Jednak ta technologiczna ewolucja ma swoją cenę i prowadzi do bifurkacji rynku. Infrastruktura DC jest znacznie droższa w budowie i eksploatacji, co przekłada się na wyższe ceny dla użytkownika końcowego. W efekcie rynek dzieli się na dwa odrębne przypadki użycia: tanie, wolne ładowanie „nocne i docelowe” oraz drogie, szybkie ładowanie „tranzytowe i z konieczności”. To zróżnicowanie ma bezpośredni wpływ na całkowity koszt posiadania (TCO) pojazdu elektrycznego. Przewaga ekonomiczna EV, będąca jednym z głównych argumentów sprzedażowych, staje się wysoce warunkowa. Jest ona w pełni realizowana przez użytkowników, którzy mogą wykonywać ponad 90% ładowań w domu, korzystając z taniej taryfy nocnej. Natomiast dla rosnącej grupy kierowców (np. mieszkańców bloków, użytkowników flotowych o dużych przebiegach), którzy będą polegać na publicznej infrastrukturze DC, przewaga kosztowa nad nowoczesnymi pojazdami spalinowymi ulega erozji lub całkowicie zanika. Stanowi to poważne wyzwanie komunikacyjne i marketingowe dla branży w perspektywie długoterminowej.
+
+Tabela 3: Kwartalny Rozwój i Struktura Publicznej Infrastruktury Ładowania w Polsce
+
+Data (Koniec okresu)	Łączna Liczba Punktów	Punkty AC (%)	Punkty DC (%)
+Grudzień 2023	5 933	74%	26%
+Marzec 2024	6 490	72%	28%
+Październik 2024	8 184	70%	30%
+Marzec 2025	9 342	68%	32%
+
+Eksportuj do Arkuszy
+Źródło: Opracowanie własne na podstawie danych z raportów PSPA/PZPM/PSNM.   
+
+Otoczenie Regulacyjne i Systemy Wsparcia Finansowego
+Analiza Programu "Mój Elektryk" (Wersja 1.0)
+Program priorytetowy „Mój Elektryk”, realizowany przez Narodowy Fundusz Ochrony Środowiska i Gospodarki Wodnej (NFOŚiGW) od 2021 roku, był fundamentalnym instrumentem stymulującym polski rynek elektromobilności. Jego konstrukcja i zasady w znaczący sposób ukształtowały popyt, profil nabywców oraz strukturę sprzedawanych modeli. Z łącznym budżetem 960 mln zł, program przyczynił się do dofinansowania zakupu około 25 tysięcy pojazdów elektrycznych, stając się głównym motorem napędowym wczesnej fazy adopcji.   
+
+Kluczowe parametry programu dla głównych grup beneficjentów były następujące :   
+
+Osoby fizyczne: Mogły ubiegać się o dotację w wysokości 18 750 zł.
+
+Posiadacze Karty Dużej Rodziny (KDR): Dla tej grupy przewidziano wyższe wsparcie, wynoszące 27 000 zł.
+
+Przedsiębiorcy: Wysokość dofinansowania była uzależniona od deklarowanego średniorocznego przebiegu. W przypadku samochodów osobowych (kategoria M1) dotacja wynosiła do 27 000 zł przy przebiegu co najmniej 15 000 km rocznie. Dla lekkich pojazdów dostawczych (kategoria N1) maksymalna kwota wsparcia sięgała 70 000 zł (ale nie więcej niż 30% kosztów kwalifikowanych) przy deklaracji przebiegu powyżej 20 000 km rocznie.
+
+Centralnym elementem programu, który silnie wpłynął na rynek, był limit cenowy dla samochodów osobowych, ustalony na poziomie 225 000 zł brutto. Ograniczenie to skutecznie ukierunkowało popyt na modele z niższej i średniej półki cenowej, jednocześnie wykluczając z dofinansowania wiele pojazdów klasy premium. Co istotne, limit ten nie obowiązywał nabywców posiadających Kartę Dużej Rodziny, co stanowiło dla nich znaczący przywilej.   
+
+Program obejmował zarówno zakup gotówkowy, jak i leasing, co było kluczowe dla rynku firmowego. Popularność ścieżki leasingowej była tak duża, że przeznaczona na ten cel alokacja w wysokości 660 mln zł została wyczerpana, co doprowadziło do czasowego wstrzymania naboru wniosków w tej formie od września do grudnia 2024 roku. Świadczy to o ogromnym znaczeniu leasingu jako formy finansowania i kluczowej roli firm w napędzaniu rynku nowych pojazdów w Polsce.   
+
+Perspektywy i Potencjalny Wpływ Programu "Mój Elektryk 2.0"
+W odpowiedzi na zmieniające się warunki rynkowe oraz w celu wykorzystania środków z Krajowego Planu Odbudowy (KPO), na początku 2025 roku zapowiedziano start nowej edycji programu – „Mój Elektryk 2.0”. Program ten, z budżetem 1,6 mld zł, wprowadza istotne zmiany w filozofii wsparcia, przesuwając akcent z ogólnej stymulacji rynku w kierunku realizacji konkretnych celów społecznych i ekologicznych.   
+
+Najważniejsze zmiany w programie „Mój Elektryk 2.0” to :   
+
+Zwiększona kwota wsparcia: Bazowa kwota dotacji ma wzrosnąć do 30 000 zł, a maksymalna, po spełnieniu dodatkowych warunków, może osiągnąć nawet 40 000 zł.
+
+Wprowadzenie bonusów: Program przewiduje dodatkową premię w wysokości do 10 000 zł za zezłomowanie starego pojazdu spalinowego (będącego w posiadaniu wnioskodawcy od co najmniej trzech lat). Ponadto, wprowadzono bonus dla osób o niższych dochodach (roczny dochód poniżej 135 000 zł).
+
+Ograniczenie grupy docelowej: Co jest najbardziej kontrowersyjną zmianą, program w nowej odsłonie ma być skierowany wyłącznie do osób fizycznych oraz osób prowadzących jednoosobową działalność gospodarczą (JDG).
+
+Ta ostatnia zmiana oznacza strategiczny zwrot, który może mieć daleko idące konsekwencje. Z jednej strony, ukierunkowanie wsparcia na osoby o niższych dochodach i promowanie wymiany najstarszych, najbardziej emisyjnych pojazdów jest słuszne z perspektywy celów środowiskowych i społecznych. Z drugiej strony, wykluczenie z programu firm i flot (poza JDG) spotkało się z otwartą krytyką ekspertów branżowych. Prezes PZPM wprost stwierdził, że pominięcie firm w nowym programie jest błędem, gdyż ich udział „znacznie zwiększyłby liczbę samochodów zeroemisyjnych jeżdżących po polskich drogach”.   
+
+Argumentacja ta opiera się na fakcie, że w Polsce to właśnie firmy są głównym nabywcą nowych samochodów. Co więcej, pojazdy firmowe, zazwyczaj wymieniane co 2-4 lata, tworzą kluczowe źródło podaży dla wtórnego rynku pojazdów. Odcięcie kanału korporacyjnego od subsydiów może spowolnić nie tylko wzrost rynku pierwotnego, ale także opóźnić rozwój zdrowego i przystępnego cenowo rynku używanych pojazdów elektrycznych, który jest niezbędny dla długoterminowej, masowej adopcji tej technologii. Polityka ta stawia decydentów przed klasycznym dylematem: realizacja wąsko zdefiniowanych celów społecznych kosztem spowolnienia ogólnego rozwoju rynku.
+
+Tabela 4: Porównanie Kluczowych Parametrów Programów "Mój Elektryk" 1.0 i 2.0
+
+Parametr	Mój Elektryk 1.0	Mój Elektryk 2.0	Analiza Zmiany
+Budżet	960 mln zł	1,6 mld zł	Znaczące zwiększenie środków, finansowanie z KPO.
+Grupa Docelowa	Osoby fizyczne, firmy, instytucje	Osoby fizyczne, jednoosobowe działalności gospodarcze	Drastyczne zawężenie grupy docelowej, wykluczenie większości firm.
+Maks. Kwota Dotacji (os. fiz.)	27 000 zł (z KDR)	40 000 zł	Istotny wzrost potencjalnej kwoty wsparcia.
+Warunki Dodatkowe	Karta Dużej Rodziny, deklaracja przebiegu (firmy)	Złomowanie starego pojazdu, limit dochodów	Przesunięcie akcentu na cele ekologiczne i społeczne.
+Limit Ceny Pojazdu (M1)	225 000 zł brutto	225 000 zł (prawdopodobnie netto)	Utrzymanie limitu, potencjalna zmiana netto/brutto może wpłynąć na dostępne modele.
+
+Eksportuj do Arkuszy
+Źródło: Opracowanie własne na podstawie danych NFOŚiGW oraz doniesień medialnych.   
+
+Analiza Kosztów Energii i Eksploatacji
+Średni Koszt Energii Elektrycznej w Domu: Tarcza Ochronna i Jej Konsekwencje
+Koszty eksploatacji pojazdu elektrycznego są jednym z kluczowych czynników wpływających na decyzje zakupowe. W Polsce analiza tych kosztów jest skomplikowana przez silną interwencję państwa na rynku energii dla gospodarstw domowych, co tworzy sztuczne, ale bardzo korzystne warunki dla właścicieli EV ładujących swoje pojazdy w domu.
+
+Rząd, w ramach działań osłonowych, zamroził maksymalną cenę energii elektrycznej dla gospodarstw domowych. Do końca września 2025 roku cena ta wynosi 500 zł netto za megawatogodzinę (MWh), czyli 0,50 zł netto za kilowatogodzinę (kWh). Jest to cena znacznie niższa niż taryfy zatwierdzone przez Urząd Regulacji Energetyki (URE) na 2025 rok, które wynoszą średnio około 623 zł/   
+
+MWh. Różnica między ceną rynkową a zamrożoną jest pokrywana przez państwo w formie rekompensat dla spółek energetycznych.   
+
+Po uwzględnieniu opłat dystrybucyjnych, ostateczna, całkowita cena brutto za 1 kWh dla odbiorcy indywidualnego waha się w zależności od operatora, ale mieści się w przedziale od około 0,94 zł do 1,18 zł. Do celów analitycznych można przyjąć średnią wartość na poziomie około 1,05 zł/   
+
+kWh. Ta stosunkowo niska cena sprawia, że koszt przejechania 100 km dla typowego samochodu elektrycznego (zużycie 18 kWh/100 km) ładowanego w domu wynosi zaledwie około 18,90 zł. Jest to fundamentalna przewaga ekonomiczna nad pojazdami spalinowymi. Należy jednak pamiętać, że jest to sytuacja tymczasowa, uzależniona od politycznych decyzji o kontynuacji tarcz osłonowych, a nie odzwierciedlenie realnych kosztów rynkowych.   
+
+Koszt Ładowania na Stacjach Publicznych: Realia Rynkowe
+Sytuacja wygląda diametralnie inaczej w przypadku publicznej infrastruktury ładowania, gdzie ceny są kształtowane przez mechanizmy rynkowe i nie podlegają rządowym tarczom ochronnym. Koszt ładowania na stacjach publicznych jest znacznie wyższy i silnie zależy od technologii (AC vs DC) oraz polityki cenowej danego operatora.
+
+Ładowanie AC (wolne): Ceny za 1 kWh na publicznych stacjach AC wahają się zazwyczaj od około 1,60 zł do 2,50 zł.   
+
+Ładowanie DC (szybkie): W przypadku szybkiego ładowania prądem stałym, ceny są jeszcze wyższe i najczęściej mieszczą się w przedziale od 2,20 zł do ponad 3,00 zł za 1 kWh. Niektórzy operatorzy, jak Tauron, wprowadzają cenniki dynamiczne, w których cena może zmieniać się w zależności od pory dnia i obciążenia sieci, osiągając w godzinach szczytu nawet 4,00 zł/   
+
+kWh.   
+
+Ta różnica w kosztach ma dramatyczne przełożenie na ekonomię użytkowania pojazdu. Koszt przejechania 100 km dla tego samego pojazdu (zużycie 18 kWh/100 km) ładowanego wyłącznie na publicznych stacjach DC w cenie 2,50 zł/kWh wynosi już 45,00 zł. Jest to kwota wyższa niż koszt paliwa dla oszczędnego samochodu spalinowego (np. 6 L/100 km * 6,50 zł/L = 39,00 zł).
+
+W ten sposób na polskim rynku powstała głęboka „przepaść kosztowa” (Great Charging Divide) między ładowaniem domowym a publicznym. Dzieli ona użytkowników EV na dwie kategorie. Pierwsza to „uprzywilejowani” – głównie właściciele domów jednorodzinnych z dostępem do własnego garażu i taniego prądu, którzy w pełni realizują ekonomiczne korzyści płynące z elektromobilności. Druga kategoria to osoby skazane na korzystanie z drogiej infrastruktury publicznej – przede wszystkim mieszkańcy budynków wielorodzinnych. Dla tej drugiej, rosnącej grupy, ekonomiczny sens przesiadki na pojazd elektryczny staje się wysoce wątpliwy. Ta dychotomia jest obecnie najważniejszym czynnikiem determinującym realny całkowity koszt posiadania EV w Polsce i stanowi kluczową barierę dla osiągnięcia masowej skali adopcji.
+
+Wnioski i Rekomendacje Strategiczne
+Analiza polskiego rynku elektromobilności w latach 2024-2025 ujawnia obraz sektora w punkcie zwrotnym. Dynamiczny wzrost napotkał pierwsze bariery strukturalne, a dotychczasowe modele rozwoju zaczynają się wyczerpywać. Poniższe wnioski syntetyzują kluczowe wyzwania i stanowią podstawę do sformułowania strategicznych rekomendacji.
+
+Kluczowe Wnioski:
+
+Uzależnienie od Cyklu Dotacyjnego: Rynek jest skrajnie wrażliwy na dostępność i warunki publicznego wsparcia. „Stagnacja” w 2024 roku i gwałtowny wzrost w połowie 2025 roku pokazują, że popyt jest w dużej mierze stymulowany, a nie organiczny. Ta zależność tworzy niestabilność, utrudniając długoterminowe planowanie wszystkim uczestnikom rynku – od producentów po operatorów infrastruktury.
+
+Ukryty Kryzys Infrastrukturalny: Problemem nie jest brak woli inwestycyjnej, lecz bariery administracyjne. Przewlekłe i nieprzewidywalne procedury przyłączeniowe do sieci energetycznej stanowią największe systemowe ryzyko dla rozwoju sieci ładowania. Długi, nawet dwuletni cykl realizacji inwestycji oznacza, że skutki obecnych zatorów proceduralnych będą odczuwalne w przyszłości, gdy deficyt ładowarek może stać się krytyczny.
+
+Pogłębiająca się Polaryzacja Rynku: Rozwój elektromobilności jest nierównomierny na dwóch płaszczyznach. Po pierwsze, geograficznie – pozostaje zjawiskiem wielkomiejskim, pogłębiając przepaść między aglomeracjami a resztą kraju. Po drugie, ekonomicznie – „przepaść kosztowa” między tanim ładowaniem domowym a drogim publicznym dzieli użytkowników na tych, dla których EV jest oszczędnością, i tych, dla których staje się luksusem.
+
+Rekomendacje Strategiczne:
+
+Dla Decydentów Politycznych:
+
+Priorytet dla Infrastruktury: Należy pilnie podjąć działania na rzecz radykalnego uproszczenia i skrócenia procedur przyłączeniowych dla stacji ładowania. Można rozważyć wprowadzenie statusu „inwestycji celu publicznego” dla strategicznych hubów ładowania lub wyznaczenie dedykowanych, uproszczonych ścieżek administracyjnych.
+
+Inteligentne Subsydia: Należy ponownie przeanalizować założenia programu „Mój Elektryk 2.0”. Wykluczenie z niego firm jest strategicznym błędem, który spowolni modernizację całej floty i rozwój rynku wtórnego. Warto rozważyć przywrócenie wsparcia dla firm, być może z dodatkowymi wymogami (np. dotyczącymi udostępniania ładowarek pracownikom). Ponadto, należy rozważyć wprowadzenie mechanizmów niwelujących „przepaść kosztową”, np. poprzez wyższe dotacje dla osób bez możliwości instalacji domowej ładowarki.
+
+Wsparcie dla Regionów Wykluczonych: Konieczne jest stworzenie dedykowanych programów wsparcia (np. dotacji o wyższej intensywności) na budowę publicznej infrastruktury ładowania na obszarach o niskiej gęstości zaludnienia i w mniejszych miejscowościach, aby przełamać geograficzne „błędne koło”.
+
+Dla Producentów i Dealerów Samochodów (OEM):
+
+Zarządzanie Zmiennością: Należy przygotować modele biznesowe i logistyczne odporne na wahania popytu wywołane cyklami dotacyjnymi. Może to obejmować elastyczne planowanie produkcji i strategie zarządzania zapasami.
+
+Transparentna Komunikacja TCO: Konieczne jest opracowanie transparentnych i uczciwych modeli komunikacji całkowitego kosztu posiadania (TCO), które jasno pokazują klientom wpływ profilu ładowania (domowe vs. publiczne) na realne koszty eksploatacji. Edukacja rynku w tym zakresie jest kluczowa dla budowania długoterminowego zaufania.
+
+Dla Operatorów Punktów Ładowania (CPO):
+
+Strategiczne Zabezpieczanie Mocy: Kluczowym zasobem staje się moc przyłączeniowa. Operatorzy powinni proaktywnie występować o warunki przyłączeniowe dla przyszłych, strategicznie zlokalizowanych hubów ładowania, nawet z dużym wyprzedzeniem.
+
+Innowacje Cenowe i Produktowe: Aby konkurować z subsydiowanym prądem domowym i przyciągnąć klientów „bez garażu”, CPO muszą rozwijać innowacyjne modele cenowe. Mogą to być plany abonamentowe, pakiety minut/kWh, taryfy nocne na publicznych stacjach czy programy lojalnościowe, które obniżą koszt i zwiększą przewidywalność wydatków na ładowanie.
+
+Załącznik Danych (Format CSV)
+Zgodnie z zamówieniem, wszystkie dane ilościowe wykorzystane w niniejszym raporcie zostały zebrane i ustrukturyzowane w osobnym pliku w formacie CSV. Plik ten został przygotowany zgodnie z wymaganym schematem (metric,date,value,unit,segment,region,source,market_scope), co umożliwia jego dalsze, maszynowe przetwarzanie i analizę.
+

@@ -10,6 +10,7 @@ class TeslaCusomerDecoderApp {
     constructor() {
         this.currentAnalysis = null;
         this.selectedTriggers = new Set();
+        this.selectedContexts = new Set();
         this.analysisCount = 0;
         this.isInitialized = false;
         this.currentCustomerId = null;
@@ -28,6 +29,10 @@ class TeslaCusomerDecoderApp {
             triggerGrid: document.getElementById('triggerGrid'),
             selectedTriggerCount: document.getElementById('selectedTriggerCount'),
             selectedTriggersList: document.getElementById('selectedTriggersList'),
+            
+            // Context elements
+            contextBonus: document.getElementById('contextBonus'),
+            contextSummary: document.getElementById('contextSummary'),
             
             // Buttons
             startAnalysis: document.getElementById('startAnalysis'),
@@ -130,6 +135,22 @@ class TeslaCusomerDecoderApp {
                 this.toggleCategory(toggleBtn.dataset.category);
             }
         });
+
+        // Context buttons
+        document.addEventListener('click', (e) => {
+            const contextBtn = e.target.closest('.context-btn');
+            if (contextBtn) {
+                this.toggleContext(contextBtn);
+            }
+        });
+
+        // Context selectors
+        ['housingType', 'hasPV', 'businessOwner'].forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.addEventListener('change', () => this.updateContextBonus());
+            }
+        });
     }
 
     populateUI() {
@@ -155,47 +176,54 @@ class TeslaCusomerDecoderApp {
 
     groupTriggersByCategory(triggers) {
         const categories = {
-            financial: { 
-                name: '💰 Finanse i Koszty', 
-                description: 'Wszelkie kwestie związane z ceną, kosztami, finansowaniem',
+            lifestyle: { 
+                name: '🏠 Sytuacja Życiowa', 
+                description: 'Rodzina, mieszkanie, styl życia klienta',
                 triggers: [],
-                color: 'border-green-500'
+                color: 'border-purple-500',
+                priority: 1
+            },
+            financial: { 
+                name: '💰 Finanse i Budget', 
+                description: 'Ceny, koszty, finansowanie, dotacje',
+                triggers: [],
+                color: 'border-green-500',
+                priority: 2
             },
             technical: { 
                 name: '⚙️ Techniczne i Praktyczne', 
-                description: 'Zasięg, ładowanie, wydajność, funkcjonalności',
+                description: 'Zasięg, ładowanie, wydajność, infrastruktura',
                 triggers: [],
-                color: 'border-blue-500'
+                color: 'border-blue-500',
+                priority: 3
             },
             competitive: { 
                 name: '🏁 Porównania i Konkurencja', 
-                description: 'Porównania z innymi markami, modelami, technologiami',
+                description: 'Porównania z innymi markami i modelami',
                 triggers: [],
-                color: 'border-red-500'
-            },
-            lifestyle: { 
-                name: '🚗 Styl Życia i Status', 
-                description: 'Prestiż, wizerunek, dopasowanie do stylu życia',
-                triggers: [],
-                color: 'border-purple-500'
+                color: 'border-red-500',
+                priority: 4
             },
             environmental: { 
-                name: '🌱 Ekologia i Wartości', 
-                description: 'Wpływ na środowisko, misja, przyszłość',
+                name: '🌱 Ekologia i Misja', 
+                description: 'Środowisko, wartości, przyszłość',
                 triggers: [],
-                color: 'border-green-400'
+                color: 'border-green-400',
+                priority: 5
             },
             decision_process: { 
-                name: '🎯 Proces Decyzyjny', 
-                description: 'Timing, badania, gotowość do zakupu',
+                name: '🎯 Gotowość Zakupu', 
+                description: 'Timing, badania, proces decyzyjny',
                 triggers: [],
-                color: 'border-orange-500'
+                color: 'border-orange-500',
+                priority: 6
             },
             objections: { 
-                name: '🚫 Obiekcje i Wątpliwości', 
-                description: 'Typowe obiekcje i zastrzeżenia klientów',
+                name: '🚫 Obawy i Zastrzeżenia', 
+                description: 'Typowe obiekcje i wątpliwości',
                 triggers: [],
-                color: 'border-red-400'
+                color: 'border-red-400',
+                priority: 7
             }
         };
 
@@ -225,7 +253,15 @@ class TeslaCusomerDecoderApp {
             }
         });
 
-        return categories;
+        // Sort categories by priority
+        const sortedCategories = {};
+        Object.keys(categories)
+            .sort((a, b) => (categories[a].priority || 99) - (categories[b].priority || 99))
+            .forEach(key => {
+                sortedCategories[key] = categories[key];
+            });
+
+        return sortedCategories;
     }
 
     renderTriggerCategories(triggersByCategory) {
@@ -385,6 +421,73 @@ class TeslaCusomerDecoderApp {
         this.ui.runAnalysis.disabled = count === 0;
     }
 
+    toggleContext(contextBtn) {
+        const context = contextBtn.dataset.context;
+        const bonus = parseInt(contextBtn.dataset.bonus) || 0;
+        
+        if (contextBtn.classList.contains('active')) {
+            // Deactivate context
+            contextBtn.classList.remove('active', 'border-green-500', 'border-blue-500', 'border-purple-500');
+            contextBtn.classList.add('border-tesla-gray-700');
+            this.selectedContexts.delete(context);
+        } else {
+            // Activate context
+            contextBtn.classList.add('active');
+            contextBtn.classList.remove('border-tesla-gray-700');
+            
+            // Add appropriate color based on bonus
+            if (bonus >= 20) contextBtn.classList.add('border-green-500');
+            else if (bonus >= 15) contextBtn.classList.add('border-blue-500');
+            else contextBtn.classList.add('border-purple-500');
+            
+            this.selectedContexts.add(context);
+        }
+        
+        this.updateContextBonus();
+    }
+
+    updateContextBonus() {
+        let totalBonus = 0;
+        const contextSummaryItems = [];
+        
+        // Check context buttons
+        this.selectedContexts.forEach(context => {
+            const btn = document.querySelector(`[data-context="${context}"]`);
+            if (btn) {
+                const bonus = parseInt(btn.dataset.bonus) || 0;
+                totalBonus += bonus;
+                
+                const label = btn.querySelector('span').textContent;
+                contextSummaryItems.push(`${label} (+${bonus})`);
+            }
+        });
+        
+        // Check selectors
+        ['housingType', 'hasPV', 'businessOwner'].forEach(id => {
+            const element = document.getElementById(id);
+            if (element && element.value) {
+                const option = element.querySelector(`option[value="${element.value}"]`);
+                if (option && option.dataset.bonus) {
+                    const bonus = parseInt(option.dataset.bonus);
+                    totalBonus += bonus;
+                    contextSummaryItems.push(`${option.textContent} (${bonus > 0 ? '+' : ''}${bonus})`);
+                }
+            }
+        });
+        
+        // Update UI
+        this.ui.contextBonus.textContent = totalBonus > 0 ? `+${totalBonus}` : totalBonus.toString();
+        this.ui.contextBonus.className = totalBonus > 0 ? 'text-green-400 font-semibold' : 
+                                         totalBonus < 0 ? 'text-red-400 font-semibold' : 
+                                         'text-tesla-gray-400 font-semibold';
+        
+        if (contextSummaryItems.length === 0) {
+            this.ui.contextSummary.textContent = 'Wybierz kontekst aby zobaczyć wpływ na analizę';
+        } else {
+            this.ui.contextSummary.textContent = contextSummaryItems.join(', ');
+        }
+    }
+
     toggleCategory(categoryKey) {
         const categorySection = document.querySelector(`.category-triggers[data-category="${categoryKey}"]`);
         const toggleButton = document.querySelector(`.category-toggle[data-category="${categoryKey}"] i`);
@@ -420,15 +523,34 @@ class TeslaCusomerDecoderApp {
         try {
             this.showLoading(true, 'Analizowanie profilu klienta...');
             
-            // Prepare input data
+            // Prepare input data with context modifiers
+            const contextModifiers = {};
+            
+            // From context buttons
+            this.selectedContexts.forEach(context => {
+                contextModifiers[context] = true;
+            });
+            
+            // From selectors
+            const housingType = document.getElementById('housingType')?.value;
+            const hasPV = document.getElementById('hasPV')?.value;
+            const businessOwner = document.getElementById('businessOwner')?.value;
+            
+            if (housingType === 'house_garage') contextModifiers.has_garage = true;
+            if (housingType === 'apartment_street') contextModifiers.no_home_charging = true;
+            if (hasPV === 'true') contextModifiers.has_home_pv = true;
+            if (businessOwner === 'true') contextModifiers.business_owner = true;
+            if (businessOwner === 'fleet') contextModifiers.fleet_decision = true;
+            
             const inputData = {
                 selectedTriggers: Array.from(this.selectedTriggers),
                 tone: this.ui.toneSelect.value,
+                contextModifiers: contextModifiers,
                 demographics: {
                     age: document.getElementById('ageRange')?.value,
-                    housingType: document.getElementById('housingType')?.value,
-                    hasPV: document.getElementById('hasPV')?.value,
-                    region: document.getElementById('region')?.value
+                    housingType: housingType,
+                    hasPV: hasPV,
+                    businessOwner: businessOwner
                 }
             };
             
@@ -458,6 +580,15 @@ class TeslaCusomerDecoderApp {
                 
                 console.log('📊 Analysis received:', this.currentAnalysis);
                 console.log('🚀 Quick responses:', this.currentAnalysis.quick_responses);
+                
+                // Validate quick_responses structure
+                if (!this.currentAnalysis.quick_responses) {
+                    console.warn('⚠️ No quick_responses in analysis, creating fallback');
+                    this.currentAnalysis.quick_responses = [];
+                } else if (!Array.isArray(this.currentAnalysis.quick_responses)) {
+                    console.warn('⚠️ quick_responses is not an array, converting');
+                    this.currentAnalysis.quick_responses = [];
+                }
                 
                 // Update analysis count
                 this.analysisCount++;
@@ -543,25 +674,7 @@ class TeslaCusomerDecoderApp {
                 <div class="bg-tesla-gray-800 p-4 rounded-lg">
                     <h5 class="text-tesla-red font-semibold mb-2">Szybkie Odpowiedzi</h5>
                     <div class="space-y-3">
-                        ${(analysis.quick_responses || []).map(response => `
-                            <div class="border-l-2 border-tesla-red pl-3">
-                                <div class="text-xs text-tesla-gray-400 mb-1">${response.trigger}</div>
-                                <div class="text-sm text-white">${response.immediate_reply}</div>
-                                ${response.key_points ? `
-                                    <div class="mt-2 space-y-1">
-                                        ${response.key_points.map(point => 
-                                            `<div class="text-xs text-tesla-gray-300">• ${point}</div>`
-                                        ).join('')}
-                                    </div>
-                                ` : ''}
-                                ${response.next_action ? `
-                                    <div class="text-xs text-tesla-red mt-2 font-semibold">Następny krok: ${response.next_action}</div>
-                                ` : ''}
-                            </div>
-                        `).join('')}
-                        ${(!analysis.quick_responses || analysis.quick_responses.length === 0) ? 
-                            `<div class="text-tesla-gray-400 text-sm">Brak szybkich odpowiedzi dla wybranych triggerów</div>` : ''
-                        }
+                        ${this.renderQuickResponses(analysis.quick_responses || [])}
                     </div>
                 </div>
             `;
@@ -689,6 +802,41 @@ class TeslaCusomerDecoderApp {
                 </div>
             `;
         }
+    }
+
+    renderQuickResponses(quickResponses) {
+        if (!Array.isArray(quickResponses) || quickResponses.length === 0) {
+            return `<div class="text-tesla-gray-400 text-sm">Brak szybkich odpowiedzi dla wybranych triggerów</div>`;
+        }
+        
+        return quickResponses.map(response => {
+            // Validate response object
+            if (!response || typeof response !== 'object') {
+                return `<div class="text-tesla-gray-400 text-sm">Nieprawidłowa struktura odpowiedzi</div>`;
+            }
+            
+            const trigger = response.trigger || 'Nieznany trigger';
+            const immediateReply = response.immediate_reply || 'Przygotowuję odpowiedź...';
+            const keyPoints = Array.isArray(response.key_points) ? response.key_points : [];
+            const nextAction = response.next_action || '';
+            
+            return `
+                <div class="border-l-2 border-tesla-red pl-3">
+                    <div class="text-xs text-tesla-gray-400 mb-1">${trigger}</div>
+                    <div class="text-sm text-white">${immediateReply}</div>
+                    ${keyPoints.length > 0 ? `
+                        <div class="mt-2 space-y-1">
+                            ${keyPoints.map(point => 
+                                `<div class="text-xs text-tesla-gray-300">• ${point}</div>`
+                            ).join('')}
+                        </div>
+                    ` : ''}
+                    ${nextAction ? `
+                        <div class="text-xs text-tesla-red mt-2 font-semibold">Następny krok: ${nextAction}</div>
+                    ` : ''}
+                </div>
+            `;
+        }).join('');
     }
 
     populateExplainabilityTab(analysis) {
@@ -906,6 +1054,7 @@ class TeslaCusomerDecoderApp {
         this.ui.analysisInterface.style.display = 'none';
         this.ui.welcomeScreen.style.display = 'block';
         this.selectedTriggers.clear();
+        this.selectedContexts.clear();
         this.updateTriggerDisplay();
         
         // Reset trigger buttons
@@ -917,6 +1066,20 @@ class TeslaCusomerDecoderApp {
                 icon.className = 'fas fa-plus text-tesla-gray-400 transition-transform duration-200';
             }
         });
+        
+        // Reset context buttons
+        document.querySelectorAll('.context-btn').forEach(btn => {
+            btn.classList.remove('active', 'border-green-500', 'border-blue-500', 'border-purple-500');
+            btn.classList.add('border-tesla-gray-700');
+        });
+        
+        // Reset selectors
+        ['ageRange', 'housingType', 'hasPV', 'businessOwner'].forEach(id => {
+            const element = document.getElementById(id);
+            if (element) element.value = '';
+        });
+        
+        this.updateContextBonus();
     }
 
     showLoading(show, message = 'Ładowanie...') {

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Sales Trigger System - Real-time Customer Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        tesla: {
+                            red: '#E31E24',
+                            black: '#000000',
+                            white: '#FFFFFF',
+                            gray: {
+                                100: '#F8F8F8',
+                                200: '#E8E8E8',
+                                300: '#D8D8D8',
+                                400: '#A0A0A0',
+                                500: '#808080',
+                                600: '#606060',
+                                700: '#404040',
+                                800: '#1A1A1A',
+                                900: '#0A0A0A'
+                            }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .trigger-btn {
+            @apply px-4 py-3 rounded-lg border-2 border-tesla-gray-600 bg-tesla-gray-800 text-tesla-gray-300 transition-all duration-200 hover:border-tesla-red hover:bg-tesla-gray-700 cursor-pointer text-sm font-medium;
+        }
+        .trigger-btn.active {
+            @apply border-tesla-red bg-tesla-red text-white;
+        }
+        .trigger-btn.eco { @apply hover:border-green-500; }
+        .trigger-btn.eco.active { @apply border-green-500 bg-green-500; }
+        .trigger-btn.tech { @apply hover:border-blue-500; }
+        .trigger-btn.tech.active { @apply border-blue-500 bg-blue-500; }
+        .trigger-btn.family { @apply hover:border-purple-500; }
+        .trigger-btn.family.active { @apply border-purple-500 bg-purple-500; }
+        .trigger-btn.business { @apply hover:border-yellow-500; }
+        .trigger-btn.business.active { @apply border-yellow-500 bg-yellow-500; }
+        .trigger-btn.concern { @apply hover:border-orange-500; }
+        .trigger-btn.concern.active { @apply border-orange-500 bg-orange-500; }
+        .trigger-btn.hot { @apply hover:border-red-500; }
+        .trigger-btn.hot.active { @apply border-red-500 bg-red-500; }
+        .trigger-btn.warm { @apply hover:border-amber-500; }
+        .trigger-btn.warm.active { @apply border-amber-500 bg-amber-500; }
+        .trigger-btn.cold { @apply hover:border-blue-300; }
+        .trigger-btn.cold.active { @apply border-blue-300 bg-blue-300; }
+        
+        .disc-d { @apply hover:border-red-600; }
+        .disc-d.active { @apply border-red-600 bg-red-600; }
+        .disc-i { @apply hover:border-yellow-500; }
+        .disc-i.active { @apply border-yellow-500 bg-yellow-500; }
+        .disc-s { @apply hover:border-green-500; }
+        .disc-s.active { @apply border-green-500 bg-green-500; }
+        .disc-c { @apply hover:border-blue-500; }
+        .disc-c.active { @apply border-blue-500 bg-blue-500; }
+    </style>
+</head>
+<body class="bg-tesla-black text-tesla-white min-h-screen">
+    
+    <!-- Header -->
+    <div class="bg-tesla-gray-900 border-b border-tesla-gray-700 p-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-2xl font-bold text-tesla-red">🎯 Tesla Sales Trigger System</h1>
+            <p class="text-tesla-gray-400 mt-1">Zaznaczaj sygnały które słyszysz od klienta podczas rozmowy</p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Left Column: Trigger System -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- Sytuacja życiowa -->
+            <div class="bg-tesla-gray-900 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-4 text-tesla-red">🏠 Sytuacja życiowa klienta</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <button class="trigger-btn family" data-trigger="family_signals" data-weight="9" data-context="has_children">
+                        👨‍👩‍👧‍👦 Rodzina/Dzieci
+                    </button>
+                    <button class="trigger-btn eco" data-trigger="house_garage" data-weight="9" data-context="has_garage">
+                        🏠 Dom z garażem
+                    </button>
+                    <button class="trigger-btn eco" data-trigger="pv_panels" data-weight="15" data-context="has_home_pv">
+                        ☀️ Panele PV/Fotowoltaika
+                    </button>
+                    <button class="trigger-btn business" data-trigger="business_signals" data-weight="12" data-context="business_owner">
+                        💼 Firma/Biznes/JDG
+                    </button>
+                    <button class="trigger-btn" data-trigger="senior_signals" data-weight="7" data-context="senior">
+                        👴 Senior/Spokój
+                    </button>
+                    <button class="trigger-btn tech" data-trigger="young_professional" data-weight="8">
+                        🚀 Młody profesjonalista
+                    </button>
+                </div>
+            </div>
+
+            <!-- Główne motywacje -->
+            <div class="bg-tesla-gray-900 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-4 text-tesla-red">💡 Główne motywacje klienta</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <button class="trigger-btn eco" data-trigger="eco_motivation" data-weight="10">
+                        🌱 Ekologia/Środowisko
+                    </button>
+                    <button class="trigger-btn tech" data-trigger="tech_motivation" data-weight="10">
+                        🚀 Technologia/Autopilot
+                    </button>
+                    <button class="trigger-btn business" data-trigger="savings_motivation" data-weight="9">
+                        💰 Oszczędności/ROI
+                    </button>
+                    <button class="trigger-btn" data-trigger="prestige_motivation" data-weight="8">
+                        ⭐ Prestiż/Status
+                    </button>
+                    <button class="trigger-btn family" data-trigger="safety_motivation" data-weight="9">
+                        🛡️ Bezpieczeństwo
+                    </button>
+                    <button class="trigger-btn tech" data-trigger="performance_motivation" data-weight="7">
+                        ⚡ Performance/Osiągi  
+                    </button>
+                </div>
+            </div>
+
+            <!-- Styl komunikacji DISC -->
+            <div class="bg-tesla-gray-900 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-4 text-tesla-red">🗣️ Jak mówi i zachowuje się klient</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <button class="trigger-btn disc-d" data-trigger="dominant_signals" data-disc="D" data-weight="9">
+                        ⚡ Szybko/Konkretnie/Decyzyjnie (D)
+                    </button>
+                    <button class="trigger-btn disc-i" data-trigger="influential_signals" data-disc="I" data-weight="8">
+                        😊 Towarzysko/Emocjonalnie/Społecznie (I)
+                    </button>
+                    <button class="trigger-btn disc-s" data-trigger="steady_signals" data-disc="S" data-weight="8">
+                        🤝 Spokojnie/Ostrożnie/Rodzinnie (S)
+                    </button>
+                    <button class="trigger-btn disc-c" data-trigger="conscientious_signals" data-disc="C" data-weight="9">
+                        📊 Analitycznie/Szczegółowo/Technicznie (C)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Obawy i gotowość -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Obawy -->
+                <div class="bg-tesla-gray-900 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold mb-4 text-tesla-red">⚠️ Obawy klienta</h3>
+                    <div class="space-y-3">
+                        <button class="trigger-btn concern w-full" data-trigger="price_concerns" data-weight="10">
+                            💸 Cena/Budżet/Za drogo
+                        </button>
+                        <button class="trigger-btn concern w-full" data-trigger="range_anxiety" data-weight="10">
+                            🔋 Zasięg/Bateria/Zimą
+                        </button>
+                        <button class="trigger-btn concern w-full" data-trigger="charging_concerns" data-weight="9">
+                            ⚡ Ładowanie/Gdzie ładować
+                        </button>
+                        <button class="trigger-btn concern w-full" data-trigger="reliability_concerns" data-weight="8">
+                            🔧 Niezawodność/Serwis
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gotowość zakupu -->
+                <div class="bg-tesla-gray-900 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold mb-4 text-tesla-red">🎯 Gotowość zakupu</h3>
+                    <div class="space-y-3">
+                        <button class="trigger-btn hot w-full" data-trigger="hot_buyer" data-weight="10">
+                            🔥 Gorący - "kiedy mogę odebrać"
+                        </button>
+                        <button class="trigger-btn warm w-full" data-trigger="warm_buyer" data-weight="7">
+                            🌡️ Ciepły - "interesuje mnie"
+                        </button>
+                        <button class="trigger-btn cold w-full" data-trigger="cold_buyer" data-weight="3">
+                            ❄️ Zimny - "tylko sprawdzam"
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Real-time Analysis & Cheatsheet -->
+        <div class="space-y-6">
+            
+            <!-- Current Analysis -->
+            <div class="bg-tesla-gray-900 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-4 text-tesla-red">📊 Analiza klienta</h3>
+                
+                <!-- DISC Analysis -->
+                <div class="mb-4 p-3 bg-tesla-gray-800 rounded">
+                    <h4 class="font-medium mb-2">🧠 Typ DISC: <span id="disc-type" class="text-tesla-red">Nieznany</span></h4>
+                    <div class="space-y-1 text-sm">
+                        <div class="flex justify-between">
+                            <span>D (Dominujący)</span>
+                            <div class="w-20 bg-tesla-gray-700 rounded-full h-2 flex items-center">
+                                <div id="disc-d-bar" class="bg-red-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                            <span id="disc-d-percent" class="text-xs">0%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>I (Wpływowy)</span>
+                            <div class="w-20 bg-tesla-gray-700 rounded-full h-2 flex items-center">
+                                <div id="disc-i-bar" class="bg-yellow-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                            <span id="disc-i-percent" class="text-xs">0%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>S (Stabilny)</span>
+                            <div class="w-20 bg-tesla-gray-700 rounded-full h-2 flex items-center">
+                                <div id="disc-s-bar" class="bg-green-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                            <span id="disc-s-percent" class="text-xs">0%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>C (Analityczny)</span>
+                            <div class="w-20 bg-tesla-gray-700 rounded-full h-2 flex items-center">
+                                <div id="disc-c-bar" class="bg-blue-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                            <span id="disc-c-percent" class="text-xs">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segment & Conversion -->
+                <div class="space-y-3">
+                    <div class="p-3 bg-tesla-gray-800 rounded">
+                        <h4 class="font-medium">🎯 Segment: <span id="segment-name" class="text-tesla-red">Nieznany</span></h4>
+                        <div class="text-sm text-tesla-gray-400 mt-1" id="segment-description">Zaznacz triggery aby zobaczyć analizę</div>
+                    </div>
+                    
+                    <div class="p-3 bg-tesla-gray-800 rounded">
+                        <h4 class="font-medium">💰 Szansa zakupu: <span id="conversion-probability" class="text-2xl text-tesla-red">0%</span></h4>
+                        <div class="mt-2 bg-tesla-gray-700 rounded-full h-2">
+                            <div id="conversion-bar" class="bg-tesla-red h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales Cheatsheet -->
+            <div class="bg-tesla-gray-900 rounded-lg p-6" id="sales-cheatsheet" style="display: none;">
+                <h3 class="text-lg font-semibold mb-4 text-tesla-red">📋 Ściąga sprzedażowa</h3>
+                
+                <!-- How to communicate -->
+                <div class="mb-4 p-3 bg-tesla-gray-800 rounded">
+                    <h4 class="font-medium mb-2">🗣️ Jak rozmawiać z tym klientem:</h4>
+                    <div id="communication-dos-donts" class="text-sm space-y-1">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Key arguments -->
+                <div class="mb-4 p-3 bg-tesla-gray-800 rounded">
+                    <h4 class="font-medium mb-2">💡 Kluczowe argumenty:</h4>
+                    <div id="key-arguments" class="text-sm space-y-2">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Next steps -->
+                <div class="p-3 bg-tesla-gray-800 rounded">
+                    <h4 class="font-medium mb-2">🎯 Następne kroki:</h4>
+                    <div id="next-steps" class="text-sm space-y-1">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="sales-trigger-system.js"></script>
+</body>
+</html>

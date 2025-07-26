@@ -1,0 +1,6 @@
+
+trigger_id,trigger_name,category,disc_affinity,effectiveness_score,seasonal_variation,regional_variation,competitive_context
+1,Cena i oszczędności,Ekonomia,"C, S",10,Niska,Wyższe zainteresowanie w regionach o niższych dochodach,"Niższa cena i TCO dzięki dopłatom NaszEauto; konkurenci (VW, Hyundai) obniżają ceny"
+2,Zasięg zimą,Użytkowość,"C, S",9,Wysoka (zimowe miesiące),Chłodniejsze regiony wymagają większego zasięgu,Tesla traci mniej zasięgu zimą niż ID.4; Hyundai wprowadza większe akumulatory
+3,Infrastruktura ładowania,Komfort,"S, I",9,Średnia,Najwięcej punktów w Warszawie; mniejsze miasta mają mniej stacji,"Tesla oferuje sieć Supercharger, ale rosnąca liczba aut powoduje kolejki; publiczne punkty AC/DC rosną"
+4,Bezpieczeństwo rodziny,Bezpieczeństwo,"S, D",8,Niska,Silniejszy wśród rodzin,Tesla ma wysokie oceny EuroNCAP; Hyundai i BMW oferują liczne systemy ADAS

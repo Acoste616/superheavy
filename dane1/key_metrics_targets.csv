@@ -1,0 +1,9 @@
+Metric,Obecna Wartość,Cel Q2 2025,Cel Q4 2025
+Personality Detection Accuracy,60-70%,75-85%,85-90%
+Conversion Prediction Accuracy,65-75%,80-85%,85-90%
+Lead Qualification Precision,70%,85%,90%
+False Positive Rate,25%,15%,<10%
+Customer Satisfaction Score,7.2/10,8.5/10,9.0/10
+Sales Cycle Reduction,0%,20%,30%
+Revenue per Lead,45k PLN,60k PLN,75k PLN
+System Response Time,2.3s,1.5s,<1s

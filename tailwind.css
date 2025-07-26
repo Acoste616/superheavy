@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Tesla Custom Colors */
+@theme {
+  --color-tesla-red: #E31E24;
+  --color-tesla-black: #000000;
+  --color-tesla-white: #FFFFFF;
+  --color-tesla-gray-100: #F8F8F8;
+  --color-tesla-gray-200: #E8E8E8;
+  --color-tesla-gray-300: #D8D8D8;
+  --color-tesla-gray-400: #A0A0A0;
+  --color-tesla-gray-500: #808080;
+  --color-tesla-gray-600: #606060;
+  --color-tesla-gray-700: #404040;
+  --color-tesla-gray-800: #1A1A1A;
+  --color-tesla-gray-900: #0A0A0A;
+}

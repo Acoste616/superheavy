@@ -64,10 +64,12 @@ class CustomerDecoderEngine {
             throw new Error('Engine not initialized');
         }
 
+        const personalityAnalysis = this.analyzePersonality(inputData);
+        
         const analysis = {
             timestamp: new Date().toISOString(),
             input: inputData,
-            personality: this.analyzePersonality(inputData),
+            personality: personalityAnalysis,
             triggers: this.analyzeTriggers(inputData.selectedTriggers),
             tone: this.analyzeTone(inputData.tone),
             demographics: this.analyzeDemographics(inputData.demographics),
@@ -93,6 +95,12 @@ class CustomerDecoderEngine {
         
         // Calculate overall confidence
         analysis.confidence = this.calculateConfidence(analysis);
+        
+        // Add conversion_probability for frontend compatibility
+        analysis.conversion_probability = analysis.scores.enhanced_total || analysis.scores.total || 0;
+        
+        // Add quick_responses for frontend compatibility
+        analysis.quick_responses = this.generateQuickResponses(analysis);
 
         return analysis;
     }
@@ -118,7 +126,9 @@ class CustomerDecoderEngine {
                 const trigger = this.findTrigger(triggerText);
                 if (trigger && trigger.personality_resonance) {
                     const resonance = trigger.personality_resonance[persona.DISC] || 0;
-                    score += resonance * trigger.base_conversion_rate;
+                    // Scale resonance (0-1) to percentage and combine with base rate
+                    const triggerScore = (resonance * 100) * (trigger.base_conversion_rate / 100);
+                    score += triggerScore;
                     triggerMatches++;
                 }
             }
@@ -133,9 +143,18 @@ class CustomerDecoderEngine {
             }
         }
 
+        const finalConfidence = isNaN(highestScore) || highestScore <= 0 ? 75 : Math.min(highestScore, 100);
+        
+        // Create a copy of the detected persona with confidence
+        const detectedPersona = bestMatch || personas[0];
+        const detectedWithConfidence = {
+            ...detectedPersona,
+            confidence: finalConfidence
+        };
+        
         return {
-            detected: bestMatch || personas[0],
-            confidence: Math.min(highestScore / 100, 1),
+            detected: detectedWithConfidence,
+            confidence: finalConfidence,
             autoDetected: true,
             alternatives: personas.filter(p => p !== bestMatch).slice(0, 2)
         };
@@ -320,7 +339,27 @@ class CustomerDecoderEngine {
 
     generateRecommendations(analysis) {
         const personality = analysis.personality.detected;
+        const selectedTriggers = analysis.triggers.selected || [];
+        
+        // Extract key messages from personality and triggers
+        const keyMessages = [];
+        if (personality && personality.sales_approach && personality.sales_approach.key_messages) {
+            keyMessages.push(...personality.sales_approach.key_messages);
+        }
+        
+        // Add trigger-specific messages
+        for (const trigger of selectedTriggers) {
+            if (trigger.response_strategies && trigger.response_strategies[personality.DISC]) {
+                const strategy = trigger.response_strategies[personality.DISC];
+                if (strategy.key_messages) {
+                    keyMessages.push(...strategy.key_messages.slice(0, 2));
+                }
+            }
+        }
+
         const recommendations = {
+            strategy: personality && personality.sales_approach ? personality.sales_approach.primary_strategy : "Personalized approach based on detected personality",
+            key_messages: [...new Set(keyMessages)].slice(0, 5), // Remove duplicates and limit
             language: {
                 keywords: this.getKeywords(personality),
                 avoidWords: this.getAvoidWords(personality),
@@ -994,6 +1033,67 @@ class CustomerDecoderEngine {
         
         // Sort by priority and return top 5
         return steps.sort((a, b) => a.priority - b.priority).slice(0, 5);
+    }
+
+    generateQuickResponses(analysis) {
+        if (!analysis.personality.detected || !analysis.triggers.selected) {
+            return [];
+        }
+
+        const personality = analysis.personality.detected;
+        const selectedTriggers = analysis.triggers.selected;
+        const quickResponses = [];
+
+        // First priority: Get trigger-specific responses based on personality
+        for (const trigger of selectedTriggers) {
+            if (trigger.response_strategies && trigger.response_strategies[personality.DISC]) {
+                const strategy = trigger.response_strategies[personality.DISC];
+                if (strategy.key_messages && strategy.key_messages.length > 0) {
+                    quickResponses.push(...strategy.key_messages.slice(0, 2));
+                }
+            } else if (trigger.quick_response && trigger.quick_response.immediate_reply) {
+                quickResponses.push(trigger.quick_response.immediate_reply);
+            }
+        }
+
+        // Second priority: Get personality-specific phrases from cheatsheet
+        if (quickResponses.length < 3) {
+            const phrases = this.generatePersonalizedPhrases(personality);
+            quickResponses.push(...phrases.slice(0, 3 - quickResponses.length));
+        }
+
+        // Third priority: Fallback responses
+        if (quickResponses.length === 0) {
+            const defaultResponses = {
+                'D': [
+                    "Tesla oferuje najlepszy ROI na rynku elektrycznych pojazdów.",
+                    "Ta technologia da Panu przewagę konkurencyjną.",
+                    "Tesla to lider w innowacyjnych rozwiązaniach transportowych."
+                ],
+                'I': [
+                    "Tesla to nie tylko samochód - to społeczność innowatorów!",
+                    "Będzie Pan częścią rewolucji transportowej.",
+                    "Tesla przyciąga uwagę i pokazuje wizjonerskie myślenie."
+                ],
+                'S': [
+                    "Tesla oferuje 8-letnią gwarancję na baterie dla Pana spokoju.",
+                    "To sprawdzona, niezawodna technologia - zaufały jej już tysiące rodzin.",
+                    "Naszym priorytetem jest bezpieczeństwo i stabilność."
+                ],
+                'C': [
+                    "Tesla ma najwyższą ocenę bezpieczeństwa - 5 gwiazdek Euro NCAP.",
+                    "Oto szczegółowe dane techniczne potwierdzające efektywność.",
+                    "Analiza TCO pokazuje oszczędności na poziomie 30,000 PLN rocznie."
+                ]
+            };
+            
+            const disc = personality.DISC;
+            quickResponses.push(...(defaultResponses[disc] || defaultResponses['S']));
+        }
+
+        // Remove duplicates and limit to 5
+        const uniqueResponses = [...new Set(quickResponses)];
+        return uniqueResponses.slice(0, 5);
     }
 }
 

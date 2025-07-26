@@ -875,6 +875,246 @@
       "conversion_modifiers": {
         "early_adopter_cautious": -10, "technology_mature": 15, "proven_track_record": 12
       }
+    },
+
+    {
+      "id": "family_children",
+      "text": "Mam rodzinę z dziećmi",
+      "category": "lifestyle",
+      "subcategory": "family_life_situation",
+      "base_conversion_rate": 68,
+      "intent_level": "high",
+      "decision_stage": "family_needs_assessment",
+      "personality_resonance": {"S": 0.95, "C": 0.8, "I": 0.7, "D": 0.6},
+      "quick_response": {
+        "immediate_reply": "Rodzina to priorytet! Tesla ma 5 gwiazdek bezpieczeństwa, najcichszą kabinę (dzieci lepiej śpią), frunk na wózki i zabawki.",
+        "key_points": ["5 gwiazdek bezpieczeństwa", "Najcichsza kabina", "Dodatkowy bagażnik (frunk)"],
+        "next_action": "Pokażę funkcje Family Safety",
+        "avoid": ["Tylko techniczne aspekty", "Ignorowanie praktycznych potrzeb rodziny"]
+      },
+      "conversion_modifiers": {
+        "has_children": 25, "safety_priority": 20, "family_budget": 8, "convenience_important": 15
+      }
+    },
+
+    {
+      "id": "house_garage",
+      "text": "Mam dom z garażem",
+      "category": "technical",
+      "subcategory": "housing_infrastructure",
+      "base_conversion_rate": 75,
+      "intent_level": "high",
+      "decision_stage": "infrastructure_ready",
+      "personality_resonance": {"S": 0.9, "C": 0.85, "D": 0.7, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Idealna sytuacja! Wallbox w garażu = ładowanie jak telefon. Wstajesz rano z pełnym 'bakiem' za 6zł za noc.",
+        "key_points": ["Wallbox w garażu", "6zł za pełne ładowanie", "Wygoda jak telefon"],
+        "next_action": "Pokażę kalkulację oszczędności",
+        "avoid": ["Komplikowanie instalacji", "Wysokie koszty setup"]
+      },
+      "conversion_modifiers": {
+        "has_garage": 20, "home_charging": 25, "convenience": 15, "cost_savings": 12
+      }
+    },
+
+    {
+      "id": "pv_panels",
+      "text": "Mam panele fotowoltaiczne",
+      "category": "environmental",
+      "subcategory": "renewable_energy_synergy",
+      "base_conversion_rate": 85,
+      "intent_level": "very_high",
+      "decision_stage": "perfect_synergy",
+      "personality_resonance": {"C": 0.95, "S": 0.9, "I": 0.8, "D": 0.75},
+      "quick_response": {
+        "immediate_reply": "Perfekcyjna synergia! Twoje panele będą ładować auto za darmo w dzień. W nocy tania taryfa. To 95% darmowa jazda!",
+        "key_points": ["95% darmowa jazda", "Panele ładują w dzień", "Tania taryfa w nocy"],
+        "next_action": "Policzę dokładne oszczędności",
+        "avoid": ["Komplikowanie rozliczeń", "Techniczne szczegóły instalacji"]
+      },
+      "conversion_modifiers": {
+        "has_home_pv": 30, "eco_conscious": 20, "cost_optimization": 25, "energy_independent": 18
+      }
+    },
+
+    {
+      "id": "business_owner",
+      "text": "Prowadzę firmę/działalność",
+      "category": "financial",
+      "subcategory": "business_optimization",
+      "base_conversion_rate": 82,
+      "intent_level": "very_high",
+      "decision_stage": "business_case_evaluation",
+      "personality_resonance": {"D": 0.95, "C": 0.9, "S": 0.6, "I": 0.75},
+      "quick_response": {
+        "immediate_reply": "Doskonała decyzja biznesowa! VAT 100% odliczenie + amortyzacja 20% rocznie + wizerunek innowacyjnej firmy.",
+        "key_points": ["100% odliczenie VAT", "20% amortyzacja rocznie", "Wizerunek innowacji"],
+        "next_action": "Przygotowuję business case",
+        "avoid": ["Tylko koszty", "Ignorowanie wizerunku biznesowego"]
+      },
+      "conversion_modifiers": {
+        "business_owner": 35, "tax_optimization": 25, "business_image": 20, "fleet_potential": 15
+      }
+    },
+
+    {
+      "id": "senior_comfort",
+      "text": "Szukam czegoś wygodnego na emeryturze",
+      "category": "lifestyle",
+      "subcategory": "senior_needs",
+      "base_conversion_rate": 65,
+      "intent_level": "medium_high",
+      "decision_stage": "comfort_evaluation",
+      "personality_resonance": {"S": 0.95, "C": 0.8, "I": 0.6, "D": 0.5},
+      "quick_response": {
+        "immediate_reply": "Tesla to ideał dla seniora! Cicha, bez spalin w garażu, łatwa obsługa ekranem dotykowym. Minimal maintenance.",
+        "key_points": ["Cicha jazda", "Brak spalin w garażu", "Minimalny serwis"],
+        "next_action": "Pokażę funkcje komfortu",
+        "avoid": ["Skomplikowane technologie", "Nacisk na performance"]
+      },
+      "conversion_modifiers": {
+        "senior": 15, "comfort_priority": 20, "health_conscious": 12, "simplicity_seeker": 18
+      }
+    },
+
+    {
+      "id": "tech_professional",
+      "text": "Pracuję w IT/technologiach",
+      "category": "lifestyle",
+      "subcategory": "professional_alignment",
+      "base_conversion_rate": 78,
+      "intent_level": "high",
+      "decision_stage": "tech_appreciation",
+      "personality_resonance": {"D": 0.9, "I": 0.85, "C": 0.8, "S": 0.6},
+      "quick_response": {
+        "immediate_reply": "Perfekcyjny match! OTA updates, neural networks, 14 TFLOPS computing power. To najbardziej zaawansowany komputer na kółkach.",
+        "key_points": ["OTA updates", "14 TFLOPS mocy", "Najbardziej zaawansowana technologia"],
+        "next_action": "Pokażę architekturę techniczną",
+        "avoid": ["Upraszczanie technologii", "Podstawowe funkcje"]
+      },
+      "conversion_modifiers": {
+        "tech_savvy": 25, "early_adopter": 20, "innovation_appreciation": 22, "professional_image": 15
+      }
+    },
+
+    {
+      "id": "ecology_motivation",
+      "text": "Zależy mi na ekologii i środowisku",
+      "category": "environmental",
+      "subcategory": "environmental_values",
+      "base_conversion_rate": 75,
+      "intent_level": "high",
+      "decision_stage": "values_alignment",
+      "personality_resonance": {"I": 0.9, "S": 0.8, "C": 0.7, "D": 0.6},
+      "quick_response": {
+        "immediate_reply": "To więcej niż samochód - to misja! Zero lokalnych emisji + Tesla używa coraz więcej odnawialnych źródeł. 4.6 tony mniej CO2 rocznie.",
+        "key_points": ["Zero lokalnych emisji", "Odnawialne źródła", "4.6 tony mniej CO2/rok"],
+        "next_action": "Pokażę pełny environmental impact",
+        "avoid": ["Tylko korzyści osobiste", "Ignorowanie misji Tesla"]
+      },
+      "conversion_modifiers": {
+        "eco_conscious": 25, "mission_aligned": 20, "environmental_priority": 22, "future_focused": 15
+      }
+    },
+
+    {
+      "id": "performance_interest",
+      "text": "Lubię szybkie i dynamiczne auta",
+      "category": "lifestyle",
+      "subcategory": "performance_preference",
+      "base_conversion_rate": 70,
+      "intent_level": "high",
+      "decision_stage": "performance_evaluation",
+      "personality_resonance": {"D": 0.95, "I": 0.8, "C": 0.6, "S": 0.4},
+      "quick_response": {
+        "immediate_reply": "Model Y Performance: 0-100 w 3.5s! Wyprzedzisz każde Porsche na światłach. Plus track mode i adaptacyjne zawieszenie.",
+        "key_points": ["0-100 w 3.5s", "Szybsze od Porsche", "Track mode"],
+        "next_action": "Pokażę performance stats",
+        "avoid": ["Tylko efficiency", "Ukrywanie mocy"]
+      },
+      "conversion_modifiers": {
+        "performance_lover": 25, "adrenaline_seeker": 20, "sports_car_experience": 18, "track_interested": 12
+      }
+    },
+
+    {
+      "id": "apartment_no_parking",
+      "text": "Mieszkam w bloku, nie mam własnego parkingu",
+      "category": "technical",
+      "subcategory": "infrastructure_challenge",
+      "base_conversion_rate": 35,
+      "intent_level": "medium",
+      "decision_stage": "infrastructure_barrier",
+      "personality_resonance": {"S": 0.9, "C": 0.8, "D": 0.5, "I": 0.6},
+      "quick_response": {
+        "immediate_reply": "Wiem, że to wyzwanie. Sprawdzmy ładowarki w okolicy - mamy już 9,342 punkty. Plus coraz więcej biurowców ma charging.",
+        "key_points": ["9,342 punkty w Polsce", "Ładowarki w biurowcach", "Sprawdzmy twoją okolicę"],
+        "next_action": "Sprawdzmy mapę infrastruktury",
+        "avoid": ["Bagatelizowanie problemu", "Tylko Superchargery"]
+      },
+      "conversion_modifiers": {
+        "no_home_charging": -20, "urban_infrastructure": 15, "workplace_charging": 20, "public_charging_dependent": 10
+      }
+    },
+
+    {
+      "id": "hot_buyer_ready",
+      "text": "Kiedy mogę odebrać samochód?",
+      "category": "decision_process",
+      "subcategory": "immediate_purchase",
+      "base_conversion_rate": 95,
+      "intent_level": "maximum",
+      "decision_stage": "ready_to_buy",
+      "personality_resonance": {"D": 0.95, "I": 0.8, "S": 0.7, "C": 0.8},
+      "quick_response": {
+        "immediate_reply": "Świetnie! Konfiguracja zajmuje 10 minut, rezerwujemy slot produkcyjny, omawiamy finansowanie. Dostawa za 4-6 tygodni.",
+        "key_points": ["Konfiguracja 10 minut", "Slot produkcyjny", "Dostawa 4-6 tygodni"],
+        "next_action": "Rozpoczynamy konfigurację TERAZ",
+        "avoid": ["Dodatkowe bariery", "Komplikowanie procesu"]
+      },
+      "conversion_modifiers": {
+        "hot_buyer": 40, "decision_maker": 30, "urgency_driven": 25, "no_objections": 35
+      }
+    },
+
+    {
+      "id": "warm_buyer_interested",
+      "text": "To bardzo mnie interesuje",
+      "category": "decision_process",
+      "subcategory": "high_interest",
+      "base_conversion_rate": 72,
+      "intent_level": "high",
+      "decision_stage": "interested_evaluation",
+      "personality_resonance": {"I": 0.9, "S": 0.8, "D": 0.7, "C": 0.75},
+      "quick_response": {
+        "immediate_reply": "Cieszę się! Co najbardziej Cię przekonuje? Zaproponuję jazdę próbną, żebyś poczuł tę różnicę na własnej skórze.",
+        "key_points": ["Co najbardziej przekonuje", "Jazda próbna", "Poczuć różnicę"],
+        "next_action": "Umówię jazdę próbną",
+        "avoid": ["Przesadzanie z naciskami", "Ignorowanie emocji"]
+      },
+      "conversion_modifiers": {
+        "warm_buyer": 25, "test_drive_ready": 20, "emotional_engagement": 18, "curiosity_high": 15
+      }
+    },
+
+    {
+      "id": "cold_buyer_checking",
+      "text": "Tylko się orientuję w cenach",
+      "category": "decision_process",
+      "subcategory": "early_research",
+      "base_conversion_rate": 25,
+      "intent_level": "low",
+      "decision_stage": "information_gathering",
+      "personality_resonance": {"C": 0.9, "S": 0.7, "D": 0.5, "I": 0.4},
+      "quick_response": {
+        "immediate_reply": "Rozumiem, to mądre podejście. Pamiętaj o dotacji 40k PLN - zmienia to znacznie kalkulację. Mogę przygotować pełne porównanie.",
+        "key_points": ["Mądre podejście", "Dotacja 40k PLN", "Pełne porównanie kosztów"],
+        "next_action": "Przygotowuję materiały informacyjne",
+        "avoid": ["Nacisk na zakup", "Bagatelizowanie research"]
+      },
+      "conversion_modifiers": {
+        "cold_buyer": -10, "research_oriented": 10, "information_seeker": 12, "long_sales_cycle": 5
+      }
     }
   ],
 
@@ -933,7 +1173,7 @@
   },
 
   "meta": {
-    "total_triggers": 35,
+    "total_triggers": 48,
     "categories": 7,
     "design_approach": "comprehensive_sales_scenario_coverage",
     "quick_response_system": "immediate_salesperson_guidance",

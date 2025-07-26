@@ -171,45 +171,88 @@
                     </div>
                 </div>
 
-                <!-- Additional Context -->
-                <div class="grid md:grid-cols-4 gap-4 mb-8">
-                    <div>
-                        <label class="block text-tesla-gray-300 mb-2 text-sm">Wiek:</label>
-                        <select id="ageRange" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
-                            <option value="">Nie określono</option>
-                            <option value="25-35">25-35 lat</option>
-                            <option value="35-45">35-45 lat</option>
-                            <option value="45-55">45-55 lat</option>
-                            <option value="55+">55+ lat</option>
-                        </select>
+                <!-- Context Modifiers - Real-time Sales Intelligence -->
+                <div class="mb-8">
+                    <label class="block text-tesla-gray-300 mb-4 font-semibold">
+                        🎯 Kontekst klienta (dodatkowe modyfikatory):
+                    </label>
+                    <div class="grid md:grid-cols-4 gap-4 mb-4">
+                        <div>
+                            <label class="block text-tesla-gray-300 mb-2 text-sm">Wiek:</label>
+                            <select id="ageRange" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
+                                <option value="">Nie określono</option>
+                                <option value="25-35">25-35 lat</option>
+                                <option value="35-45">35-45 lat</option>
+                                <option value="45-55">45-55 lat</option>
+                                <option value="55+">55+ lat</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-tesla-gray-300 mb-2 text-sm">Mieszkanie:</label>
+                            <select id="housingType" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
+                                <option value="">Nie określono</option>
+                                <option value="house_garage" data-bonus="20">🏠 Dom z garażem (+20)</option>
+                                <option value="apartment_parking">🏢 Mieszkanie z parkingiem</option>
+                                <option value="apartment_street">🏢 Blok - parking uliczny (-10)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-tesla-gray-300 mb-2 text-sm">Panele PV:</label>
+                            <select id="hasPV" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
+                                <option value="">Nie wiem</option>
+                                <option value="true" data-bonus="30">☀️ Tak, ma PV (+30)</option>
+                                <option value="false">Nie ma PV</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-tesla-gray-300 mb-2 text-sm">Biznes:</label>
+                            <select id="businessOwner" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
+                                <option value="">Osoba prywatna</option>
+                                <option value="true" data-bonus="35">💼 Firma/JDG (+35)</option>
+                                <option value="fleet" data-bonus="40">🚗 Flota biznesowa (+40)</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-tesla-gray-300 mb-2 text-sm">Typ mieszkania:</label>
-                        <select id="housingType" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
-                            <option value="">Nie określono</option>
-                            <option value="dom">🏠 Dom z garażem</option>
-                            <option value="mieszkanie_parking">🏢 Mieszkanie z parkingiem</option>
-                            <option value="mieszkanie_ulica">🏢 Mieszkanie - parking uliczny</option>
-                        </select>
+                    
+                    <!-- Quick Context Buttons -->
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <button type="button" class="context-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 text-left hover:border-green-500 transition-colors" 
+                                data-context="has_children" data-bonus="15">
+                            <div class="flex items-center justify-between">
+                                <span class="text-white">👨‍👩‍👧‍👦 Ma dzieci</span>
+                                <span class="text-green-400 text-sm">+15</span>
+                            </div>
+                            <div class="text-xs text-tesla-gray-400 mt-1">Bezpieczeństwo rodziny priorytetem</div>
+                        </button>
+                        
+                        <button type="button" class="context-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 text-left hover:border-blue-500 transition-colors" 
+                                data-context="tech_professional" data-bonus="20">
+                            <div class="flex items-center justify-between">
+                                <span class="text-white">💻 Pracuje w IT</span>
+                                <span class="text-blue-400 text-sm">+20</span>
+                            </div>
+                            <div class="text-xs text-tesla-gray-400 mt-1">Doceni zaawansowaną technologię</div>
+                        </button>
+                        
+                        <button type="button" class="context-btn bg-tesla-gray-800 border border-tesla-gray-700 rounded-lg p-3 text-left hover:border-purple-500 transition-colors" 
+                                data-context="eco_conscious" data-bonus="18">
+                            <div class="flex items-center justify-between">
+                                <span class="text-white">🌱 Świadomy ekologicznie</span>
+                                <span class="text-purple-400 text-sm">+18</span>
+                            </div>
+                            <div class="text-xs text-tesla-gray-400 mt-1">Misja Tesla to priority</div>
+                        </button>
                     </div>
-                    <div>
-                        <label class="block text-tesla-gray-300 mb-2 text-sm">Panele PV:</label>
-                        <select id="hasPV" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
-                            <option value="">Nie wiem</option>
-                            <option value="true">Tak, ma PV</option>
-                            <option value="false">Nie ma PV</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-tesla-gray-300 mb-2 text-sm">Region:</label>
-                        <select id="region" class="w-full bg-tesla-gray-800 border border-tesla-gray-700 rounded px-3 py-2 text-white text-sm">
-                            <option value="">Nie określono</option>
-                            <option value="mazowieckie">Mazowieckie</option>
-                            <option value="slaskie">Śląskie</option>
-                            <option value="wielkopolskie">Wielkopolskie</option>
-                            <option value="malopolskie">Małopolskie</option>
-                            <option value="other">Inny</option>
-                        </select>
+                    
+                    <!-- Context Summary -->
+                    <div class="mt-4 p-3 bg-tesla-gray-800 rounded-lg">
+                        <div class="flex items-center justify-between">
+                            <span class="text-tesla-gray-300">Modyfikatory kontekstowe:</span>
+                            <span id="contextBonus" class="text-tesla-red font-semibold">+0</span>
+                        </div>
+                        <div id="contextSummary" class="text-xs text-tesla-gray-400 mt-1">
+                            Wybierz kontekst aby zobaczyć wpływ na analizę
+                        </div>
                     </div>
                 </div>
 
